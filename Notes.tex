@@ -1,0 +1,118 @@
+\documentclass{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% package setup
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\usepackage{enumitem}
+\usepackage{amsfonts,amsmath, soul, matlab-prettifier, bm, amsthm,enumitem,amssymb,multirow,float,mathtools,bbm,array,varwidth,hyperref}
+\usepackage[all]{xy}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{graphicx}
+\usepackage{mathtools, caption}
+
+
+\raggedbottom
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% operators and symbols
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% operators
+\newcommand{\Hom}{\mathrm{Hom}}
+\newcommand{\Ker}{\mathrm{Ker}}
+\newcommand{\Pic}{\mathrm{Pic}}
+\newcommand{\Proj}{\mathrm{Proj}}
+\newcommand{\rk}{\mathrm{rk}}
+\newcommand{\Spec}{\mathrm{Spec}}
+\newcommand{\Sym}{\mathrm{Sym}}
+\newcommand{\Frob}{\mathrm{Frob}}
+\newcommand{\Gal}{\mathrm{Gal}}
+\newcommand{\GL}{\mathrm{GL}}
+\newcommand{\SL}{\mathrm{SL}}
+\newcommand{\Ind}{\mathrm{Ind}}
+
+% mathcal
+\newcommand{\cO}{\mathcal{O}}
+
+% mathbb
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\GG}{\mathbb{G}}
+\newcommand{\adele}{\mathbb{A}}
+\newcommand{\pp}{\mathfrak{p}}
+
+% mathfra
+\newcommand{\fg}{\mathfrak{g}}
+\newcommand{\fm}{\mathfrak{m}}
+
+
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\hatv}[1]{\overset{\vee}{\mathstrut#1}}
+
+\DeclareMathOperator{\Ima}{Im}
+
+\linespread{1.5}
+
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{question}[thm]{Question}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{convention}[thm]{Convention}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{algo}[thm]{Algorithm}
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{notn}[thm]{Notation}
+\newtheorem{rem}[thm]{Remark}
+\newtheorem{example}[thm]{Example}
+\newtheorem{examples}[thm]{Examples}
+\newtheorem{fact}[thm]{Fact}
+
+
+\title{Local Langlands for $\mathrm{GL}_2$}
+\author{Yiannis Fam, Albert Lopez Bruch, Jakab Schrettner}
+
+\begin{document}
+	\maketitle
+	\pagenumbering{arabic}
+
+\section{Locally Profinite Groups and Smooth Representations}
+\input{section_one}
+
+%need defn of (compact) induction and frobenius reciprocity, duality thm
+
+\section{Hecke Algebras}
+[Possibly put this whole section at the end with modular forms. I think we only need the computation of $\delta_B$ from here.]
+
+
+\input{Section4}
+
+%\section{Modular forms as automorphic forms}
+%\input{modforms.tex}
+%maybe add more definitions and details later
+
+\section{Principal series representations of $\GL_2$}
+\input{principal_series}
+
+% Reference additive duality from section 1 when ready. Also duality thm end of 3.3
+% explain characters of torus
+
+\section{Functional equation for $\GL_2$}
+\input{func_equation}
+
+\newpage
+
+\bibliography{references}
+\bibliographystyle{amsalpha}
+
+
+\end{document}

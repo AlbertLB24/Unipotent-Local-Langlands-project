@@ -1,0 +1,436 @@
+
+
+Let $F$ be a nonarchimedean local field, $G=\GL_2(F)$, and $B=\{\begin{psmallmatrix} a&b\\0&d\end{psmallmatrix} \mid a,d \in F^\times, b \in F\}$ the Borel subgroup of upper triangular matrices, so that $B=N \rtimes T$ for $T=\{\begin{psmallmatrix}
+    a&0\\0&d
+\end{psmallmatrix}\mid a,d \in F^\times\} \cong F^\times \times F^\times$ and $N=\{\begin{psmallmatrix}
+    1&b\\0&1
+\end{psmallmatrix}\mid b \in F\}\cong F$. Between $N$ and $B$ we also have the mirabolic subgroup $M=\{\begin{psmallmatrix}
+    a&b\\0&1
+\end{psmallmatrix} \mid a\in F^\times, b \in F\}$ with $M/N \cong F^\times$.
+
+In studying the local Langlands correspondence, we want to understand all the irreducible smooth representations of $G$. One method for producing representations of $G$ is by induction from a subgroup of $G$. Typically one takes this subgroup to be `parabolic'; in our case there is one nontrivial parabolic, namely $B$. From our decomposition $B=N \rtimes T$ (more generally we have a so-called Levi decomposition) we see that we can produce representations of $B$ by inflating representations of the torus $T$. Since $T \cong F^\times \times F^\times$, the irreducible representations of $T$ are products of characters of $F^\times$, which are relatively easy to get a handle on.
+
+\begin{defn}
+    For $\chi:T \to \CC^\times$ a character of the torus, we say that the representation $\Ind_B^G \chi$ is a parabolically induced representation. A principal series representation is an irreducible subrepresentation of a parabolically induced representation.
+\end{defn}
+
+In this section, we will only concern ourselves with classifying the principal series representations of $G$. This means that we must understand how $\Ind_B^G \chi$ decomposes into irreducible representations of $G$, and also study the morphisms between them using Frobenius reciprocity.
+
+To understand these decompositions, we want to study how they decompose into irreducibles over a less unwieldy subgroup of $G$, such as $B$. Note that restricting $\Ind_B^G \chi$ to $B$ is analogous to applying Mackey theory in the finite group context. It turns out that the $\Ind_B^G \chi$ do not decompose any further over $M$ than over $B$. On the other hand, the representation theory of $M$ is very easy to classify - the combination of these two observations is what makes the mirabolic subgroup so `miraculous'. To get representations of $M$ we can induce from characters of $N$, or inflate from $M/N\cong F^\times$. There are many characters of $N\cong F$, in fact these are in bijection with $F$ [REFER TO SECTION 1]. The key property of $M$ is that conjugation by $M$ acts transitively on these characters $\psi$, which greatly simplifies the representation theory of $M$ coming via induction from $N$. The mirabolic $M$ is also small enough that this induction, together with the characters of $F^\times$, give all irreducible representations of $M$.
+
+In this section, we begin by studying the representations of $N$ and introducing the Jacquet functor, before discussing representations of $M$. From there we determine that parabolically induced representations of $G$ decompose over $M$ with length at most 3. Theorem \ref{criterion} gives the decomposition of $\Ind_B^G \chi$ into irreducible representations of $G$, and then Theorem \ref{classify} lists the isomorphism classes of principal series representations. The presentation follows sections 8 and 9 of \cite{BH1}.
+
+\subsection{Representations of $N$}
+
+We first study the representation theory of $N \cong F$. This is an abelian group so, by Schur's lemma, all irreducible representations are characters (Corollary 2.6.2 \cite{BH1}). For finite abelian groups, any representation $V$ decomposes into a direct sum of characters. This is no longer true when $N\cong F$ is infinite, but it is still true that any vector in $V$ is nonzero in some quotient on which $N$ acts via a character. To formalise this, we define
+
+\begin{notn}
+    Let $V$ be a smooth representation of $N$ and $\theta$ a character of $N$. Let $V(\theta) \leq V$ be the subspace spanned by $\{n\cdot v - \theta(n)v \mid n \in N, v \in V\}$. Set $V_\theta = V/V(\theta)$ so that $N$ acts on $V_\theta$ by $\theta$. When $\theta$ is trivial we write $V(N)$ and $V_N$ respectively. 
+\end{notn}
+
+The following is a useful equivalent definition of $V(\theta)$:
+
+\begin{lemma}\label{criteria N}
+    The vector $v \in V$ lies in $V(\theta)$ if and only if 
+    $$\int_{N_0} \theta(n)^{-1}  n \cdot v dn = 0$$
+    for some compact open subgroup $N_0$ of $N$.
+\end{lemma}
+In the lemma we restrict to compact opens for the integral to be well defined.
+
+\begin{proof}
+    \cite[Lemma 8.1]{BH1}.
+\end{proof}
+
+\begin{cor}\label{exact}
+    The functor $V \mapsto V_\theta$ from smooth representations of $N$ to complex vector spaces is exact.
+\end{cor}
+\begin{proof}
+    One checks formally that the functor is right exact. For left exactness we need to show that if $f: V \hookrightarrow V'$ is injective then $V_\theta \hookrightarrow V'_\theta$ is injective. If $v \in V$ with $f(v) \in V'(\theta)$, then 
+    $$\int_{N_0} \theta(n)^{-1}n \cdot f(v) dn = 0$$
+    for some $N_0$ by the above lemma. Since $f$ is compatible with the action of $N$, we can pull $f$ out of the integral so that the injectivity of $f$ implies
+    $$\int_{N_0} \theta(n)^{-1}n \cdot v dn = 0.$$
+    We deduce that $v \in V(\theta)$ by the above lemma.
+\end{proof}
+
+\begin{prop}
+    Let $V$ be a smooth representation of $N$. For any $v \neq 0$ in $V$, there exists a character $\theta$ of $N$ such that $v \not\in V(\theta)$.
+\end{prop}
+\begin{proof}
+    \cite[Proposition 8.1]{BH1}.
+\end{proof}
+
+\begin{cor}\label{character}
+    If $V$ is a smooth representation of $N$ such that $V_\theta=0$ for all $\theta$ then $V=0$.
+\end{cor}
+
+
+\subsection{Representations of $M$}
+
+Now we consider $V$ an irreducible smooth representation of $M$. 
+
+\begin{lemma}\label{coinvariants}
+	The subspace $V(N) \leq V$ is a representation of $M$, and so $V_N$ is as well. Moreover, $S = \{\begin{psmallmatrix}
+        a&0\\0&1
+    \end{psmallmatrix} \mid a \in F^\times\}$ permutes the subspaces $V(\theta)$ with $\theta \not= 1$ transitively, and hence the $V_\theta$ are isomorphic as vector spaces.
+\end{lemma}
+\begin{proof}
+	The first claim comes from the computation 
+	$$mn\cdot v - m\cdot v = n'm\cdot v - m\cdot v$$ for some $n' \in N$, using the fact that $N \lhd M$. For the second claim we have the computation
+	\[s(nv - \theta(n)v) = sns^{-1}\cdot sv - \theta (s^{-1}(sns^{-1})s)sv = n'\cdot sv - \theta(s^{-1}n's) sv\]
+	where $n' = sns^{-1}\in N$. Hence $sV(\theta) = V(\theta')$ where $\theta'(n) := \theta(s^{-1}ns)$. Now the computation
+	\[\begin{pmatrix}
+		a & 0 \\ 0 & 1
+	\end{pmatrix}\begin{pmatrix}
+		1 & x \\ 0 & 1
+	\end{pmatrix}\begin{pmatrix}
+		a^{-1} & 1 \\ 0 & 1
+	\end{pmatrix} = \begin{pmatrix}
+		1 & ax \\ 0 & 1
+	\end{pmatrix}\]
+	together with [ADDITIVE DUALITY] implies the claim.
+\end{proof}
+
+
+
+\begin{thm}\label{inf dim}
+    Let $(\pi,V)$ be an irreducible smooth representation of $M$. Either 
+    \begin{itemize}
+        \item $\dim V=1$ and $\pi$ is the inflation of a character of $M/N \cong F^\times$, or
+        \item $\dim V = \infty$ and $\pi \cong c\mathrm{-Ind}_N^M \theta$, for any nontrivial character $\theta$ of $N$.
+    \end{itemize}
+\end{thm}
+
+This itself follows from the following theorems. To compare $V$ and $c\mathrm{-Ind}_N^M \theta$, it is more natural to compare $V$ and $\mathrm{Ind}_N^M V_\theta$. By Frobenius reciprocity,
+$$\Hom_N(V,V_\theta) \cong \Hom_M(V,\mathrm{Ind}_N^M V_\theta).$$
+Let $q_*: V \to \Ind_N^M(V_\theta)$ be the image of the quotient map $q: V \to V_\theta$.
+
+\begin{thm}\label{mirabolic}
+    The $M$-homomorphism $q_*: V \to \Ind_N^M V_\theta$ induces an isomorphism $V(N) \cong c\mathrm{-Ind}_N^M V_\theta$. 
+\end{thm}
+\begin{proof}
+    \cite[Theorem 8.3]{BH1}.
+\end{proof}
+
+\begin{thm}\label{irred induction}
+    For any nontrivial character $\theta$ of $N$, the smooth representation $c\mathrm{-Ind}_N^M \theta$ of $M$ is irreducible. 
+\end{thm}
+\begin{proof}
+    \cite[Corollary 8.2]{BH1}
+\end{proof}
+
+\begin{proof}[Proof of Theorem \ref{inf dim}]
+    If $V$ is an irreducible smooth representation of $M$, then either $V(N)=0$ or $V(N)=V$. In the former case $N$ acts trivially on $V$, so the action of $M$ factors through $M/N \cong F^\times$. Schur's lemma implies that $V$ is a character of $M$ factoring through $M/N$. 
+    
+    In the latter case, $V_N=0$, so we must have $V_\theta \neq 0$ for all nontrivial characters of $N$ by Lemma \ref{coinvariants} and Corollary \ref{character}. Thus the $M$-representation $V$ must have infinite dimension, since there are infinitely many characters $\theta$. Theorem \ref{mirabolic} implies that $V = V(N)$ is isomorphic to $c\mathrm{-Ind}_N^M V_\theta$, which is a direct sum of copies of $c\mathrm{-Ind}_N^M \theta$. Since $c\mathrm{-Ind}_N^M \theta$ is irreducible by Theorem \ref{irred induction}, we must have $V\cong c\mathrm{-Ind}_N^M \theta$. 
+\end{proof}
+
+
+
+
+\subsection{Irreducible principal series representations}
+
+Let $V$ be a smooth representation of $G$. In the preceding subsections, we defined the quotient $V_N =V/V(N)$, called the $N$-coinvariants of $V$. As in Lemma \ref{coinvariants}, this is a representation of $B$ (as $N \lhd B$). As $N$ acts trivially on $V_N$, $V_N$ inherits the structure of a representation of $T=B/N$.
+
+\begin{defn}
+    Let $V$ be a smooth representation of $G$ (or $B$). The Jacquet module of $V$ at $N$ is the space of $N$-coinvariants $V_N$ viewed as a representation of $T$. The Jacquet functor is the functor sending the $G$-representation $(\pi,V)$ to the $T$-representation $(\pi_N,V_N)$. 
+\end{defn}
+
+By Corollary \ref{exact}, the Jacquet functor is exact.
+
+If $V$ is a representation of $G$, and $\chi$ is a character of $T$, then we have by Frobenius Reciprocity that
+\[\Hom_G(V, \Ind_B^G \chi) \cong \Hom_B(V, \chi)\]
+But since $\chi$ as a character $B$ has trivial $N$-action, maps $V\to \chi$ factor through $V_N$, and we obtain a version of Frobenius reciprocity for the Jacquet module:
+\[\Hom_G(V, \Ind_B^G \chi)\cong \Hom_T(V_N, \chi)\]
+i.e. the Jacquet module is left adjoint to parabolic induction.
+
+In the classical setting of representations of $\mathbf G=\GL_2(k)$ for a finite field $k$, we have the following dichotomy (where $\mathbf B,\mathbf T,\mathbf N$ are the appropriate subgroups of $\mathbf G$):
+\begin{lemma}
+    Let $(\pi,V)$ be an irreducible representation of $\mathbf G$. The following are equivalent:
+    \begin{enumerate}
+        \item $\pi$ contains the trivial character of $\mathbf N$
+        \item $\pi$ is isomorphic to a $\mathbf G$-subrepresentation of $\Ind_{\mathbf B}^{\mathbf G} \chi$ for some character $\chi$ of $\mathbf T$ inflated to $\mathbf B$.
+    \end{enumerate}
+\end{lemma}
+\begin{proof}
+    \cite[Lemma 6.3]{BH1}.
+\end{proof}
+
+Returning to $G=\GL_2(F)$, if $(\pi,V)$ is a smooth representation, the restriction to $N$ is no longer necessarily semisimple because $F$ is of infinite order. We instead replace the condition that $\pi |_N$ contains the trivial character of $N$ with the condition that $N$ acts trivially on some nonzero quotient of $V$ (which is an equivalent condition in the finite field case). This is measured by the Jacquet module $V_N$. There is the analogous dichotomy which tells us that principal series representations can be identified as the irreducible smooth representations of $G$ with nonzero Jacquet module: 
+
+\begin{prop}
+    Let $(\pi,V)$ be an irreducible smooth representation of $G$. The following are equivalent:
+    \begin{enumerate}
+        \item $V_N \neq 0$
+        \item $\pi$ is isomorphic to a $G$-subrepresentation of $\Ind_B^G \chi$ for some character $\chi$ of $T$ inflated to $B$.
+    \end{enumerate}
+\end{prop}
+\begin{proof}[Proof sketch]
+    (2) implies (1) is a consequence of Frobenius reciprocity:
+    $$\Hom_G(\pi,\Ind \chi) = \Hom_T(\pi_N,\chi)$$
+
+    Given (1), one shows by a technical argument that $V_N$ is finitely generated as a representation of $T$. An application of Zorn's lemma allows us to construct a maximal $T$-subspace $U$ of $V_N$, so that $V_N/U$ is a nonzero irreducible $T$-representation, and is thus a character $\chi$ by Schur's lemma. The above Frobenius reciprocity implies (2).
+\end{proof}
+
+\begin{rem}
+    The same proof holds for the finite field case, where we bypass the technical details in showing (1) implies (2) because any representation of the finite group $T$ admits an irreducible quotient.
+\end{rem}
+
+\begin{rem}
+    We ask for a nonzero Jacquet module $V_N$ rather than a trivial $N$-subrepresentation of $V$ because of the following fact:
+\end{rem}
+
+\begin{lemma}
+    Let $(\pi,V)$ be an irreducible smooth representation of $G$ with a nonzero vector $v\in V$ fixed by $N$. Then $\pi = \phi \circ \det$, for some character $\phi$ of $F^\times$. In particular, $\pi$ is one dimensional.
+\end{lemma}
+\begin{proof}[Proof sketch]
+    The vector $v$ is fixed by $N$, but also by a compact open subgroup $K$ of $G$ by smoothness. As we are working with $F$ a nonarchimedean local field (as opposed to a finite field), this implies $K$ contains a unipotent lower triangular matrix, and one shows that $v$ is fixed by $\mathrm{SL}_2(F)$. Thus $\pi$ factors through $\det$.
+\end{proof}
+
+
+Once again, let $\chi$ be a character of $T$ and let $(\Sigma,X)$ denote $\Ind_B^G \chi$. We want to study how $X$ decomposes into irreducible $G$-representations. As mentioned earlier, we will begin by studying their decompositions over $B$ or even $M$. 
+
+To begin with, $X$ will never be irreducible over $B$ because we always have the canonical $B$-homomorphism $\Sigma \to \chi$, given by sending $f \mapsto f(1) \in \CC$. So we have an exact sequence of $B$-representations
+$$\xymatrix{0 \ar[r] & V \ar[r] & X \ar[r] & \CC \ar[r] & 0,}$$
+where $V=\{f \in X  \mid f(1)=0\}$, and $B$ acts on $\CC$ via $\chi$. Now we want to understand how $V$ decomposes over $B$. We have another exact sequence of $B$-representations,
+$$\xymatrix{0 \ar[r] & V(N) \ar[r] & V \ar[r] & V_N \ar[r] & 0,}$$
+so we reduce to studying $V(N)$ and $V_N$. We will show that $V(N)$ is irreducible over $B$ (and even over $M$), while $V_N$ will be determined by the Restriction-Induction lemma. 
+
+%(which generally treats the exact sequence obtained by applying the Jacquet functor to the first exact sequence, where we may replace $\chi$ by any smooth representation $\sigma$ of $T$).
+
+The following lemma makes the structure of $V$ more apparent.
+
+\begin{lemma}\label{reduce to N}
+    Let $V=\{f \in X:f(1)=0\}$. The map 
+    \begin{equation*}
+        \begin{split}
+            V &\to C_c^\infty(N) \\
+            f(-) &\mapsto f(w-) 
+        \end{split}
+    \end{equation*}
+    is an $N$-isomorphism (with $N$ acting by right translation on either side), where $w=\begin{psmallmatrix}
+        0&1\\1&0
+    \end{psmallmatrix}$.
+\end{lemma}
+\begin{proof}
+    We have the Bruhat decomposition $G=B \sqcup BwN$. Since $f(1)=0$, and $f$ is induced from $B$, we must have that $f$ is supported on $BwN$. $G$-smoothness of $f$ implies that $f$ is also zero on some compact open $K \leq G$. This will contain $\begin{psmallmatrix}
+        1&0\\\varpi^n \mathcal O &1
+    \end{psmallmatrix}$ for some $n$, so that $f$ vanishes on 
+    $$\begin{pmatrix}
+        1&0\\x&1
+    \end{pmatrix} \in Bw \begin{pmatrix}
+        1&x^{-1}\\0&1
+    \end{pmatrix}$$
+    for all $x \in \varpi^n \mathcal O$. Thus $f(w-)$ is supported on $\begin{psmallmatrix}
+        1&y\\0&1
+    \end{psmallmatrix} \in N$ with $v(y) > -n$ and so is compactly supported. $G$-smoothness of $f$ also implies that $f(w-)$ is $N$-smooth. Since $f$ is induced from $B$ and is supported on $BwN$, the map is injective. Conversely, any $g \in C_c^\infty(N)$ determines $f \in \Ind_B^G \chi$ such that $f(w-)=g$ and $f(B)=0$.
+\end{proof}
+
+\begin{prop}
+    For $V$ as above, $V(N)$ is irreducible over $M$ (and hence over $B$). Moreover, $V(N)$ is infinite dimensional.
+\end{prop}
+\begin{proof}
+    The idea will be to use Theorem \ref{mirabolic}, which tells us $V(N) \cong c\mathrm{-Ind}_N^M V_\theta$. This is irreducible over $M$ (and infinite dimensional) if we can show that $V_\theta$ is one dimensional, by Theorem \ref{irred induction}.
+
+    By the above lemma we can identify $V \cong C_c^\infty(N)$ as $N$-representations. But $M$ also acts via right translation on $V$ (since $BwB=BwN=BwM$), which gives the structure of a $M$-representation on $C_c^\infty(N)$. We can calculate it explicitly (but we won't need it), where
+    $$f\left(bw\begin{pmatrix}
+        1&x\\0&1
+    \end{pmatrix}\begin{pmatrix}
+        a&0\\0&1
+    \end{pmatrix}\right) = f\left(b \begin{pmatrix}
+        1&0\\0&a
+    \end{pmatrix}w\begin{pmatrix}
+        1&a^{-1}x\\0&1
+    \end{pmatrix}\right)$$
+    tells us that the corresponding $M=F^\times N$ action on $C_c^\infty(N)$ is the composite of right translation by $N$ with the action 
+    $$a\cdot \phi \begin{pmatrix}
+        1&x\\0&1
+    \end{pmatrix} = \chi_2(a) \phi \begin{pmatrix}
+        1&a^{-1}x \\ 0&1
+    \end{pmatrix}$$ of $a \in F^\times$.
+
+    So now we may consider $V=C_c^\infty(N)$. The benefit is that for this representation, the spaces of coinvariants of characters $\theta$ of $N$ are very simple. In particular, the map $f \mapsto \theta f$ is a linear automorphism of $C_c^\infty(N)$ taking $V(N)$ to $V(\theta)$, since $$n \cdot f - f \mapsto \theta (n \cdot f) - \theta f = \theta(n)^{-1} n \cdot (\theta f) - \theta f \in V(\theta).$$
+    Hence all the $V_\theta$ have the same dimension as $V_N=V/V(N)$, which has dimension 1 (we can see this from the characterisation of $V(N)$ as the zeros of some integral (Lemma \ref{criteria N}), or from the Restriction-Induction lemma to follow). The result follows from Theorem \ref{mirabolic} and Theorem \ref{irred induction}.
+\end{proof}
+
+We turn our attention to the Jacquet module $V_N$. Recall $V$ fits in the exact sequence
+$$\xymatrix{0 \ar[r] & V \ar[r] & X = \mathrm{Ind}_B^G \chi \ar[rr]^{f \mapsto f(1)} && \CC \ar[r] & 0}$$ of smooth representations of $B$, where $B$ acts via $\chi$ on $\CC$. Since the Jacquet functor is exact, we get the exact sequence
+
+$$\xymatrix{0 \ar[r] & V_N \ar[r] & X_N \ar[r] & \CC \ar[r] & 0}$$ of $T$-representations. The following lemma determines the structure of $V_N$ as a $T$-representation. This can be stated in more generality:
+
+\begin{lemma}[Restriction-Induction lemma]
+    Let $(\sigma, U)$ be a smooth representation of $T$ and $(\Sigma, X) = \mathrm{Ind}_B^G \sigma$. Then there is an exact sequence of smooth $T$ representations:
+    $$\xymatrix{0 \ar[r] & \sigma^w \otimes \delta_B^{-1} \ar[r] & \Sigma_N \ar[r] & \sigma \ar[r] & 0.}$$
+    Here, $\sigma^w(t) := \sigma(wtw)$ for $w=\begin{psmallmatrix}
+        0&1\\1&0
+    \end{psmallmatrix}$, so that if $\sigma$ is the character $\chi_1 \otimes \chi_2$ of $T$, then $\sigma^w = \chi_2\otimes \chi_1$.
+\end{lemma}
+\begin{proof}
+    The proof of Lemma \ref{reduce to N} generalises to show that the vector space $V = \{f \in X \mid f(1)=0\}$ is isomorphic, as $N$-representations, to the space $\mathcal S$ of smooth compactly supported functions $N \to U$, by identifying $f$ with $f(w-)$.
+
+
+
+    We can define a map $\mathcal S \to U$ by 
+    $$g=f(w-) \mapsto \int_N f(wn) dn,$$ where this integral is finite since $g$ is compactly supported. By Lemma \ref{criteria N}, this induces an isomorphism $\mathcal S_N \cong U$.
+
+
+    Now $V$ also carries the structure of a $B$-representation as well, since $BwB=BwN$. We can repeat the same calculation as in the previous proposition, replacing $F^\times$ with $T\cong F^\times \times F^\times$, to compute the action of $B=TN$ on $\mathcal S$. As usual, $N$ acts via right translation. If $t=\begin{psmallmatrix}
+        t_1&0 \\0 & t_2
+    \end{psmallmatrix} \in T$, then for $\phi \in \mathcal S$, 
+    $$t\cdot \phi \begin{pmatrix}
+        1&x\\0&1
+    \end{pmatrix} = \sigma^w(t) \phi \begin{pmatrix}
+        1&\frac{t_2}{t_1}x \\ 0&1
+    \end{pmatrix}.$$
+
+    Thus the $T$-representation structure on $U \cong \mathcal S_N \cong V_N$ is given by 
+
+    $$t \cdot \int_N f(wn)dn = \sigma^w(t) \left| \frac{t_1}{t_2} \right| \int_N f(wn)dn,$$
+    which is $\sigma^w \otimes \delta_B^{-1}$.
+\end{proof}
+
+\begin{cor}\label{length 3}
+    As a representation of $B$ or $M$, $\mathrm{Ind}_B^G \chi$ has composition length 3. Two of the factors have dimension 1, and the other is infinite dimensional.
+\end{cor}
+\begin{proof}
+    This follows from the exact sequences
+    $$\xymatrix{0 \ar[r] & V \ar[r] & \mathrm{Ind}_B^G \CC \ar[r] & \chi \ar[r] & 0}$$
+    and
+    $$\xymatrix{0 \ar[r] & V(N) \ar[r] & V \ar[r] & V_N \ar[r] & 0}$$
+    where we saw that $V(N)$ is irreducible and infinite dimensional, and $V_N \cong \chi^w \otimes \delta_B^{-1}$.
+\end{proof}
+
+So we understand how $\mathrm{Ind}_B^G \chi$ decomposes into irreducible $B$-representations, and we want to understand its decomposition into $G$-representations. Our goal is to prove the following:
+
+\begin{thm}[Irreducibility Criterion]\label{criterion}
+    Let $\chi = \chi_1 \otimes \chi_2$ be a character of $T$ and let $X = \mathrm{Ind}_B^G \chi$.
+    \begin{enumerate}
+        \item The representation $X$ of $G$ is irreducible if and only if $\chi_1\chi_2^{-1}$ is either the trivial character of $F^\times$, or the character $x \mapsto |x|^2$ of $F^\times$.
+        \item Suppose $X$ is reducible. Then \begin{itemize}
+            \item the $G$-composition length of $X$ is 2
+            \item one factor has dimension 1, the other is infinite dimensional
+            \item $X$ has a 1-dimensional $G$-subspace exactly when $\chi_1\chi_2^{-1}=1$
+            \item $X$ has a 1-dimensional $G$-quotient exactly when $\chi_1\chi_2^{-1}(x) = |x|^2$.
+        \end{itemize}
+    \end{enumerate}
+\end{thm}
+
+We make some comments in preparation for the proof. Suppose $X$ is a reducible representation of $G$, and $X_0$ a nonzero proper subrepresentation. If $X_0$ is finite-dimensional, then its composition factors over $B$ can only consist of the 1-dimensional composition factors of $X$ over $B$ described in Corollary \ref{length 3}. If $X_0$ is infinite dimensional, then it contains the infinite-dimensional $B$-composition factor of Corollary \ref{length 3}, and so the quotient $X/X_0$ can only consist of the 1-dimensional factors. In all, if $X$ is reducible then it has a finite dimensional (dimension 1 or 2) $G$-subspace or $G$-quotient. By taking duals we can assume we are in the first case. In the Irreducibility Criterion, we want to show that this implies $\chi_1 = \chi_2$ and that $X$ has a 1-dimensional $G$-subspace.
+
+\begin{defn}
+    Let $\pi$ be a smooth representation of $G$ and $\phi$ a character of $F^\times$. The twist of $\pi$ by $\phi$ is the representation $\phi\pi$ of $G$ defined by 
+    $$\phi \pi(g) = \phi (\det g)\pi(g).$$
+    In this way, for a character $\chi=\chi_1 \otimes \chi_2$ of $T$, we have $\phi\chi = \phi\chi_1 \otimes \phi\chi_2$. 
+\end{defn}
+
+\begin{lemma}
+    For $\chi$ a character of $T$ and $\phi$ a character of $F^\times$, we have $\Ind_B^G(\phi\chi) = \phi\Ind_B^G \chi$.
+\end{lemma}
+\begin{proof}
+    Since $\phi\chi(b) = \phi \circ \det(b) \chi(b)$ for any $b \in B$, where $\chi$ is inflated from $T$, we see that 
+    $$(\phi \circ \det)(bg)f(bg) = \phi\chi(b)(\phi \circ \det)(g)f(g)$$ for any $f \in \Ind_B^G \chi$. Thus the map $f \mapsto (\phi \circ \det)f$ from $\Ind_B^G \chi \to \Ind_B^G(\phi\chi)$ is well defined on the underlying vector spaces. This induces an isomorphism of representations of $G$, $\phi\Ind_B^G \chi \cong \Ind_B^G(\phi\chi)$.
+\end{proof}
+
+\begin{prop}
+    The following are equivalent:
+    \begin{enumerate}
+        \item $\chi_1=\chi_2$
+        \item $X$ has a 1-dimensional $N$-subspace.
+    \end{enumerate}
+    If this holds then this subspace is also a $G$-subspace of $X$ not contained in $V$.
+\end{prop}
+\begin{proof}
+    (1) implies (2): since induction commutes with twisting we may assume $\chi_1=\chi_2=1$. Then any nonzero constant function spans a 1-dimensional $G$-subspace (not just $N$-subspace) of $X = \mathrm{Ind}_B^G 1$.
+
+    (2) implies (1): suppose this subspace is spanned by $f$. The group $N$ acts as a character on this subspace via right translation. We cannot have $f \in V$ (meaning $f(1)=0$) because we saw earlier that $f$ would then have support in some $BwN_0$ for $N_0 \leq N$ open compact, and this is not closed under multiplication by $N$.
+
+    So $f \not\in V$ and therefore its image spans $X/V \cong \CC$, on which $B$ acts via $\chi$. On this quotient, $N$ acts trivially because $\chi$ was inflated from $B/N=T$. Thus $f$ is in fact fixed by $N$ under right translation. But $f$ is also fixed under right translation by some compact open of $G$, so for sufficiently large $|x|$ we have
+    \begin{equation*}
+        \begin{split}
+            f(w) = f\left(w \begin{psmallmatrix}
+                1&x \\0 & 1
+            \end{psmallmatrix}\right) &= f\left( \begin{psmallmatrix}
+                1&x^{-1} \\0 & 1
+            \end{psmallmatrix}\begin{psmallmatrix}
+                -x^{-1}&0 \\0 & x
+            \end{psmallmatrix}\begin{psmallmatrix}
+                1&0 \\x^{-1} & 1
+            \end{psmallmatrix}\right) \\
+            &= f\left( \begin{psmallmatrix}
+                1&x^{-1} \\0 & 1
+            \end{psmallmatrix}\begin{psmallmatrix}
+                -x^{-1}&0 \\0 & x
+            \end{psmallmatrix}\right) \\
+            &= \chi_1(-1) \left( \chi_1^{-1}\chi_2(x)\right) f(1).
+        \end{split}
+    \end{equation*}
+
+    The first equality comes from $f$ being fixed by $N$. The third equality comes from $f$ being fixed by a compact open subgroup of $G$.
+
+    This tells us that $\chi_1^{-1}\chi_2(x)$ is constant for $|x|$ sufficiently large. In particular, for large $|x|$ we have $\chi_1^{-1}\chi_2(x) = \chi_1^{-1}\chi_2(x^2) = (\chi_1^{-1}\chi_2(x))^2$. We deduce that $\chi_1(x)=\chi_2(x)$ for $|x|$ sufficiently large. Now for any $y \in F^\times$, we can pick $|x|$ large enough so that $\chi_1(x)=\chi_2(x)$ and $\chi_1(xy)=\chi_2(xy)$, from which we deduce that $\chi_1(y)=\chi_2(y)$. 
+    
+    %The uniqueness of the 1-dimensional subspace comes from the fact that it must span $X/V \cong \CC$. 
+    % if we had two then any linear combination must also not live in V, then the 2D space does not intersect the kernel of X to X/V, but this is 1D.
+\end{proof}
+
+\begin{proof}[Proof of Irreducibility Criterion]
+    Assume that $X$ is reducible and we are in the case that $X$ has a finite dimensional $G$-subspace. It has a 1-dimensional $N$-subspace $L$ because $N$ is abelian. Then $L$ is also a $G$-subspace by the above proposition. Since $G$ must act via a character on $L$, it factors as $\phi \circ \det$, where $\chi_1=\phi=\chi_2$. 
+
+    Let $Y$ be the $G$-representation $X/L$. Since $L$ spans the vector space $X/V$, the $B$-homomorphism \\${V \hookrightarrow X \to X/L}$ is surjective. It is injective since $L \cap V = 0$. Thus $Y \cong V$ as $B$-representations.
+
+    We need to show that $X$ has $G$-length 2. By the Corollary \ref{length 3} it has length at most 3. We know that $V$ has $B$-length 2 with a 1-dimensional quotient $V_N$. If $Y$ had $G$-length 2, then the $B$-factors of $V$ are also $G$-factors, so that $G$ must act on $V_N$, necessarily by a character $\phi' \circ \det$. But this is impossible because $B \leq G$ acts on $V_N$ by $\phi \delta_B^{-1}$ by Restriction-Induction, and this does not factor through $\det$ on $B$. So we must have that $Y$ is irreducible over $G$ and so $X$ has $G$-length 2.
+
+    In the other case we have a finite dimensional $G$-quotient. The smooth dual $X^\vee$ is then in the first case, where the Duality Theorem (\cite[Theorem 3.5]{BH1}) tells us that $X^\vee \cong \mathrm{Ind}_B^G \delta_B^{-1} \chi^\vee$. If we write $\delta_B^{-1} \chi^\vee = \psi_1 \otimes \psi_2$ then we must have $\psi_1 = \psi_2$. Computing $\psi_1(x) = |x|^{-1} \chi_1(x)$ and $\psi_2(x) = |x| \chi_2(x)$ gives $\chi_1\chi_2^{-1} = |\cdot|^2$.
+
+    The converse direction to (1) follows from the previous proposition.
+\end{proof}
+
+
+\subsection{Classification of principal series representations}
+
+
+Now that we've seen how parabolically induced representations decompose into irreducibles, we want to classify the isomorphism classes.
+
+\begin{prop}
+    Let $\chi, \xi$ be characters of $T$. The space $\Hom_G(\mathrm{Ind}_B^G \chi, \Ind_B^G \xi)$ is 1-dimensional if $\xi = \chi$ or $\chi^w \delta_B^{-1}$ and 0 otherwise.
+\end{prop}
+\begin{proof}
+    Frobenius reciprocity tells us
+    $$\Hom_G(\mathrm{Ind}_B^G \chi, \Ind_B^G \xi) \cong \Hom_T((\Ind \chi)_N, \xi).$$
+    From the Restriction-Induction lemma we have the exact sequence of $T$-modules
+    $$\xymatrix{0 \ar[r] & \chi^w \delta_B^{-1} \ar[r] & (\Ind \chi)_N \ar[r] & \chi \ar[r] & 0.}$$
+
+    By taking duals of these finite dimensional $T$-modules, we see that both $\chi$ and $\chi^w \delta_B^{-1}$ are subrepresentations of $(\Ind \chi)_N$. In the case $\chi \neq \chi^w \delta_B^{-1}$ we must have $(\Ind \chi)_N = \chi \oplus \chi^w \delta_B^{-1}$ and the result follows. If $\chi = \chi^w \delta_B^{-1}$ then $\chi_1\chi_2^{-1} (x) = |x|$ so $\Ind \chi$ is irreducible and the result still follows from Schur's lemma.
+\end{proof}
+
+\begin{rem}
+In the case that $\Ind \chi$ is irreducible, we deduce that $\Ind \chi \cong \Ind \chi^w \delta_B^{-1}$. And in the case $\Ind \chi$ is reducible, it is not semisimple, else $\Hom_G(\mathrm{Ind}_B^G \chi, \Ind_B^G \chi)$ would have dimension strictly greater than 1.
+\end{rem}
+
+We can be more explicit in the reducible case. One can check that the conditions for reducibility in the Irreducibility Criterion are equivalent to $\chi$ being of the form $\chi = \phi 1_T$ or $\chi =\phi \delta_B^{-1}$ for $\phi$ a character of $F^\times$. Untwisting, we may as well assume $\phi=1$ in what follows.
+
+\begin{defn}
+    The Steinberg representation of $G$ is defined by the exact sequence
+    $$\xymatrix{0 \ar[r] & 1_G \ar[r] & \Ind_B^G 1_T \ar[r] & \mathrm{St}_G \ar[r] & 0,}$$ and is an infinite-dimensional irreducible smooth representation. By Restriction-Induction, the Jacquet module is $(\mathrm{St}_G)_N \cong \delta_B^{-1}$. The representations $\phi \mathrm{St}_G$ are called `twists of Steinberg' or `special representations'.
+\end{defn}
+
+The case $\chi = \delta_B^{-1}$ can be dealt with by taking smooth duals (which is exact by \cite[Lemma 2.10]{BH1}) to get 
+$$\xymatrix{0 \ar[r] & \mathrm{St}_G^\vee \ar[r] & \Ind_B^G \delta_B^{-1} \ar[r] & 1_G \ar[r] & 0,}$$ where we use the Duality Theorem, \cite[Theorem 3.5]{BH1}. The Irreducibility Criterion implies that $\mathrm{St}_G^\vee$ is also irreducible, and in fact the previous proposition applied to $\chi=1, \xi = \delta_B^{-1}$ implies that
+$$\mathrm{St}_G \cong \mathrm{St}_G^\vee.$$
+% we can see irreducibility by prop 2.10 and using admissibility 
+% add our own duality thm?
+
+\begin{notn}
+    Define normalised induction by
+    $$\iota_B^G \sigma = \Ind_B^G (\delta_B^{-1/2} \otimes \sigma).$$
+    This has the benefit that $(\iota_B^G \sigma)^\vee \cong \iota_B^G \sigma^\vee$ (\cite[Theorem 3.5]{BH1}).
+\end{notn}
+
+\begin{thm}[Classification Theorem]\label{classify}
+    The following are all the isomorphism classes of principal series representations of $G$:
+    \begin{itemize}
+        \item the irreducible induced representations $\iota_B^G \chi$ when $\chi \neq \phi \delta_B^{\pm 1/2}$ for a character $\phi$ of $F^\times$.
+        \item the one-dimensional representations $\phi \circ \det$ for $\phi$ a character of $F^\times$.
+        \item the twists of Steinberg (special representations) $\phi \mathrm{St}_G$ for $\phi$ a character of $F^\times$.
+    \end{itemize}
+    These are all distinct isomorphism classes except in the first case where $\iota_B^G \chi \cong \iota_B^G \chi^w$.
+\end{thm}
