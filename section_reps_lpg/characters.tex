@@ -1,3 +1,40 @@
+\subsection{Characters of Local Fields}
+
+Now we turn our attention to the representation theory of locally profinite groups. In studying their representations, it turns out that the entire set is too big, so we need to restrict our attention to those representations satisfying a certain ``smoothness" condition. To motivate this condition, we will first describe the simplest (yet very relevant!) case: one-dimensional representations of a local field $F$: that is, group homomorphisms $\phi:F\rightarrow\CC^{\times}$. Later in this section we will also study the one-dimensional representations of $F^{\times}$.
+
+As we have discussed in the previous section, locally profinite groups carry a certain topology, so a natural condition to impose is \textbf{continuity} with respect to the usual topologies in $\CC^{\times}$ and $G$. A continuous homomorphism $\psi:G\rightarrow\CC^{\times}$ will be denoted as a \textit{character} of $G$.
+
+Characters of a locally profinite group $G$ are a group under multiplication, denoted by $\hat{G}$. It turns out that for one-dimensional representations, continuity coincides with the smoothness condition we require which will be introduced later. 
+
+When $G$ is a finite group with discrete topology, then any one-dimensional representation is a character, and we have the following simple description.
+
+\begin{prop}
+    If $G$ is a finite group with the discrete topology, then $\hat{G}\cong G^{ab}$. In particular, if $G$ is abelian then $\hat{G}\cong G$.
+\end{prop}
+\begin{proof}
+    \textbf{Insert reference here}
+\end{proof}
+
+For general locally profinite results, we have this rather surprising result. 
+\begin{lemma}\label{lem_cont_chars}
+    Let $G$ be a locally profinite group and $\psi: G\rightarrow\CC^{\times}$ a homomorphism. Then $\psi$ is continous if and only if $\ker\psi$ is open in $G$. Furthermore, if $G$ is the union of its compact open subgroups, then\footnote{Characters satisfying this property are called \textit{unitary}} $$\psi(G)\subseteq\{z\in\CC^{\times}:|z|=1\}=S^1.$$
+\end{lemma}
+\begin{proof}
+    If $\ker\psi=\psi^{-1}(1)$ is open in $G$, then for any $z\in\Ima\psi$, then $\psi^{-1}(z)=g\ker\psi$ is also open, where $\psi(g)=z$. So in fact, \textbf{for any} $U\subseteq\CC^{\times}$, 
+    $$\psi^{-1}(U)=\bigcup_{z\in U\cap\Ima\psi}\psi^{-1}(z),$$
+    and so in particular it is continous.
+    Conversely, if $\psi$ is continous, then for any open neighbourhood $\mathcal{N}$ of $1$, $\psi^{-1}(\mathcal{N})$ contains an open compact subgroup $K$ of $G$. But $\mathcal{N}$ can be chosen sufficiently small so that it does not contain any non-trivial subgroup of $\CC^{\times}$. Hence, $\psi(K)=1$ so $K\subseteq\ker\psi$, and since $K$ is open, so is $\ker\psi$.
+    The last assertion is a direct consequence of the fact that the continuous image of a compact set is compact and $S^1$ is the unique maximal compact subgroup of $\CC^{\times}$.
+\end{proof}
+
+Since $F$ is the union of its open compact subgroups, all characters of $F$ are unitary. However, this is not the case for $F^{\times}$. Indeed, the map $x\mapsto|x|$ is a character of $F^{\times}$, yet it is clearly not unitary. 
+
+Before stating the classification theorem for characters of $F$, we need one last definition. 
+
+\begin{defn}
+    Let $\psi$ be a non-trivial character of $F$ (resp. of $F^{\times}$). The \textbf{level} of $\psi$ is defined as be the least $d\geq0$ such that $\pp^d\subseteq\ker\psi$ (resp. $U_F^{d+1}\subseteq\ker\psi$).
+\end{defn}
+
 \begin{lemma}
     Let $\psi\in\hat{F}$ be a character of level $d$ and let $a\in F$. Then the map $a\psi:x\mapsto\psi(ax)$ is a character of $F$ and if $a\neq0$ then $a\psi$ has level $d-\nu_F(a)$.
 \end{lemma}

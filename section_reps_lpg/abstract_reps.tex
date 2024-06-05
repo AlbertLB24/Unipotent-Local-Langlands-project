@@ -1,0 +1,111 @@
+\subsection{Abstract Representations of Groups} \label{Abstract_Reps}
+Before discussing the representation theory of locally profinite groups, we first review some general results and constructions of representations of arbitrary groups $G$. We begin by recalling the notion of a representation.
+
+\begin{defn}
+    A representation of a group $G$ over a field $k$ is a pair $(\pi,V)$ where $V$ is a $k$-vector space and $\pi:G\rightarrow\GL(V)$ is a group homomorphism. We say that $\dim V$ is the dimension of the representation.
+\end{defn}
+
+Equivalently, a representation of $G$ is a $k$-vector space $V$ equipped with a $k$-linear $G$ action. Whenever the representation is clear from the context, we will omit $\pi$ from the notation and write $g\cdot v$ for $\pi(g)v$. 
+
+Throughout this document, we will only be interested in complex representations, so for now on we will assume that $k=\CC$ unless otherwise stated, and hence we will omit the underlying field from the notation.
+
+We say that $U\leq V$ is a $G$-subspace if $U$ is closed under the $G$-action; i.e. if $g\cdot U\subseteq U$ for every $g\in G$. When this happens, both $U$ and $V/U$ are naturally $G$-representations. Importantly, we say that that a representation $(\pi,V)$ is irreducible (or simple) if $V$ has no non-trivial $G$-subspaces. These are the \textit{building blocks} of more complicated representations, and thus we are often interested in classifying them.
+
+This also motivates the following definition.
+
+\begin{defn}
+    A representation $(\pi,V)$ of a group $G$ is semisimple if it is the direct sum of simple subrepresentations. 
+\end{defn}
+
+\begin{rem}\label{rem_semisimple}
+    If $G$ is a finite group, Maschke's Theorem shows that all finite dimensional complex representations of $G$ are semisimple. As a consequence, one can show that any complex irreducible representation of $G$ is finite dimensional, appearing as a subrepresentation of the canonical representation $\CC G$. 
+    
+    As we shall visit later in this chapter, continuous finite dimensional representations over profinite groups also share these properties. However, it is easy to construct representations of locally profinite groups which are continous yet not semisimple. For example,
+    \begin{align*}
+        \phi:\ZZ\longrightarrow \GL_2(\CC)\\
+        n\mapsto 
+        \begin{pmatrix}
+            1 & n\\
+            0 & 1\\
+        \end{pmatrix}
+    \end{align*}
+    has a single one-dimensional invariant subspace. One can also construct irreducible representations that are infinite dimensional, but these are harder to construct. \textbf{Reference to a later section when we consider the reps of the Mirabolic subgroup or the steinberg reps of $\GL2(F)$}.
+\end{rem}
+
+
+Naturally, we also define the notion of a homomorphism between representations.
+
+\begin{defn}
+    A morphism between two complex representations $(\pi,V)$, $(\sigma,W)$ of a group $G$ is a linear map $\phi:V\rightarrow W$ compatible with the $G$ action. That is, 
+    $$\phi(\pi(g)v)=\sigma(g)\phi(v)\ \text{for all } g\in G,\ v\in V.$$
+\end{defn}
+
+Therefore, the set of complex representations of $G$ form a category denoted by $\Rep_G$, which importantly is an \textbf{abelian category}.
+
+We finish this section by introducing important constructions and functors between these categories that allow us to obtain new represenations from old ones, and which we will use heavily later on.
+
+\begin{defn}
+    Given $(\pi,V)\in\mathrm{Rep}_G$, define the dual space $V^*=\Hom(V,\CC)$, and denote by 
+    \begin{align*}
+        V^*\times V\longrightarrow \CC,\\
+        (v^*,v)\longmapsto\langle v^*,v\rangle,
+    \end{align*}
+    the canonical evaluation homomorphism. Then $V^*$ carries a natural representation 
+    $$\langle\pi^*(g)v^*,v\rangle=\langle v^*,\pi(g^{-1})v\rangle,$$
+    denoted as the dual representation, and the functor 
+    \begin{align*}
+        (-)^*:\Rep_G&\longrightarrow\Rep_G\\
+        (\pi,V)&\longrightarrow(\pi^*,V^*)
+    \end{align*}
+    is an additive and exact contravariant functor.
+\end{defn}
+
+One can also consider the composition of this functor with itself to obtain the \textbf{double dual} $(\pi^{**},V^{**})$. Then there is a canonical $G$-homomorphism $\delta:V\rightarrow V^{**}$ such that $$\langle\delta(v),v^*\rangle_{V^*}=\langle v^*,v\rangle_{V}.$$
+When $V$ is finite dimensional, $\delta$ is a $G$-isomorphism. For general representations of locally profinite groups, this is not always the case, but under additional assumptions it is possible to give a precise criterion that determines when $\delta$ is bijective (\cite[2.8 Corollary, 2.9 Proposition]{BH1}).
+
+
+\begin{defn}
+    Let $H\leq G$ be groups and let $(\pi,V)$ and $(\sigma,W)$ be representations of $G$ and $H$ repectively. The restriction of $\pi$ to $H$ gives a \textbf{restriction} functor
+    \begin{align*}
+        \Res_H^G:\Rep_G&\longrightarrow\Rep_H\\
+        (\pi,V)&\longmapsto(\pi|_H,V)
+    \end{align*}
+    On the other hand, given $(\sigma,W)\in\Rep_H$ one can construct the vector space
+    $$X=\{f:G\to W:f(hg)=\sigma(h)f(g)\text{ for all }h\in H, g\in G\},$$
+    equipped with the $G$-action $\Sigma:G\longrightarrow\Aut_\CC(X)$ such that
+    $$\Sigma(g)f:x\longmapsto f(xg),\ x,g\in G.$$
+    This gives the \textbf{induction} functor
+    \begin{align*}
+        \Ind_H^G:\Rep_H&\longrightarrow\Rep_G\\
+        (\pi,V)&\longmapsto(\Sigma,X).
+    \end{align*}
+\end{defn}
+
+As with the dual functor, both the restriction and induction functors are additive and exact covariant functors. To simplify notation, we will write $\Ind_H^G\sigma$ instead of $\Ind_H^G(\sigma,W)$, which is the usual convention in the literature.
+
+We remark that one can construct the following canonical $H$-homomorphisms 
+\begin{align*}
+    a_\sigma: \Ind_H^G\sigma&\longrightarrow W\\
+    f&\longmapsto f(1)
+\end{align*}
+and 
+\begin{align*}
+    a_\sigma^c: W&\longrightarrow \Ind_H^G\sigma\\
+    w&\longmapsto f_w
+\end{align*}
+where $f_w$ is supported in $H$ and $f_w(h)=\sigma(h)w$ for $h\in H$. The choice of notation will be understood later. These, in turn, induce the maps 
+\begin{align*}
+    \Psi:\Hom_G(\pi,\Ind_H^G\sigma)&\longrightarrow\Hom_H(\Res_H^G\pi,\sigma),\\
+    \phi&\longmapsto a_\sigma\circ\phi,
+\end{align*}
+and
+\begin{align*}
+    \Psi^c:\Hom_G(\Ind_H^G\sigma,\pi)&\longrightarrow\Hom_H(\sigma,\Res_H^G\pi),\\
+    f&\longmapsto f\circ a_\sigma^c.
+\end{align*}
+When $G$ is a finite group, we have the following result.
+\begin{thm}[Frobenius reciprocity]
+    Let $G$ be a finite group. Then the maps $\Psi$ and $\Psi^c$ are bijections that are functorial in both variables $\sigma$ and $\pi$. In categorical terms, we have the adjunctions $$\Ind_H^G\dashv\Res_H^G\dashv\Ind_H^G.$$
+\end{thm}
+
+This theorem fails for general representations of locally profinite groups $G$ and subgroups $H\leq G$. However, the theorem does hold under certain additional assumptions on the topology of $H$ inside $G$, a smoothness condition on the representations and an adequate modification of the set $X$ above. This will all be discussed in Section \textbf{Insert here reference to the section in which this is discussed.}

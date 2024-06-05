@@ -1,0 +1,49 @@
+\subsection{Schur's Lemma}
+
+We end this section by discussing a version of Schur's Lemma for smooth representations of locally profinite groups. We recall Schur's Lemma for finite groups.
+
+\begin{thm}
+    Let $G$ be a finite group and let $(\pi,V)$ be a complex irreducible represenation of $G$. Then for any $\phi\in\End_G(V)$, there is some $\lambda\in\CC$ such that $\phi(v)=\lambda v$ for all $v\in V$. In other words, $\End_G(V)\cong\CC$.
+\end{thm}
+
+As it turns out, Schur's Lemma does not hold for complex smooth irreducible representations of a locally profinite group $G$. However, it is true under a mild hypothesis that is satisfied by all locally profinite groups that will be of interest for us.
+
+\begin{hypothesis}
+    For any compact open subgroup $K$ of $G$, the set $K\backslash G$ is countable.
+\end{hypothesis}
+
+This is in fact a hypothesis that can be tested easily, as if it is true for one open subgroup $K$, then it is true for all. Under this hypothesis, the following result holds.
+
+\begin{lemma}
+    Let $(\pi,V)$ be an irreducible smooth representation of $G$. Then the dimension $\dim_{\CC}V$ is countable.
+\end{lemma}
+\begin{proof}
+    Let $v\in V$, $v\neq0$ and let $K$ open compact subgroup such that $v\in V^K$. The set $\{\pi(g)v:g\in G\}=\{\pi(g)v:g\in K\backslash G\}$ spans $V$ and it is countable.
+\end{proof}
+
+We are now ready to state and prove Schur's Lemma in our context.
+
+\begin{thm}
+    If $(\pi,V)$ is a smooth irreducible representation of $G$, then $\End_{\CC}V\cong \CC$.
+\end{thm}
+
+This results has two important corollaries worth recalling. For the first one, we note that given a locally profinite group $G$, its centre $Z$ is a closed subgroup of $G$ and therefore a locally profinite group too.
+
+\begin{cor}
+    Let $(\pi,V)$ be an irreducible smooth representation of $G$. The centre $Z$ of $G$ acts on $V$ via a character $\omega_{\pi}:Z\to\CC^{\times}$. In other words, $\pi(z)v=\omega_{\pi}(z)v$ for all $v\in V$ and $z\in Z$.
+\end{cor}
+\begin{proof}
+    \cite[2.6 Schur's Lemma]{BH1}
+\end{proof}
+
+\begin{proof}
+    For any $z\in Z$, the automorphism $\pi(z):V\to V$ lies in $\End_G(V)\cong\CC$. Hence, the desired map $\omega_{\pi}:Z\to\CC^{\times}$ does indeed exist, and it is a group homomorphism. To prove smoothness, we note that if $K$ is an open compact subgroup such that $V^K\neq 0$, then $\omega_{\pi}$ is trivial on the open compact subgroup $K\cap Z$ of $Z$. So $\omega_{\pi}$ is indeed a character of $Z$.
+\end{proof}
+
+The character $\omega_{\pi}$ is denoted as the \textbf{central character} of $(\pi,V)$.
+
+\begin{cor}
+    If $G$ is abelian, any irreducible smooth represenation of $G$ is one-dimensional.
+\end{cor}
+
+This justifies the notation $\hat{K}$ for the set of equivalence classes of irreducible smooth representation of a locally profinite group $K$, since this notation can now be seen to coincide with the set of characters $\hat{F}$ of $F$.
