@@ -1,28 +1,28 @@
 \subsection{Smooth Representations of Locally Profinite Groups}
 
-We now turn our attention representations of locally profinite groups of arbitrary dimension. For one-dimensional representations, we imposed a natural continuity condition, and Lemma \ref{lem_cont_chars} showed that characters have open kernel. This is a remarkable result, since this means that the homomorphism is continuous with respect to \textbf{any} topology on $\CC^{\times}$, not just the usual one.
+We now turn our attention to representations of locally profinite groups of arbitrary dimension. For one-dimensional representations, we imposed a natural continuity condition, and Lemma \ref{lem_cont_chars} showed that characters have open kernel. This is a remarkable result, since this means that the homomorphism is continuous with respect to \textbf{any} topology on $\CC^{\times}$, not just the usual one.
 
-If $V$ is a finite dimensional representation of a locally profinite group $G$, the group $\Aut_\CC(V)$ has a natural topology as an open subspace of $M_n(\CC)\cong\CC^{n^2}$. It turns out that, analogously to $C^{\times}$, small neighbourhoods of the identity of $\Aut_\CC(V)$ do not contain any non-trivial subgroups. The same reasoning as in Lemma \ref{lem_cont_chars} shows that continous finite dimensional representations have open kernel too. That is, the homomorphism is continous with respect to any topology on $\Aut_\CC(V)$.
+If $V$ is a finite-dimensional representation of a locally profinite group $G$, the group $\GL_\CC(V)$ has a natural topology as an open subspace of $M_n(\CC)\cong\CC^{n^2}$. It turns out that, analogously to $\CC^{\times}$, small neighbourhoods of the identity of $\GL_\CC(V)$ do not contain any non-trivial subgroups. The same reasoning as in Lemma \ref{lem_cont_chars} shows that continuous finite dimensional representations have open kernel too. That is, the homomorphism is continuous with respect to any topology on $\GL_\CC(V)$.
 
-However, for infinite dimensional representations $V$, equipping $\Aut_\CC(V)$ with a topology is not as straightforward and the requirement of having an open kernel is too restrictive. The natural idea behind a \textit{smooth representation} is the requirement that any finite dimensional subrepresentation $V$ (if any) should have an open kernel. To give the precise definition, we first introduce the module of invariants and coinvariants.
+However, for infinite-dimensional representations $V$, equipping $\GL_\CC(V)$ with a topology is not as straightforward, and the requirement of having an open kernel is too restrictive. Instead, we will define smooth representations, for which we must first introduce the module of invariants and coinvariants.
 
 \begin{defn}
-    Let $H\leq G$ be groups and $(\pi,V)$ a representation of $G$. We define the $H$-invariants to be 
+    Let $H\leq G$ be groups and $(\pi,V)$ a representation of $G$. We define the $H$-invariants of $V$ to be 
     $$V^{H}:=\{v\in V:\pi(h)v=v\text{ for all }h\in H\},$$
     and the $H$-coinvariants to be 
     $$V_H:=V/V(H)\text{ where } V(H)=\textrm{Span}_\CC\{v-\pi(h)v:v\in V,h\in H\}.$$
     That is, $V^H$ (resp. $V_H$) is the largest subspace (resp. quotient) on which $H$ acts trivially.
 \end{defn}
 
-We are now ready to define a \textit{smooth representation} of a locally profinite group $G$.
 
 \begin{defn}
-	A representation $V$ of $G$ is \textbf{smooth} if for $v\in V$ there exists a compact-open subgroup $K\subseteq G$ such that $v\in V^K$. In other words,
-    $$V=\bigcup_K V^K.$$
-    Moreover, we say $V$ is \textbf{admissible} if $V^K$ is finite-dimensional for all compact-open $K$.
+	A representation $V$ of $G$ is \textit{smooth} if for all $v\in V$ there exists a compact open subgroup $K\leq G$ such that $v\in V^K$. In other words,
+    $$V=\bigcup_K V^K$$ as we range over all compact open subgroups $K$ of $G$. We say that $V$ is \textit{admissible} if $V^K$ is finite dimensional for all compact open $K$.
 \end{defn}
 
-Smooth representations of $G$ are a full, abelian subcategory of $\Rep_G$, and this category is denoted by $\Smo_G$. 
+Smooth representations of $G$ are a full abelian subcategory of $\Rep(G)$, and this category is denoted by $\Smo(G)$. 
+
+*********************************
 
 \begin{rem}
     If $(\pi,V)$ is a finite dimensional smooth representation and $\{v_1,\ldots,v_n\}$ is a $\CC$-basis such that $v_i\in V^{K_i}$ for some open compact subgroups $K_i$, then 
@@ -70,7 +70,7 @@ This proposition has important structure results. Let $\hat{K}$ denote the set o
 Let $(\pi,V)$ be a smooth representation of a locally profinite group $G$ and let $K$ be an open compact subgroup. For each $\rho\in\hat{K}$, let $V^\rho$ be the sum of all irreducible $K$-subspaces of $V$ isomorphic to $K$, which is denoted as the $\rho$-isotypic component of $V$. Note also that $V^{1_K}=V^K$.
 
 \begin{prop}
-    Let $G$ be a locally profinite group and $K$ a compact open subgroup of $G$. Let $(\tau,U),(\pi,V)$, $(\sigma,W)\in\Smo_G$ and $a:U\rightarrow V$ and $b:V\rightarrow W$ be $G$-homomorphisms. 
+    Let $G$ be a locally profinite group and $K$ a compact open subgroup of $G$. Let $(\tau,U),(\pi,V)$, $(\sigma,W)\in\Smo(G)$ and $a:U\rightarrow V$ and $b:V\rightarrow W$ be $G$-homomorphisms. 
     \begin{enumerate}
         \item The space $V$ is the sum of the $K$-isotypic components:
         $$V=\bigoplus_{\rho\in\hat{K}}V^\rho.$$
@@ -91,22 +91,22 @@ Let $(\pi,V)$ be a smooth representation of a locally profinite group $G$ and le
     \cite[2.3 Proposition and Corollary 1,2]{BH1}
 \end{proof}
 
-As promised in \S\ref{Abstract_Reps}, we now discuss the dual, restriction and induction functors in the context of smooth representations of locally profinite groups. From our previous discussion, two major problems arise in this context. Firstly, given a locally profinite group $G$ and a subgroup $H$, there is no guarantee that $H$ is locally profinite and thus $\Smo_H$ may not be well-defined. Secondly, when we perform some construction on a smooth representation (constructing its dual, inducing to a bigger group,...) there is no gurarantee that the resulting representation is smooth. Thankfully, both of this problems can be resolved in a straightforward way.
+As promised in \S\ref{Abstract_Reps}, we now discuss the dual, restriction and induction functors in the context of smooth representations of locally profinite groups. From our previous discussion, two major problems arise in this context. Firstly, given a locally profinite group $G$ and a subgroup $H$, there is no guarantee that $H$ is locally profinite and thus $\Smo(H)$ may not be well-defined. Secondly, when we perform some construction on a smooth representation (constructing its dual, inducing to a bigger group,...) there is no gurarantee that the resulting representation is smooth. Thankfully, both of this problems can be resolved in a straightforward way.
 
 To ensure that $H$ is locally profinite, we must add a condition on the topology on $H$. Based on Example \ref{example_prof_groups}(7), we just need to assume that $H$ is a closed subgroup of $G$. In some cases, we will need to assume that $H$ is also open, which is a more restrictive condition. To ensure that the functors give smooth representations of $G$, we simply compose them with the \textbf{smoothness functor}
 \begin{align*}
-    (-)^\infty:\Rep_G&\longrightarrow\Smo_G,\\
+    (-)^\infty:\Rep(G)&\longrightarrow\Smo(G),\\
     (\pi,V)&\longmapsto(\pi^\infty,V^\infty)
 \end{align*}
 where $$V^\infty=\bigcup_K V^K \text{  and  } \pi^\infty(g)=\pi(g)|_{V^\infty} \text{  for each  } g\in G,$$ and $K$ ranges over the compact open subgroups of $G$. By chasing definitions, one can show that $(-)^\infty$ is a well-defined left-exact functor such that 
-$$\Hom_G(V,W)=\Hom_G(V,W^\infty) \text{ for all } V\in\Smo_G, W\in\Rep_G.$$
+$$\Hom_G(V,W)=\Hom_G(V,W^\infty) \text{ for all } V\in\Smo(G), W\in\Rep(G).$$
 
 Using this constructions, we can define the smooth dual, restriction and induction functors. We remark that as long as $H\leq G$ is closed, the usual restriction sends smooth representations of $G$ to smooth representations of $H$. This is not the case for the dual and induction functors, so we apply to construction above.
 
 \begin{defn}
     If $G$ is a locally profinite group, define the smooth dual functor 
     \begin{align*}
-        \check{(-)}:\Smo_G&\longrightarrow\Smo_G,\\
+        \check{(-)}:\Smo(G)&\longrightarrow\Smo(G),\\
         (\pi,V)&\longmapsto(\check{\pi},\check{V})
     \end{align*}
     where $(\check{\pi},\check{V})=(\pi^*,V^*)^\infty$.
@@ -126,7 +126,7 @@ We also define the smooth induction functor as the composition of the induction 
 \begin{defn}\label{induction}
     Let $G$ be a locally profinite group and $H\leq G$ a closed subgroup. Define the smooth induction functor
     \begin{align*}
-        \Ind_H^G:\Smo_H&\longrightarrow\Smo_G,\\
+        \Ind_H^G:\Smo(H)&\longrightarrow\Smo(G),\\
         (\sigma,W)&\longmapsto(\Sigma,X)
     \end{align*}
     where $X$ is the space of functions $f: G\to W$ satisfying
@@ -138,7 +138,7 @@ We also define the smooth induction functor as the composition of the induction 
 
 Since the action $\Sigma$ on $X$ is given by $\Sigma(g)f:x\mapsto f(xg)$, condition $2.$ is precisely the smoothness condition that $f\in X^K$ for some open compact subgroup $K$. As above, we will denote this representation of $G$ as $\Ind_H^G\sigma$. Under these conditions, the first half of Frobenius Reciprocity holds:
 
-\begin{thm}[Frobenius reciprocity]
+\begin{thm}[Frobenius reciprocity]\label{thm:frob}
 	Let $(\pi,V)$ be a smooth representation of $G$, and $(\sigma,W)$ a smooth representation of a closed subgroup $H$. Then the map
 	\begin{align*}
 		\Psi:\Hom_G(\pi, \Ind_H^G\sigma)&\longrightarrow \Hom_H(\Res_H^G \pi, \sigma),\\
@@ -153,7 +153,7 @@ However, in this context, it is not the case that $\Ind_H^G$ is left adjoint to 
 \begin{defn}
 	Let $G$ be a locally profinite group, $H$ a closed subgroup, and $(\sigma,W)$ a smooth representation of $H$. Consider the functor 
     \begin{align*}
-        c-\Ind_H^G:\Smo_H&\longrightarrow\Smo_G,\\
+        c-\Ind_H^G:\Smo(H)&\longrightarrow\Smo(G),\\
         (\sigma,W)&\longmapsto(\Sigma,X_c)
     \end{align*}
     where 
@@ -164,7 +164,7 @@ However, in this context, it is not the case that $\Ind_H^G$ is left adjoint to 
 
 This construction is mainly of interest in the case when $H$ is open in $G$, in which case $a_\sigma^c$ is a $H$-homomorphism. This construction satisfies the second half of Frobenius Reciprocity.
 
-\begin{thm}
+\begin{thm}\label{thm:frob2}
 	Let $(\pi,V)$ be a smooth representation of $G$, and $(\sigma,W)$ a smooth representation of an open subgroup $H$. Then the map 
 	\begin{align*}
 		\Psi^c:\Hom_G(c-\Ind_H^G \sigma, \pi)&\longrightarrow \Hom_H(\sigma, \Res_H^G\pi)\\

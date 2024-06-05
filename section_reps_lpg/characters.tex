@@ -1,12 +1,12 @@
 \subsection{Characters of Local Fields}
 
-Now we turn our attention to the representation theory of locally profinite groups. In studying their representations, it turns out that the entire set is too big, so we need to restrict our attention to those representations satisfying a certain ``smoothness" condition. To motivate this condition, we will first describe the simplest (yet very relevant!) case: one-dimensional representations of a local field $F$: that is, group homomorphisms $\phi:F\rightarrow\CC^{\times}$. Later in this section we will also study the one-dimensional representations of $F^{\times}$.
+Now we turn our attention to the representation theory of locally profinite groups. It turns out that there are too many representations, so we need to restrict our attention to those representations satisfying a certain smoothness condition. To motivate this condition, we will first describe the simplest case: one-dimensional representations of a local field $F$: that is, group homomorphisms $\phi:F\rightarrow\CC^{\times}$. Later in this section we will also study the one-dimensional representations of $F^{\times}$.
 
-As we have discussed in the previous section, locally profinite groups carry a certain topology, so a natural condition to impose is \textbf{continuity} with respect to the usual topologies in $\CC^{\times}$ and $G$. A continuous homomorphism $\psi:G\rightarrow\CC^{\times}$ will be denoted as a \textit{character} of $G$.
+As we have discussed in the previous section, locally profinite groups carry a topology, so a natural condition to impose is \textit{continuity} with respect to the usual topologies in $\CC^{\times}$ and $G$. A \textit{character} of $G$ is a continuous homomorphism $\psi:G\rightarrow\CC^{\times}$.
 
-Characters of a locally profinite group $G$ are a group under multiplication, denoted by $\hat{G}$. It turns out that for one-dimensional representations, continuity coincides with the smoothness condition we require which will be introduced later. 
+Characters of a locally profinite group $G$ form a group $\hat{G}$ under multiplication. It turns out that for one-dimensional representations, continuity coincides with the smoothness condition we will introduce later. 
 
-When $G$ is a finite group with discrete topology, then any one-dimensional representation is a character, and we have the following simple description.
+When $G$ is a finite group with the discrete topology, then any one-dimensional representation is a character, and we have the following simple description.
 
 \begin{prop}
     If $G$ is a finite group with the discrete topology, then $\hat{G}\cong G^{ab}$. In particular, if $G$ is abelian then $\hat{G}\cong G$.
@@ -17,35 +17,39 @@ When $G$ is a finite group with discrete topology, then any one-dimensional repr
 
 For general locally profinite results, we have this rather surprising result. 
 \begin{lemma}\label{lem_cont_chars}
-    Let $G$ be a locally profinite group and $\psi: G\rightarrow\CC^{\times}$ a homomorphism. Then $\psi$ is continous if and only if $\ker\psi$ is open in $G$. Furthermore, if $G$ is the union of its compact open subgroups, then\footnote{Characters satisfying this property are called \textit{unitary}} $$\psi(G)\subseteq\{z\in\CC^{\times}:|z|=1\}=S^1.$$
+    Let $G$ be a locally profinite group and $\psi: G\rightarrow\CC^{\times}$ a homomorphism. Then $\psi$ is continuous if and only if $\ker\psi$ is open in $G$. Furthermore, if $G$ is the union of its compact open subgroups, then $$\psi(G)\subseteq\{z\in\CC^{\times}:|z|=1\}=S^1.$$
 \end{lemma}
+\begin{rem}
+    Characters of locally profinite groups that have image in $S^1$ are called \textit{unitary}.
+\end{rem}
 \begin{proof}
-    If $\ker\psi=\psi^{-1}(1)$ is open in $G$, then for any $z\in\Ima\psi$, then $\psi^{-1}(z)=g\ker\psi$ is also open, where $\psi(g)=z$. So in fact, \textbf{for any} $U\subseteq\CC^{\times}$, 
+    If $\ker\psi=\psi^{-1}(1)$ is open in $G$, then for any $z\in\Ima\psi$, the preimage $\psi^{-1}(z)=g\ker\psi$ is also open, for any $g \in G$ satisfying $\psi(g)=z$. Then for any $U\subseteq\CC^{\times}$, 
     $$\psi^{-1}(U)=\bigcup_{z\in U\cap\Ima\psi}\psi^{-1}(z),$$
-    and so in particular it is continous.
-    Conversely, if $\psi$ is continous, then for any open neighbourhood $\mathcal{N}$ of $1$, $\psi^{-1}(\mathcal{N})$ contains an open compact subgroup $K$ of $G$. But $\mathcal{N}$ can be chosen sufficiently small so that it does not contain any non-trivial subgroup of $\CC^{\times}$. Hence, $\psi(K)=1$ so $K\subseteq\ker\psi$, and since $K$ is open, so is $\ker\psi$.
-    The last assertion is a direct consequence of the fact that the continuous image of a compact set is compact and $S^1$ is the unique maximal compact subgroup of $\CC^{\times}$.
+    so that $\psi$ is continuous.
+    Conversely, if $\psi$ is continuous, then for any open neighbourhood $\mathcal{N}$ of $1$, $\psi^{-1}(\mathcal{N})$ contains an open compact subgroup $K$ of $G$. But $\mathcal{N}$ can be chosen sufficiently small so that it does not contain any non-trivial subgroup of $\CC^{\times}$. Hence, $\psi(K)=1$, so $K\subseteq\ker\psi$, and since $K$ is open, so is $\ker\psi$.
+    The last assertion is a direct consequence of the fact that the continuous image of a compact set is compact, and $S^1$ is the unique maximal compact subgroup of $\CC^{\times}$.
 \end{proof}
 
-Since $F$ is the union of its open compact subgroups, all characters of $F$ are unitary. However, this is not the case for $F^{\times}$. Indeed, the map $x\mapsto|x|$ is a character of $F^{\times}$, yet it is clearly not unitary. 
+
+Since the local field $F$ is the union of its open compact subgroups, all characters of $F$ are unitary. However, this is not the case for $F^{\times}$. Indeed, the map $x\mapsto|x|$ is a character of $F^{\times}$ that is not unitary. 
 
 Before stating the classification theorem for characters of $F$, we need one last definition. 
 
 \begin{defn}
-    Let $\psi$ be a non-trivial character of $F$ (resp. of $F^{\times}$). The \textbf{level} of $\psi$ is defined as be the least $d\geq0$ such that $\pp^d\subseteq\ker\psi$ (resp. $U_F^{d+1}\subseteq\ker\psi$).
+    Let $\psi$ be a non-trivial character of $F$ (resp. of $F^{\times}$). The \textit{level} of $\psi$ is defined as the least integer $d\geq0$ such that $\pp^d\subseteq\ker\psi$ (resp. $U_F^{d+1}\subseteq\ker\psi$).
 \end{defn}
 
 \begin{lemma}
-    Let $\psi\in\hat{F}$ be a character of level $d$ and let $a\in F$. Then the map $a\psi:x\mapsto\psi(ax)$ is a character of $F$ and if $a\neq0$ then $a\psi$ has level $d-\nu_F(a)$.
+    Let $\psi\in\hat{F}$ be a character of level $d$ and let $a\in F$. Then the map $a\psi:x\mapsto\psi(ax)$ is a character of $F$, and if $a\neq0$ then $a\psi$ has level $d-\nu_F(a)$.
 \end{lemma}
 \begin{proof}
-    It is clear that $a\psi$ is a character since if $x\in\pp^{d-\nu_F(a)}$, then $ax\in\pp^d$ so $a\psi(x)=1$ so $\pp^{d-\nu_F(a)}\subseteq\ker(a\psi)$ and the kernel is open. Furthermore, there is some $y\in\pp^{d-1}$ such that $\psi(y)\neq1$ so $a\psi(a^{-1}y)\neq1$. Since $a^{-1}y\in\pp^{d-1-\nu_F(a)}$, this indeed shows that the level of $a\psi$ is $d-\nu_F(a)$. 
+    It is clear that $a\psi$ is a character since if $x\in\pp^{d-\nu_F(a)}$, then $ax\in\pp^d$, so $a\psi(x)=1$, and therefore $\pp^{d-\nu_F(a)}\subseteq\ker(a\psi)$ and the kernel of $a\psi$ is open. Furthermore, there is some $y\in\pp^{d-1}$ such that $\psi(y)\neq1$, and so $a\psi(a^{-1}y)\neq1$. Since $a^{-1}y\in\pp^{d-1-\nu_F(a)}$, this indeed shows that the level of $a\psi$ is $d-\nu_F(a)$. 
 \end{proof}
 
 We are now ready to give the classfication theorem for $\hat{F}$.
 
-\begin{thm}[Additive duality]\label{add_dual}
-    Let $\psi\in\hat{F}$ be character with level $d$. The map $a\mapsto a\psi$ induces an isomorphism $F\cong\hat{F}$. 
+\begin{thm}[Additive Duality]\label{add_dual}
+    Let $\psi\in\hat{F}$ be a character of level $d$. The map $a\mapsto a\psi$ induces an isomorphism $F\cong\hat{F}$. 
 \end{thm}
 
 The proof of surjectivity of the theorem requires an inductive step, which heavily relies on the following results.
@@ -62,16 +66,16 @@ The proof of surjectivity of the theorem requires an inductive step, which heavi
 \end{lemma}
 
 \begin{proof}
-    Since $\hat\kappa\cong\kappa$, it is enough to construct a bijection between $\mathcal{A}:=\{\Theta\in\widehat{\pp^{n-1}}:\Theta|_{\pp^n}=\theta\}$ and $\hat{\kappa}$. Let $\phi=\theta^{-1}$ and let $\Phi$ be \textbf{any} lift of $\phi$ as a character of $\pp^{n-1}$. Now given $\Theta\in\mathcal{A}$, the character $\Theta\cdot\Phi$ is trivial on $\pp^{n}$ and thus it descends to a map 
+    Since $\hat\kappa\cong\kappa$, where $\kappa$ is the residue field of $F$, it is enough to construct a bijection between $\mathcal{A}:=\{\Theta\in\widehat{\pp^{n-1}}:\Theta|_{\pp^n}=\theta\}$ and $\hat{\kappa}$. Let $\phi=\theta^{-1}$ and let $\Phi$ be \textit{any} lift of $\phi$ as a character of $\pp^{n-1}$. Now given $\Theta\in\mathcal{A}$, the character $\Theta\cdot\Phi$ is trivial on $\pp^{n}$ and thus it descends to a map 
     $$\overline{\Theta\cdot\Phi}:\kappa\cong\pp^{n-1}/\pp^n\longrightarrow\CC^{\times}.$$
 
     To construct an inverse to the map $\Theta\mapsto\overline{\Theta\cdot\Phi}$, choose some $\chi\in\hat\kappa$, view it as a character of $\pp^{n-1}/\pp^{n}$ and consider the map $\tilde\chi:\pp^{n-1}\rightarrow\CC^{\times}$ given by $\tilde{\chi}(u)=\chi(u+\pp^n)$. Then the map $\chi\mapsto\Phi^{-1}\cdot\tilde\chi$ is the required inverse map.
 \end{proof}
 
-We are now ready for the proof of Additive duality.
+We are now ready for the proof of Additive Duality.
 
 \begin{proof}[Proof of Theorem \ref{add_dual}]
-    The map $a\mapsto a\psi$ is clearly a homomorphism. To prove injectivity, suppose that $a\neq b$ but $a\psi=b\psi$. Then it follows that $x(a-b)\in\ker\psi$ for all $x\in F$. But since $a-b\neq 0$, then $\ker\psi=F$, a contradiction.
+    The map $a\mapsto a\psi$ is clearly a homomorphism. To prove injectivity, suppose that $a\neq b$ but $a\psi=b\psi$. It follows that $x(a-b)\in\ker\psi$ for all $x\in F$. But since $a-b\neq 0$, we have $\ker\psi=F$, contradicting our assumption that $\psi$ is non-trivial.
 
     Let $\theta\in\hat{F}$ be any non-trivial character (if $\theta$ were trivial, then $0\psi=\theta$), and let $l$ be the level of $\theta$. By replacing $\theta$ with $\varpi^{l-d}\theta$, which has level $d$, we may assume without loss of generality that $\theta$ and $\psi$ have the same level $d$, and therefore they both agree on $\pp^d$. To show there is some $u\in F$ (in fact, $u\in U_F$ necessarily) such that $u\psi=\theta$,   we construct a sequence $\{u_n\}_{n\geq0}$ inductively such that $u_n\psi|_{\pp^{d-n}}=\theta|_{\pp^{d-n}}$ and $u_{n+1}\equiv u_n\pmod{\pp^n}$. Such a sequence is clearly Cauchy, and since $F$ is complete, it converges to some $u\in U_F$ such that $u\equiv u_n\pmod{\pp^n}$ for all $n\geq 1$ and thus $u\psi$ agrees with $\theta$ on $\cup_{n\in\ZZ}\ \pp^n=F$, which concludes the proof.
 
