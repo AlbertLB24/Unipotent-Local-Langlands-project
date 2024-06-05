@@ -494,19 +494,20 @@ For context, we state more general versions of these results that hold for any i
 
 The Propositions \ref{prop:gl2factor} and \ref{prop:gl2gamma} prove the Theorems \ref{BHThm1} and \ref{BHThm2} in the case that $\pi = \iota_B^G \chi$ and $\pi$ is irreducible. As in Theorem \ref{classify}, the representations $\pi = \iota_B^G \chi$ are typically irreducible - they are only reducible when $\chi = \phi \delta_B^{\pm 1/2}$ for some character $\phi$ of $F^\times$. In this case the composition factors are characters $\phi \circ \det$, and twists of Steinberg $\phi \mathrm{St}_G$. We state without proof the $L$-functions and local constants in the case that $\pi$ is one of these composition factors. For more detail see Sections 26.5 - 26.8 of \cite{BH1}. The results for all principal series representations are summarised in the following table:
 
-\begin{center}
-    \captionof{table}{$L$-functions and local constants of principal series representations of $G$}
+\begin{figure}[h!]
+    \centering
     \begin{tabular}{ |c|c|c| }
-     \hline
-     Principal series representation $\pi$ & $L(\pi,s)$ & $\epsilon(\pi,s,\psi)$ \\ \hline
-     $\iota_B^G \chi$, $\chi=\chi_1\otimes \chi_2$, $\chi \neq \phi \delta_B^{\pm 1/2}$ & $L(\chi_1,s)L(\chi_2,s)$ & $\epsilon(\chi_1,s,\psi)\epsilon(\chi_2,s,\psi)$ \\ 
-     $\phi \circ \det$, $\phi :F^\times \to \CC^\times$ ramified & 1 & $\epsilon(\phi,s-\frac{1}{2},\psi)\epsilon(\phi,s+\frac{1}{2},\psi)$ \\ 
-     $\phi \mathrm{St}_G$, $\phi :F^\times \to \CC^\times$ ramified & 1 & $\epsilon(\phi,s-\frac{1}{2},\psi)\epsilon(\phi,s+\frac{1}{2},\psi)$ \\  
-     $\phi \circ \det$, $\phi :F^\times \to \CC^\times$ unramified & $L(\phi,s-\frac{1}{2})L(\phi,s+\frac{1}{2})$ & $\epsilon(\phi,s-\frac{1}{2},\psi)\epsilon(\phi,s+\frac{1}{2},\psi)$ \\ 
-     $\phi \mathrm{St}_G$, $\phi :F^\times \to \CC^\times$ unramified & $L(\phi,s+\frac{1}{2})$ & $-\epsilon(\phi,s,\psi)$ \\     
-     \hline
-    \end{tabular}
-\end{center}
+        \hline
+        Principal series representation $\pi$ & $L(\pi,s)$ & $\epsilon(\pi,s,\psi)$ \\ \hline
+        $\iota_B^G \chi$, $\chi=\chi_1\otimes \chi_2$, $\chi \neq \phi \delta_B^{\pm 1/2}$ & $L(\chi_1,s)L(\chi_2,s)$ & $\epsilon(\chi_1,s,\psi)\epsilon(\chi_2,s,\psi)$ \\ 
+        $\phi \circ \det$, $\phi :F^\times \to \CC^\times$ ramified & 1 & $\epsilon(\phi,s-\frac{1}{2},\psi)\epsilon(\phi,s+\frac{1}{2},\psi)$ \\ 
+        $\phi \mathrm{St}_G$, $\phi :F^\times \to \CC^\times$ ramified & 1 & $\epsilon(\phi,s-\frac{1}{2},\psi)\epsilon(\phi,s+\frac{1}{2},\psi)$ \\  
+        $\phi \circ \det$, $\phi :F^\times \to \CC^\times$ unramified & $L(\phi,s-\frac{1}{2})L(\phi,s+\frac{1}{2})$ & $\epsilon(\phi,s-\frac{1}{2},\psi)\epsilon(\phi,s+\frac{1}{2},\psi)$ \\ 
+        $\phi \mathrm{St}_G$, $\phi :F^\times \to \CC^\times$ unramified & $L(\phi,s+\frac{1}{2})$ & $-\epsilon(\phi,s,\psi)$ \\     
+        \hline
+       \end{tabular}
+       \caption{$L$-functions and local constants of principal series representations of $G$}
+\end{figure}
 
 In particular, if $\pi$ is a composition factor of $\iota_B^G \chi$ then $L(\pi,s) = L(\chi_1,s)L(\chi_2,s)$, unless $\pi = \phi \mathrm{St}_G$ for some unramified character $\phi : F^\times \to \CC^\times$.
 
