@@ -1,0 +1,62 @@
+\subsection{Review of harmonic analysis}
+
+Take as motivation the representation theory of a finite group $H$. Every irreducible representation of $H$ appears as a direct summand of the regular representation $\CC[H]$, with some multiplicity. For a locally compact topological group $\mathbb G$ with Haar measure $dg$, the correct generalisation of $\CC[H]$ is the space $L^2(\mathbb G)$ of measurable functions $f:\mathbb G \to \CC$ for which 
+$$\int_{\mathbb G} |f(g)|^2 dg < \infty.$$
+The action of $\mathbb G$ is by right translation. If $\mathbb G$ is additionally abelian, the group $\hat{\mathbb G}$ of (unitary) characters of $\mathbb G$ is also a locally compact abelian group, the Pontryagin dual of $\mathbb G$. 
+
+\begin{example}
+    The Pontryagin duals of $\mathbb G = \RR, \ZZ, \RR/\ZZ$ are $\RR, \RR/\ZZ, \ZZ$ respectively. The characters of $\RR$ are of the form $x \mapsto e^{-2\pi i xy}$ for $y \in \RR$. The characters of $\ZZ$ are of the form $n \mapsto e^{-2\pi i nx}$ for $x \in \RR/\ZZ \cong S^1$. The characters of $\RR/\ZZ$ are of the form $x \mapsto e^{-2\pi i nx}$ for $n \in \ZZ$. In particular, $\RR$ is self-dual.
+\end{example}
+
+On a suitable dense subset of $L^2(\mathbb G)$ (the Schwartz space), one can define the Fourier transform $\hat{f} \in L^2(\hat{\mathbb G})$ of $f$ by
+$$\hat{f}(\chi) = \int_{\mathbb G} f(g)\chi(g) dg.$$
+The Fourier transform uniquely extends to a map $L^2(\mathbb G) \to L^2(\hat{\mathbb G})$. For suitable choices of Haar measures there is then a Fourier inversion formula 
+$$\hat{\hat{f}}(g)=f(-g),$$ so that the above map is a bijection.
+
+\begin{example}
+    For $\mathbb G=\RR$, the Fourier transform of $f$ is 
+    $$\hat{f}(x) = \int_{\RR} f(y)e^{-2\pi i xy} dy$$
+    which is the classical Fourier transform. Identifying $\hat{\RR} = \RR$, the Fourier transform gives an invertible map $L^2(\RR) \to L^2(\RR)$, so that any element of $L^2(\RR)$ can be expressed as an integral of elements of $\hat{\RR}$. 
+
+    Inside the representation $L^2(\RR)$ of $\RR$ we therefore see this `continuous spectrum' of the irreducible unitary representations (characters) of $\RR$, parametrised by $\RR$. Note, however, that each such character can not be realised as a subrepresentation of $L^2(\RR)$; for $y \in \RR$ the character $x \mapsto e^{-2\pi i xy}$ is realised as the Fourier transform of a function on $\RR$ supported only at $y$, but such a function is not in $L^2(\RR)$.
+\end{example}
+
+\begin{example}
+    For $\mathbb G = \ZZ$, the Fourier transform of $f$ is 
+    $$\hat{f}(x) = \sum_{\ZZ} f(n)e^{-2\pi i nx}.$$
+    So any element of $L^2(\RR/\ZZ)$ can be expressed as a sum of unitary characters of $\ZZ$; we have a `discrete spectrum'. 
+\end{example}
+
+\begin{rem}
+    The terminology of discrete and continuous spectra comes from the analogy with the spectral theory of the Laplacian. Over $\RR$, the Laplacian is $\Delta = \frac{\partial^2}{\partial x^2}$, and the characters $x \mapsto e^{-2\pi i xy}$ are eigenfunctions. 
+\end{rem}
+
+The dichotomy in the above examples is reflected in the compactness of $S^1$ and non compactness of $\RR$. More generally,
+
+\begin{thm}[Peter-Weyl]
+    Let $K$ be a compact Hausdorff topological group. Any unitary representation of $K$ decomposes into a completed Hilbert space direct sum of irreducible unitary subrepresentations. There is a unitary equivalence
+    $$L^2(K) \cong \widehat{\bigoplus}_{\pi \in \hat{K}} \mathrm{End}(V_\pi)$$
+    of representations of $K\times K$, where $(\pi,V_\pi)$ ranges over the set $\hat{K}$ of equivalence classes of irreducible representations of $K$, and $\hat\oplus$ denotes the completed Hilbert space direct sum.
+\end{thm}
+\begin{proof}
+    \cite[Theorem 7.3.2]{DE} and \cite[Theorem 7.2.3]{DE}.
+\end{proof}
+
+Even more generally, for so-called Type I groups one can decompose unitary representations through a combination of integrals and Hilbert space direct sums. See \cite[Section 3.10]{GH1} for further details.
+
+Returning to $G=\GL_2(F)$, as this is not compact we would expect the regular representation $L^2(G)$ to decompose according to both a continuous spectra and a discrete spectra. This continous spectra is provided by the parabolically induced representations $\iota_B^G \chi$, where $\chi$ ranges over the characters of $T \cong F^\times \times F^\times$.
+
+In order to compare representations of $G$ and Galois representations through the local Langlands correspondence, we would like to classify them according to some common language. This is provided by the zeta functions, $L$-functions and functional equations discussed in this section. 
+
+The prototypical example of an $L$-function is the Riemann zeta function $\zeta(s) = \sum_{n \geq 1} n^{-s}$.
+
+\begin{prop}
+    The function $\zeta(s) = \sum_{n \geq 1} n^{-s}$ satisfies the following properties:
+    \begin{itemize}
+        \item (Analytic continuation) The Riemann zeta functions converges absolutely to a holomorphic function on $\mathrm{Re}(s)>1$. It has a unique analytic continuation to the complex plane, except the point $s=1$ where $\zeta(s)$ has a simple pole.
+        \item (Euler product) We have the identity $$\sum\limits_{n=1}^\infty n^{-s} = \prod\limits_{p \text{ prime}} \frac{1}{1-p^{-s}},$$ convergent for $\mathrm{Re}(s)>1$.
+        \item (Functional equation) There is an explicit function $\gamma(s)$ such that $\zeta(1-s)=\gamma(s)\zeta(s)$.
+    \end{itemize}
+\end{prop}
+
+The approach of Tate in his thesis was to view the Riemann (And Dedekind) zeta functions from an adelic perspective. There the Euler product formulation is immediate and we only need to study the zeta functions locally. Attached to any character $\chi:F^\times \to \CC^\times$ there is an associated space $\mathcal Z(\chi)$ of zeta functions $\zeta(\Phi,\chi,s)$, where $\Phi \in C_c^\infty(F)$. The factor at the prime $p$ of the Riemann zeta function corresponds to the trivial character of $\QQ_p^\times$ and the function $\mathbbm{1}_{\ZZ_p} \in C_c^\infty(\QQ_p)$. A key ingredient in the proof of the functional equation of the Riemann zeta function is the Fourier transform over $\CC$. In general, the functional equation associated to $\chi$ relates zeta functions $\zeta(\hat{\Phi},\chi^{-1},1-s)$ and $\zeta(\Phi,\chi,s)$, where $\hat{\Phi}$ is the Fourier transform of $\Phi$ in $C_c^\infty(F)$. 

@@ -44,6 +44,7 @@
 \newcommand{\Span}{\mathrm{Span}}
 \newcommand{\supp}{\mathrm{supp}}
 \newcommand{\End}{\mathrm{End}}
+\newcommand{\St}{\mathrm{St}}
 
 
 
@@ -102,7 +103,9 @@
 
 \begin{document}
 	\maketitle
+	\tableofcontents
 	\pagenumbering{arabic}
+	\newpage
 
 \section{Locally Profinite Groups and Smooth Representations}
 \input{section_reps_lpg/section_reps_lpg.tex}
@@ -121,14 +124,17 @@
 %\input{modforms.tex}
 %maybe add more definitions and details later
 
-\section{Principal series representations of \texorpdfstring{$\GL_2$}{TEXT}}
+\section{Principal Series Representations of \texorpdfstring{$\GL_2$}{TEXT}}
 \input{principal_series}
 
 % Reference additive duality from section 1 when ready. Also duality thm end of 3.3
 % explain characters of torus
 
-\section{Functional equation for \texorpdfstring{$\GL_2$}{TEXT}}
-\input{func_equation}
+\section{Functional Equation for \texorpdfstring{$\GL_1$}{TEXT}}
+\input{sections_funceqn/funceqn_GL1.tex}
+
+\section{Functional Equation for \texorpdfstring{$\GL_2$}{TEXT}}
+\input{sections_funceqn/funceqn_GL2.tex}
 
 \newpage
 

@@ -1,0 +1,145 @@
+\subsection{The L-function of a Character of \texorpdfstring{$F^\times$}{TEXT}}
+
+Let $F$ be a nonarchimedean local field, $\varpi$ be a uniformiser and $q$ be the size of the residue field. We will later define $L$-functions attached to an irreducible smooth representation of $\GL_2(F)$ and determine a functional equation they satisfy. The ideas involved in the proof that such objects exists are similar (and highly dependent) on the ideas associated to the development of the theory discussed in the previous section for the local field $F$. 
+
+Therefore, we explain these results first in the context of irreducible smooth representations $\chi$ of $\GL_1(F)$, necessarily a character $\chi: F^\times \to \CC^\times$. To mimic the development we aim to follow for the case of irreducible representations of $\GL_2(F)$, we will first define the space $\mathcal Z(\chi)$ from which the definition of the L-function $L(\chi,s)$ arises naturally. Afterwards, we will introduce the analogue of the Fourier transform over $F$. This will lead us to the proof of the functional equation of $\GL_1$ and the construction of the local constant $\varepsilon(\chi,s,\psi)$. 
+
+Let $\chi: F^\times \to \CC^\times$ be a smooth character of $F^\times$. We want to attach to this character an $L$-function $L(\chi,s)$ in the formal variable $s$. This is defined to be $(1-\chi(\varpi)q^{-s})^{-1}$ when $\chi$ is unramified, and 1 otherwise. In order to generalise to $\GL_2$ it would be preferable to have a more intrinsic definition.
+
+\begin{defn}
+    For $\Phi \in C_c^\infty(F)$ and $\chi :F^\times \to \CC^\times$, define the zeta function $\zeta(\Phi,\chi,s)$ to be
+    $$\zeta(\Phi,\chi,s) := \int_{F^\times} \Phi(x)\chi(x)|x|^s d^*x,$$ in the formal variable $s$, where $d\mu^*(x) = d^*x$ denotes any choice of Haar measure on $F^\times$.
+\end{defn}
+
+We remark that we can equivalently rewrite the zeta function as
+$$\zeta(\Phi,\chi,s) = \sum\limits_{m \in \ZZ} z_m q^{-ms}$$
+where $$z_m = \int\limits_{\varpi^m \mathcal O_F^\times} \Phi(x)\chi(x)d^*x.$$ 
+Note that $z_m=z_m(\Phi,\chi)$ vanish for $m \ll0$ because $\Phi$ is compactly supported on $F$, so $\supp\Phi\subseteq\pp^N$ for some sufficiently small $N$. In this way it is clear that $\zeta(\Phi,\chi,s) \in \CC((q^{-s}))$. 
+The zeta function $\zeta(\Phi,\chi,s)$ only depends on $d^*x$ up to scaling. To remove this dependence we define the following space.
+
+\begin{notn}
+    Let $\chi$ be a character of $F^\times$. Then we define 
+    $$\mathcal Z(\chi) = \{\zeta(\Phi,\chi,s) \mid \Phi \in C_c^\infty(F)\}.$$
+\end{notn}
+
+\begin{notn}
+    For $a \in F^\times$ and $\Phi \in C_c^\infty(F)$, denote by $a\Phi$ the function $x \mapsto \Phi(a^{-1}x)$.
+\end{notn}
+
+\begin{lemma}
+    The space $\mathcal Z(\chi)$ is a $\CC[q^{-s},q^s]$-module, containing $\CC[q^{-s},q^s]$.
+\end{lemma}
+\begin{proof}
+    Let $a \in F^\times$ of valuation $v_F(a)$. Then 
+    $$\zeta(a\Phi,\chi,s) = \chi(a)q^{-v_f(a)s}\zeta(\Phi,\chi,s),$$ giving the desired module structure. To establish the containment we show that $\mathcal Z(\chi)$ contains a nonzero constant. Let $d$ be such that $\chi \mid_{U_F^{d}} = 1$. Taking $\Phi=\mathbbm{1}_{U_F^{d}}$, we see that 
+    $$Z(\Phi,\chi,s) = \mu^*(U_F^{d}) \neq 0.$$
+\end{proof}
+
+\textbf{Question to potentially simplify the proof}
+
+The ring $\CC[X,X^{-1}]$ of Laurent series with complex coefficients has very useful properties. It is a principal ideal domain and its group of units consists of the monomials $aX^b,a\in\CC^\times, b\in\ZZ$. Then $\mathcal Z(\chi)$, being a $\CC[q^{-s},q^s]$-module contained in its fraction field $\CC((q^{-s}))$, it of the form 
+$$\mathcal{Z}(\chi)=P_\chi(q^{-s})\cdot\CC[q^{-s},q^s]$$ for some polynomial $P_\chi(X)\in\CC[X]$ that is unique under the assumption that $P_\chi(0)=1$.
+
+\textbf{Is this correct?}
+
+\begin{prop}\label{prop:gl1factor}
+    Let $\chi:F^\times \to \CC^\times$. There exists a unique polynomial $P_\chi \in \CC[X]$ with $P_\chi(0)=1$ such that
+    $$\mathcal Z(\chi) = P_\chi(q^{-s})^{-1}\cdot \CC[q^{-s},q^s].$$
+    Moreover, we have
+    $$
+    P_\chi(X) =
+    \begin{cases}
+        1-\chi(\varpi)X & \text{if $\chi$ is unramified} \\
+        1 & \text{otherwise}
+    \end{cases}
+    $$
+\end{prop}
+\begin{proof}
+    Suppose $\Phi(0)=0$. Then $\Phi|_{F^\times} \in C_c^\infty(F^\times)$, and so $\Phi$ is identically zero on $\varpi^m\mathcal O_F^\times$ for $|m| >>0$. Thus only finitely many of the coefficients $z_m$ are nonzero, so that $\Phi \in \CC[q^{-s},q^s]$.
+
+    The space $C_c^\infty(F)$ is spanned by $C_c^\infty(F^\times)$ and $\mathbbm{1}_{\mathcal O_F}$. We compute
+    $$\zeta(\mathbbm{1}_{\mathcal O_F},\chi,s) = \sum\limits_{m \geq 0} \chi(\varpi^m)q^{-ms} \int_{\mathcal O_F^\times} \chi(x)d^*x.$$
+    If $\chi$ is unramified (trivial on $\mathcal O_F^\times$), this gives us 
+    $$\sum\limits_{m \geq 0} \chi(\varpi)^mq^{-ms} \mu^*(\mathcal O_F^\times) = (1-\chi(\varpi)q^{-s})^{-1} \mu^*(\mathcal O_F^\times).$$
+    When $\chi$ is ramified the integral is zero. Indeed, translation invariance of $d^*x$ implies
+    $$\int_{\mathcal O_F^\times} \chi(x)d^*x = \int_{\mathcal O_F^\times} \chi(xy)d^*x = \chi(y)\int_{\cO_F^\times} \chi(x) d^*x$$ for any $y \in \cO_F^\times$, so that this is zero if there is some $y$ with $\chi(y) \neq 1$. This computation, together with the previous lemma, establish the result. 
+\end{proof}
+
+\begin{rem}
+    The computation in the proof above shows, in the case $\chi = 1$, that $\zeta(\mathbbm{1}_{\cO_F},1,s) = (1-q^{-s})^{-1}$, provided that $\mu^*(\mathcal{O}_F^\times)=1$. If $F=K_v$ is the completion of a number field $K$ at a nonarchimedean place $v$, we recover the Euler factor of the Dedekind zeta function $\zeta_K(s)$ at the place $v$. This explains the naming of our zeta functions. 
+\end{rem}
+
+\begin{rem}
+    The computations of Proposition \ref{prop:gl1factor} show that each $\zeta(\Phi,\chi,s)$ converges absolutely and uniformly in vertical strips in some right half plane, and admit analytic continuation to a rational function in $q^{-s}$.
+\end{rem}
+
+\begin{defn}\label{def:lfunction}
+    The $L$-function attached to a character $\chi$ of $F^\times$ is defined to be
+    \begin{equation*}
+        L(\chi,s)=P_\chi(q^{-s})^{-1}=
+        \begin{cases}
+            (1-\chi(\varpi)q^{-s})^{-1} & \text{if $\chi$ is unramified} \\
+            1 & \text{otherwise},
+        \end{cases}
+    \end{equation*}
+    which indeed coincides with the classical language.
+\end{defn}
+
+\subsection{The Functional Equation}
+
+Next, taking from the classical study of the Riemann zeta function and its functional equation, we want to introduce an analogue of the Fourier transform over $F$. We replace the additive character $e^{2\pi i -}: \RR \to \CC^\times$ with any choice of additive character $\psi: F \to \CC^\times$ with $\psi \neq 1$. In this way, by Additive Duality, all characters of $F$ are of the form $y\mapsto\psi(ay),y\in F$ for some $a\in F$. The functions we will apply the Fourier transform to will be the algebra $C_c^\infty(F)$ of locally constant compactly supported functions $F \to \CC$. For any choice of Haar measure $\mu$ on $F$, we now define the Fourier transform.
+
+\begin{defn}
+    Let $\Phi \in C_c^\infty(F)$, $\psi:F \to \CC^\times$ be an additive character of $F$, and $\mu$ be a Haar measure on $F$. The Fourier transform of $\Phi$ (with respect to $\psi$ and $\mu$) is 
+    $$\hat{\Phi}(x) := \int_F \Phi(y)\psi(xy) d\mu(y).$$
+\end{defn}
+
+To match the classical definition over $\RR$, we would like the Fourier transform to preserve $C_c^\infty(F)$, and to have a Fourier inversion formula. Indeed:
+
+\begin{prop}
+    
+    \begin{itemize}
+        \item For any $\Phi \in C_c^\infty(F)$, we have $\hat{\Phi} \in C_c^\infty(F)$.
+        \item For any $\psi: F \to \CC^\times$ with $\psi \neq 1$, there is a unique Haar measure $\mu_\psi$ on $F$ such that for the associated Fourier transform we have $$\hat{\hat{\Phi}}(x) = \Phi(-x)$$ for any $\Phi \in C_c^\infty(F)$ and $x \in F$.
+    \end{itemize}
+    
+\end{prop}
+\begin{proof}
+    \cite[Proposition 23.1]{BH1}
+\end{proof}
+
+\begin{notn}
+    For the remainder of this subsection, $\psi \neq 1$ will be an additive character of $F$, and $\mu= \mu_\psi$ will denote the associated self-dual Haar measure on $F$.
+\end{notn}
+
+As with the Riemann zeta function, we have functional equations for the zeta functions.
+
+\begin{thm}\label{thm:gl1gamma}
+    Let $\chi: F^\times \to \CC^\times$. There is a unique $\gamma(\chi,s,\psi) \in \CC(q^{-s})$ such that 
+    $$\zeta(\hat{\Phi}, \check{\chi},1-s) = \gamma(\chi,s,\psi) \zeta(\Phi,\chi,s)$$ for all $\Phi \in C_c^\infty(F)$, where $\check{\chi}=1/\chi : F^\times \to \CC^\times$.
+\end{thm}
+\begin{proof}
+    \cite[Theorem 23.3]{BH1}.
+\end{proof}
+
+Since $\mathcal Z(\chi) = L(\chi,s)\cdot \CC[q^{-s},q^s]$, it is natural to consider the terms $\frac{\zeta(\Phi,\chi,s)}{L(\chi,s)} \in \CC[q^{-s},q^s]$. This allows us to treat the case of $\chi$ ramified and unramified evenly. 
+
+\begin{defn}
+    Given characters $\chi$ and $\psi$ of $F^\times$ and $F$ respectively, define
+    $$\varepsilon(\chi,s,\psi) := \gamma(\chi,s,\psi) \cdot \frac{L(\chi,s)}{L(\check{\chi},s)},$$
+    denoted as \textit{Tate's local constant}.
+\end{defn}
+
+
+The functional equation for $\zeta$ can be rewritten as
+$$\frac{\zeta(\hat{\Phi},\check{\chi},1-s)}{L(\check{\chi},1-s)} = \varepsilon(\chi,s,\psi) \frac{\zeta(\Phi,\chi,s)}{L(\chi,s)}.$$
+
+\begin{cor}
+    The local constant satisfies the functional equation
+    $$\varepsilon(\chi,s,\psi)\varepsilon(\check{\chi},1-s,\psi) = \chi(-1).$$
+    The local constant is of the form $$\varepsilon(\chi,s,\psi) = aq^{bs}$$ for some $a \in \CC^\times$, $b \in \ZZ$.
+\end{cor}
+\begin{proof}
+    The first statement comes from the Fourier inversion formula, where the $\chi(-1)$ term comes from the minus sign in $\hat{\hat{\Phi}}(x) = \Phi(-x)$. The functional equation implies that $\varepsilon$ is a unit in $\CC[q^{-s},q^s]$, and the units are precisely the elements of the form $aq^{bs}$ for $a\in\CC^\times$ and $b \in \ZZ$.
+\end{proof}
+
