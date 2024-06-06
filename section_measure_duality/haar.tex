@@ -1,0 +1,152 @@
+\subsection{The Space \texorpdfstring{$C_c^{\infty}(G)$}{TEXT} and the Haar Measure}
+
+Let $G$ be a locally profinite group. Then we define $\CG$ to be the space of functions $f:G\to\CC$ which are locally constant and that have compact support. Such a function $f$ can be equivalently characterized as a finite linear combination of characteristic functions of double cosets $KgK$ for some open compact subgroup $K$ of $G$. Hence, the space $\CG$ is a complex vector space and admits two natural actions by $G$ by left and right translation:
+
+$$\lambda_g f:x\longmapsto f(g^{-1}x),\quad\text{and}\quad \rho_g f:x\longmapsto f(xg),$$
+for $x,g\in G$ and $f\in\CG$. These actions define smooth representation since characteristic functions of double cosets of $K$ are invariant under translation by $K$. We are now ready to define the notion of a \textit{Haar integral} and \textit{Haar measure}.
+
+\begin{defn}
+    A \textit{left Haar integral} on $G$ is a non-zero linear functional 
+    $$I:\CG\longrightarrow \CC$$
+    such that
+    \begin{enumerate}[(1)]
+        \item $I(\lambda_g f)=I(f),\ g\in G,\ f\in\CG$, and
+        \item $I(f)\geq 0$ for any $f\in\CG$ such that $f\geq 0$.
+    \end{enumerate}
+    A \textit{right Haar integral} is defined analogously by replacing $\lambda_g$ by $\rho_g$.
+\end{defn}
+
+The usefulness of the Haar integral relies on the fact that locally profinite groups possess essentially one unique left Haar integral.
+
+\begin{prop}\label{prop:haar}
+    There exists a left Haar integral $I:\CG\to\CC$. Moreover, a linear functional $I':\CG\to\CC$ is a left Haar integral if and only if $I'=cI$ for some constant $c>0$.
+\end{prop}
+\begin{proof}
+    \cite[3.1 Proposition]{BH1}
+\end{proof}
+
+Whenever we have a \textit{left Haar integral} $I$, we can define the associated \textit{left Haar measure} as follows. Let $S\subset G$ and let $\Gamma_S$ be its characteristic function. Then $\Gamma_S\in\CG$ if and only if $S$ is open and compact. In that case, we define $$\mu_G(S)=I(\Gamma_S)$$ to be the Haar measure of $S$. We note that $\mu_G(S)>0$ and by left invariance, $\mu_G(gS)=\mu_G(S)$ for any $g\in G$. The relationship is commonly expressed by using the usual integral notation
+$$I(f)=\int_G f(g)d\mu_G(g),\quad f\in\CG.$$
+This choice of notation is motivated by the fact that since $f$ is locally constant and has constant support, the integral $I(f)$ is effectively a finite weighted sum of $\mu_G(S_i)$ where $S_i$ are open, compact and $f$ is constant on them. 
+
+\begin{example}
+    The notion of a left Haar measure is only determined up to a constant. In practice, to uniquely determine the measure, we associate a particular open compact subset with a value. For example if $G=F$ is a local field, one commonly chooses $\mu_F$ so that $\mu_F(R)=1$. Under this choice, we calculate that $\mu_F(\pp^n)=q^{-n}$.
+\end{example}
+
+Left Haar measures behave predictably under usual group constructions. For example, if $G_1,G_2$ are profinite groups, then $G=G_1\times G_2$ is also profinite group, and we have an isomorphism 
+\begin{align*}
+    C_c^{\infty}(G_1)\otimes C_c^{\infty}(G_1)&\longrightarrow \CG\\
+    \sum_{i=1}^{r}f_i^1\otimes f_i^2 &\longmapsto \left((g_1,g_2)\mapsto \sum_{i=1}^{r}f_i^1(g_1)f_i^2(g_2)\right).
+\end{align*}
+If $\mu_i$ is a left Haar measure in $G_i$ for $i=1,2$, then there is a unique left Haar measure $\mu_G$ on $G$ such that 
+$$\int_G f_1\otimes f_2(g)d\mu_G(g)=\int_{G_1}f_1(g_1)d\mu_1(g_1)\int_{G_2}f_2(g_2)d\mu_2(g_2),$$
+usually dentoted as $\mu_G=\mu_1\otimes\mu_2$.
+
+\subsection{The Module of a Group}
+
+Of course, the discussion from the previous subsection holds if we replace `right' by `left' throughout. At this point it is therefore natural to ask whether a left Haar integral $I$ on $G$ is also a right Haar integral. This important consideration motivates the following definition.
+
+\begin{defn}
+    The group $G$ is \textit{unimodular} if any left Haar integral on $G$ is also a right Haar integral. 
+\end{defn}
+
+As a first observation, we note that if the group $G$ is abelian, then $\lambda_g f=\rho_{g^{-1}} f$ and therefore $G$ is unimodular. However, for general groups this is not the case. 
+
+To investigate this, choose some left Haar measure $\mu_G$ on $G$, and consider the functional
+\begin{align*}
+    I_g:\CG&\longrightarrow\CC\\
+    f\longmapsto\int_G& f(xg)d\mu_G(x).
+\end{align*}
+In other words, if $I$ is the associated left Haar integral of $\mu_G$, then $I_g(f)=I(\rho_g f)$. Since the actions of $G$ on $\CG$ by left and right translation commute, $$I_g(\lambda_h f)=I(\rho_g\lambda_h f)=I(\lambda_h\rho_g f)=I(\rho_g f)=I_g(f)$$
+and so $I_g$ is also a left Haar integral. Therefore, there is a unique $\delta_G(g)\in \RR_+^{\times}$ such that $\delta_G(g)I_g(f)=I(f)$ for all $f\in\CG$. In the integral notation, this means that 
+$$\delta_G(g)\int_G f(xg)d\mu_G(x)=\int_G f(x)d\mu_G(x)$$
+for all $f\in\CG$. Moreover, the map $\delta_G$ also interacts predictably with the left Haar measure. If $S$ is an open compact subset of $G$ and $f=\Gamma_S$ is its characteristic function then one obtains that 
+$$\delta_G(g)\mu_G(Sg)=\mu_G(S),$$
+which also uniquely identifies $\delta_G(g)$.
+
+\begin{lemma}
+    The map $\delta_G:G\to\RR_+^{\times}$ is a homomorphism independent of the choice of left Haar integral $I$ and it is trivial on any open compact subgroup of $G$. In particular, $\delta_G$ is a character of $G$.
+\end{lemma}
+\begin{proof}
+    By above, we have that 
+    $$\delta_G(gh)I(\rho_{gh}f)=I(f)=\delta_G(g)I(\rho_g f)=\delta_G(g)\delta_G(h)I(\rho_h\rho_g f)$$
+    for any $g,h\in G$ and $f\in\CG$.
+    By uniqueness of $\delta_G$ and the fact that $\rho_{gh}=\rho_g\rho_h$, it follows that $\delta_G$ is a homomorphism. The fact that it is independent of the left Haar measure follows immediately from its definition and Prposition \ref{prop:haar}. 
+    If $K$ is an open compact subgroup of $G$ and $k\in K$, then by choosing $f=\Gamma_K$ to be the characteristic function of $K$, it follows that $\rho_k f= f$ and therefore $\delta_G(k)=1$.
+\end{proof}
+
+The character $\delta_G:G\to\CC$ is denoted as the \textit{module} of $G$, and its importance relies of the following result.
+
+\begin{lemma}
+    Let $G$ be a locally profinite group let and $\delta_G:G\to\CC$ be its module. Then $G$ is unimodular if and only if $\delta_G$ is trivial. 
+\end{lemma}
+\begin{proof}
+    Let $I$ be a left Haar integral on $G$. Then $G$ is unimodular if and only if $I$ is a right Haar integral. This is equivalent to $I(f)=I(\rho_g f)=I_g(f)=\delta(g)^{-1}I(f)$ for every $g\in G$. But this is clearly equivalent to $\delta_G$ being trivial. 
+\end{proof}
+
+Finally, when the group $G$ is not unimodular, the module $\delta_G$ gives a canonical relationship between left and right Haar integrals.
+
+\begin{lemma}
+    Let $I$ be a left Haar integral on $G$ with associated left Haar measure $\mu_G$. If $\delta_G$ is the module of $G$, then the functional
+    \begin{align*}
+        J:\CG&\longrightarrow\CC\\
+        f\longmapsto\int_G& \delta_G(x)^{-1}f(x)d\mu_G(x)
+    \end{align*}
+    is a right Haar integral for $G$.
+\end{lemma}
+\begin{proof}
+    The functional $J$ can also be expressed as $J(f)=I(\delta_G^{-1}f)$. We note that $\delta_G^{-1}\rho_g(f)=\delta_G(g)\rho_g\delta_G^{-1}f$ as elements of $\CG$ for all $g\in G$ and $f\in\CG$.  Hence, 
+    $$J(\rho_g f)=I(\delta_G^{-1}\rho_g f)=\delta_G(g)I(\rho_g\delta_G^{-1}f)=I(\delta^{-1}_G f)=J(f)$$
+    for every $g\in G$ and $f\in\CG$, as desired.
+\end{proof}
+
+\subsection{Positive Semi-invariant Measures and the Duality Theorem}
+
+To classify the principal series representations of $\GL_2(F)$ in the following section, one needs to understand the interaction between the induction and the duality functor for smooth representations of locally profinite groups and their closed groups. To this aim, we need to develop one last bit of machinery from measure theory called \textit{positive semi-invariant measures}, which generalise the notion of Haar measures.
+
+Let $G$ be a locally profinite group and let $H$ be a closed subgroup. Fix some character $\theta$ of $H$ and consider the space of functions $f:G\to\CC$ that are $G$-smooth under right translation, are compactly supported modulo $H$ and satisfy $$f(hg)=\theta(h)f(g),\quad h\in H,g\in G.$$
+This space is in fact the compact induction $\cInd_H^G\theta$, but in analogy to $\CG=\cInd_{e}^G\mathds{1}$ we denote it as $C_c^{\infty}(H\backslash G,\theta)$. At this point it is natural to ask whether there exists some non-zero linear functional $I_{\theta}:C_c^{\infty}(H\backslash G,\theta)\to\CC$ such that $I_{\theta}(\rho_g f)=I_{\theta}(f)$ for all $g\in G$. As it turns out, this is not possible and there is a simple criterion to determine when it is possible.
+
+\begin{prop}\label{prop:semiinvariant}
+    Let $\theta:H\to\CC^{\times}$ be a character of $H$. Then there exists a non-zero linear functional $I_{\theta}:C_c^{\infty}(H\backslash G,\theta)\to\CC$ such that $I_{\theta}(\rho_g f)=I_{\theta}(f)$ for all $g\in G$ and $f\in C_c^{\infty}(H\backslash G,\theta)$ if and only if $\theta\delta_H=\delta_G|_H$.
+
+    Furthermore, when this holds, the functional $I_\theta$ is uniquely determined up to a constant.
+\end{prop}
+\begin{proof}
+    \cite[3.4 Proposition]{BH1}
+\end{proof}
+
+We remark that this is a generalisation of Proposition \ref{prop:haar}; indeed, by setting $H=\{e\}$ one recovers the usual right Haar integral on $G$. Similarly to the above case, when $\theta=\delta_H^{-1}\delta_G|_H$, one commonly expresses the functional $I_\theta$ with the integral notation 
+$$I_\theta(f)=\int_{H\backslash G}f(g)d\mu_{H\backslash G}(g),\quad f\in C_c^{\infty}(H\backslash G,\theta),$$
+where $\mu_{H\backslash G}$ is called a \textit{positive semi-invariant measure} on $H\backslash G$. Also, since such a $\theta$ for which Proposition \ref{prop:semiinvariant} holds is uniquely defined, it is common to write $\delta_{H\backslash G}$ for $\delta_H^{-1}\delta_G|_H$. We now have all the required machinery to describe the Duality Theorem.
+
+\begin{thm}
+    Let $H$ be a closed subgroup of a locally profinite group $G$ and let $\dot{\mu}$ be a positive semi-invariant measure on $H\backslash G$. Let $(\sigma,W)$ be a smooth representation of $H$. Then there is a natural isomorphism
+    $$\left(\cInd_H^G\sigma \right)^{\check{}}\cong \Ind_H^G(\delta_{H\backslash G}\otimes \check{\sigma}),$$
+    which only depends on the choice of $\dot{\mu}$.
+\end{thm}
+
+\begin{proof}
+    We sketch a proof to motivate why one would expect $\delta_{H\backslash G}$ to appear. For a detalied proof, check \cite[]{BH1}
+    Throughout, we view the action of $\delta_{H\backslash G}\otimes\check{\sigma}$ naturally on $\check{W}$ (where $\check{\sigma}$ acts). For $\phi\in \cInd_H^G\sigma$ and $\Phi\in\Ind_H^G\delta_{H\backslash G}\otimes\check{\sigma}$, 
+    we have that $\phi(g)\in W$ and $\Phi(g)\in\check{W}$ for any $g\in G$. We can then consider the function $$f:g\longmapsto\langle\Phi(g),\phi(g)\rangle,\quad g\in G $$ 
+    where $\langle\cdot,\cdot\rangle$ is the standard evaluation pairing on $\check{W}\times W$. This function satisfies 
+    $$f(hg)=\langle\Phi(hg),\phi(hg)\rangle=\delta_{H\backslash G}(h)\langle\check{\sigma}(h)\Phi(g),\sigma(h)\phi(g)\rangle=\delta_{H\backslash G}(h)\langle\Phi(g),\phi(g)\rangle=\delta_{H\backslash G}(h)f(g)\quad h\in H, g\in G.$$
+    Therefore, there is a well-defined pairing 
+    \begin{align*}
+        \Psi:\Ind_H^G(\delta_{H\backslash G}\otimes\check{\sigma})\times \cInd_H^G\sigma\longrightarrow\CC&,\\
+        (\Phi,\phi)\longmapsto\int_{H\backslash G}\langle\Phi(x),\phi(x)\rangle d\dot{\mu}(x)&.
+    \end{align*}
+    Crucially, this pairing is $G$-invariant. Indeed, 
+    $$\Psi(\rho_g\Phi,\rho_g\phi)=\int_{H\backslash G}\langle\Phi(xg),\phi(xg)\rangle d\dot{\mu}(x)=\int_{H\backslash G}\langle\Phi(x),\phi(x)\rangle d\dot{\mu}(x)=\Psi(\Phi,\phi)$$
+    by right translation invariance of the positive semi-invariant measure on $H/G$. 
+    This induces a $G$-homomorphism $\Ind_H^G(\delta_{H\backslash G}\otimes \check{\sigma})\to \left(\cInd_H^G\sigma \right)^{\check{}}$. The remaining of the proof consists on proving that this is an isomoprhism.
+
+    The main idea is that the $G$-homomorphism above is an isomorphism if and only if the following holds.
+    \begin{lemma}
+        The above pairing identifies $\left(\Ind_H^G(\delta_{H\backslash G}\otimes \check{\sigma})\right)^K$ bijectively with the linear dual of $\left(\cInd_H^G\sigma \right)^K$.
+    \end{lemma}
+    \begin{proof}
+        We omit the proof of this result. The advantage is that one can explicitly describe a canonical basis for each space, which are canonically identified by the pairing. For a complete description, check \cite[3.5 Lemma 2]{BH1}.
+    \end{proof}
+\end{proof}

@@ -6,12 +6,14 @@
 
 
 
-\usepackage{enumitem}
+\usepackage[shortlabels]{enumitem}
 \usepackage{amsfonts,amsmath, soul, matlab-prettifier, bm, amsthm,enumitem,amssymb,multirow,float,mathtools,bbm,array,varwidth,hyperref}
 \usepackage[all]{xy}
 \usepackage[margin=0.9in]{geometry}
 \usepackage{graphicx}
-\usepackage{mathtools, caption}
+\usepackage{mathtools, caption, dsfont}
+
+\mathchardef\mhyphen="2D
 
 
 \raggedbottom
@@ -64,6 +66,9 @@
 \newcommand{\fg}{\mathfrak{g}}
 \newcommand{\fm}{\mathfrak{m}}
 
+% shortcuts
+\newcommand{\CG}{C_c^{\infty}(G)}
+\newcommand{\cInd}{c\mhyphen\mathrm{Ind}}
 
 \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
 \newcommand{\hatv}[1]{\overset{\vee}{\mathstrut#1}}
@@ -99,8 +104,10 @@
 
 \section{Locally Profinite Groups and Smooth Representations}
 \input{section_reps_lpg/section_reps_lpg.tex}
+\section{Measure and the Duality Theorem}
+\input{section_measure_duality/section_measure_duality.tex}
 
-%need defn of (compact) induction and frobenius reciprocity, duality thm
+
 
 \section{Hecke Algebras}
 [Possibly put this whole section at the end with modular forms. I think we only need the computation of $\delta_B$ from here.]
