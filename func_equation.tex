@@ -294,9 +294,9 @@ $$\zeta\left(\Phi,f,s+\frac{1}{2}\right) = \int_{G} \Phi(x)f(x)|\det x|^{s+\frac
 The matrix coefficients $\mathcal C(\pi)$ are spanned by 
 $$\gamma_{\tau \otimes \theta} : g \mapsto \langle \tau, \pi(g) \theta \rangle$$ over $\theta \in V, \tau \in \check{V}$. Here $\theta \in \iota_B^G \chi$ is viewed as a smooth function $\theta : G \to \CC$ satisfying 
 $$\theta(ntg) = \delta_B^{-1/2}(t) \chi(t) \theta(g)$$
-for any $t \in T, n \in N, g \in G$. The Duality Theorem [ADD REFERENCE] identifies $\check{V} \cong \iota_B^G \check{\chi}$. In this way we view $\tau$ as a smooth function $\tau: G \to \CC$ satisfying
+for any $t \in T, n \in N, g \in G$. The Duality Theorem \ref{thm:duality} identifies $\check{V} \cong \iota_B^G \check{\chi}$. In this way we view $\tau$ as a smooth function $\tau: G \to \CC$ satisfying
 $$\tau(ntg) = \delta_B^{-1/2}(t)\chi(t)^{-1}\tau(g)$$
-for any $t \in T, n \in N, g \in G$. The proof of the Duality Theorem shows that the pairing between $V$ and $\check{V}$ gives
+for any $t \in T, n \in N, g \in G$. The proof of the Duality Theorem \ref{thm:duality} shows that the pairing between $V$ and $\check{V}$ gives
 $$\gamma_{\tau \otimes \theta}(g) = \langle \tau, \pi(g)\theta \rangle = \int_{B\backslash G} \tau(x)\theta(xg) d\dot{x}$$ for a positive semi-invariant measure $d\dot{x}$ on $B \backslash G$. Let $K=\GL_2(\cO_F)$. Since we have a bijection $B \backslash G \leftrightarrow K \cap B \backslash K$ and $\delta_B(tn)=\delta_B(t) = |t_2/t_1|$ (Proposition \ref{prop:modularchar}) is trivial on $K\cap B$, we can rewrite this as 
 $$\gamma_{\tau \otimes \theta}(g) = \int_K \tau(k)\theta(kg)dk$$ for some Haar measure $dk$ on $K$ (\cite[Corollary 7.6]{BH1}). Moreover, \cite[Equation 7.6.2]{BH1} tells us that there is a left Haar measure $db$ on $B$ such that
 $$\int_G \phi(g) dg = \int_K \int_B \phi(bk) dbdk$$ for all $\phi \in C_c^\infty(G)$. Using this, our zeta integrals reduce to integrals over $B$ and $K$. Integration over $K$ is easier to handle using the smoothness of our representations. We can write $db = dn dt$ to view integration over $B$ as integration over $T$ and $N$. In order to relate $\zeta(\Phi,f,s+\frac{1}{2})$ to zeta functions coming from $\chi: T \to \CC^\times$, we want to express the integrals over $B$ solely in terms of integrals over $T$. To do so we use the following lemma. 

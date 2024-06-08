@@ -16,7 +16,7 @@ In studying the local Langlands correspondence, we want to understand all the ir
 
 In this section, we will only concern ourselves with classifying the principal series representations of $G$. This means that we must understand how $\Ind_B^G \chi$ decomposes into irreducible representations of $G$, and also study the morphisms between them using Frobenius reciprocity.
 
-To understand these decompositions, we want to study how they decompose into irreducibles over a less unwieldy subgroup of $G$, such as $B$. Note that restricting $\Ind_B^G \chi$ to $B$ is analogous to applying Mackey theory in the finite group context. It turns out that the $\Ind_B^G \chi$ do not decompose any further over $M$ than over $B$. On the other hand, the representation theory of $M$ is very easy to classify - the combination of these two observations is what makes the mirabolic subgroup so `miraculous'. To get representations of $M$ we can induce from characters of $N$, or inflate from $M/N\cong F^\times$. There are many characters of $N\cong F$, in fact these are in bijection with $F$ [REFER TO SECTION 1]. The key property of $M$ is that conjugation by $M$ acts transitively on these characters $\psi$, which greatly simplifies the representation theory of $M$ coming via induction from $N$. The mirabolic $M$ is also small enough that this induction, together with the characters of $F^\times$, give all irreducible representations of $M$.
+To understand these decompositions, we want to study how they decompose into irreducibles over a less unwieldy subgroup of $G$, such as $B$. Note that restricting $\Ind_B^G \chi$ to $B$ is analogous to applying Mackey theory in the finite group context. It turns out that the $\Ind_B^G \chi$ do not decompose any further over $M$ than over $B$. On the other hand, the representation theory of $M$ is very easy to classify - the combination of these two observations is what makes the mirabolic subgroup so `miraculous'. To get representations of $M$ we can induce from characters of $N$, or inflate from $M/N\cong F^\times$. There are many characters of $N\cong F$, in fact these are in bijection with $F$ by Additive Duality \ref{add_dual}. The key property of $M$ is that conjugation by $M$ acts transitively on these characters $\psi$, which greatly simplifies the representation theory of $M$ coming via induction from $N$. The mirabolic $M$ is also small enough that this induction, together with the characters of $F^\times$, give all irreducible representations of $M$.
 
 In this section, we begin by studying the representations of $N$ and introducing the Jacquet functor, before discussing representations of $M$. From there we determine that parabolically induced representations of $G$ decompose over $M$ with length at most 3. Theorem \ref{criterion} gives the decomposition of $\Ind_B^G \chi$ into irreducible representations of $G$, and then Theorem \ref{classify} lists the isomorphism classes of principal series representations. The presentation follows sections 8 and 9 of \cite{BH1}.
 
@@ -87,7 +87,7 @@ Now we consider $V$ an irreducible smooth representation of $M$.
 	\end{pmatrix} = \begin{pmatrix}
 		1 & ax \\ 0 & 1
 	\end{pmatrix}\]
-	together with [ADDITIVE DUALITY] implies the claim.
+	together with Additive Duality \ref{add_dual} implies the claim.
 \end{proof}
 
 
@@ -379,7 +379,7 @@ We make some comments in preparation for the proof. Suppose $X$ is a reducible r
 
     We need to show that $X$ has $G$-length 2. By the Corollary \ref{length 3} it has length at most 3. We know that $V$ has $B$-length 2 with a 1-dimensional quotient $V_N$. If $Y$ had $G$-length 2, then the $B$-factors of $V$ are also $G$-factors, so that $G$ must act on $V_N$, necessarily by a character $\phi' \circ \det$. But this is impossible because $B \leq G$ acts on $V_N$ by $\phi \delta_B^{-1}$ by Restriction-Induction, and this does not factor through $\det$ on $B$. So we must have that $Y$ is irreducible over $G$ and so $X$ has $G$-length 2.
 
-    In the other case we have a finite dimensional $G$-quotient. The smooth dual $X^\vee$ is then in the first case, where the Duality Theorem (\cite[Theorem 3.5]{BH1}) tells us that $X^\vee \cong \mathrm{Ind}_B^G \delta_B^{-1} \chi^\vee$. If we write $\delta_B^{-1} \chi^\vee = \psi_1 \otimes \psi_2$ then we must have $\psi_1 = \psi_2$. Computing $\psi_1(x) = |x|^{-1} \chi_1(x)$ and $\psi_2(x) = |x| \chi_2(x)$ gives $\chi_1\chi_2^{-1} = |\cdot|^2$.
+    In the other case we have a finite dimensional $G$-quotient. The smooth dual $X^\vee$ is then in the first case, where the Duality Theorem \ref{thm:duality} tells us that $X^\vee \cong \mathrm{Ind}_B^G \delta_B^{-1} \chi^\vee$. If we write $\delta_B^{-1} \chi^\vee = \psi_1 \otimes \psi_2$ then we must have $\psi_1 = \psi_2$. Computing $\psi_1(x) = |x|^{-1} \chi_1(x)$ and $\psi_2(x) = |x| \chi_2(x)$ gives $\chi_1\chi_2^{-1} = |\cdot|^2$.
 
     The converse direction to (1) follows from the previous proposition.
 \end{proof}
@@ -414,7 +414,7 @@ We can be more explicit in the reducible case. One can check that the conditions
 \end{defn}
 
 The case $\chi = \delta_B^{-1}$ can be dealt with by taking smooth duals (which is exact by \cite[Lemma 2.10]{BH1}) to get 
-$$\xymatrix{0 \ar[r] & \mathrm{St}_G^\vee \ar[r] & \Ind_B^G \delta_B^{-1} \ar[r] & 1_G \ar[r] & 0,}$$ where we use the Duality Theorem, \cite[Theorem 3.5]{BH1}. The Irreducibility Criterion implies that $\mathrm{St}_G^\vee$ is also irreducible, and in fact the previous proposition applied to $\chi=1, \xi = \delta_B^{-1}$ implies that
+$$\xymatrix{0 \ar[r] & \mathrm{St}_G^\vee \ar[r] & \Ind_B^G \delta_B^{-1} \ar[r] & 1_G \ar[r] & 0,}$$ where we use the Duality Theorem \ref{thm:duality}. The Irreducibility Criterion implies that $\mathrm{St}_G^\vee$ is also irreducible, and in fact the previous proposition applied to $\chi=1, \xi = \delta_B^{-1}$ implies that
 $$\mathrm{St}_G \cong \mathrm{St}_G^\vee.$$
 % we can see irreducibility by prop 2.10 and using admissibility 
 % add our own duality thm?
@@ -422,7 +422,7 @@ $$\mathrm{St}_G \cong \mathrm{St}_G^\vee.$$
 \begin{notn}
     Define normalised induction by
     $$\iota_B^G \sigma = \Ind_B^G (\delta_B^{-1/2} \otimes \sigma).$$
-    This has the benefit that $(\iota_B^G \sigma)^\vee \cong \iota_B^G \sigma^\vee$ (\cite[Theorem 3.5]{BH1}).
+    This has the benefit that $(\iota_B^G \sigma)^\vee \cong \iota_B^G \sigma^\vee$ (Theorem \ref{thm:duality}).
 \end{notn}
 
 \begin{thm}[Classification Theorem]\label{classify}
