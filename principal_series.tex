@@ -11,7 +11,7 @@ Let $F$ be a nonarchimedean local field, $G=\GL_2(F)$, and $B=\{\begin{psmallmat
 In studying the local Langlands correspondence, we want to understand all the irreducible smooth representations of $G$. One method for producing representations of $G$ is by induction from a subgroup of $G$. Typically one takes this subgroup to be `parabolic'; in our case there is one nontrivial parabolic, namely $B$. From our decomposition $B=N \rtimes T$ (more generally we have a so-called Levi decomposition) we see that we can produce representations of $B$ by inflating representations of the torus $T$. Since $T \cong F^\times \times F^\times$, the irreducible representations of $T$ are products of characters of $F^\times$, which are relatively easy to get a handle on.
 
 \begin{defn}
-    For $\chi:T \to \CC^\times$ a character of the torus, we say that the representation $\Ind_B^G \chi$ is a parabolically induced representation. A principal series representation is an irreducible subrepresentation of a parabolically induced representation.
+    For $\chi:T \to \CC^\times$ a character of the torus, we say that the representation $\Ind_B^G \chi$ is a \textit{parabolically induced representation}. A \textit{principal series representation} is an irreducible subrepresentation of a parabolically induced representation.
 \end{defn}
 
 In this section, we will only concern ourselves with classifying the principal series representations of $G$. This means that we must understand how $\Ind_B^G \chi$ decomposes into irreducible representations of $G$, and also study the morphisms between them using Frobenius reciprocity.
@@ -132,7 +132,7 @@ Let $q_*: V \to \Ind_N^M(V_\theta)$ be the image of the quotient map $q: V \to V
 Let $V$ be a smooth representation of $G$. In the preceding subsections, we defined the quotient $V_N =V/V(N)$, called the $N$-coinvariants of $V$. As in Lemma \ref{coinvariants}, this is a representation of $B$ (as $N \lhd B$). As $N$ acts trivially on $V_N$, $V_N$ inherits the structure of a representation of $T=B/N$.
 
 \begin{defn}
-    Let $V$ be a smooth representation of $G$ (or $B$). The Jacquet module of $V$ at $N$ is the space of $N$-coinvariants $V_N$ viewed as a representation of $T$. The Jacquet functor is the functor sending the $G$-representation $(\pi,V)$ to the $T$-representation $(\pi_N,V_N)$. 
+    Let $V$ be a smooth representation of $G$ (or $B$). The \textit{Jacquet module} of $V$ at $N$ is the space of $N$-coinvariants $V_N$ viewed as a representation of $T$. The \textit{Jacquet functor} is the functor sending the $G$-representation $(\pi,V)$ to the $T$-representation $(\pi_N,V_N)$. 
 \end{defn}
 
 By Corollary \ref{exact}, the Jacquet functor is exact.
@@ -317,7 +317,7 @@ So we understand how $\mathrm{Ind}_B^G \chi$ decomposes into irreducible $B$-rep
 We make some comments in preparation for the proof. Suppose $X$ is a reducible representation of $G$, and $X_0$ a nonzero proper subrepresentation. If $X_0$ is finite-dimensional, then its composition factors over $B$ can only consist of the 1-dimensional composition factors of $X$ over $B$ described in Corollary \ref{length 3}. If $X_0$ is infinite dimensional, then it contains the infinite-dimensional $B$-composition factor of Corollary \ref{length 3}, and so the quotient $X/X_0$ can only consist of the 1-dimensional factors. In all, if $X$ is reducible then it has a finite dimensional (dimension 1 or 2) $G$-subspace or $G$-quotient. By taking duals we can assume we are in the first case. In the Irreducibility Criterion, we want to show that this implies $\chi_1 = \chi_2$ and that $X$ has a 1-dimensional $G$-subspace.
 
 \begin{defn}
-    Let $\pi$ be a smooth representation of $G$ and $\phi$ a character of $F^\times$. The twist of $\pi$ by $\phi$ is the representation $\phi\pi$ of $G$ defined by 
+    Let $\pi$ be a smooth representation of $G$ and $\phi$ a character of $F^\times$. The \text{twist of $\pi$ by $\phi$} is the representation $\phi\pi$ of $G$ defined by 
     $$\phi \pi(g) = \phi (\det g)\pi(g).$$
     In this way, for a character $\chi=\chi_1 \otimes \chi_2$ of $T$, we have $\phi\chi = \phi\chi_1 \otimes \phi\chi_2$. 
 \end{defn}
@@ -409,7 +409,7 @@ In the case that $\Ind \chi$ is irreducible, we deduce that $\Ind \chi \cong \In
 We can be more explicit in the reducible case. One can check that the conditions for reducibility in the Irreducibility Criterion are equivalent to $\chi$ being of the form $\chi = \phi 1_T$ or $\chi =\phi \delta_B^{-1}$ for $\phi$ a character of $F^\times$. Untwisting, we may as well assume $\phi=1$ in what follows.
 
 \begin{defn}
-    The Steinberg representation of $G$ is defined by the exact sequence
+    The \textit{Steinberg representation} of $G$ is defined by the exact sequence
     $$\xymatrix{0 \ar[r] & 1_G \ar[r] & \Ind_B^G 1_T \ar[r] & \mathrm{St}_G \ar[r] & 0,}$$ and is an infinite-dimensional irreducible smooth representation. By Restriction-Induction, the Jacquet module is $(\mathrm{St}_G)_N \cong \delta_B^{-1}$. The representations $\phi \mathrm{St}_G$ are called `twists of Steinberg' or `special representations'.
 \end{defn}
 
