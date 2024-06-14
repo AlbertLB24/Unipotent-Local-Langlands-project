@@ -11,12 +11,12 @@ Let $F$ be a nonarchimedean local field, $G=\GL_2(F)$, and $B=\{\begin{psmallmat
 In studying the local Langlands correspondence, we want to understand all the irreducible smooth representations of $G$. One method for producing representations of $G$ is by induction from a subgroup of $G$. Typically one takes this subgroup to be `parabolic'; in our case there is one nontrivial parabolic, namely $B$. From our decomposition $B=N \rtimes T$ (more generally we have a so-called Levi decomposition) we see that we can produce representations of $B$ by inflating representations of the torus $T$. Since $T \cong F^\times \times F^\times$, the irreducible representations of $T$ are products of characters of $F^\times$, which are relatively easy to get a handle on.
 
 \begin{defn}
-    For $\chi:T \to \CC^\times$ a character of the torus, we say that the representation $\Ind_B^G \chi$ is a parabolically induced representation. A principal series representation is an irreducible subrepresentation of a parabolically induced representation.
+    For $\chi:T \to \CC^\times$ a character of the torus, we say that the representation $\Ind_B^G \chi$ is a \textit{parabolically induced representation}. A \textit{principal series representation} is an irreducible subrepresentation of a parabolically induced representation.
 \end{defn}
 
 In this section, we will only concern ourselves with classifying the principal series representations of $G$. This means that we must understand how $\Ind_B^G \chi$ decomposes into irreducible representations of $G$, and also study the morphisms between them using Frobenius reciprocity.
 
-To understand these decompositions, we want to study how they decompose into irreducibles over a less unwieldy subgroup of $G$, such as $B$. Note that restricting $\Ind_B^G \chi$ to $B$ is analogous to applying Mackey theory in the finite group context. It turns out that the $\Ind_B^G \chi$ do not decompose any further over $M$ than over $B$. On the other hand, the representation theory of $M$ is very easy to classify - the combination of these two observations is what makes the mirabolic subgroup so `miraculous'. To get representations of $M$ we can induce from characters of $N$, or inflate from $M/N\cong F^\times$. There are many characters of $N\cong F$, in fact these are in bijection with $F$ [REFER TO SECTION 1]. The key property of $M$ is that conjugation by $M$ acts transitively on these characters $\psi$, which greatly simplifies the representation theory of $M$ coming via induction from $N$. The mirabolic $M$ is also small enough that this induction, together with the characters of $F^\times$, give all irreducible representations of $M$.
+To understand these decompositions, we want to study how they decompose into irreducibles over a less unwieldy subgroup of $G$, such as $B$. Note that restricting $\Ind_B^G \chi$ to $B$ is analogous to applying Mackey theory in the finite group context. It turns out that the $\Ind_B^G \chi$ do not decompose any further over $M$ than over $B$. On the other hand, the representation theory of $M$ is very easy to classify - the combination of these two observations is what makes the mirabolic subgroup so `miraculous'. To get representations of $M$ we can induce from characters of $N$, or inflate from $M/N\cong F^\times$. There are many characters of $N\cong F$, in fact these are in bijection with $F$ by Additive Duality \ref{add_dual}. The key property of $M$ is that conjugation by $M$ acts transitively on these characters $\psi$, which greatly simplifies the representation theory of $M$ coming via induction from $N$. The mirabolic $M$ is also small enough that this induction, together with the characters of $F^\times$, give all irreducible representations of $M$.
 
 In this section, we begin by studying the representations of $N$ and introducing the Jacquet functor, before discussing representations of $M$. From there we determine that parabolically induced representations of $G$ decompose over $M$ with length at most 3. Theorem \ref{criterion} gives the decomposition of $\Ind_B^G \chi$ into irreducible representations of $G$, and then Theorem \ref{classify} lists the isomorphism classes of principal series representations. The presentation follows sections 8 and 9 of \cite{BH1}.
 
@@ -87,7 +87,7 @@ Now we consider $V$ an irreducible smooth representation of $M$.
 	\end{pmatrix} = \begin{pmatrix}
 		1 & ax \\ 0 & 1
 	\end{pmatrix}\]
-	together with [ADDITIVE DUALITY] implies the claim.
+	together with Additive Duality \ref{add_dual} implies the claim.
 \end{proof}
 
 
@@ -132,7 +132,7 @@ Let $q_*: V \to \Ind_N^M(V_\theta)$ be the image of the quotient map $q: V \to V
 Let $V$ be a smooth representation of $G$. In the preceding subsections, we defined the quotient $V_N =V/V(N)$, called the $N$-coinvariants of $V$. As in Lemma \ref{coinvariants}, this is a representation of $B$ (as $N \lhd B$). As $N$ acts trivially on $V_N$, $V_N$ inherits the structure of a representation of $T=B/N$.
 
 \begin{defn}
-    Let $V$ be a smooth representation of $G$ (or $B$). The Jacquet module of $V$ at $N$ is the space of $N$-coinvariants $V_N$ viewed as a representation of $T$. The Jacquet functor is the functor sending the $G$-representation $(\pi,V)$ to the $T$-representation $(\pi_N,V_N)$. 
+    Let $V$ be a smooth representation of $G$ (or $B$). The \textit{Jacquet module} of $V$ at $N$ is the space of $N$-coinvariants $V_N$ viewed as a representation of $T$. The \textit{Jacquet functor} is the functor sending the $G$-representation $(\pi,V)$ to the $T$-representation $(\pi_N,V_N)$. 
 \end{defn}
 
 By Corollary \ref{exact}, the Jacquet functor is exact.
@@ -317,7 +317,7 @@ So we understand how $\mathrm{Ind}_B^G \chi$ decomposes into irreducible $B$-rep
 We make some comments in preparation for the proof. Suppose $X$ is a reducible representation of $G$, and $X_0$ a nonzero proper subrepresentation. If $X_0$ is finite-dimensional, then its composition factors over $B$ can only consist of the 1-dimensional composition factors of $X$ over $B$ described in Corollary \ref{length 3}. If $X_0$ is infinite dimensional, then it contains the infinite-dimensional $B$-composition factor of Corollary \ref{length 3}, and so the quotient $X/X_0$ can only consist of the 1-dimensional factors. In all, if $X$ is reducible then it has a finite dimensional (dimension 1 or 2) $G$-subspace or $G$-quotient. By taking duals we can assume we are in the first case. In the Irreducibility Criterion, we want to show that this implies $\chi_1 = \chi_2$ and that $X$ has a 1-dimensional $G$-subspace.
 
 \begin{defn}
-    Let $\pi$ be a smooth representation of $G$ and $\phi$ a character of $F^\times$. The twist of $\pi$ by $\phi$ is the representation $\phi\pi$ of $G$ defined by 
+    Let $\pi$ be a smooth representation of $G$ and $\phi$ a character of $F^\times$. The \text{twist of $\pi$ by $\phi$} is the representation $\phi\pi$ of $G$ defined by 
     $$\phi \pi(g) = \phi (\det g)\pi(g).$$
     In this way, for a character $\chi=\chi_1 \otimes \chi_2$ of $T$, we have $\phi\chi = \phi\chi_1 \otimes \phi\chi_2$. 
 \end{defn}
@@ -379,7 +379,7 @@ We make some comments in preparation for the proof. Suppose $X$ is a reducible r
 
     We need to show that $X$ has $G$-length 2. By the Corollary \ref{length 3} it has length at most 3. We know that $V$ has $B$-length 2 with a 1-dimensional quotient $V_N$. If $Y$ had $G$-length 2, then the $B$-factors of $V$ are also $G$-factors, so that $G$ must act on $V_N$, necessarily by a character $\phi' \circ \det$. But this is impossible because $B \leq G$ acts on $V_N$ by $\phi \delta_B^{-1}$ by Restriction-Induction, and this does not factor through $\det$ on $B$. So we must have that $Y$ is irreducible over $G$ and so $X$ has $G$-length 2.
 
-    In the other case we have a finite dimensional $G$-quotient. The smooth dual $X^\vee$ is then in the first case, where the Duality Theorem (\cite[Theorem 3.5]{BH1}) tells us that $X^\vee \cong \mathrm{Ind}_B^G \delta_B^{-1} \chi^\vee$. If we write $\delta_B^{-1} \chi^\vee = \psi_1 \otimes \psi_2$ then we must have $\psi_1 = \psi_2$. Computing $\psi_1(x) = |x|^{-1} \chi_1(x)$ and $\psi_2(x) = |x| \chi_2(x)$ gives $\chi_1\chi_2^{-1} = |\cdot|^2$.
+    In the other case we have a finite dimensional $G$-quotient. The smooth dual $X^\vee$ is then in the first case, where the Duality Theorem \ref{thm:duality} tells us that $X^\vee \cong \mathrm{Ind}_B^G \delta_B^{-1} \chi^\vee$. If we write $\delta_B^{-1} \chi^\vee = \psi_1 \otimes \psi_2$ then we must have $\psi_1 = \psi_2$. Computing $\psi_1(x) = |x|^{-1} \chi_1(x)$ and $\psi_2(x) = |x| \chi_2(x)$ gives $\chi_1\chi_2^{-1} = |\cdot|^2$.
 
     The converse direction to (1) follows from the previous proposition.
 \end{proof}
@@ -409,12 +409,12 @@ In the case that $\Ind \chi$ is irreducible, we deduce that $\Ind \chi \cong \In
 We can be more explicit in the reducible case. One can check that the conditions for reducibility in the Irreducibility Criterion are equivalent to $\chi$ being of the form $\chi = \phi 1_T$ or $\chi =\phi \delta_B^{-1}$ for $\phi$ a character of $F^\times$. Untwisting, we may as well assume $\phi=1$ in what follows.
 
 \begin{defn}
-    The Steinberg representation of $G$ is defined by the exact sequence
+    The \textit{Steinberg representation} of $G$ is defined by the exact sequence
     $$\xymatrix{0 \ar[r] & 1_G \ar[r] & \Ind_B^G 1_T \ar[r] & \mathrm{St}_G \ar[r] & 0,}$$ and is an infinite-dimensional irreducible smooth representation. By Restriction-Induction, the Jacquet module is $(\mathrm{St}_G)_N \cong \delta_B^{-1}$. The representations $\phi \mathrm{St}_G$ are called `twists of Steinberg' or `special representations'.
 \end{defn}
 
 The case $\chi = \delta_B^{-1}$ can be dealt with by taking smooth duals (which is exact by \cite[Lemma 2.10]{BH1}) to get 
-$$\xymatrix{0 \ar[r] & \mathrm{St}_G^\vee \ar[r] & \Ind_B^G \delta_B^{-1} \ar[r] & 1_G \ar[r] & 0,}$$ where we use the Duality Theorem, \cite[Theorem 3.5]{BH1}. The Irreducibility Criterion implies that $\mathrm{St}_G^\vee$ is also irreducible, and in fact the previous proposition applied to $\chi=1, \xi = \delta_B^{-1}$ implies that
+$$\xymatrix{0 \ar[r] & \mathrm{St}_G^\vee \ar[r] & \Ind_B^G \delta_B^{-1} \ar[r] & 1_G \ar[r] & 0,}$$ where we use the Duality Theorem \ref{thm:duality}. The Irreducibility Criterion implies that $\mathrm{St}_G^\vee$ is also irreducible, and in fact the previous proposition applied to $\chi=1, \xi = \delta_B^{-1}$ implies that
 $$\mathrm{St}_G \cong \mathrm{St}_G^\vee.$$
 % we can see irreducibility by prop 2.10 and using admissibility 
 % add our own duality thm?
@@ -422,7 +422,7 @@ $$\mathrm{St}_G \cong \mathrm{St}_G^\vee.$$
 \begin{notn}
     Define normalised induction by
     $$\iota_B^G \sigma = \Ind_B^G (\delta_B^{-1/2} \otimes \sigma).$$
-    This has the benefit that $(\iota_B^G \sigma)^\vee \cong \iota_B^G \sigma^\vee$ (\cite[Theorem 3.5]{BH1}).
+    This has the benefit that $(\iota_B^G \sigma)^\vee \cong \iota_B^G \sigma^\vee$ (Theorem \ref{thm:duality}).
 \end{notn}
 
 \begin{thm}[Classification Theorem]\label{classify}
