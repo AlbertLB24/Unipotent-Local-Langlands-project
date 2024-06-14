@@ -44,11 +44,11 @@ In addition, the Fouirer transform also commutes with another operator that natu
     Since $\psi_A = \psi \circ \mathrm{tr}_A$ and $\mathrm{tr}_A$ is invariant under conjugation, we have $\psi_A(k_j^{-1}xk_iy) = \psi_A(xk_iyk_j^{-1})$.
 \end{proof}
 
-We require one last element of notation before we can state and prove the functional equation for $G$, the main result of this section. Recall that for the $F^\times$ case, the functional equation related $\zeta(\hat{\Phi},\check{\chi},1-s)$ with $\zeta(\Phi,\chi,s)$, where $\check{\chi}(g)=\chi(g^{-1})$. Analogously, given a matrix coefficient $f\in\mathcal{C}(\pi)$, we denote by $\check{f} \in \mathcal C(\check\pi)$ the matrix coefficient $\check{f}(g) = f(g^{-1})$.
+We require one last element of notation before we can state and prove the functional equation for $G$, the main result of this section. Recall that for the $F^\times$ case, the functional equation related $\zeta(\hat{\Phi},\check{\chi},1-s)$ with $\zeta(\Phi,\chi,s)$, where $\check{\chi}(g)=\chi(g^{-1})$. Analogously, given a matrix coefficient $f\in\mathcal{C}(\pi)$, we write $\check{f} \in \mathcal C(\check\pi)$ for the matrix coefficient $\check{f}(g) = f(g^{-1})$.
 
 \begin{prop}\label{prop:gl2gamma}
     Let $\pi = \iota_B^G \chi$ where $\chi=\chi_1\otimes \chi_2$ is a character of $T$. There is a unique $\gamma(\pi,s,\psi) \in \CC(q^{-s})$, depending on the additive character $\psi \neq 1$ of $F$ defining the Fourier transform, such that 
-    $$\zeta(\hat{\Phi},\check{f},(1-s)+\frac{1}{2}) = \gamma(\pi,s,\psi) \zeta(\Phi,f,s+\frac{1}{2})$$
+    $$\zeta\left(\hat{\Phi},\check{f},(1-s)+\frac{1}{2}\right) = \gamma(\pi,s,\psi) \zeta\left(\Phi,f,s+\frac{1}{2}\right)$$
     for all $\Phi \in C_c^\infty(A)$ and $f \in \mathcal C(\pi)$. Moreover, 
     $$\gamma(\pi,s,\psi) = \gamma(\chi_1,s,\psi)\gamma(\chi_2,s,\psi).$$
 \end{prop}
@@ -58,7 +58,7 @@ We require one last element of notation before we can state and prove the functi
     $$\check{f}(g) = \int_{B \backslash G}\tau(xg)\theta(x) d\dot{x} = \int_K \tau(kg)\theta(k)dk.$$ The same computation as the proof of Proposition \ref{prop:gl2factor} gives (for the same $K_1$ and coset representatives $k_i$ of $K/K_1$)
     \begin{equation*}
         \begin{split}
-            \zeta(\hat{\Phi},\check{f},(1-s)+\frac{1}{2}) &= \mu(K_1)^2 \sum\limits_{i,j} \theta(k_j)\tau(k_i) \int_T (\hat\Phi^{ji})_T(t) \chi(t)^{-1} |\det t|^{1-s} dt \\
+            \zeta\left(\hat{\Phi},\check{f},(1-s)+\frac{1}{2}\right) &= \mu(K_1)^2 \sum\limits_{i,j} \theta(k_j)\tau(k_i) \int_T (\hat\Phi^{ji})_T(t) \chi(t)^{-1} |\det t|^{1-s} dt \\
             &= \mu(K_1)^2 \sum\limits_{i,j} \theta(k_j)\tau(k_i) \int_T \widehat{(\Phi_T^{ij})}(t) \chi(t)^{-1} |\det t|^{1-s} dt
         \end{split}
     \end{equation*}
@@ -67,14 +67,13 @@ We require one last element of notation before we can state and prove the functi
         \int_{F^\times}\int_{F^\times}& \widehat{(\Phi^{ij}_T)}(t)\chi_1(t_1)^{-1}\chi_2(t_2)^{-1}|t_1t_2|^{1-s} dt_2dt_1 \\
         =&\ \gamma(\chi_1,s,\psi)\gamma(\chi_2,s,\psi) \int_{F^\times} \int_{F^\times}\Phi^{ij}_T(t)\chi_1(t_1)\chi_2(t_2) |t_1t_2|^s dt_2dt_1,
     \end{align*}
-    
     where $t = \begin{psmallmatrix}
         t_1 &0\\0&t_2
     \end{psmallmatrix} \in T$. By Theorem \ref{thm:gl1gamma}, this equality holds whenever we replace $\Phi^{ij}_T \in C_c^\infty(D)$ by a function of the form $\phi_{11}(t_1) \otimes \phi_{22}(t_2) \in C_c^\infty(D)$. But such functions span $C_c^\infty(D)$, so we are done by linearity of the integrals.
 \end{proof}
 
 \begin{defn}
-    Define the Godement-Jacquet local constant $\varepsilon(\pi,s,\psi)$ of $\pi = \iota_B^G \chi$ by 
+    Define the \textit{Godement-Jacquet local constant} $\varepsilon(\pi,s,\psi)$ of $\pi = \iota_B^G \chi$ by 
     $$\varepsilon(\pi,s,\psi) = \gamma(\pi,s,\psi) \frac{L(\pi,s)}{L(\check{\pi},1-s)}.$$
 \end{defn}
 
@@ -91,16 +90,23 @@ Similarly to case of the $L$-functions, one can also prove more general versions
 
 \begin{thm}\label{BHThm2}
     Let $\pi$ be an irreducible smooth representation of $G$. There is a unique rational function $\gamma(\pi,s,\psi) \in \CC(q^{-s})$ such that 
-    $$\zeta(\hat\Phi,\check{f},(1-s)+\frac{1}{2}) = \gamma(\pi,s,\psi) \zeta(\Phi,f,s+\frac{1}{2})$$ for all $\Phi \in C_c^\infty(A)$ and $f \in \mathcal C(\pi)$. \textbf{If $\pi$ is a composition factor of $\Ind_B^G\chi$ for some character $\chi=\chi_1\otimes\chi_2$ of $T$, then
-    $$\gamma(\pi,s,\psi)=\gamma(\chi_1,s,\psi)\gamma(\chi_2,s,\psi).$$
-    }
+    $$\zeta\left(\hat\Phi,\check{f},(1-s)+\frac{1}{2}\right) = \gamma(\pi,s,\psi) \zeta\left(\Phi,f,s+\frac{1}{2}\right)$$ for all $\Phi \in C_c^\infty(A)$ and $f \in \mathcal C(\pi)$.
 \end{thm}
 \begin{proof}
     \cite[Theorem 24.2.2]{BH1}.
 \end{proof}
 
+The above theorem holds for any irreducible representation $\pi$ of $G$. When $\pi$ is a principal series representation, then $\gamma(\pi,s,\psi)$ has an explicit description.
+
+\begin{lemma}
+    If $(\pi,V)$ is a composition factor of $\Ind_B^G\chi$ for some character $\chi=\chi_1\otimes\chi_2$ of $T$, then
+    $$\gamma(\pi,s,\psi)=\gamma\left(\Ind_B^G\chi,s,\psi\right)=\gamma(\chi_1,s,\psi)\gamma(\chi_2,s,\psi).$$
+\end{lemma}
+
+
+
 \begin{defn}
-    Define the Godement-Jacquet local constant $\varepsilon(\pi,s,\psi)$ of an irreducible smooth representation $\pi$ of $G$ by 
+    Define the \textit{Godement-Jacquet local constant} $\varepsilon(\pi,s,\psi)$ of an irreducible smooth representation $\pi$ of $G$ by 
     $$\varepsilon(\pi,s,\psi) = \gamma(\pi,s,\psi) \frac{L(\pi,s)}{L(\check{\pi},1-s)}.$$
 \end{defn}
 
@@ -128,6 +134,7 @@ The Propositions \ref{prop:gl2factor} and \ref{prop:gl2gamma} prove the Theorems
         \hline
        \end{tabular}
        \caption{$L$-functions and local constants of principal series representations of $G$}
+       \label{table:Lfunc}
 \end{figure}
 
 In particular, if $\pi$ is a composition factor of $\iota_B^G \chi$ then $L(\pi,s) = L(\chi_1,s)L(\chi_2,s)$, unless $\pi = \phi \mathrm{St}_G$ for some unramified character $\phi : F^\times \to \CC^\times$.

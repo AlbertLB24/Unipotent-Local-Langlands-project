@@ -4,7 +4,7 @@ Let $F$ be a nonarchimedean local field, $\varpi$ be a uniformiser and $q$ be th
 
 Therefore, we explain these results first in the context of irreducible smooth representations $\chi$ of $\GL_1(F)$, necessarily a character $\chi: F^\times \to \CC^\times$. To mimic the development we aim to follow for the case of irreducible representations of $\GL_2(F)$, we will first define the space $\mathcal Z(\chi)$ from which the definition of the L-function $L(\chi,s)$ arises naturally. Afterwards, we will introduce the analogue of the Fourier transform over $F$. This will lead us to the proof of the functional equation of $\GL_1$ and the construction of the local constant $\varepsilon(\chi,s,\psi)$. 
 
-Let $\chi: F^\times \to \CC^\times$ be a smooth character of $F^\times$. We want to attach to this character an $L$-function $L(\chi,s)$ in the formal variable $s$. This is defined to be $(1-\chi(\varpi)q^{-s})^{-1}$ when $\chi$ is unramified, and 1 otherwise. In order to generalise to $\GL_2$ it would be preferable to have a more intrinsic definition.
+Let $\chi: F^\times \to \CC^\times$ be a character of $F^\times$. We want to attach to this character an $L$-function $L(\chi,s)$ in the formal variable $s$. This is defined to be $(1-\chi(\varpi)q^{-s})^{-1}$ when $\chi$ is unramified, and 1 otherwise. In order to generalise to $\GL_2$ it would be preferable to have a more intrinsic definition.
 
 \begin{defn}
     For $\Phi \in C_c^\infty(F)$ and $\chi :F^\times \to \CC^\times$, define the zeta function $\zeta(\Phi,\chi,s)$ to be
@@ -14,13 +14,13 @@ Let $\chi: F^\times \to \CC^\times$ be a smooth character of $F^\times$. We want
 We remark that we can equivalently rewrite the zeta function as
 $$\zeta(\Phi,\chi,s) = \sum\limits_{m \in \ZZ} z_m q^{-ms}$$
 where $$z_m = \int\limits_{\varpi^m \mathcal O_F^\times} \Phi(x)\chi(x)d^*x.$$ 
-Note that $z_m=z_m(\Phi,\chi)$ vanish for $m \ll0$ because $\Phi$ is compactly supported on $F$, so $\supp\Phi\subseteq\pp^N$ for some sufficiently small $N$. In this way it is clear that $\zeta(\Phi,\chi,s) \in \CC((q^{-s}))$. 
+Note that $z_m=z_m(\Phi,\chi)$ vanishes for $m \ll0$ because $\Phi$ is compactly supported on $F$, so $\supp\Phi\subseteq\pp^N$ for some sufficiently small $N$. In this way it is clear that $\zeta(\Phi,\chi,s) \in \CC((q^{-s}))$. 
 The zeta function $\zeta(\Phi,\chi,s)$ only depends on $d^*x$ up to scaling. To remove this dependence we define the following space.
 
-\begin{notn}
-    Let $\chi$ be a character of $F^\times$. Then we define 
+\begin{defn}
+    Let $\chi$ be a character of $F^\times$. Then we define the space of $\zeta$-functions associated to $\chi$ as
     $$\mathcal Z(\chi) = \{\zeta(\Phi,\chi,s) \mid \Phi \in C_c^\infty(F)\}.$$
-\end{notn}
+\end{defn}
 
 \begin{notn}
     For $a \in F^\times$ and $\Phi \in C_c^\infty(F)$, denote by $a\Phi$ the function $x \mapsto \Phi(a^{-1}x)$.
@@ -43,13 +43,13 @@ $$\mathcal{Z}(\chi)=P_\chi(q^{-s})\cdot\CC[q^{-s},q^s]$$ for some polynomial $P_
 \textbf{Is this correct?}
 
 \begin{prop}\label{prop:gl1factor}
-    Let $\chi:F^\times \to \CC^\times$. There exists a unique polynomial $P_\chi \in \CC[X]$ with $P_\chi(0)=1$ such that
+    Let $\chi:F^\times \to \CC^\times$ be a character. There exists a unique polynomial $P_\chi \in \CC[X]$ with $P_\chi(0)=1$ such that
     $$\mathcal Z(\chi) = P_\chi(q^{-s})^{-1}\cdot \CC[q^{-s},q^s].$$
     Moreover, we have
     $$
     P_\chi(X) =
     \begin{cases}
-        1-\chi(\varpi)X & \text{if $\chi$ is unramified} \\
+        1-\chi(\varpi)X & \text{if $\chi$ is unramified,} \\
         1 & \text{otherwise}
     \end{cases}
     $$
@@ -87,7 +87,7 @@ $$\mathcal{Z}(\chi)=P_\chi(q^{-s})\cdot\CC[q^{-s},q^s]$$ for some polynomial $P_
 
 \subsection{The Functional Equation}
 
-Next, taking from the classical study of the Riemann zeta function and its functional equation, we want to introduce an analogue of the Fourier transform over $F$. We replace the additive character $e^{2\pi i -}: \RR \to \CC^\times$ with any choice of additive character $\psi: F \to \CC^\times$ with $\psi \neq 1$. In this way, by Additive Duality, all characters of $F$ are of the form $y\mapsto\psi(ay),y\in F$ for some $a\in F$. The functions we will apply the Fourier transform to will be the algebra $C_c^\infty(F)$ of locally constant compactly supported functions $F \to \CC$. For any choice of Haar measure $\mu$ on $F$, we now define the Fourier transform.
+Next, taking from the classical study of the Riemann zeta function and its functional equation, we want to introduce an analogue of the Fourier transform over $F$. We replace the additive character $x\mapsto e^{2\pi i x},x\in\RR$ with any choice of additive character $\psi: F \to \CC^\times$ with $\psi \neq 1$. In this way, by Additive Duality, all characters of $F$ are of the form $y\mapsto\psi(ay),y\in F$ for some $a\in F$. The functions we will apply the Fourier transform to will be the algebra $C_c^\infty(F)$ of locally constant compactly supported functions $F \to \CC$. For any choice of Haar measure $\mu$ on $F$, we now define the Fourier transform.
 
 \begin{defn}
     Let $\Phi \in C_c^\infty(F)$, $\psi:F \to \CC^\times$ be an additive character of $F$, and $\mu$ be a Haar measure on $F$. The Fourier transform of $\Phi$ (with respect to $\psi$ and $\mu$) is 
@@ -97,10 +97,10 @@ Next, taking from the classical study of the Riemann zeta function and its funct
 To match the classical definition over $\RR$, we would like the Fourier transform to preserve $C_c^\infty(F)$, and to have a Fourier inversion formula. Indeed:
 
 \begin{prop}
-    
+    The Fourier transform on $C_c^\infty(F)$ satisfies the following:
     \begin{itemize}
         \item For any $\Phi \in C_c^\infty(F)$, we have $\hat{\Phi} \in C_c^\infty(F)$.
-        \item For any $\psi: F \to \CC^\times$ with $\psi \neq 1$, there is a unique Haar measure $\mu_\psi$ on $F$ such that for the associated Fourier transform we have $$\hat{\hat{\Phi}}(x) = \Phi(-x)$$ for any $\Phi \in C_c^\infty(F)$ and $x \in F$.
+        \item For any $\psi: F \to \CC^\times$ with $\psi \neq 1$, there is a unique Haar measure $\mu_\psi$ on $F$ such that for the associated Fourier transform we have $$\hat{\hat{\Phi}}(x) = \Phi(-x)$$ for any $\Phi \in C_c^\infty(F)$ and $x \in F$. This measure satisfies that $\mu_\psi(\mathfrak{o})=q^{l/2}$, where $l$ is the level of $\psi$.
     \end{itemize}
     
 \end{prop}
@@ -125,9 +125,9 @@ As with the Riemann zeta function, we have functional equations for the zeta fun
 Since $\mathcal Z(\chi) = L(\chi,s)\cdot \CC[q^{-s},q^s]$, it is natural to consider the terms $\frac{\zeta(\Phi,\chi,s)}{L(\chi,s)} \in \CC[q^{-s},q^s]$. This allows us to treat the case of $\chi$ ramified and unramified evenly. 
 
 \begin{defn}
-    Given characters $\chi$ and $\psi$ of $F^\times$ and $F$ respectively, define
-    $$\varepsilon(\chi,s,\psi) := \gamma(\chi,s,\psi) \cdot \frac{L(\chi,s)}{L(\check{\chi},s)},$$
-    denoted as \textit{Tate's local constant}.
+    Given characters $\chi$ and $\psi$ of $F^\times$ and $F$ respectively,  we define %a rational function $\varepsilon(\chi,s,\psi)\in\CC(q^{-s})$ by
+    $$\varepsilon(\chi,s,\psi) := \gamma(\chi,s,\psi)\frac{L(\chi,s)}{L(\check{\chi},1-s)}.$$
+    Then $\varepsilon(\chi,s,\psi)\in\CC(q^{-s})$ is known as \textit{Tate's local constant}.
 \end{defn}
 
 
@@ -140,6 +140,6 @@ $$\frac{\zeta(\hat{\Phi},\check{\chi},1-s)}{L(\check{\chi},1-s)} = \varepsilon(\
     The local constant is of the form $$\varepsilon(\chi,s,\psi) = aq^{bs}$$ for some $a \in \CC^\times$, $b \in \ZZ$.
 \end{cor}
 \begin{proof}
-    The first statement comes from the Fourier inversion formula, where the $\chi(-1)$ term comes from the minus sign in $\hat{\hat{\Phi}}(x) = \Phi(-x)$. The functional equation implies that $\varepsilon$ is a unit in $\CC[q^{-s},q^s]$, and the units are precisely the elements of the form $aq^{bs}$ for $a\in\CC^\times$ and $b \in \ZZ$.
+    The first statement comes from the Fourier inversion formula, where the $\chi(-1)$ term comes from the minus sign in $\hat{\hat{\Phi}}(x) = \Phi(-x)$. The functional equation implies that $\varepsilon(\chi,s,\psi)$ is a unit in $\CC[q^{-s},q^s]$, and the units are precisely the elements of the form $aq^{bs}$ for $a\in\CC^\times$ and $b \in \ZZ$.
 \end{proof}
 
