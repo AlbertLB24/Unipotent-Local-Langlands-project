@@ -1,16 +1,16 @@
-The local Langlands correspondence for $G=\GL_2(F)$, where $F$ is a nonarchimedean local field, establishes a bijection between irreducible smooth representations of $G$, and 2-dimensional semisimple Weil-Deligne representations. In this report we have seen this bijection for the subsets of principal series representations of $G$ and reducible Weil-Deligne representations. The local Langlands correspondence is not merely a bijection of sets, but is compatible with various properties defined on either side. In the previous section, we saw that the correspondence for principal series representations is compatible with $L$-functions and local constants. 
+The local Langlands correspondence for $G=\GL_2(F)$, where $F$ is a nonarchimedean local field, establishes a bijection between irreducible smooth representations of $G$, and 2-dimensional semisimple Weil--Deligne representations. In this report we have seen this bijection for the subsets of principal series representations of $G$ and reducible Weil--Deligne representations. The local Langlands correspondence is not merely a bijection of sets, but is compatible with various properties defined on either side. In the previous section, we saw that the correspondence for principal series representations is compatible with $L$-functions and local constants. 
 
-On the Weil-Deligne side, we can distinguish the 2-dimensional semisimple representations $\rho$ which are trivial on the inertia subgroup $\mathcal I_F \leq \mathcal W_F$. These are the unramified Weil-Deligne representations. Since $\mathcal W_F/\mathcal I_F \cong \ZZ$ is abelian, $\rho$ is necessarily reducible, and we can ask what the corresponding principal series representations of $G$ are. The representations, as we shall see, are the unipotent representations of $G$.
+On the Weil--Deligne side, we can distinguish the 2-dimensional semisimple representations $\rho$ which are trivial on the inertia subgroup $\mathcal I_F \leq \mathcal W_F$. These are the unramified Weil--Deligne representations. Since $\mathcal W_F/\mathcal I_F \cong \ZZ$ is abelian, $\rho$ is necessarily reducible, and we can ask what the corresponding principal series representations of $G$ are. The representations, as we shall see, are the unipotent representations of $G$.
 
-Unipotent representations were first introduced by Deligne-Lusztig, in their famous paper \cite{DL1}, in the context of representations of reductive groups over finite fields. In particular, one can talk about unipotent representations of $\GL_2(\mathbb F_q)$, for a finite field $\mathbb F_q$. This case is particularly simple; only the trivial representation and Steinberg are unipotent. 
+Unipotent representations were first introduced by Deligne--Lusztig, in their famous paper \cite{DL1}, in the context of representations of reductive groups over finite fields. In particular, one can talk about unipotent representations of $\GL_2(\mathbb F_q)$, for a finite field $\mathbb F_q$. This case is particularly simple; only the trivial representation and Steinberg are unipotent. 
 
-For a nonarchimedean local field $F$, there is a natural filtration of open compact subgroups of $F^\times$: $\cO_F^\times \supset 1+\varpi\cO_F \supset 1+\varpi^2 \cO_F \supset \cdots$. The quotient $\cO_F^\times/1+\varpi\cO_F$ is isomorphic to $\mathbb F_q^\times = \GL_1(\FF_q)$. There are similar filtrations of $G=\GL_2(F)$ by open compact subgroups, the Moy-Prasad filtrations, for which the first quotients are isomorphic to the group $\mathbf{G}$ of points of a reductive group over a finite field. Under certain conditions, smooth representations of $G$ descend to representations of $\mathbf G$. This will allow us to define unipotent representations of $G$.
+For a nonarchimedean local field $F$, there is a natural filtration of open compact subgroups of $F^\times$: $\cO_F^\times \supset 1+\varpi\cO_F \supset 1+\varpi^2 \cO_F \supset \cdots$. The quotient $\cO_F^\times/1+\varpi\cO_F$ is isomorphic to $\mathbb F_q^\times = \GL_1(\FF_q)$. There are similar filtrations of $G=\GL_2(F)$ by open compact subgroups, the Moy--Prasad filtrations, for which the first quotients are isomorphic to the group $\mathbf{G}$ of points of a reductive group over a finite field. Under certain conditions, smooth representations of $G$ descend to representations of $\mathbf G$. This will allow us to define unipotent representations of $G$.
 
-In this section we first introduce the Moy--Prasad filtrations, specialised to the case of $G=\GL_2(F)$, and explain more precisely how smooth representations of $G$ descend to representations of some finite reductive group over $\FF_q$. We then briefly summarise the results of Deligne-Lusztig theory in our context and describe the unipotent representations over a finite field. Finally, we define the unipotent representations of $G$ and show that they correspond to the unramified Weil-Deligne representations.
+In this section we first introduce the Moy--Prasad filtrations, specialised to the case of $G=\GL_2(F)$, and explain more precisely how smooth representations of $G$ descend to representations of some finite reductive group over $\FF_q$. We then briefly summarise the results of Deligne--Lusztig theory in our context and describe the unipotent representations over a finite field. Finally, we define the unipotent representations of $G$ and show that they correspond to the unramified Weil--Deligne representations.
 
 \subsection{Moy--Prasad Filtrations of \texorpdfstring{$\GL_2(F)$}{TEXT}}
 
-Fix a nonarchimedean local field $F$, with ring of integers $\cO_F$, uniformiser $\varpi$ and residue field $\FF_q$. Let $\nu$ be the standard discrete valuation on $F$ defined by $\nu(\varpi)=1$. Let $G=\GL_2(F)$ and $T=\left\{\begin{psmallmatrix}
+Fix a nonarchimedean local field $F$, with ring of integers $\cO$, uniformiser $\varpi$ and residue field $\FF_q$. Let $\nu$ be the standard discrete valuation on $F$ defined by $\nu(\varpi)=1$. Let $G=\GL_2(F)$ and $T=\left\{\begin{psmallmatrix}
     a&0\\0&d
 \end{psmallmatrix} : a,d \in F^\times\right\}$ the split maximal torus of diagonal matrices.
 
@@ -41,9 +41,9 @@ $$\langle, \rangle : \left(X^*(T) \times X_*(T)\right) \otimes_\ZZ \RR \to \RR.$
     \end{psmallmatrix} \in \fg_\alpha, \begin{psmallmatrix}
         0&0\\1&0
     \end{psmallmatrix} \in \fg_{-\alpha}\right\}$. This determines isomorphisms $x_\alpha: F \cong U_\alpha$ and $x_{-\alpha}: F \cong U_{-\alpha}$ by sending $a \in F$ to $\begin{psmallmatrix}
-        1&a//0&1
+        1&a\\0&1
     \end{psmallmatrix}$ and $\begin{psmallmatrix}
-        1&0//a&1
+        1&0\\a&1
     \end{psmallmatrix}$ respectively.
 \end{example}
 
@@ -93,7 +93,7 @@ To collect the notation that we have fixed, we make the following definition, fo
     The (underlying set of the) \textit{Bruhat--Tits building} $\mathcal B(G,F)$ of $G$ can be interpreted as the set of BT triples modulo the equivalence relation defined by saying two triples are equivalent if they define the same Moy--Prasad filtration.
 \end{rem}
 
-\begin{example}
+\begin{example}\label{ex:parahoric}
     We compute the parahoric subgroups of $G=\GL_2(F)$. Recall that $\Phi(G,T)=\{\alpha,-\alpha\}$ where $\alpha$ is the root $t \mapsto t_1t_2^{-1}$. Let $\check\alpha$ denote the coroot $\GG_m \to T$ defined by $t \mapsto \begin{psmallmatrix}
         t&0\\0&t^{-1}
     \end{psmallmatrix}$ so that $\langle \alpha,\check \alpha\rangle=2$. We will consider BT triples of the form 
@@ -150,7 +150,11 @@ To collect the notation that we have fixed, we make the following definition, fo
         \varpi\cO & \varpi^{-c+1}\cO \\ \varpi^{c+1}\cO & \varpi \cO
     \end{psmallmatrix}$ and $\begin{psmallmatrix}
         \varpi\cO & \varpi^{\lceil -c\rceil}\cO \\ \varpi^{\lceil c\rceil} \cO & \varpi\cO
-    \end{psmallmatrix}$, where one checks that these are closed under addition and multiplication.   
+    \end{psmallmatrix}$, where one checks that $\begin{psmallmatrix}
+        \varpi\cO & \varpi^{-c+1}\cO \\ \varpi^{c+1}\cO & \varpi \cO
+    \end{psmallmatrix}$ and $\begin{psmallmatrix}
+        \varpi\cO & \varpi^{\lceil -c\rceil}\cO \\ \varpi^{\lceil c\rceil} \cO & \varpi\cO
+    \end{psmallmatrix}$ are closed under addition and multiplication.   
 \end{example}
 
 Finally, we record under what conditions smooth representations of $G$ descend to representations of these finite groups $\GL_2(\FF_q)$ and $T(\FF_q)$.
@@ -165,4 +169,140 @@ Finally, we record under what conditions smooth representations of $G$ descend t
 
 
 \subsection{Unipotent Representations over a Finite Field}
+
+Before specialising to representations of the finite groups $\GL_2(\FF_q)$ and $T(\FF_q)$ that appear in the representation theory of $G=\GL_2(F)$, we make some general comments on the representation theory of finite groups. The classification of finite simple groups, due to a large number of authors and stated in, for example, \cite{Gor1}, states that any finite noncyclic simple group is either an alternating group, a simple group of Lie type or one of 26 sporadic simple groups. Thus the representation theory of finite groups of Lie type, that is the points of some reductive group over a finite field, is central to the representation theory of finite groups. In the case of complex representations of finite groups of Lie type, Deligne and Lusztig in \cite{DL1} construct virtual characters $R_{\mathbf S}(\theta)$, for any reductive group $\mathbf G$ and maximal torus $\mathbf S$, in which all irreducible representations of $\mathbf G(\FF_q)$ appear. The irreducible components of $R_{\mathbf S}(1)$, as we range over all maximal tori $\mathbf S$, are known as the unipotent representations of $\mathbf G(\FF_q)$. In a precise sense (\cite[Theorem 4.23]{Lus2}), the unipotent representations of $\mathbf G(\FF_q)$ and its subgroups are the building blocks of all representations of $\mathbf G(\FF_q)$. Here, we will briefly describe the Deligne--Lusztig characters and unipotent representations in the general case of a reductive group $\mathbf G$ over a finite field $\FF_q$. For further reference on reductive groups, one can consult \cite[Chapter 1]{Car1} or \cite[Chapter 1]{GH1}. An exposition of \cite{DL1} can also be found in \cite{Car1}.
+
+First we recall some notions in the representation theory of finite groups. Let $H$ be a finite group and let $\rho:H \to \GL(V)$ be a finite-dimensional complex representation. The function $\chi(h):=\mathrm{tr}\rho(h)$, called the \textit{character} of $H$, is a class function on $H$ (a function defined on the set of conjugacy classes in $H$). There is a natural inner product on the space of class functions on $H$:
+$$\langle \alpha, \beta \rangle = \frac{1}{|H|} \sum\limits_{h \in H}\alpha(h)\overline{\beta(h)}$$ for which the characters of irreducible representations of $H$ form an orthonormal basis. A \textit{virtual character} is the difference of characters of finite-dimensional representations of $H$.
+
+Let $\mathbf G$ now be a reductive group over a finite field $\FF_q$, and let $\mathbf S$ be a maximal torus of $\mathbf G$ defined over $\FF_q$. For example, the pair $(\mathbf G,\mathbf S)$ could be $(\GL_2(\FF_q),T(\FF_q))$ or $(T(\FF_q),T(\FF_q))$. Let $\theta: \mathbf S(\FF_q) \to \CC^\times$ be a character of the torus. Deligne and Lusztig construct virtual characters $R_{\mathbf S}(\theta)$ from the $\ell$-adic cohomology of some algebraic subvariety of $\mathbf G$ determined by $\mathbf S$. These virtual characters have the following property:
+
+\begin{thm}
+    For any irreducible representation $\rho$ of $\mathbf G(\FF_q)$ there exists a maximal torus $\mathbf S$ defined over $\FF_q$ and a character $\theta$ of $\mathbf S(\FF_q)$ such that $\langle \rho, R_{\mathbf S}(\theta)\rangle \neq 0$.
+\end{thm}
+\begin{proof}
+    \cite[Corollary 7.7]{DL1}.
+\end{proof}
+
+When $\mathbf S$ is a split maximal torus then we can describe the characters $R_{\mathbf S}(\theta)$ more explicitly.
+
+\begin{prop}\label{prop:DLinduct}
+    Let $\mathbf S$ be a split maximal torus of $\mathbf G$ defined over $\FF_q$. Let $\mathbf B$ be a Borel subgroup of $\mathbf G$ defined over $\FF_q$ and containing $\mathbf S$. Suppose $\theta: \mathbf S(\FF_q) \to \CC^\times$ is a character of $\mathbf S(\FF_q)$. Then $R_{\mathbf S}(\theta)$ is the character of the parabolic induction $\Ind_{\mathbf B(\FF_q)}^{\mathbf G(\FF_q)} \theta$ of $\theta$.
+\end{prop}
+\begin{proof}
+    \cite[Proposition 7.2.4]{Car1}.
+\end{proof}
+
+Finally, we define the unipotent representations of $\mathbf G(\FF_q)$.
+
+\begin{defn}
+    An irreducible representation $\rho$ of $\mathbf G(\FF_q)$ is \textit{unipotent} if $\langle \rho, R_{\mathbf S}(1)\rangle \neq 0$ for some maximal torus $\mathbf S$ of $\mathbf G$ defined over $\FF_q$.
+\end{defn}
+
+
+
+\begin{example}\label{ex:uniT}
+    Let $\mathbf G$ be the torus $T$ of diagonal matrices in $\GL_2$. Then $R_T(1) = 1_{T(\FF_Q)}$ is the trivial representation of $T(\FF_q)$, and this is the only unipotent representation.
+\end{example}
+
+\begin{example}\label{ex:uniG}
+    Let $\mathbf G$ be $\GL_2$, $B$ be the Borel subgroup of upper triangular matrices and $T$ the split maximal torus of diagonal matrices. By Proposition \ref{prop:DLinduct}, the character $R_T(1)$ of $\GL_2(\FF_q)$ is simply the character of $\Ind_{B}^{\GL_2}1_{T}$. Thus, the trivial character of $\GL_2(\FF_q)$ and the Steinberg representation are unipotent representations of $\GL_2(\FF_q)$. 
+    
+    There is one other conjugacy class of maximal tori in $\GL_2$ defined over $\FF_q$. This is owing to the fact that the Weyl group of $T$ in $\GL_2$ is $W(T) = \ZZ/2\ZZ$ (see \cite[Proposition 3.3.3]{BH1}). The Weyl group of a maximal torus is the quotient of the normaliser of the torus by the torus. For $T$ the torus of diagonal matrices, the nontrivial element of the Weyl group is represented by a matrix under which conjugation swaps eigenvalues in $T$. This matrix is defined over $\FF_q$. Let $S$ be a representative of this other conjugacy class of maximal tori; $S$ is a non-split maximal torus. We have the following character relation, \cite[Corollary 7.6.5]{BH1}:
+    $$1 = \frac{R_{T}(1)}{|W(T)(\FF_q)|} + \frac{R_{S}(1)}{|W(S)(\FF_q)|}.$$ Since $R_{T}(1) = 1+\mathrm{St}$, where $\mathrm{St}$ is the Steinberg character, we deduce that the only irreducible representations of $\GL_2$ appearing in $R_S(1)$ are again the trivial character and Steinberg. In fact, using \cite[Proposition 3.3.6]{BH1} to calculate $|W(S)(\FF_q)|=2$, we have $R_S(1) = 1-\mathrm{St}$.
+
+    The unipotent representations of $\GL_2(\FF_q)$ are exactly the trivial representation and the Steinberg representation.
+\end{example}
+
+
+\subsection{Unipotent Local Langlands for \texorpdfstring{$\GL_2(F)$}{TEXT}}
+
+So far we have described the Moy--Prasad filtrations of $G=\GL_2(F)$, from which we can occasionally take a smooth representation of $G$ and produce a representation of $\GL_2(\FF_q)$ or $T(\FF_q)$. We have also defined the unipotent representations of finite groups of Lie type. Putting this together, we define the unipotent representations of $G$, and compare this to the unramified representations on the Weil--Deligne side. Our definition comes from \cite{Lus1}.
+
+\begin{defn}
+    An irreducible smooth representation $(\pi,V)$ of $G$ is \textit{unipotent} if there exists a parahoric subgroup $K=G_{x,0}$ of $G$ such that, denoting $G_{x,0+}$ by $K^+$, there is a cuspidal unipotent representation $\rho$ of $K/K^+$ such that $\Hom_{K/K^+}(\rho, \bar{\pi}) \neq 0$.
+\end{defn}
+\begin{rem}
+    There is a general definition of cuspidal representations, but for our purposes we use the fact that every irreducible representation of $T(\FF_q)$ is cuspidal. The cuspidal representations of $\GL_2(\FF_q)$ are the irreducible representations which are not a subrepresentation of a parabolically induced representation. In particular, the trivial representation and Steinberg are not cuspidal.
+\end{rem}
+
+From Examples \ref{ex:uniG} and \ref{ex:uniT} we can classify the unipotent representations of $G$ more simply:
+
+\begin{notn}
+    Let 
+    $$I = \left\{ \begin{pmatrix}
+        a&b\\c&d
+    \end{pmatrix} : a,d \in \cO^\times, b \in \cO, c \in \varpi\cO\right\}$$ denote the Iwahori subgroup of $G$.
+\end{notn}
+
+\begin{prop}\label{prop:unipotent}
+    An irreducible smooth representation $(\pi,V)$ of $G$ is unipotent if and only if $V^I \neq 0$.
+\end{prop}
+\begin{proof}
+    By Example \ref{ex:parahoric}, the parahoric subgroups $K$ of $G$ are all conjugate to either $\GL_2(\cO)$ or $I$. Thus the quotients $K/K^+$ are isomorphic to either $\GL_2(\FF_q)$ or $T(\FF_q)$. By Examples \ref{ex:uniG} and \ref{ex:uniT}, there are no cuspidal unipotent representations of $\GL_2(\FF_q)$, and the trivial representation is the only cuspidal unipotent representation of $T(\FF_q)$.
+
+    It follows that $(\pi,V)$ is unipotent if and only if the trivial representation of $T(\FF_q)$ is a subrepresentation of $(\bar{\pi},V^{K^+})$, in other words $V^K \neq 0$, for some parahoric $K$ conjugate to $I$. From the calculation 
+    $$g \cdot V^K = V^{gKg^{-1}},$$ the representation $(\pi,V)$ is unipotent if and only if $V^I \neq 0$.
+\end{proof}
+
+This allows us to list the unipotent principal series representations of $G=\GL_2(F)$. It turns out that there are no unipotent cuspidal representations of $G$ (\cite[Proposition 14.3]{BH1}) so that these are all the unipotent representations.
+
+\begin{prop}\label{prop:unipotent2}
+    Let $(\pi,V)$ be an irreducible smooth representation of $G$ that is a composition factor of $\iota_B^G\chi$, where $\chi=\chi_1\otimes \chi_2$ is a character of $T$. Then $(\pi,V)$ is unipotent if and only if $\chi_1$ and $\chi_2$ are both unramified characters of $F^\times$.
+\end{prop}
+\begin{proof}
+    We first consider the case that $\iota_B^G\chi$ is irreducible, so $\pi = \iota_B^G\chi$. By Proposition \ref{prop:unipotent}, we need to check when there is a nonzero element of $\iota_B^G\chi$ fixed by right translation by $I$. This is a function $f: G \to \CC$ satisfying 
+    $$f(bgk) = \chi(b)\delta_B^{-1/2}(b)f(g), \hspace{1em}\text{ for all } b \in B, g \in G, k \in I.$$
+    For such an $f$ to exist, we must have $\chi(b)\delta_B^{-1/2}(b)=1$ for all $b \in B \cap I = \begin{psmallmatrix}
+        \cO^\times & \cO \\ 0 & \cO^\times
+    \end{psmallmatrix}$. This forces $\chi_1$ and $\chi_2$ to be 1 on $\cO^\times$, which is the condition of being unramified. Conversely, if $\chi_1$ and $\chi_2$ are unramified, the formula
+    $$f(bk) = \chi(b)\delta_B^{-1/2}(b), \hspace{1em}\text{ for all } b \in B, k \in I$$
+    defines a nonzero function $BI \to \CC$ for which the extension by zero to $G$ lives in $(\iota_B^G \chi)^I$.
+
+
+    Suppose now $\iota_B^G \chi$ is reducible and $\pi$ is an irreducible factor. Thus $\pi$ is either $\phi \circ \det$ or $\phi \mathrm{St}_G$ for a character $\phi$ of $F^\times$. The above calculation shows that if a subrepresentation of $\iota_B^G \chi$ has a nonzero Iwahori fixed vector, then $\chi_1$ and $\chi_2$ are unramified. The characters $\phi \circ \det$ are subrepresentations of $\iota_B^G(\delta_B^{1/2}(\phi\circ \det))$, while by the Duality Theorem \ref{thm:duality} and self-duality of the Steinberg representation (Corollary \ref{cor:selfdual}), $\phi\mathrm{St}_G$ is a subrepresentation of $\iota_B^G(\delta_B^{-1/2}\cdot(\phi\circ \det))$. Since $\delta_B(t)=|t_2/t_1|$ as a character of $T$ is the product of two unramified characters of $F^\times$, it follows that if $\phi \circ \det$ or $\phi \mathrm{St}_G$ are unipotent, then $\phi$ is an unramified character of $F^\times$. Since $\phi \circ \det$ is 1 on $I$, the action of $\pi$ on $V^{I}$ is preserved by unramified twisting and so it remains to prove that the trivial representation and Steinberg are unipotent. Any vector in $1_G$ is an Iwahori fixed vector, so $1_G$ is unipotent. 
+    
+    To show that the Steinberg representation is unipotent, we produce a non-constant function $f \in \Ind_B^G 1$ which is invariant under right translation by $I$. The image in the Steinberg representation, as the quotient of $\Ind_B^G 1$ by $1_G$, is then a nonzero Iwahori fixed vector. Such an $f$ is exactly a non-constant complex valued function on the set of $B-I$ double cosets of $G$. The existence of $f$ follows from the claim that $BI \neq G$. To see this, there is a surjection $B \backslash G \to \PP^1(F)$ given by sending $g=\begin{psmallmatrix}
+        a&b\\c&d
+    \end{psmallmatrix}$ to $[a:c]$. But the image of $I$ consists of $[a:c]$ such that the valuation of $c$ in $F$ is strictly greater than that of $a$. So $BI \neq G$ and thus the Steinberg representation is unipotent. 
+
+\end{proof}
+
+On the Weil--Deligne side, we define unramified representations.
+
+\begin{defn}
+    A Deligne representation $(\rho, V, \mathfrak n)$ of the Weil group $\mathcal W_F$ is \textit{unramified} if $\rho(\mathcal I_F)=1$.
+\end{defn}
+\begin{rem}
+    Since $\mathcal W_F/\mathcal I_F \cong \ZZ$ is abelian, if $(\rho,V,\mathfrak n)$ is an unramified semisimple Deligne representation, the underlying smooth representation $\rho$ of $\mathcal W_F$ decomposes as a direct sum of characters of $\ZZ$. Consequently, unramified semisimple $n$-dimensional Deligne representations correspond to semisimple elements $g \in \GL_n(\CC)$, together with $\mathfrak n \in \mathrm{M}_n(\CC)$ satisfying $g \mathfrak n g^{-1} = q^{-1}\mathfrak n$. For example, in dimension 2, we could take $g=\begin{psmallmatrix}
+        q^{-1/2} &0\\0&q^{1/2}
+    \end{psmallmatrix} $ and $\mathfrak n = \begin{psmallmatrix}
+        0&1\\0&0
+    \end{psmallmatrix}$.
+\end{rem}
+
+Comparing with the proof of Theorem ************ we have
+
+\begin{cor}
+    The bijection of Theorem ********** restricts to a bijection between the equivalence classes of unipotent representations of $G=\GL_2(F)$ and the equivalence classes of unramified, 2-dimensional, semisimple Deligne representations of the Weil group $\mathcal W_F$.    
+\end{cor}
+
+
+We have seen that the unipotent representations of $G$ are the irreducible smooth representations with a nonzero fixed vector under the action of the Iwahori subgroup $I$. A stronger condition is asking for a nonzero fixed vector under the subgroup $\GL_2(\cO)$. The following definition is from \cite[Definition 7.1]{GH1}.
+
+\begin{defn}
+    Let $K=\GL_2(\cO)$. An irreducible smooth representation $(\pi,V)$ of $G$ is \textit{$K$-unramified} if $V^K \neq 0$.
+\end{defn}
+
+\begin{cor}
+    The bijection of Theorem ********** restricts to a bijection between the equivalence classes of $K$-unramified representations of $G=\GL_2(F)$ and the equivalence classes of unramified, 2-dimensional, semisimple smooth representations of the Weil group $\mathcal W_F$.    
+\end{cor}
+\begin{proof}
+    The proof of Proposition \ref{prop:unipotent2} can be adapted (replacing $I$ with $K$) to show that the $K$-unramified representations of $G$ are all the unipotent representations except the twists of Steinberg $\phi \mathrm{St}_G$ by an unramified character $\phi$ of $F^\times$. We lose the Steinberg representation because $BK=G$. On the other hand, restricting to smooth representations of $\mathcal W_F$ only loses the Deligne representations for which $\mathfrak n \neq 0$. These correspond to the twists of Steinberg under the bijection of Theorem **********.
+\end{proof}
+\begin{rem}
+    *********** Compare with $\ell$-adic unramified.
+\end{rem}
+
+
 
