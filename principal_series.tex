@@ -96,23 +96,23 @@ Now we consider $V$ an irreducible smooth representation of $M$.
     Let $(\pi,V)$ be an irreducible smooth representation of $M$. Either 
     \begin{itemize}
         \item $\dim V=1$ and $\pi$ is the inflation of a character of $M/N \cong F^\times$, or
-        \item $\dim V = \infty$ and $\pi \cong c\mathrm{-Ind}_N^M \theta$, for any nontrivial character $\theta$ of $N$.
+        \item $\dim V = \infty$ and $\pi \cong \cInd_N^M \theta$, for any nontrivial character $\theta$ of $N$.
     \end{itemize}
 \end{thm}
 
-This itself follows from the following theorems. To compare $V$ and $c\mathrm{-Ind}_N^M \theta$, it is more natural to compare $V$ and $\mathrm{Ind}_N^M V_\theta$. By Frobenius reciprocity,
+This itself follows from the following theorems. To compare $V$ and $\cInd_N^M \theta$, it is more natural to compare $V$ and $\mathrm{Ind}_N^M V_\theta$. By Frobenius reciprocity,
 $$\Hom_N(V,V_\theta) \cong \Hom_M(V,\mathrm{Ind}_N^M V_\theta).$$
 Let $q_*: V \to \Ind_N^M(V_\theta)$ be the image of the quotient map $q: V \to V_\theta$.
 
 \begin{thm}\label{mirabolic}
-    The $M$-homomorphism $q_*: V \to \Ind_N^M V_\theta$ induces an isomorphism $V(N) \cong c\mathrm{-Ind}_N^M V_\theta$. 
+    The $M$-homomorphism $q_*: V \to \Ind_N^M V_\theta$ induces an isomorphism $V(N) \cong \cInd_N^M V_\theta$. 
 \end{thm}
 \begin{proof}
     \cite[Theorem 8.3]{BH1}.
 \end{proof}
 
 \begin{thm}\label{irred induction}
-    For any nontrivial character $\theta$ of $N$, the smooth representation $c\mathrm{-Ind}_N^M \theta$ of $M$ is irreducible. 
+    For any nontrivial character $\theta$ of $N$, the smooth representation $\cInd_N^M \theta$ of $M$ is irreducible. 
 \end{thm}
 \begin{proof}
     \cite[Corollary 8.2]{BH1}
@@ -121,7 +121,7 @@ Let $q_*: V \to \Ind_N^M(V_\theta)$ be the image of the quotient map $q: V \to V
 \begin{proof}[Proof of Theorem \ref{inf dim}]
     If $V$ is an irreducible smooth representation of $M$, then either $V(N)=0$ or $V(N)=V$. In the former case $N$ acts trivially on $V$, so the action of $M$ factors through $M/N \cong F^\times$. Schur's lemma implies that $V$ is a character of $M$ factoring through $M/N$. 
     
-    In the latter case, $V_N=0$, so we must have $V_\theta \neq 0$ for all nontrivial characters of $N$ by Lemma \ref{coinvariants} and Corollary \ref{character}. Thus the $M$-representation $V$ must have infinite dimension, since there are infinitely many characters $\theta$. Theorem \ref{mirabolic} implies that $V = V(N)$ is isomorphic to $c\mathrm{-Ind}_N^M V_\theta$, which is a direct sum of copies of $c\mathrm{-Ind}_N^M \theta$. Since $c\mathrm{-Ind}_N^M \theta$ is irreducible by Theorem \ref{irred induction}, we must have $V\cong c\mathrm{-Ind}_N^M \theta$. 
+    In the latter case, $V_N=0$, so we must have $V_\theta \neq 0$ for all nontrivial characters of $N$ by Lemma \ref{coinvariants} and Corollary \ref{character}. Thus the $M$-representation $V$ must have infinite dimension, since there are infinitely many characters $\theta$. Theorem \ref{mirabolic} implies that $V = V(N)$ is isomorphic to $\cInd_N^M V_\theta$, which is a direct sum of copies of $\cInd_N^M \theta$. Since $\cInd_N^M \theta$ is irreducible by Theorem \ref{irred induction}, we must have $V\cong \cInd_N^M \theta$. 
 \end{proof}
 
 
@@ -229,7 +229,7 @@ The following lemma makes the structure of $V$ more apparent.
     For $V$ as above, $V(N)$ is irreducible over $M$ (and hence over $B$). Moreover, $V(N)$ is infinite dimensional.
 \end{prop}
 \begin{proof}
-    The idea will be to use Theorem \ref{mirabolic}, which tells us $V(N) \cong c\mathrm{-Ind}_N^M V_\theta$. This is irreducible over $M$ (and infinite dimensional) if we can show that $V_\theta$ is one dimensional, by Theorem \ref{irred induction}.
+    The idea will be to use Theorem \ref{mirabolic}, which tells us $V(N) \cong \cInd_N^M V_\theta$. This is irreducible over $M$ (and infinite dimensional) if we can show that $V_\theta$ is one dimensional, by Theorem \ref{irred induction}.
 
     By the above lemma we can identify $V \cong C_c^\infty(N)$ as $N$-representations. But $M$ also acts via right translation on $V$ (since $BwB=BwN=BwM$), which gives the structure of a $M$-representation on $C_c^\infty(N)$. We can calculate it explicitly (but we won't need it), where
     $$f\left(bw\begin{pmatrix}

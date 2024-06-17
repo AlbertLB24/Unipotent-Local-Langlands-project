@@ -146,7 +146,7 @@ where $\mu_{H\backslash G}$ is called a \textit{positive semi-invariant measure}
 
 \begin{thm}[Duality Theorem]\label{thm:duality}
     Let $H$ be a closed subgroup of a locally profinite group $G$ and let $\dot{\mu}$ be a positive semi-invariant measure on $H\backslash G$. Let $(\sigma,W)$ be a smooth representation of $H$. Then there is a natural isomorphism
-    $$\left(\cInd_H^G\sigma \right)^{\check{}}\cong \Ind_H^G(\delta_{H\backslash G}\otimes \check{\sigma}),$$
+    $$\left(\cInd_H^G\sigma \right)^\vee\cong \Ind_H^G(\delta_{H\backslash G}\otimes \check{\sigma}),$$
     which only depends on the choice of $\dot{\mu}$.
 \end{thm}
 
@@ -165,7 +165,7 @@ where $\mu_{H\backslash G}$ is called a \textit{positive semi-invariant measure}
     Crucially, this pairing is $G$-invariant. Indeed, 
     $$\Psi(\rho_g\Phi,\rho_g\phi)=\int_{H\backslash G}\langle\Phi(xg),\phi(xg)\rangle d\dot{\mu}(x)=\int_{H\backslash G}\langle\Phi(x),\phi(x)\rangle d\dot{\mu}(x)=\Psi(\Phi,\phi)$$
     by right translation invariance of the positive semi-invariant measure on $H/G$. 
-    This induces a $G$-homomorphism $\Ind_H^G(\delta_{H\backslash G}\otimes \check{\sigma})\to \left(\cInd_H^G\sigma \right)^{\check{}}$. The remainder of the proof consists of proving that this is an isomoprhism.
+    This induces a $G$-homomorphism $\Ind_H^G(\delta_{H\backslash G}\otimes \check{\sigma})\to \left(\cInd_H^G\sigma \right)^\vee$. The remainder of the proof consists of proving that this is an isomoprhism.
 
     \begin{lemma}
         The above pairing identifies $\left(\Ind_H^G(\delta_{H\backslash G}\otimes \check{\sigma})\right)^K$ bijectively with the linear dual of $\left(\cInd_H^G\sigma \right)^K$.
@@ -216,7 +216,7 @@ $$I(\Phi) = \int_T\int_N \Phi(tn) dn dt.$$
 The family of irreducible representations that we will study in the next chapter arise as subrepresentations of $\Ind_B^G\sigma$ where $\sigma$ is a smooth representation of $T$. We remark that the Borel subgroup $B$ is a normal subgroup of $G$ and that $G/B$ is compact and therefore the functors $\Ind_B^G$ and $\cInd_B^G$ coincide.
 
 Hence, by the Duality Theorem, it follows that 
-$$(\Ind_B^G\sigma)^{\check{}}\cong\Ind_B^G(\delta_B^{-1}\otimes\check{\sigma}),$$
+$$(\Ind_B^G\sigma)^\vee\cong\Ind_B^G(\delta_B^{-1}\otimes\check{\sigma}),$$
 for any smooth representation $\sigma$ of $T$. This is slightly impractical, so one introduces a related functor that interacts well with duality.
 
 \begin{defn}
@@ -227,4 +227,4 @@ for any smooth representation $\sigma$ of $T$. This is slightly impractical, so 
     \end{align*}
 \end{defn}
 This functor is also additive and exact, and it gives the more natural formula
-$$(\iota_B^G\sigma)^{\check{}}\cong\iota_B^G\check{\sigma}.$$
+$$(\iota_B^G\sigma)^\vee\cong\iota_B^G\check{\sigma}.$$
