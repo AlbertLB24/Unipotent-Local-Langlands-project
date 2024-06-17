@@ -1,9 +1,21 @@
 \subsection{The Space \texorpdfstring{$C_c^{\infty}(G)$}{TEXT} and the Haar Measure}
 
-Let $G$ be a locally profinite group. Denote by $\CG$ the space of functions $f:G\to\CC$ which are locally constant and compactly supported. Such a function $f$ can be equivalently characterised as a finite linear combination of characteristic functions of double cosets $KgK$ for some open compact subgroup $K$ of $G$. Hence, the space $\CG$ is a complex vector space and admits two natural actions of $G$ by left and right translation:
+Let $G$ be a locally profinite group. Denote by $\CG$ the space of functions $f:G\to\CC$ that are locally constant and compactly supported. 
+
+\begin{exercise}
+    Show that a function $f:G\to\CC$ lies in $\CG$ if and only if it is a finite linear combination of characteristic functions of double cosets $KgK$ for some open compact subgroup $K$ of $G$.
+\end{exercise}
+
+The space $\CG$ is a complex vector space and admits two natural actions of $G$ by left and right translation:
 
 $$\lambda_g f:x\longmapsto f(g^{-1}x),\quad\text{and}\quad \rho_g f:x\longmapsto f(xg),$$
-for $x,g\in G$ and $f\in\CG$. These actions endow $\CG$ with the structure of smooth representations of $G$, because characteristic functions of double cosets of $K$ are invariant under translation by $K$. We are now ready to define the notion of a Haar integral and Haar measure.
+for $x,g\in G$ and $f\in\CG$. These actions endow $\CG$ with the structure of a smooth representation of $G$, because characteristic functions of double cosets of $K$ are invariant under translation by $K$. 
+
+\begin{rem}
+    The representation $(\CG,\rho)\in\Smo(G)$ is isomorphic to $\cInd_{\{1\}}^G\mathds{1}$, where $\{1\}$ is the trivial subgroup of $G$.  
+\end{rem}
+
+We are now ready to define the notion of a Haar integral and Haar measure.
 
 \begin{defn}
     A \textit{left Haar integral} on $G$ is a non-zero linear functional 
@@ -11,7 +23,7 @@ for $x,g\in G$ and $f\in\CG$. These actions endow $\CG$ with the structure of sm
     such that
     \begin{enumerate}[(1)]
         \item $I(\lambda_g f)=I(f),\ g\in G,\ f\in\CG$, and
-        \item $I(f)\geq 0$ for any $f\in\CG$ such that $f\geq 0$.
+        \item $I(f)\geq 0$ for any $f\in\CG$ such that $\mathrm{Im}(f)\subseteq\RR_{\geq0}$.
     \end{enumerate}
     A \textit{right Haar integral} is defined analogously by replacing $\lambda_g$ with $\rho_g$.
 \end{defn}
@@ -22,12 +34,20 @@ The usefulness of the Haar integral relies on the fact that locally profinite gr
     There exists a left Haar integral $I:\CG\to\CC$. Moreover, a linear functional $I':\CG\to\CC$ is a left Haar integral if and only if $I'=cI$ for some constant $c>0$.
 \end{prop}
 \begin{proof}
+    %We give a proof sketch of this proposition. For each open compact subgroup $K$, we consider the space 
+    
+    %The main idea is to consider a descending chain of open compact subgroups $K_n$ of $G$ such that $\cap_nK_n=\{1\}$. 
     \cite[Proposition 3.1]{BH1}
 \end{proof}
 
-Whenever we have a left Haar integral $I$, we can define the associated left Haar measure as follows. Let $S\subset G$ and let $\Gamma_S$ be its characteristic function. Then $\Gamma_S\in\CG$ if and only if $S$ is open and compact. In that case, we define $$\mu_G(S)=I(\Gamma_S)$$ to be the Haar measure of $S$. We note that $\mu_G(S)>0$ when $S$ is nonempty, and by left invariance, $\mu_G(gS)=\mu_G(S)$ for any $g\in G$. The relationship is commonly expressed by using the usual integral notation
-$$I(f)=\int_G f(g)d\mu_G(g),\quad f\in\CG.$$
-This choice of notation is motivated by the fact that since $f$ is locally constant and has constant support, the integral $I(f)$ is effectively a finite weighted sum of $\mu_G(S_i)$, where the $S_i$ are open compact, and $f$ is constant on them. 
+Whenever we have a left Haar integral $I$, we can define the associated \textit{left Haar measure} as follows. Let $S\subset G$ and let $\Gamma_S$ be its characteristic function. Then $\Gamma_S\in\CG$ if and only if $S$ is open and compact. In that case, we define $$\mu_G(S)=I(\Gamma_S)$$ to be the Haar measure of $S$. We note that $\mu_G(S)>0$ when $S$ is nonempty, and by left invariance, $\mu_G(gS)=\mu_G(S)$ for any $g\in G$. The relationship is commonly expressed by using the usual integral notation
+\begin{equation}\tag{$\dagger$}\label{eq:integral}
+    I(f)=\int_G f(g)d\mu_G(g),\quad f\in\CG.
+\end{equation}
+
+This choice of notation is motivated by the fact that one can also recover the left Haar integral from the left Haar measure. Indeed, since $f\in\CG$ is locally constant and has constant support, we can express $f=\sum_{i=1}^r\alpha_i\mathds{1}_{Kg_iK}$ for some open compact subgroup $K$, $g_i\in G, \alpha_i\in\CC$ and $r\geq 1$. Then, Equation \ref{eq:integral} represents the finite sum 
+$$I(f)=\sum_{i=1}^r\alpha_i\mu_G(Kg_iK)$$
+from which we can recover the left Haar integral from the left Haar measure. Therefore, both notions carry essentially the same information. During our discussion, we will often fix a left Haar measure on $G$ and then consider the Haar integral induced by the measure. This makes some arguments more natural to follow.
 
 \begin{example}
     The notion of a left Haar measure is only determined up to a constant. In practice, to uniquely determine the measure, we associate a particular open compact subset with a value. For example, if $G=F$ is a local field, one commonly chooses $\mu_F$ so that $\mu_F(R)=1$, where $R$ is the valuation ring. Under this choice, we calculate that $\mu_F(\pp^n)=q^{-n}$.
@@ -47,12 +67,12 @@ usually dentoted $\mu_G=\mu_1\otimes\mu_2$.
 Of course, the discussion from the previous subsection holds if we replace `right' by `left' throughout. At this point it is therefore natural to ask whether a left Haar integral $I$ on $G$ is also a right Haar integral. This important consideration motivates the following definition.
 
 \begin{defn}
-    A locally profinite group $G$ is \textit{unimodular} if any left Haar integral on $G$ is also a right Haar integral. 
+    A locally profinite group $G$ is \textit{unimodular} if any left Haar integral (resp. measure) on $G$ is also a right Haar integral (resp. measure). 
 \end{defn}
 
-As a first observation, we note that if the group $G$ is abelian, then $\lambda_g f=\rho_{g^{-1}} f$, and therefore $G$ is unimodular. However, for general groups this is not always the case. 
+As a first observation, we note that if the group $G$ is abelian, then $\lambda_g f=\rho_{g^{-1}} f$, and therefore $G$ is unimodular. However, for general locally profinite groups this is not always the case. 
 
-To investigate this, choose some left Haar measure $\mu_G$ on $G$, and consider the functional
+To investigate this, choose some left Haar measure $\mu_G$ on a locally profinite group $G$ (not necessarily abelian), and consider the functional
 \begin{align*}
     I_g:\CG&\longrightarrow\CC\\
     f\longmapsto\int_G& f(xg)d\mu_G(x).
@@ -104,12 +124,67 @@ Finally, when the group $G$ is not unimodular, the modular character $\delta_G$ 
 \end{proof}
 
 
+\subsection{Positive Semi-invariant Measures and the Duality Theorem}
 
-We now focus on the group $G=\GL_2(F)$ over a nonarchimedean local field $F$. Let $B=\{\begin{psmallmatrix} a&b\\0&d\end{psmallmatrix} \mid a,d \in F^\times, b \in F\}$ the Borel subgroup of upper triangular matrices, so that $B=N \rtimes T$ for $T=\{\begin{psmallmatrix}
+To classify the principal series representations of $\GL_2(F)$ in the following section, one needs to understand the interaction between the induction and the duality functor for smooth representations of locally profinite groups and their closed subgroups. To this aim, we need to develop one last bit of machinery from measure theory called positive semi-invariant measures, which generalise the notion of Haar measures.
+
+Let $G$ be a locally profinite group and let $H$ be a closed subgroup. Fix some character $\theta$ of $H$ and consider the space of functions $f:G\to\CC$ that are $G$-smooth under right translation, are compactly supported modulo $H$ and satisfy $$f(hg)=\theta(h)f(g),\quad h\in H,g\in G.$$
+This space is the compact induction $\cInd_H^G\theta$, but in analogy to $\CG=\cInd_{\{1\}}^G\mathds{1}$ we denote it as $C_c^{\infty}(H\backslash G,\theta)$. At this point it is natural to ask if there exists some non-zero linear functional $I_{\theta}:C_c^{\infty}(H\backslash G,\theta)\to\CC$ such that $I_{\theta}(\rho_g f)=I_{\theta}(f)$ for all $g\in G$. As it turns out, this is not always possible and there is a simple criterion to determine when it is.
+
+\begin{prop}\label{prop:semiinvariant}
+    Let $\theta:H\to\CC^{\times}$ be a character of $H$. Then there exists a non-zero linear functional $I_{\theta}:C_c^{\infty}(H\backslash G,\theta)\to\CC$ such that $I_{\theta}(\rho_g f)=I_{\theta}(f)$ for all $g\in G$ and $f\in C_c^{\infty}(H\backslash G,\theta)$ if and only if $\theta\delta_H=\delta_G|_H$.
+
+    Furthermore, when this holds, the functional $I_\theta$ is uniquely determined up to a constant.
+\end{prop}
+\begin{proof}
+    \cite[Proposition 3.4]{BH1}
+\end{proof}
+
+We remark that this is a generalisation of Proposition \ref{prop:haar}; indeed, by setting $H=\{1\}$ one recovers the usual right Haar integral on $G$. Similarly to the above case, when $\theta=\delta_H^{-1}\delta_G|_H$, one commonly expresses the functional $I_\theta$ with the integral notation 
+$$I_\theta(f)=\int_{H\backslash G}f(g)d\mu_{H\backslash G}(g),\quad f\in C_c^{\infty}(H\backslash G,\theta),$$
+where $\mu_{H\backslash G}$ is called a \textit{positive semi-invariant measure} on $H\backslash G$. Also, since such a $\theta$ for which Proposition \ref{prop:semiinvariant} holds is uniquely defined, it is common to write $\delta_{H\backslash G}$ for $\delta_H^{-1}\delta_G|_H$. We now have all the required machinery to describe the Duality Theorem.
+
+\begin{thm}[Duality Theorem]\label{thm:duality}
+    Let $H$ be a closed subgroup of a locally profinite group $G$ and let $\dot{\mu}$ be a positive semi-invariant measure on $H\backslash G$. Let $(\sigma,W)$ be a smooth representation of $H$. Then there is a natural isomorphism
+    $$\left(\cInd_H^G\sigma \right)^{\check{}}\cong \Ind_H^G(\delta_{H\backslash G}\otimes \check{\sigma}),$$
+    which only depends on the choice of $\dot{\mu}$.
+\end{thm}
+
+\begin{proof}
+    We sketch a proof to motivate why one would expect $\delta_{H\backslash G}$ to appear. For a detailed proof, see \cite[Theorem 3.5]{BH1}.
+    Throughout, we view the action of $\delta_{H\backslash G}\otimes\check{\sigma}$ naturally on $\check{W}$ (where $\check{\sigma}$ acts). For $\phi\in \cInd_H^G\sigma$ and $\Phi\in\Ind_H^G\delta_{H\backslash G}\otimes\check{\sigma}$, 
+    we have that $\phi(g)\in W$ and $\Phi(g)\in\check{W}$ for any $g\in G$. We can then consider the function $$f:g\longmapsto\langle\Phi(g),\phi(g)\rangle,\quad g\in G $$ 
+    where $\langle\cdot,\cdot\rangle$ is the standard evaluation pairing on $\check{W}\times W$. This function satisfies 
+    $$f(hg)=\langle\Phi(hg),\phi(hg)\rangle=\delta_{H\backslash G}(h)\langle\check{\sigma}(h)\Phi(g),\sigma(h)\phi(g)\rangle=\delta_{H\backslash G}(h)\langle\Phi(g),\phi(g)\rangle=\delta_{H\backslash G}(h)f(g)\quad h\in H, g\in G,$$
+    so $f\in C_c^\infty(H\backslash G,\delta_{H\backslash G})$.
+    Therefore, there is a well-defined pairing 
+    \begin{align*}
+        \Psi:\Ind_H^G(\delta_{H\backslash G}\otimes\check{\sigma})\times \cInd_H^G\sigma\longrightarrow\CC&,\\
+        (\Phi,\phi)\longmapsto\int_{H\backslash G}\langle\Phi(x),\phi(x)\rangle d\dot{\mu}(x)&.
+    \end{align*}
+    Crucially, this pairing is $G$-invariant. Indeed, 
+    $$\Psi(\rho_g\Phi,\rho_g\phi)=\int_{H\backslash G}\langle\Phi(xg),\phi(xg)\rangle d\dot{\mu}(x)=\int_{H\backslash G}\langle\Phi(x),\phi(x)\rangle d\dot{\mu}(x)=\Psi(\Phi,\phi)$$
+    by right translation invariance of the positive semi-invariant measure on $H/G$. 
+    This induces a $G$-homomorphism $\Ind_H^G(\delta_{H\backslash G}\otimes \check{\sigma})\to \left(\cInd_H^G\sigma \right)^{\check{}}$. The remainder of the proof consists of proving that this is an isomoprhism.
+
+    \begin{lemma}
+        The above pairing identifies $\left(\Ind_H^G(\delta_{H\backslash G}\otimes \check{\sigma})\right)^K$ bijectively with the linear dual of $\left(\cInd_H^G\sigma \right)^K$.
+    \end{lemma}
+    \begin{proof}
+        We omit the proof of this result. The advantage is that one can explicitly describe a canonical basis for each space, which are canonically identified by the pairing. For a complete description, check \cite[Lemma 3.5.2]{BH1}.
+    \end{proof}
+    This concludes the proof of the Duality Theorem.
+\end{proof}
+
+\subsection{Measure Theory on \texorpdfstring{$GL_2(F)$}{TEXT}}
+
+We now focus on the group $G=\GL_2(F)$ over a non-Archimedean local field $F$. This group will be the main object of study of the next chapter, where we will study and classify a large family of irreducible representations of $G$. To that aim, we first need to develop some measure theory associated to the group, and we do this now.
+
+We begin by introducing some notation. Let $$B=\left\{\begin{psmallmatrix} a&b\\0&d\end{psmallmatrix} \mid a,d \in F^\times, b \in F\right\},\quad T=\left\{\begin{psmallmatrix}
     a&0\\0&d
-\end{psmallmatrix}\mid a,d \in F^\times\} \cong F^\times \times F^\times$ and $N=\{\begin{psmallmatrix}
+\end{psmallmatrix}\mid a,d \in F^\times\right\} \cong F^\times \times F^\times\quad\text{ and }\quad N=\left\{\begin{psmallmatrix}
     1&b\\0&1
-\end{psmallmatrix}\mid b \in F\}\cong F$.
+\end{psmallmatrix}\mid b \in F\right\}\cong F$$ be the Borel subgroup $B$ of upper triangular matrices, the maximal torus $T$ and the subgroup of nilpotent elements $N$ of $B$, respectively. A simple calculation shows that $N$ is a normal subgroup of $B$ while $T$ is not. Furthermore, $B\cap N=\{1\}$ and $B=NT$ and so it follows that $B=N \rtimes T$.
 
 Although $G$ is unimodular (\cite[Proposition 7.5]{BH1}), the Borel subgroup $B$ is not. The failure of $B$ to be unimodular is a consequence of the subgroups $T$ and $N$ not commuting. As $T$ and $N$ are abelian, they are unimodular, and so we may pick Haar measures $dt$ and $dn$ on $T$ and $N$ respectively. Define a linear function $I$ on $C_c^\infty(B) = C_c^\infty(T) \otimes C_c^\infty(N)$ by
 $$I(\Phi) = \int_T\int_N \Phi(tn) dn dt.$$
@@ -132,64 +207,24 @@ $$I(\Phi) = \int_T\int_N \Phi(tn) dn dt.$$
 \begin{proof}
     By a similar argument as above, we have
     $$\int_T\int_N \Phi(tnsm) dtdn = \int_T\int_N \Phi(tss^{-1}nsm)dtdn = \int_T\int_N \Phi(ts^{-1}ns) dt dn.$$ Identifying $N \cong F$ this is
-    $$\int_T\int_N \Phi(t \cdot \begin{psmallmatrix}
+    $$\int_T\int_N \Phi\left(t \cdot \begin{psmallmatrix}
         1 & s_1^{-1}xs_2 \\0&1 
-    \end{psmallmatrix}) d\mu_F(x) = |s_1/s_2|\int_T\int_N\Phi(tn)dtdn$$
+    \end{psmallmatrix}\right) d\mu_F(x) = |s_1/s_2|\int_T\int_N\Phi(tn)dtdn$$
     so by definition of the modular character we have $\delta_B(sm) = |s_2/s_1|$.
 \end{proof}
 
+The family of irreducible representations that we will study in the next chapter arise as subrepresentations of $\Ind_B^G\sigma$ where $\sigma$ is a smooth representation of $T$. We remark that the Borel subgroup $B$ is a normal subgroup of $G$ and that $G/B$ is compact and therefore the functors $\Ind_B^G$ and $\cInd_B^G$ coincide.
 
+Hence, by the Duality Theorem, it follows that 
+$$(\Ind_B^G\sigma)^{\check{}}\cong\Ind_B^G(\delta_B^{-1}\otimes\check{\sigma}),$$
+for any smooth representation $\sigma$ of $T$. This is slightly impractical, so one introduces a related functor that interacts well with duality.
 
-
-
-
-\subsection{Positive Semi-invariant Measures and the Duality Theorem}
-
-To classify the principal series representations of $\GL_2(F)$ in the following section, one needs to understand the interaction between the induction and the duality functor for smooth representations of locally profinite groups and their closed groups. To this aim, we need to develop one last bit of machinery from measure theory called positive semi-invariant measures, which generalise the notion of Haar measures.
-
-Let $G$ be a locally profinite group and let $H$ be a closed subgroup. Fix some character $\theta$ of $H$ and consider the space of functions $f:G\to\CC$ that are $G$-smooth under right translation, are compactly supported modulo $H$ and satisfy $$f(hg)=\theta(h)f(g),\quad h\in H,g\in G.$$
-This space is in fact the compact induction $\cInd_H^G\theta$, but in analogy to $\CG=\cInd_{e}^G\mathds{1}$ we denote it as $C_c^{\infty}(H\backslash G,\theta)$. At this point it is natural to ask whether there exists some non-zero linear functional $I_{\theta}:C_c^{\infty}(H\backslash G,\theta)\to\CC$ such that $I_{\theta}(\rho_g f)=I_{\theta}(f)$ for all $g\in G$. As it turns out, this is not possible and there is a simple criterion to determine when it is possible.
-
-\begin{prop}\label{prop:semiinvariant}
-    Let $\theta:H\to\CC^{\times}$ be a character of $H$. Then there exists a non-zero linear functional $I_{\theta}:C_c^{\infty}(H\backslash G,\theta)\to\CC$ such that $I_{\theta}(\rho_g f)=I_{\theta}(f)$ for all $g\in G$ and $f\in C_c^{\infty}(H\backslash G,\theta)$ if and only if $\theta\delta_H=\delta_G|_H$.
-
-    Furthermore, when this holds, the functional $I_\theta$ is uniquely determined up to a constant.
-\end{prop}
-\begin{proof}
-    \cite[Proposition 3.4]{BH1}
-\end{proof}
-
-We remark that this is a generalisation of Proposition \ref{prop:haar}; indeed, by setting $H=\{e\}$ one recovers the usual right Haar integral on $G$. Similarly to the above case, when $\theta=\delta_H^{-1}\delta_G|_H$, one commonly expresses the functional $I_\theta$ with the integral notation 
-$$I_\theta(f)=\int_{H\backslash G}f(g)d\mu_{H\backslash G}(g),\quad f\in C_c^{\infty}(H\backslash G,\theta),$$
-where $\mu_{H\backslash G}$ is called a \textit{positive semi-invariant measure} on $H\backslash G$. Also, since such a $\theta$ for which Proposition \ref{prop:semiinvariant} holds is uniquely defined, it is common to write $\delta_{H\backslash G}$ for $\delta_H^{-1}\delta_G|_H$. We now have all the required machinery to describe the Duality Theorem.
-
-\begin{thm}[Duality Theorem]\label{thm:duality}
-    Let $H$ be a closed subgroup of a locally profinite group $G$ and let $\dot{\mu}$ be a positive semi-invariant measure on $H\backslash G$. Let $(\sigma,W)$ be a smooth representation of $H$. Then there is a natural isomorphism
-    $$\left(\cInd_H^G\sigma \right)^{\check{}}\cong \Ind_H^G(\delta_{H\backslash G}\otimes \check{\sigma}),$$
-    which only depends on the choice of $\dot{\mu}$.
-\end{thm}
-
-\begin{proof}
-    We sketch a proof to motivate why one would expect $\delta_{H\backslash G}$ to appear. For a detailed proof, see \cite[Theorem 3.5]{BH1}.
-    Throughout, we view the action of $\delta_{H\backslash G}\otimes\check{\sigma}$ naturally on $\check{W}$ (where $\check{\sigma}$ acts). For $\phi\in \cInd_H^G\sigma$ and $\Phi\in\Ind_H^G\delta_{H\backslash G}\otimes\check{\sigma}$, 
-    we have that $\phi(g)\in W$ and $\Phi(g)\in\check{W}$ for any $g\in G$. We can then consider the function $$f:g\longmapsto\langle\Phi(g),\phi(g)\rangle,\quad g\in G $$ 
-    where $\langle\cdot,\cdot\rangle$ is the standard evaluation pairing on $\check{W}\times W$. This function satisfies 
-    $$f(hg)=\langle\Phi(hg),\phi(hg)\rangle=\delta_{H\backslash G}(h)\langle\check{\sigma}(h)\Phi(g),\sigma(h)\phi(g)\rangle=\delta_{H\backslash G}(h)\langle\Phi(g),\phi(g)\rangle=\delta_{H\backslash G}(h)f(g)\quad h\in H, g\in G.$$
-    Therefore, there is a well-defined pairing 
+\begin{defn}
+    Let $G$, $B$ and $T$ as above. Define the normalized induction functor 
     \begin{align*}
-        \Psi:\Ind_H^G(\delta_{H\backslash G}\otimes\check{\sigma})\times \cInd_H^G\sigma\longrightarrow\CC&,\\
-        (\Phi,\phi)\longmapsto\int_{H\backslash G}\langle\Phi(x),\phi(x)\rangle d\dot{\mu}(x)&.
+        \iota_B^G:\Smo(T)&\longrightarrow\Smo(G),\\
+        \sigma&\longmapsto\Ind_B^G(\delta_B^{-1/2}\otimes\sigma).
     \end{align*}
-    Crucially, this pairing is $G$-invariant. Indeed, 
-    $$\Psi(\rho_g\Phi,\rho_g\phi)=\int_{H\backslash G}\langle\Phi(xg),\phi(xg)\rangle d\dot{\mu}(x)=\int_{H\backslash G}\langle\Phi(x),\phi(x)\rangle d\dot{\mu}(x)=\Psi(\Phi,\phi)$$
-    by right translation invariance of the positive semi-invariant measure on $H/G$. 
-    This induces a $G$-homomorphism $\Ind_H^G(\delta_{H\backslash G}\otimes \check{\sigma})\to \left(\cInd_H^G\sigma \right)^{\check{}}$. The remainder of the proof consists of proving that this is an isomoprhism.
-
-    \begin{lemma}
-        The above pairing identifies $\left(\Ind_H^G(\delta_{H\backslash G}\otimes \check{\sigma})\right)^K$ bijectively with the linear dual of $\left(\cInd_H^G\sigma \right)^K$.
-    \end{lemma}
-    \begin{proof}
-        We omit the proof of this result. The advantage is that one can explicitly describe a canonical basis for each space, which are canonically identified by the pairing. For a complete description, check \cite[Lemma 3.5.2]{BH1}.
-    \end{proof}
-    This concludes the proof of the Duality Theorem.
-\end{proof}
+\end{defn}
+This functor is also additive and exact, and it gives the more natural formula
+$$(\iota_B^G\sigma)^{\check{}}\cong\iota_B^G\check{\sigma}.$$

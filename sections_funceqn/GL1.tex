@@ -1,6 +1,6 @@
 \subsection{The L-function of a Character of \texorpdfstring{$F^\times$}{TEXT}}
 
-Let $F$ be a nonarchimedean local field, $\varpi$ be a uniformiser and $q$ be the size of the residue field. We will later define $L$-functions attached to an irreducible smooth representation of $\GL_2(F)$ and determine a functional equation they satisfy. The ideas involved in the proof that such objects exists are similar (and highly dependent) on the ideas associated to the development of the theory discussed in the previous section for the local field $F$. 
+Let $F$ be a non-Archimedean local field, $\varpi$ be a uniformiser and $q$ be the size of the residue field. We will later define $L$-functions attached to an irreducible smooth representation of $\GL_2(F)$ and determine a functional equation they satisfy. The ideas involved in the proof that such objects exists are similar (and highly dependent) on the ideas associated to the development of the theory discussed in the previous section for the local field $F$. 
 
 Therefore, we explain these results first in the context of irreducible smooth representations $\chi$ of $\GL_1(F)$, necessarily a character $\chi: F^\times \to \CC^\times$. To mimic the development we aim to follow for the case of irreducible representations of $\GL_2(F)$, we will first define the space $\mathcal Z(\chi)$ from which the definition of the L-function $L(\chi,s)$ arises naturally. Afterwards, we will introduce the analogue of the Fourier transform over $F$. This will lead us to the proof of the functional equation of $\GL_1$ and the construction of the local constant $\varepsilon(\chi,s,\psi)$. 
 
@@ -35,12 +35,14 @@ The zeta function $\zeta(\Phi,\chi,s)$ only depends on $d^*x$ up to scaling. To 
     $$Z(\Phi,\chi,s) = \mu^*(U_F^{d}) \neq 0.$$
 \end{proof}
 
+\iffalse
 \textbf{Question to potentially simplify the proof}
 
 The ring $\CC[X,X^{-1}]$ of Laurent series with complex coefficients has very useful properties. It is a principal ideal domain and its group of units consists of the monomials $aX^b,a\in\CC^\times, b\in\ZZ$. Then $\mathcal Z(\chi)$, being a $\CC[q^{-s},q^s]$-module contained in its fraction field $\CC((q^{-s}))$, it of the form 
 $$\mathcal{Z}(\chi)=P_\chi(q^{-s})\cdot\CC[q^{-s},q^s]$$ for some polynomial $P_\chi(X)\in\CC[X]$ that is unique under the assumption that $P_\chi(0)=1$.
 
 \textbf{Is this correct?}
+\fi
 
 \begin{prop}\label{prop:gl1factor}
     Let $\chi:F^\times \to \CC^\times$ be a character. There exists a unique polynomial $P_\chi \in \CC[X]$ with $P_\chi(0)=1$ such that
@@ -66,7 +68,7 @@ $$\mathcal{Z}(\chi)=P_\chi(q^{-s})\cdot\CC[q^{-s},q^s]$$ for some polynomial $P_
 \end{proof}
 
 \begin{rem}
-    The computation in the proof above shows, in the case $\chi = 1$, that $\zeta(\mathbbm{1}_{\cO_F},1,s) = (1-q^{-s})^{-1}$, provided that $\mu^*(\mathcal{O}_F^\times)=1$. If $F=K_v$ is the completion of a number field $K$ at a nonarchimedean place $v$, we recover the Euler factor of the Dedekind zeta function $\zeta_K(s)$ at the place $v$. This explains the naming of our zeta functions. 
+    The computation in the proof above shows, in the case $\chi = 1$, that $\zeta(\mathbbm{1}_{\cO_F},1,s) = (1-q^{-s})^{-1}$, provided that $\mu^*(\mathcal{O}_F^\times)=1$. If $F=K_v$ is the completion of a number field $K$ at a non-Archimedean place $v$, we recover the Euler factor of the Dedekind zeta function $\zeta_K(s)$ at the place $v$. This explains the naming of our zeta functions. 
 \end{rem}
 
 \begin{rem}

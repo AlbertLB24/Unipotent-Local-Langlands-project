@@ -1,21 +1,18 @@
-\subsection{Characters of Local Fields}
+\subsection{Characters of Local Fields}\label{sec:chars}
 
-Now we turn our attention to the representation theory of locally profinite groups. It turns out that there are too many representations, so we need to restrict our attention to those representations satisfying a certain smoothness condition. To motivate this condition, we will first describe the simplest case: one-dimensional representations of a local field $F$: that is, group homomorphisms $\phi:F\rightarrow\CC^{\times}$. Later in this section we will also study the one-dimensional representations of $F^{\times}$.
+Now we turn our attention to the representation theory of a locally profinite group $G$. The category $\Rep(G)$ of abstract representations introduced in the previous section only takes into consideration the group structure of $G$, but it completely ignores its topology. In the previous section, we have seen that locally profinite groups have a rather special topology and, as it will become apparent as we develop the theory, this topology is a crucial piece of information associated to the group. Consequently, instead of working with $\Rep(G)$, we will work with a full subcategory of representations that satisfy an additional smoothness condition, which will be denoted as $\Smo(G)$ and its elements called \textit{smooth representations}. This condition, as the name suggests, requires the representation to be continuous with respect to the topology on $G$ and the complex topology of $\Aut_\CC(V)$. In sections \ref{sec:chars} and \ref{sec:smoothrep}, we will see that these two notions coincide when the representation is finite-dimensional, but not in general. To motivate this condition, we will first describe the simplest case: one-dimensional representations of a local field $F$: that is, group homomorphisms $\phi:F\rightarrow\CC^{\times}$. Later in this section we will also study the one-dimensional representations of $F^{\times}$. We now follow closely the development from \cite[\S 2]{BH1}, while stressing the motivation for the terms introduced through examples.
 
-As we have discussed in the previous section, locally profinite groups carry a topology, so a natural condition to impose is \textit{continuity} with respect to the usual topologies in $\CC^{\times}$ and $G$. A \textit{character} of $G$ is a continuous homomorphism $\psi:G\rightarrow\CC^{\times}$.
+\begin{defn}
+    A \textit{character} of a locally profinite group $G$ is a continuous homomorphism $\psi:G\rightarrow\CC^{\times}$.
+\end{defn}
 
-Characters of a locally profinite group $G$ form a group $\hat{G}$ under multiplication. It turns out that for one-dimensional representations, continuity coincides with the smoothness condition we will introduce later. 
+Characters of a locally profinite group $G$ form an abelian group $\hat{G}$ under multiplication, denoted as the \textit{dual group} of $G$. 
 
-When $G$ is a finite group with the discrete topology, then any one-dimensional representation is a character, and we have the following simple description.
+\begin{example}
+    Let $G$ be a finite group with the discrete topology. Then any one-dimensional representation is a character, and we have the simple description $\hat{G}\cong G^{ab}$. In particular, if $G$ is abelian then $\hat{G}\cong G$.
+\end{example}
 
-\begin{prop}
-    If $G$ is a finite group with the discrete topology, then $\hat{G}\cong G^{ab}$. In particular, if $G$ is abelian then $\hat{G}\cong G$.
-\end{prop}
-\begin{proof}
-    \textbf{Insert reference here}
-\end{proof}
-
-For general locally profinite results, we have this rather surprising result. 
+For general locally profinite results, we have this rather surprising result
 \begin{lemma}\label{lem_cont_chars}
     Let $G$ be a locally profinite group and $\psi: G\rightarrow\CC^{\times}$ a homomorphism. Then $\psi$ is continuous if and only if $\ker\psi$ is open in $G$. Furthermore, if $G$ is the union of its compact open subgroups, then $$\psi(G)\subseteq\{z\in\CC^{\times}:|z|=1\}=S^1.$$
 \end{lemma}
@@ -30,35 +27,68 @@ For general locally profinite results, we have this rather surprising result.
     The last assertion is a direct consequence of the fact that the continuous image of a compact set is compact, and $S^1$ is the unique maximal compact subgroup of $\CC^{\times}$.
 \end{proof}
 
+\begin{example}
+    The local field $F$ is the union of its open compact subgroups, so all characters of $F$ are unitary. This can also be checked directly as follows. Let $\psi:F\to\CC^\times$ be a character. By Lemma \ref{lem_cont_chars}, $\ker\psi$ is open in $F$ and therefore it contains $\pp^N$ for some $N$ large enough. Assume, for example, that $\psi$ is trivial on $R=\pp^0$. We will describe such characters inductively for each $\pp^n, n<0$. Fix some $n<0$ and assume that $\psi(\pp^n)\subset S^1$. Then $\psi(\varpi^{n-1})^q=\psi(q\varpi^{n-1})\in S^1$ since $q\varpi^{n-1}\in\pp^n$ and therefore $\psi(\varpi^{n-1})\in S^1$. Since any $x\in\pp^{n-1}$ can be expressed uniquely as $x=a\varpi^{n-1}+y$ for $a\in\{0,1,\ldots,q-1\}$ and $y\in \pp^n$, it follows that $\psi(x)=\psi(\varpi^{n-1})^a\psi(y)\in S^{1}$, so $\psi(\pp^{n-1})\subset S^1$.
+    
+    
+    We remark that, for each $n<0$, there are exactly $q$ choices for $\psi(\varpi^n)$, since it is a $q$th root of $\psi(q\varpi^{n})$ and $q\varpi^{n}\in\pp^{n+1}$. Once this choice is made $\psi$ is completely determined on $\pp^n$. We have shown that all characters of $F$ trivial on $R$ are constructed this way.
 
-Since the local field $F$ is the union of its open compact subgroups, all characters of $F$ are unitary. However, this is not the case for $F^{\times}$. Indeed, the map $x\mapsto|x|$ is a character of $F^{\times}$ that is not unitary. 
+    It is also worth mentioning that if the uniformizer is chosen appropiately, the above construction can be made explicit. For example, if $F=\QQ_p$ and $\varpi=p$, then $\psi(p^{n-1})^p=\psi(p^{n})$ for any character $\psi$ of $\QQ_p$ and $n\in\ZZ$. This means that if $\psi$ is trivial on $R$ (in particular, $\psi(1)=1$), then $\psi$ is determined by a sequence $(\zeta_1,\zeta_2,\zeta_3,\ldots)$ where $\zeta_n$ is a $p^n$th root of unity and $\zeta_n^p=\zeta_{n-1}$. For example,
+    \begin{align*}
+        \psi:\QQ_p&\longrightarrow \CC^\times\\
+        \sum_{k\geq m} a_kp^k&\longmapsto
+        \begin{cases}
+            1 \text{ if } m\geq 0,\\
+            \prod_{k=m}^{-1}e^{2\pi i a_kp^k} \text{ if } m < 0.\\
+        \end{cases}
+    \end{align*}
+    is a non-trivial character of $\QQ_p$.
+    
+    
+    From this perspective, it is clear that
+    $$\{\psi\in\widehat{\QQ_p}\text{ trivial on } p^n\ZZ_p \text{ for some }n\in\ZZ \}\cong\{\psi\in\widehat{\QQ_p}\text{ trivial on } \ZZ_p \}\cong \varprojlim_{n\geq 0} \ZZ/p^n\ZZ\cong \ZZ_p,$$
+    where the first isomorphism follows by replacing some character $\psi$ trivial on $p^n\ZZ_p$ for the character $x\mapsto\psi(p^n x)$, trivial on $\ZZ_p$. The more general statement 
+    $$\{\psi\in\hat{F}\text{ trivial on } \pp^n \text{ for some }n\in\ZZ \}\cong R$$
+    also holds for any local field $F$, but this takes some more work. We prove this fact in Theorem \ref{thm:duality} (Additive Duality), together with the important isomorphism $\hat{F}\cong F$.
 
-Before stating the classification theorem for characters of $F$, we need one last definition. 
+\end{example}
+
+\begin{example}
+    In contrast, the multiplicative group $F^\times$ is not the union of its open compact subgroups. For instance, no open compact subgroup contains $2$ assuming that $\mathrm{char}\kappa\geq 3$. Moreover, it is not the case that all characters of $F^\times$ are unitary. Indeed, the map $\chi:x\mapsto|x|$ is a character of $F^{\times}$ since $\ker\chi=R^\times$ is an open subgroup of $F^\times$, and it is not unitary.
+
+    This example hints at the fact that the group structure of $\hat{F^\times}$ is quite subtle and we will not cover its description here. The interested reader can find a partial description in \cite[\S 1.8]{BH1}
+\end{example}
+
+
+Before stating Additive Duality, the main result of this section, we need one last definition.
 
 \begin{defn}
-    Let $\psi$ be a non-trivial character of $F$ (resp. of $F^{\times}$). The \textit{level} of $\psi$ is defined as the least integer $d\geq0$ such that $\pp^d\subseteq\ker\psi$ (resp. $U_F^{d+1}\subseteq\ker\psi$).
+    Let $\psi$ be a non-trivial character of $F$. The \textit{level} of $\psi$ is the least integer $d$ such that $\pp^d\subseteq\ker\psi$.
 \end{defn}
 
+The following is a simple property of the level of a character.
+
 \begin{lemma}
-    Let $\psi\in\hat{F}$ be a character of level $d$ and let $a\in F$. Then the map $a\psi:x\mapsto\psi(ax)$ is a character of $F$, and if $a\neq0$ then $a\psi$ has level $d-\nu_F(a)$.
+    Let $\psi\in\hat{F}$ be a character of level $d$ and let $a\in F$. Then the map $a\psi:x\mapsto\psi(ax)$ is a character of $F$, and if $a\neq0$ then $a\psi$ has level $d-\nu(a)$.
 \end{lemma}
 \begin{proof}
-    It is clear that $a\psi$ is a character since if $x\in\pp^{d-\nu_F(a)}$, then $ax\in\pp^d$, so $a\psi(x)=1$, and therefore $\pp^{d-\nu_F(a)}\subseteq\ker(a\psi)$ and the kernel of $a\psi$ is open. Furthermore, there is some $y\in\pp^{d-1}$ such that $\psi(y)\neq1$, and so $a\psi(a^{-1}y)\neq1$. Since $a^{-1}y\in\pp^{d-1-\nu_F(a)}$, this indeed shows that the level of $a\psi$ is $d-\nu_F(a)$. 
+    The map $a\psi$ is clearly a homomorphism. It is also a character since if $x\in\pp^{d-\nu(a)}$, then $ax\in\pp^d$, so $a\psi(x)=1$, and therefore $\pp^{d-\nu(a)}\subseteq\ker(a\psi)$ and the kernel of $a\psi$ is open. Furthermore, there is some $y\in\pp^{d-1}$ such that $\psi(y)\neq1$, and so $a\psi(a^{-1}y)\neq1$. Since $a^{-1}y\in\pp^{d-1-\nu(a)}$, this indeed shows that the level of $a\psi$ is $d-\nu(a)$. 
 \end{proof}
 
 We are now ready to give the classfication theorem for $\hat{F}$.
 
 \begin{thm}[Additive Duality]\label{add_dual}
-    Let $\psi\in\hat{F}$ be a character of level $d$. The map $a\mapsto a\psi$ induces an isomorphism $F\cong\hat{F}$. 
+    Let $\psi\in\hat{F}$ be a character of level $d$. The map $a\mapsto a\psi$ induces the isomorphisms 
+    $$F\cong\hat{F} \quad\text{ and }\quad R\cong\{\psi\in\hat{F}:\pp^d\subseteq\ker\psi\}.$$  
 \end{thm}
 
-The proof of surjectivity of the theorem requires an inductive step, which heavily relies on the following results.
+The proof of surjectivity of the theorem requires an inductive step, which relies on the following results.
 
 \begin{lemma}\label{lem_congruence}
     Let $\psi\in\hat{F}$ be a character of level $d$ and let $u,u'\in U_F$ be two units of $F$. Then $u\psi$ coincides with $u'\psi$ on $\pp^{d-n}$ if and only if $u'u^{-1}\in U_F^{n}$.
 \end{lemma}
 \begin{proof}
-    Let $\alpha=\nu_F(u-u')$. A simple definition chase shows that $u\psi$ and $u'\psi$ agree on $\pp^{d-n}$ if and only if $\pp^{d-n+\alpha}=(u-u')\pp^{d-n}\subseteq\ker\psi$. By definition of level, this is the case if and only if $\alpha\geq n$; that is, if $u\equiv u'\pmod{\pp^n}$ or $u'u^{-1}\in U_F^{n}$.
+    Let $\alpha=\nu(u-u')$. A simple definition chase shows that $u\psi$ and $u'\psi$ agree on $\pp^{d-n}$ if and only if $\pp^{d-n+\alpha}=(u-u')\pp^{d-n}\subseteq\ker\psi$. By definition of level, this is the case if and only if $\alpha\geq n$; that is, if $u\equiv u'\pmod{\pp^n}$ or equivalently $u'u^{-1}\in U_F^{n}$.
 \end{proof}
 
 \begin{lemma}\label{lem_chars}
@@ -82,4 +112,6 @@ We are now ready for the proof of Additive Duality.
     Thus, it remains to construct the sequence above. To construct $u_1$ we note that by Lemma \ref{lem_chars}, there are exactly $q-1$ non-trivial characters on $\pp^{d-1}$ that are trivial on $\pp^d$. In addition, by Lemma \ref{lem_congruence}, as $u$ ranges over the cossets of $U_F/U_F^1$, the characters $u\psi|_{\pp^{d-1}}$ are distinct. Since $|U_F/U_F^1|=|\kappa^{\times}|=q-1$, there is some $u_1\in U_F$ such that $u_1\psi$ agrees with $\theta$ on $\pp^{d-1}$. 
     
     Assuming now we have constructed $u_1,\ldots,u_n$ in $U_F$ with the desired conditions, we note that by Lemma \ref*{lem_chars}, there are exactly $q$ characters of $\pp^{d-n-1}$ that coincide with $\theta|_{\pp^{d-n}}$ when they are restricted. Again by Lemma \ref*{lem_congruence}, as $\alpha$ ranges over the cosets of $U_F^n/U_F^{n+1}$ the characters $\alpha u_n\psi$ are distinct on $\pp^{d-n-1}$ but they all coincide on $\pp^{d-n}$. Since $|U_F^n/U_F^{n+1}|=|\kappa|=q$, there is some $\alpha_n$ such that $\alpha_n u_n\psi$ coincides with $\theta$ on $\pp^{d-n-1}$. Since $\alpha_n\in U_F^n$, $\alpha_n u_n\equiv u_n\pmod{\pp^n}$. Hence $u_{n+1}:=\alpha_n u_n$ has the required properties.
+
+    Finally, it follows immediately from the definition of level that. under the above isomorphism, the elements $a\in R$ correspond to the characters $\psi\in\hat{F}$ that are trivial on $\pp^d$. This concludes the proof.
 \end{proof}

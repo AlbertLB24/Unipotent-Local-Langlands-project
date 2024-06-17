@@ -85,7 +85,7 @@ We require one last element of notation before we can state and prove the functi
     This follows from Proposition \ref{prop:gl2gamma} and Proposition \ref{prop:gl2factor}.
 \end{proof}
 
-Similarly to case of the $L$-functions, one can also prove more general versions of the functional equation and the local constant that hold for any irreducible smooth representation $\pi$ of $G$
+Similarly to case of the $L$-functions, one can also prove more general versions of the functional equation and the local constant that hold for any irreducible smooth representation $\pi$ of $G$.
 
 
 \begin{thm}\label{BHThm2}
@@ -96,14 +96,19 @@ Similarly to case of the $L$-functions, one can also prove more general versions
     \cite[Theorem 24.2.2]{BH1}.
 \end{proof}
 
-The above theorem holds for any irreducible representation $\pi$ of $G$. When $\pi$ is a principal series representation, then $\gamma(\pi,s,\psi)$ has an explicit description.
+The above theorem holds for any irreducible representation $\pi$ of $G$, including cuspidal representations. With the work we have done so far, we can easily calculate $\gamma(\pi,s,\chi)$ whenever $\pi$ is a principal series representation.
+
 
 \begin{lemma}
-    If $(\pi,V)$ is a composition factor of $\Ind_B^G\chi$ for some character $\chi=\chi_1\otimes\chi_2$ of $T$, then
-    $$\gamma(\pi,s,\psi)=\gamma\left(\Ind_B^G\chi,s,\psi\right)=\gamma(\chi_1,s,\psi)\gamma(\chi_2,s,\psi).$$
+    If $(\pi,V)$ is a composition factor of $\Sigma:=\iota_B^G\chi$ for some character $\chi=\chi_1\otimes\chi_2$ of $T$, then
+    $$\gamma(\pi,s,\psi)=\gamma\left(\Sigma,s,\psi\right)=\gamma(\chi_1,s,\psi)\gamma(\chi_2,s,\psi).$$
 \end{lemma}
 
-
+\begin{proof}
+    By the classification of principal series representations, we may assume that $\pi$ is a subrepresentation of $\Sigma$. In this case, by definition, we have that $\mathcal{C}(\pi)\subseteq\mathcal{C}(\Sigma)$. Consequently, $\mathcal{Z}(\pi)\subseteq\mathcal{Z}(\Sigma)$ and, in particular, the convergence for the zeta functions also hold for $\pi$. Therefore, for any $\Phi\in C_c^\infty(A)$ and $f\in\mathcal{C}(\pi)$ we have that $\check{f}\in\mathcal{C}(\check{\pi})\subseteq\mathcal{C}(\check{\Sigma})$ and therefore
+    $$\zeta\left(\hat{\Phi},\check{f},\frac{3}{2}-s\right)=\gamma(\Sigma,s,\psi)\zeta\left(\Phi,f,s+\frac{1}{2}\right),$$
+    whence $\gamma(\pi,s,\psi)=\gamma\left(\Sigma,s,\psi\right)$ as desired.
+\end{proof}
 
 \begin{defn}
     Define the \textit{Godement-Jacquet local constant} $\varepsilon(\pi,s,\psi)$ of an irreducible smooth representation $\pi$ of $G$ by 

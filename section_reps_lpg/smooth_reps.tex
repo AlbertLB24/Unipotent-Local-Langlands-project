@@ -1,10 +1,10 @@
-\subsection{Smooth Representations of Locally Profinite Groups}
+\subsection{Smooth Representations of Locally Profinite Groups} \label{sec:smoothrep}
 
-We now turn our attention to representations of locally profinite groups of arbitrary dimension. For one-dimensional representations, we imposed a natural continuity condition, and Lemma \ref{lem_cont_chars} showed that characters have open kernel. This is a remarkable result, since this means that the homomorphism is continuous with respect to \textbf{any} topology on $\CC^{\times}$, not just the usual one.
+We now turn our attention to representations of arbitrary dimension of locally profinite groups and we introduce the notion of \textit{smooth representations}, which form a full subcategory of $\Rep(G)$. For one-dimensional representations, we imposed a natural continuity condition, and Lemma \ref{lem_cont_chars} showed that characters have open kernel. This is a remarkable result, since this means that the homomorphism is continuous with respect to \textbf{any} topology on $\CC^{\times}$, not just the usual one. 
 
-If $V$ is a finite-dimensional representation of a locally profinite group $G$, the group $\GL_\CC(V)$ has a natural topology as an open subspace of $M_n(\CC)\cong\CC^{n^2}$. It turns out that, analogously to $\CC^{\times}$, small neighbourhoods of the identity of $\GL_\CC(V)$ do not contain any non-trivial subgroups. The same reasoning as in Lemma \ref{lem_cont_chars} shows that continuous finite dimensional representations have open kernel too. That is, the homomorphism is continuous with respect to any topology on $\GL_\CC(V)$.
+If $V$ is a finite-dimensional representation of a locally profinite group $G$, the group $\GL_\CC(V)$ has a natural topology as an open subspace of $M_n(\CC)\cong\CC^{n^2}$. Again, it is a natural requirement that finite dimensional representations should be continous with respect to these topologies. It is a fact, analogous to $\CC^{\times}$, that small neighbourhoods of the identity of $\GL_\CC(V)$ do not contain any non-trivial subgroups. Therefore, the same reasoning as in Lemma \ref{lem_cont_chars} shows that continuous finite-dimensional representations of $G$ have open kernel too. That is, the homomorphism is continuous with respect to any topology on $\GL_\CC(V)$.
 
-However, for infinite-dimensional representations $V$, equipping $\GL_\CC(V)$ with a topology is not as straightforward, and the requirement of having an open kernel is too restrictive. Instead, we will define smooth representations, for which we must first introduce the module of invariants and coinvariants.
+However, for infinite-dimensional representations $V$, equipping $\GL_\CC(V)$ with a topology is not as straightforward, and the requirement of having an open kernel is too restrictive. Here is where the notion of smooth representation becomes relevant, for which we must first introduce the module of invariants and coinvariants.
 
 \begin{defn}
     Let $H\leq G$ be groups and $(\pi,V)$ a representation of $G$. We define the $H$-invariants of $V$ to be 
@@ -20,7 +20,7 @@ However, for infinite-dimensional representations $V$, equipping $\GL_\CC(V)$ wi
     $$V=\bigcup_K V^K$$ as we range over all compact open subgroups $K$ of $G$. We say that $V$ is \textit{admissible} if $V^K$ is finite dimensional for all compact open $K$.
 \end{defn}
 
-Smooth representations of $G$ are a full abelian subcategory of $\Rep(G)$, and this category is denoted by $\Smo(G)$. 
+Smooth representations of $G$ are a full abelian subcategory of $\Rep(G)$ denoted by $\Smo(G)$. 
 
 
 \begin{rem}
@@ -104,10 +104,14 @@ To ensure that $H$ is locally profinite, we must add a condition on the topology
     $$V^\infty:=\bigcup_K V^K \text{  and  } \pi^\infty(g):=\pi(g)|_{V^\infty} \text{  for each  } g\in G,$$ and $K$ ranges over the compact open subgroups of $G$.
 \end{defn}
 
-By chasing definitions, one can show that $(-)^\infty$ is a well-defined left-exact functor such that 
+\begin{rem}
+    One should check that the smoothness functor is well-defined. In other words, we should check that the space $V^\infty$ is preserved under the $G$-action, making it a $G$-representation. Let $v\in V^\infty$ and choose some open compact subgroup $K$ such that $v\in V^K$. For any $g\in G$, we have that $\pi^\infty(g)v=\pi(g)v\in V^{gKg^{-1}}\subseteq V^\infty$ since $\pi(gkg^{-1})\pi(g)v=\pi(gk)v=\pi(g)v$ for any $k\in K$.
+\end{rem}
+
+Furthermore, the functor $(-)^\infty$ is left-exact and it satisfies that
 $$\Hom_G(V,W)=\Hom_G(V,W^\infty) \text{ for all } V\in\Smo(G), W\in\Rep(G).$$
 
-Using these constructions, we can define the smooth dual, restriction and induction functors. We remark that as long as $H\leq G$ is closed, the usual restriction sends smooth representations of $G$ to smooth representations of $H$. This is because the intersection of an open compact subgroup of $G$ with $H$ is still open compact in the subspace topology of $H$. The analogous statement does not hold for the dual and induction functors, so we must compose with the smoothness functor.
+Using these constructions, we can define the smooth dual, restriction and induction functors. Recall that a subgroup $H\leq G$ is also locally profinite if $H$ is closed in $G$. In that case, the restriction functor (Definition \ref{def:absresind}) sends smooth representations of $G$ to smooth representations of $H$. This is because the intersection of an open compact subgroup of $G$ with $H$ is still open compact in the subspace topology of $H$. The analogous statement does not hold for the dual and induction functors, so we must compose with the smoothness functor.
 
 \begin{defn}
     If $G$ is a locally profinite group, define the \textit{smooth dual functor} 
@@ -132,15 +136,28 @@ We also define the smooth induction functor as the composition of the induction 
 \begin{defn}\label{induction}
     Let $G$ be a locally profinite group and $H\leq G$ a closed subgroup. Define the \textit{smooth induction functor}
     \begin{align*}
+        (\Ind_H^G(-))^\infty:\Smo(H)&\longrightarrow\Smo(G),\\
+        (\sigma,W)&\longmapsto(\Sigma,X)^\infty
+    \end{align*}
+    where we recall that $X$ is the space of functions $f: G\to W$ satisfying $f(hg) = \sigma(h)f(g)$ for all $h\in H, g\in G$ and the action of $\Sigma$ on $X$ is given by right translation $\Sigma(g)f:x\mapsto f(xg)$.
+\end{defn}
+
+\begin{rem}
+    Throghout this document, we will only be interested in studying the smooth induction of smooth representations. The idea is that smooth induction is the `right' construction in this setting, which coincides with the abstract induction from Definition \ref{def:absresind} when the group is finite with the discrete topology. Therefore, as it is common in the literature, we will use a slight abuse of notation and denote the smooth induction functor as $\Ind_H^G$. We will write 
+    \begin{align*}
         \Ind_H^G:\Smo(H)&\longrightarrow\Smo(G),\\
         (\sigma,W)&\longmapsto(\Sigma,X)
     \end{align*}
-    where $X$ is the space of functions $f: G\to W$ satisfying
-	\begin{enumerate}
-		\item $f(hg) = \sigma(h)f(g)$ for all $h\in H, g\in G$.
-		\item There is a compact open subgroup $K\subseteq G$ (depending on $f$) such that $f(gk) = f(g)$ for all $g\in G, k\in K$.
-	\end{enumerate}
-\end{defn}
+    where $\Sigma$ is now the space of functions $f:G\to W$ satisfying:
+    \begin{enumerate}
+        \item For all $h\in H, g\in G$, we have $f(hg) = \sigma(h)f(g)$.
+        \item There is some open compact subgroup $K$ of $G$ such that $f(xg)=g(x)$ for all $x\in G$ and $g\in K$,
+    \end{enumerate}
+    and $\Sigma$ is the action on $X$ by right translation.
+
+    The second condition is precisely the smoothness condition that appears after composing the abstract induction with the smoothness functor.
+    
+\end{rem}
 
 Since the action $\Sigma$ on $X$ is given by $\Sigma(g)f:x\mapsto f(xg)$, condition $2.$ is precisely the smoothness condition that $f\in X^K$ for some open compact subgroup $K$. As above, we will denote this representation of $G$ by $\Ind_H^G\sigma$. Under these conditions, the first half of Frobenius reciprocity holds:
 
@@ -148,24 +165,28 @@ Since the action $\Sigma$ on $X$ is given by $\Sigma(g)f:x\mapsto f(xg)$, condit
 	Let $(\pi,V)$ be a smooth representation of $G$, and $(\sigma,W)$ a smooth representation of a closed subgroup $H$. Then the map
 	\begin{align*}
 		\Psi:\Hom_G(\pi, \Ind_H^G\sigma)&\longrightarrow \Hom_H(\Res_H^G \pi, \sigma),\\
-		\varphi &\longmapsto \alpha_\sigma \circ \varphi,
+		\varphi &\longmapsto a_\sigma \circ \varphi,
 	\end{align*}
-    is a bijection that is functorial in both variables $\pi,\sigma$. Here $\alpha_\sigma:\Ind_H^G\sigma \to W$ is the canonical map $\alpha_\sigma(f) = f(1)$. In categorical terms,
+    is a bijection that is functorial in both variables $\pi,\sigma$. Here $a_\sigma:\Ind_H^G\sigma \to W$ is the canonical map $a_\sigma(f) = f(1)$. In categorical terms,
     $$\Res_H^G\dashv\Ind_H^G.$$
 \end{thm}
+\begin{proof}
+    \cite[2.4 Frobenius Reciprocity]{BH1}
+\end{proof}
 
 However, in this context, it is not the case that $\Ind_H^G$ is left adjoint to $\Res_H^G$. With a small modification we can recover left exactness. Firstly, we note that to ensure that $a_\sigma^c$ (to be defined shortly) is a $H$-homomorphism, we need the stronger assumption that $H$ is open in $G$. Secondly, we observe that given representations $(\pi,V)$ and $(\sigma,W)$, of $G$ and $H$ respectively, $a_\sigma^c(w)$ is supported only in $H$ for any $w\in W$. Hence, one should not consider the entire representation $\Ind_H^G\sigma$, but rather a subrepresentation of it. Here is the precise construction.
 
 \begin{defn}
 	Let $G$ be a locally profinite group, $H$ a closed subgroup, and $(\sigma,W)$ a smooth representation of $H$. Define the \textit{compact induction functor} 
     \begin{align*}
-        c-\Ind_H^G:\Smo(H)&\longrightarrow\Smo(G),\\
+        \cInd_H^G:\Smo(H)&\longrightarrow\Smo(G),\\
         (\sigma,W)&\longmapsto(\Sigma_c,X_c)
     \end{align*}
     where, if $\mathrm{Ind}_H^G(\sigma,W) = (\Sigma,X)$, then
-    $$X_c:=\{f\in X: \supp f\subseteq H\backslash G \text{ is compact}\}.$$
-    We say that functions satisfying the later condition are compactly supported modulo $H$, and this condition is equivalent to $\supp f\subseteq HC$ for some compact subset $C$ of $G$.
-    The action by $\Sigma$ is closed in $\Sigma_c$, so the functor is well-defined.
+    $$X_c:=\{f\in X: \supp f \text{ in } H\backslash G \text{ is compact}\},$$
+    and $\Sigma_c$ acts on $X_c$ by right translation.
+    We say that functions satisfying the later condition are \textit{compactly supported modulo $H$}, and this condition is equivalent to $\supp f\subseteq HC$ for some compact subset $C$ of $G$.
+    The space $X_c$ is closed under the action by $\Sigma$, so the functor is well-defined.
 \end{defn}
 
 This construction is mainly of interest in the case when $H$ is open in $G$, in which case $a_\sigma^c$ is a $H$-homomorphism. This construction satisfies the second half of Frobenius reciprocity.
@@ -173,10 +194,13 @@ This construction is mainly of interest in the case when $H$ is open in $G$, in 
 \begin{thm}\label{thm:frob2}
 	Let $(\pi,V)$ be a smooth representation of $G$, and $(\sigma,W)$ a smooth representation of an open subgroup $H$. Then the map 
 	\begin{align*}
-		\Psi^c:\Hom_G(c-\Ind_H^G \sigma, \pi)&\longrightarrow \Hom_H(\sigma, \Res_H^G\pi)\\
-		\varphi &\longmapsto \varphi \circ \alpha^c_\sigma 
+		\Psi^c:\Hom_G(\cInd_H^G \sigma, \pi)&\longrightarrow \Hom_H(\sigma, \Res_H^G\pi)\\
+		\varphi &\longmapsto \varphi \circ a^c_\sigma 
 	\end{align*}
-    is a bijection that is functorial in both variables $\pi,\sigma$. Here $\alpha^c_\sigma: W\to c-\Ind_H^G \sigma$ is the map $w\mapsto f_w$, where $f_w$ is supported in $H$ and defined by $f_w(h) = hw$.
+    is a bijection that is functorial in both variables $\pi,\sigma$. Here $a^c_\sigma: W\to c-\Ind_H^G \sigma$ is the map $w\mapsto f_w$, where $f_w$ is supported in $H$ and defined by $f_w(h) = hw$.
 \end{thm}
+\begin{proof}
+    \cite[2.5 Theorem]{BH1}
+\end{proof}
 In categorical terms, under the assumptions of this theorem we have
-$$c-\Ind_H^G\dashv\Res_H^G\dashv\Ind_H^G.$$
+$$\cInd_H^G\dashv\Res_H^G\dashv\Ind_H^G.$$

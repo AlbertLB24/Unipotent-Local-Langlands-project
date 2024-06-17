@@ -1,18 +1,24 @@
 \subsection{Schur's Lemma}
 
-We end this section by discussing a version of Schur's Lemma for smooth representations of locally profinite groups. We recall Schur's Lemma for finite groups.
+We end this section by discussing a version of Schur's Lemma for smooth representations of locally profinite groups. Throughout, $G$ will denote a locally profinite group. We recall Schur's Lemma for finite groups.
 
 \begin{thm}
     Let $\mathbf{G}$ be a finite group and let $(\pi,V)$ be a complex irreducible representation of $\mathbf G$. Then for any $\phi\in\End_{\mathbf{G}}(V)$, there is some $\lambda\in\CC$ such that $\phi(v)=\lambda v$ for all $v\in V$. In other words, $\End_{\mathbf{G}}(V)\cong\CC$.
 \end{thm}
 
-Schur's Lemma does not hold for complex smooth irreducible representations of a locally profinite group $G$. However, it is true under a mild hypothesis that is satisfied by all locally profinite groups that will be of interest to us.
+Schur's Lemma does not hold for complex smooth irreducible representations of a locally profinite group $G$. However, it is true under a mild hypothesis.
 
 \begin{hypothesis}
     For any compact open subgroup $K$ of $G$, the set $K\backslash G$ is countable.
 \end{hypothesis}
 
-If this hypothesis holds for one compact open subgroup $K$, then it holds for all of them. For the remainder of this section we assume the hypothesis.
+A short topological argument shows that if this hypothesis holds for one compact open subgroup $K$, then it holds for all of them.
+
+\begin{example}
+    This hypothesis is satisfied by all locally profinite groups in Examples \ref{example_prof_groups}, which are the groups of interest for us. For example, if $F$ is a local field of $0$ characteristic, then $F=K_\mathfrak{P}$ is the completion of a number field at some prime $\mathfrak{P}$. Then the composite map $K\hookrightarrow K_\mathfrak{P}=F\twoheadrightarrow F/R$ is surjective. Since $K$ is a number field, it is countable, which shows that $F/R$ is countable too. The other cases are proven using similar (yet tedious) reasonings.
+\end{example}
+
+ For the remainder of this section we assume the hypothesis.
 
 
 \begin{lemma}
@@ -37,14 +43,14 @@ This results has two important corollaries worth recalling. For the first one, w
     Let $(\pi,V)$ be an irreducible smooth representation of $G$. The centre $Z$ of $G$ acts on $V$ via a character $\omega_{\pi}:Z\to\CC^{\times}$. In other words, $\pi(z)v=\omega_{\pi}(z)v$ for all $v\in V$ and $z\in Z$.
 \end{cor}
 
-\begin{proof}[Proof of Theorem \ref{thm:schur}]
+\begin{proof}
     For any $z\in Z$, the automorphism $\pi(z):V\to V$ lies in $\End_G(V)\cong\CC$. Hence, the desired map $\omega_{\pi}:Z\to\CC^{\times}$ does indeed exist, and it is a group homomorphism. To prove smoothness, we note that if $K$ is an open compact subgroup such that $V^K\neq 0$, then $\omega_{\pi}$ is trivial on the open compact subgroup $K\cap Z$ of $Z$. So $\omega_{\pi}$ is indeed a character of $Z$.
 \end{proof}
 
 The character $\omega_{\pi}$ is called the \textit{central character} of $(\pi,V)$.
 
 \begin{cor}
-    If $G$ is abelian, any irreducible smooth represenation of $G$ is one-dimensional.
+    If $G$ is abelian, any irreducible smooth represenation of $G$ is one dimensional.
 \end{cor}
 
 This justifies the notation $\hat{K}$ for the set of equivalence classes of irreducible smooth representations of a locally profinite group $K$, since this notation can now be seen to coincide with the set of characters $\hat{F}$ of $F$.
