@@ -44,6 +44,7 @@
 \newcommand{\Span}{\mathrm{Span}}
 \newcommand{\supp}{\mathrm{supp}}
 \newcommand{\End}{\mathrm{End}}
+\newcommand{\St}{\mathrm{St}}
 
 
 
@@ -104,6 +105,7 @@
 	\maketitle
 	\tableofcontents
 	\pagenumbering{arabic}
+	\newpage
 
 \section{Locally Profinite Groups and Smooth Representations}
 \input{section_reps_lpg/section_reps_lpg.tex}
@@ -118,36 +120,23 @@
 
 
 \section{Principal Series Representations of \texorpdfstring{$\GL_2(F)$}{TEXT}}\label{sec:principal}
+\section{Principal Series Representations of \texorpdfstring{$\GL_2$}{TEXT}}\label{sec:principal}
 \input{principal_series}
 
 
 % explain characters of torus
 
-\section{Functional Equation for \texorpdfstring{$\GL_2(F)$}{TEXT}}
-\input{func_equation}
 
+\section{Functional Equation for \texorpdfstring{$\GL_1$}{TEXT}}
+\input{sections_funceqn/funceqn_GL1.tex}
 
-\section{Unipotent Representations of \texorpdfstring{$\GL_2(F)$}{TEXT}}
-\input{unipotent}
+\section{Functional Equation for \texorpdfstring{$\GL_2$}{TEXT}}
+\input{sections_funceqn/funceqn_GL2.tex}
 
-
-
-
-
-
-%\section{Hecke Algebras}
-%[Possibly put this whole section at the end with modular forms. I think we only need the computation of $\delta_B$ from here.]
-
-
-%\input{Section4}
-
-%\section{Modular forms as automorphic forms}
-%\input{modforms.tex}
-%maybe add more definitions and details later
-
-
-
-
+\iffalse
+\section{Functional Equation}
+\input{sections_funceqn/new_funceq.tex}
+\fi
 \newpage
 
 \bibliography{references}

@@ -1,0 +1,51 @@
+\subsection{Positive Semi-invariant Measures and the Duality Theorem}
+
+To classify the principal series representations of $\GL_2(F)$ in the following section, one needs to understand the interaction between the induction and the duality functor for smooth representations of locally profinite groups and their closed groups. To this aim, we need to develop one last bit of machinery from measure theory called \textit{positive semi-invariant measures}, which generalise the notion of Haar measures.
+
+Let $G$ be a locally profinite group and let $H$ be a closed subgroup. Fix some character $\theta$ of $H$ and consider the space of functions $f:G\to\CC$ that are $G$-smooth under right translation, are compactly supported modulo $H$ and satisfy $$f(hg)=\theta(h)f(g),\quad h\in H,g\in G.$$
+This space is in fact the compact induction $\cInd_H^G\theta$, but in analogy to $\CG=\cInd_{e}^G\mathds{1}$ we denote it as $C_c^{\infty}(H\backslash G,\theta)$. At this point it is natural to ask whether there exists some non-zero linear functional $I_{\theta}:C_c^{\infty}(H\backslash G,\theta)\to\CC$ such that $I_{\theta}(\rho_g f)=I_{\theta}(f)$ for all $g\in G$. As it turns out, this is not possible and there is a simple criterion to determine when it is possible.
+
+\begin{prop}\label{prop:semiinvariant}
+    Let $\theta:H\to\CC^{\times}$ be a character of $H$. Then there exists a non-zero linear functional $I_{\theta}:C_c^{\infty}(H\backslash G,\theta)\to\CC$ such that $I_{\theta}(\rho_g f)=I_{\theta}(f)$ for all $g\in G$ and $f\in C_c^{\infty}(H\backslash G,\theta)$ if and only if $\theta\delta_H=\delta_G|_H$.
+
+    Furthermore, when this holds, the functional $I_\theta$ is uniquely determined up to a constant.
+\end{prop}
+\begin{proof}
+    \cite[3.4 Proposition]{BH1}
+\end{proof}
+
+We remark that this is a generalisation of Proposition \ref{prop:haar}; indeed, by setting $H=\{e\}$ one recovers the usual right Haar integral on $G$. Similarly to the above case, when $\theta=\delta_H^{-1}\delta_G|_H$, one commonly expresses the functional $I_\theta$ with the integral notation 
+$$I_\theta(f)=\int_{H\backslash G}f(g)d\mu_{H\backslash G}(g),\quad f\in C_c^{\infty}(H\backslash G,\theta),$$
+where $\mu_{H\backslash G}$ is called a \textit{positive semi-invariant measure} on $H\backslash G$. Also, since such a $\theta$ for which Proposition \ref{prop:semiinvariant} holds is uniquely defined, it is common to write $\delta_{H\backslash G}$ for $\delta_H^{-1}\delta_G|_H$. We now have all the required machinery to describe the Duality Theorem.
+
+\begin{thm}[Duality Theorem]\label{thm:duality}
+    Let $H$ be a closed subgroup of a locally profinite group $G$ and let $\dot{\mu}$ be a positive semi-invariant measure on $H\backslash G$. Let $(\sigma,W)$ be a smooth representation of $H$. Then there is a natural isomorphism
+    $$\left(\cInd_H^G\sigma \right)^{\check{}}\cong \Ind_H^G(\delta_{H\backslash G}\otimes \check{\sigma}),$$
+    which only depends on the choice of $\dot{\mu}$.
+\end{thm}
+
+\begin{proof}
+    We sketch a proof to motivate why one would expect $\delta_{H\backslash G}$ to appear. For a detalied proof, check \cite[]{BH1}
+    Throughout, we view the action of $\delta_{H\backslash G}\otimes\check{\sigma}$ naturally on $\check{W}$ (where $\check{\sigma}$ acts). For $\phi\in \cInd_H^G\sigma$ and $\Phi\in\Ind_H^G\delta_{H\backslash G}\otimes\check{\sigma}$, 
+    we have that $\phi(g)\in W$ and $\Phi(g)\in\check{W}$ for any $g\in G$. We can then consider the function $$f:g\longmapsto\langle\Phi(g),\phi(g)\rangle,\quad g\in G $$ 
+    where $\langle\cdot,\cdot\rangle$ is the standard evaluation pairing on $\check{W}\times W$. This function satisfies 
+    $$f(hg)=\langle\Phi(hg),\phi(hg)\rangle=\delta_{H\backslash G}(h)\langle\check{\sigma}(h)\Phi(g),\sigma(h)\phi(g)\rangle=\delta_{H\backslash G}(h)\langle\Phi(g),\phi(g)\rangle=\delta_{H\backslash G}(h)f(g)\quad h\in H, g\in G.$$
+    Therefore, there is a well-defined pairing 
+    \begin{align*}
+        \Psi:\Ind_H^G(\delta_{H\backslash G}\otimes\check{\sigma})\times \cInd_H^G\sigma\longrightarrow\CC&,\\
+        (\Phi,\phi)\longmapsto\int_{H\backslash G}\langle\Phi(x),\phi(x)\rangle d\dot{\mu}(x)&.
+    \end{align*}
+    Crucially, this pairing is $G$-invariant. Indeed, 
+    $$\Psi(\rho_g\Phi,\rho_g\phi)=\int_{H\backslash G}\langle\Phi(xg),\phi(xg)\rangle d\dot{\mu}(x)=\int_{H\backslash G}\langle\Phi(x),\phi(x)\rangle d\dot{\mu}(x)=\Psi(\Phi,\phi)$$
+    by right translation invariance of the positive semi-invariant measure on $H/G$. 
+    This induces a $G$-homomorphism $\Ind_H^G(\delta_{H\backslash G}\otimes \check{\sigma})\to \left(\cInd_H^G\sigma \right)^{\check{}}$. The remaining of the proof consists on proving that this is an isomoprhism.
+
+    The main idea is that the $G$-homomorphism above is an isomorphism if and only if the following holds.
+    \begin{lemma}
+        The above pairing identifies $\left(\Ind_H^G(\delta_{H\backslash G}\otimes \check{\sigma})\right)^K$ bijectively with the linear dual of $\left(\cInd_H^G\sigma \right)^K$.
+    \end{lemma}
+    \begin{proof}
+        We omit the proof of this result. The advantage is that one can explicitly describe a canonical basis for each space, which are canonically identified by the pairing. For a complete description, check \cite[3.5 Lemma 2]{BH1}.
+    \end{proof}
+    This concludes the proof of the Duality Theorem.
+\end{proof}

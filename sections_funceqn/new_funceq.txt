@@ -553,6 +553,3 @@ Then we can distinguish between cuspidal and principal series representations as
 \begin{rem}
     The proof of Theorem \ref{thm:converse} for principal series representations shows that the isomorphism class of $\pi$ is determined solely by the $L$-functions $L(\phi\pi,s)$ as we range over all characters $\phi :F^\times \to \CC^\times$. For cuspidal representations, all $L$-functions are 1 and they are instead distinguished solely by the local constants.
 \end{rem}
-
-
-

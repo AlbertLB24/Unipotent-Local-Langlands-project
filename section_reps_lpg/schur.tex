@@ -24,18 +24,18 @@ If this hypothesis holds for one compact open subgroup $K$, then it holds for al
 
 We are now ready to state and prove Schur's Lemma in our context.
 
-\begin{thm}\label{thm:schur}
+\begin{thm}[Schur's Lemma]\label{thm:schur}
     If $(\pi,V)$ is a smooth irreducible representation of $G$, then $\End_{\CC}V\cong \CC$.
 \end{thm}
-
-This results has two important corollaries worth recalling. For the first one, we note that given a locally profinite group $G$, its centre $Z$ is a closed subgroup of $G$ and therefore a locally profinite group too.
-
-\begin{cor}
-    Let $(\pi,V)$ be an irreducible smooth representation of $G$. The centre $Z$ of $G$ acts on $V$ via a character $\omega_{\pi}:Z\to\CC^{\times}$. In other words, $\pi(z)v=\omega_{\pi}(z)v$ for all $v\in V$ and $z\in Z$.
-\end{cor}
 \begin{proof}
     \cite[2.6 Schur's Lemma]{BH1}
 \end{proof}
+
+This results has two important corollaries worth recalling. For the first one, we note that given a locally profinite group $G$, its centre $Z$ is a closed subgroup of $G$ and therefore a locally profinite group too.
+
+\begin{cor}\label{cor:centralchar}
+    Let $(\pi,V)$ be an irreducible smooth representation of $G$. The centre $Z$ of $G$ acts on $V$ via a character $\omega_{\pi}:Z\to\CC^{\times}$. In other words, $\pi(z)v=\omega_{\pi}(z)v$ for all $v\in V$ and $z\in Z$.
+\end{cor}
 
 \begin{proof}[Proof of Theorem \ref{thm:schur}]
     For any $z\in Z$, the automorphism $\pi(z):V\to V$ lies in $\End_G(V)\cong\CC$. Hence, the desired map $\omega_{\pi}:Z\to\CC^{\times}$ does indeed exist, and it is a group homomorphism. To prove smoothness, we note that if $K$ is an open compact subgroup such that $V^K\neq 0$, then $\omega_{\pi}$ is trivial on the open compact subgroup $K\cap Z$ of $Z$. So $\omega_{\pi}$ is indeed a character of $Z$.

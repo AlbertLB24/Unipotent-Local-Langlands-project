@@ -1,0 +1,40 @@
+\subsection{Converse Theorem}
+
+Attached to any principal series representation $\pi$ of $G$ we have an associated $L$-function $L(\pi,s)$ and local constant $\varepsilon(\pi,s,\psi)$. In some sense this is enough information to distinguish them as irreducible smooth representations of $G$. More precisely, one can also define $L$-functions and local constants for the cuspidal representations of $G$, and the following holds.
+
+\begin{thm}[Converse Theorem]\label{thm:converse}
+    Let $\psi:F \to \CC^\times$ be an additive character with $\psi \neq 1$. Let $\pi_1,\pi_2$ be irreducible smooth representations of $G=\GL_2(F)$. Suppose that 
+    $$L(\chi\pi_1,s)=L(\chi\pi_2,s) \text{   and   } \varepsilon(\chi\pi_1,s,\psi) = \varepsilon(\chi\pi_2,s,\psi),$$ for all characters $\chi :F^\times \to \CC^\times$. Then $\pi_1 \cong \pi_2$.
+\end{thm}
+
+Recall that the twist $\chi\pi$ denotes the representation $g \mapsto \chi(\det(g))\pi(g)$.
+
+We take as fact the following result for cuspidal representations.
+
+\begin{prop}\label{prop:cuspL}
+    Let $\pi$ be an irreducible cuspidal representation of $G$. Then $L(\pi,s)=1$.
+\end{prop}
+\begin{proof}
+    \cite[Corollary 24.5]{BH1}.
+\end{proof}
+
+Then we can distinguish between cuspidal and principal series representations as follows.
+
+\begin{prop}\label{prop:twistL}
+    An irreducible smooth  representation $\pi$ of $G$ is cuspidal if and only if $L(\phi\pi,s)=1$ for all characters $\phi$ of $F^\times$.
+\end{prop}
+\begin{proof}
+    Since twisting preserves principal series representations, it preserves cuspidal representations. Proposition \ref{prop:cuspL} implies that if $\pi$ is cuspidal then $L(\phi\pi,s)=1$ for all $\phi$. In the other direction, suppose that $\pi$ is a composition factor of $\iota_B^G \chi$ for $\chi= \chi_1\otimes \chi_2$ a character of $T$. Taking $\phi=\chi_2^{-1}$, $\phi\pi$ is a composition factor of $\iota_B^G \phi\chi$ with $\phi\chi = \chi_1\chi_2^{-1} \otimes 1$. Now, except for the case $\phi\pi$ is a twist of Steinberg by an unramified character, we have $L(\phi\pi,s) = L(\chi_1\chi_2^{-1},s)L(1,s)$, and then $L(1,s)=(1-q^{-s})^{-1}$ is nontrivial. In the case it is a twist of Steinberg by an unramified character, the $L$-function is still nontrivial as seen in Table 1.
+\end{proof}
+
+\begin{proof}[Proof of Theorem \ref{thm:converse} for principal series representations]
+    Twisting $\pi$, we may assume that $L(\pi,s) \neq 1$ as in the proof of Proposition \ref{prop:twistL}. Then $L(\pi,s)$ has degree 2 (as a rational function of $q^{-s}$). 
+
+    Suppose $L(\pi,s)$ has degree 2. From Table \ref{table:Lfunc}, $\pi$ is either $\iota_B^G \chi$ for some $\chi=\chi_1 \otimes \chi_2$, with $\chi_1\chi_2^{-1} \neq |-|^{\pm 1}$ and $\chi_i$ unramified, or $\pi = \phi \circ \det$ for some unramified character $\phi :F^\times \to \CC^\times$. In either case, we have $L(\pi,s)=L(\chi_1,s)L(\chi_2,s)$ for unramified characters $\chi_i$ of $F^\times$, where $\pi = \phi \circ \det$ corresponds to $\chi_i = \phi |-|^{\pm 1}$. But since an unramified character $\chi$ is determined by $\chi(\varpi)$, it is determined by $L(\chi,s)$. Since $\iota_B^G( \chi_1 \otimes \chi_2) \cong \iota_B^G (\chi_2 \otimes \chi_1)$, it follows that $L(\pi,s)$ is enough to distinguish all principal series representations $\pi$ for which $L(\pi,s)$ has degree 2.
+
+    Suppose $L(\pi,s)$ has degree 1, and is $L(\theta,s)$ for some unramified character $\theta$ of $F^\times$. As above, we can recover $\theta$ from $L(\theta, s)$. From Table \ref{table:Lfunc}, $\pi$ is either $\iota_B^G (\theta' \otimes \theta)$ for some ramified character $\theta'$, or $\pi = \theta' \mathrm{St}_G$ for $\theta' = \theta|-|^{-1/2}$. In the latter case, $\theta'$ is unramified and so for any ramified character $\phi$ we have $L(\phi\pi,s)=1$. This distinguishes it from the former case where if we take $\phi = (\theta')^{-1}$, a ramified character, we have $\phi\pi = \iota_B^G (1 \otimes \phi\theta)$ so that $L(\phi\pi,s) \neq 1$. To recover $\theta'$ in this case, we can choose some ramified character $\phi$ such that $L(\phi\pi,s) \neq 1$, say $L(\phi\pi,s) = L(\theta'',s)$ fo a unique unramified character $\theta''$ of $F^\times$. Since $\phi\pi = \iota_B^G (\phi\theta' \otimes \phi\theta,s)$, and $\phi\theta$ is ramified, we have $L(\phi\pi,s) = L(\phi\theta',s)$. Therefore $\theta' = \phi^{-1}\theta''$.
+\end{proof}
+
+\begin{rem}
+    The proof of Theorem \ref{thm:converse} for principal series representations shows that the isomorphism class of $\pi$ is determined solely by the $L$-functions $L(\phi\pi,s)$ as we range over all characters $\phi :F^\times \to \CC^\times$. For cuspidal representations, all $L$-functions are 1 and they are instead distinguished solely by the local constants.
+\end{rem}

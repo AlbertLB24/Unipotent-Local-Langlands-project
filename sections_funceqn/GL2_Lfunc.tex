@@ -1,0 +1,199 @@
+\subsection{The L-function of a Principal Series Representation}
+
+Recall that for a character $\chi:F^\times \to \CC^\times$ we defined, for any $\Phi \in C_c^\infty(F)$, a zeta function $$\zeta(\Phi,\chi,s) = \int_{F^\times} \Phi(x)\chi(x) |x|^s d^*x.$$
+To replicate this for smooth representations $\pi : G \to \GL(V)$ we need to extract scalar values from $\pi(g) \in \GL(V)$. These will come from matrix coefficients.
+
+\begin{defn}
+Let $(\pi,V)$ be a smooth representation of $G$ with smooth dual $\check{V}$. For vectors $v\in V, \check{v} \in \check{V}$, define the smooth function $\gamma_{v \otimes \check{v}}: G \to \CC$ by 
+$$\gamma_{\check{v} \otimes v} : g \mapsto \langle \check{v},\pi(g) v \rangle,$$ where $\langle, \rangle$ denotes the natural evaluation pairing $\check{V} \otimes V \to \CC$. Let $\mathcal C(\pi)$ be the vector space spanned by the functions $\gamma_{\check{v} \otimes v}$. Elements of $\mathcal C(\pi)$ are called the \textit{matrix coefficients} of $\pi$.
+\end{defn}
+\begin{rem}
+    If $\pi=\chi:F^\times \to \CC^\times$ is a character, any matrix coefficient (defined in the analogous way for $F^\times$) of $\chi$ is some scalar multiple of $\chi$.
+
+    If $V$ is the tautological representation of $G$ with basis $e_1,e_2$, then $\gamma_{\check{e_i} \otimes e_j}(g)$ is precisely the $(i,j)$-th entry of $g$ as a matrix with respect to the basis $e_1,e_2$.
+\end{rem}
+
+\iffalse
+\begin{defn}
+    Let $(\pi,V)$ be an irreducible smooth representation of $G$. The centre $Z$ of $G$ acts on $V$ via the central character $\omega_\pi : Z \to \CC^\times$.
+\end{defn}
+\fi
+
+An important aspect of matrix coefficients is that the interact well with the action of the centre $Z$ of $G$ by left translation. 
+
+\begin{lemma}\label{central char}
+    Let $(\pi,V)$ be an irreducible smooth representation of $G$, and let $Z$ be its centre. For any $f \in \mathcal C(\pi), z \in Z$ and $g \in G$ we have $f(zg) = \omega_\pi(z) f(g)$, where $\omega_\pi:Z\to\CC^\times$ is the central character defined in Corollary \ref{cor:centralchar}.
+\end{lemma}
+
+
+Fix a smooth representation $\pi$ of $G$. We may now define zeta functions for any $f \in \mathcal C(\pi)$.
+
+\begin{defn}
+    For $\Phi \in C_c^\infty(A)$ and $f \in \mathcal C(\pi)$, define the \textit{zeta function} $\zeta(\Phi,f,s)$ to be
+    $$\zeta(\Phi,f,s) := \int_{G} \Phi(x)f(x)|\det x|^s d^*x,$$ in the formal variable $s$, where $d\mu^*(x) = d^*x$ denotes any choice of Haar measure on $G$.
+\end{defn}
+
+\begin{lemma}
+    For any $\Phi \in C_c^\infty(A)$ and $f \in \mathcal C(\pi)$ we have $\zeta(\Phi,f,s) \in \CC((q^{-s}))$ in the formal variable $s$.
+\end{lemma}
+\begin{proof}
+    This follows from \cite[Lemma 24.4.1]{BH1}.
+\end{proof}
+
+\begin{defn}
+    Let $(\pi,V)$ be a smooth representation of $G$. We define the space of $\zeta$-functions associated to $\pi$ as $$\mathcal Z(\pi) = \left\{\zeta\left(\Phi,f,s+\frac{1}{2}\right) \mid \Phi \in C_c^\infty(A), f \in \mathcal C(\pi)\right\}.$$
+\end{defn}
+\begin{rem}
+    The addition of $1/2$ will be explained in the case of principal series representations by the appearance of the modular character $\delta_B$.
+\end{rem}
+
+\begin{lemma}
+    The space $\mathcal Z(\pi)$ is a $\CC[q^{-s},q^s]$-module, containing $\CC[q^{-s},q^s]$.
+\end{lemma}
+\begin{proof}
+    \cite[Lemma 24.4.2]{BH1}.
+\end{proof}
+
+
+Consider now the situation where $\pi = \iota_B^G \chi$ is a parabolically induced representation, where $\chi = \chi_1 \otimes \chi_2$ is a character of $T$. We want to study the space $\mathcal Z(\pi)$ and prove an analogous result to Proposition \ref{prop:gl1factor}. The following fundamental result provides a complete answer to this question.
+
+
+\begin{prop}\label{prop:gl2factor}
+    Let $\chi=\chi_1\otimes \chi_2$ be a character of $T$ and let $(\pi,V)=\iota_B^G \chi$. Then, formally, we have
+    $$\mathcal Z(\pi) = \mathcal Z(\chi_1) \mathcal Z(\chi_2) \subset \CC((q^{-s})).$$
+    In particular, there is a unique polynomial $P_\pi \in \CC[X]$ with $P_\pi(0)=1$ such that 
+    $$\mathcal Z(\pi) = P_\pi(q^{-s})^{-1} \cdot \CC[q^{-s},q^s].$$
+    Moreover, $P_\pi(X) = P_{\chi_1}(X)P_{\chi_2}(X)$.
+\end{prop}
+
+We make some comments in preparation for the proof. The proposition concerns the zeta integrals 
+$$\zeta\left(\Phi,f,s+\frac{1}{2}\right) = \int_{G} \Phi(x)f(x)|\det x|^{s+\frac{1}{2}} d^*x.$$
+
+The matrix coefficients $\mathcal C(\pi)$ are spanned by 
+$$\gamma_{\tau \otimes \theta} : g \mapsto \langle \tau, \pi(g) \theta \rangle$$ over $\theta \in V, \tau \in \check{V}$. Here $\theta \in \iota_B^G \chi$ is viewed as a smooth function $\theta : G \to \CC$ satisfying 
+$$\theta(ntg) = \delta_B^{-1/2}(t) \chi(t) \theta(g)$$
+for any $t \in T, n \in N, g \in G$. The Duality Theorem \ref{thm:duality} identifies $\check{V} \cong \iota_B^G \check{\chi}$. In this way we view $\tau$ as a smooth function $\tau: G \to \CC$ satisfying
+$$\tau(ntg) = \delta_B^{-1/2}(t)\chi(t)^{-1}\tau(g)$$
+for any $t \in T, n \in N, g \in G$. The proof of the Duality Theorem \ref{thm:duality} shows that the pairing between $V$ and $\check{V}$ gives
+$$\gamma_{\tau \otimes \theta}(g) = \langle \tau, \pi(g)\theta \rangle = \int_{B\backslash G} \tau(x)\theta(xg) d\dot{x}$$ for a positive semi-invariant measure $d\dot{x}$ on $B \backslash G$. Let $K=\GL_2(\cO_F)$. Since we have a bijection $B \backslash G \leftrightarrow K \cap B \backslash K$ and $\delta_B(tn)=\delta_B(t) = |t_2/t_1|$ (Proposition \ref{prop:modularchar}) is trivial on $K\cap B$, we can rewrite this as 
+$$\gamma_{\tau \otimes \theta}(g) = \int_K \tau(k)\theta(kg)dk$$ for some Haar measure $dk$ on $K$ (\cite[Corollary 7.6]{BH1}). Moreover, \cite[Equation 7.6.2]{BH1} tells us that there is a left Haar measure $db$ on $B$ such that
+$$\int_G \phi(g) dg = \int_K \int_B \phi(bk) dbdk$$ for all $\phi \in C_c^\infty(G)$. Using this, our zeta integrals reduce to integrals over $B$ and $K$. Integration over $K$ is easier to handle using the smoothness of our representations. We can write $db = dn dt$ to view integration over $B$ as integration over $T$ and $N$. In order to relate $\zeta(\Phi,f,s+\frac{1}{2})$ to zeta functions coming from $\chi: T \to \CC^\times$, we want to express the integrals over $B$ solely in terms of integrals over $T$. To do so we use the following lemma. 
+
+\begin{lemma}\label{lemma:phiT}
+    Let $D$ be the algebra of diagonal matrices in $A$ so that $D^\times =T$. Let $\Phi \in C_c^\infty(A)$. There is a unique function $\Phi_T \in C_c^\infty(D)$ whose restriction to $T$ is given by 
+    $$\Phi_T(t) = |t_1| \int_N \Phi(tn)dn, \hspace{1cm} t=\begin{psmallmatrix}
+        t_1 & 0\\0&t_2
+    \end{psmallmatrix}.$$
+    The map $\Phi \mapsto \Phi_T$ is a linear surjection $C_c^\infty(A) \to C_c^\infty (D)$.
+\end{lemma}
+\begin{proof}
+    The space $C_c^\infty(A)$ is spanned by functions of the form 
+    $$\Phi = (\phi_{uv}): (a_{uv}) \mapsto \prod\limits_{u,v} \phi_{uv}(a_{uv})$$
+    for $\phi_{uv} \in C_c^\infty (F)$ and $1 \leq u,v \leq 2$. For such $\Phi$ we compute (identifying $N \cong F$)
+    
+    \begin{equation*}
+        \begin{split}
+            \Phi_T(t) &= |t_1| \int_F \phi_{11}(t_1)\phi_{12}(t_1n)\phi_{21}(0)\phi_{22}(t_2)dn \\
+            &= \phi_{11}(t_1)\phi_{22}(t_2)\phi_{21}(0) |t_1|\int_F \phi_{12}(t_1n) dn \\
+            &= \phi_{11}(t_1)\phi_{22}(t_2)\phi_{21}(0) \int_F \phi_{12}(n) dn
+        \end{split}
+    \end{equation*}
+    which uniquely extends to a function in $C_c^\infty(D)$. Surjectivity is now clear.
+\end{proof}
+\begin{rem}
+    The content of the lemma is that the function $\Phi_T$ is compactly supported, for which the introduction of the factor of $|t_1|$ is necessary.
+\end{rem}
+
+\begin{proof}[Proof of Proposition \ref{prop:gl2factor}]
+    We first establish the containment $\mathcal Z(\pi) \subset \mathcal Z(\chi_1)\mathcal Z(\chi_2)$. We must show that for any $\Phi \in C_c^\infty(A)$ and $f \in \mathcal C(\pi)$ we have $\zeta(\Phi,f,s+\frac{1}{2}) \in \mathcal Z(\chi_1)\mathcal Z(\chi_2)$. Since $\mathcal C(\pi)$ is spanned by the coefficients $\gamma_{\tau \otimes \theta}$, for $\theta \in V, \tau \in \check{V}$, we assume $f$ is of this form.
+
+    Formally expanding, for any $\Phi \in C_c^\infty(A)$
+    \begin{equation*}
+        \begin{split}
+            \zeta\left(\Phi,f,s+\frac{1}{2}\right) &= \int_G \Phi(g)f(g) |\det g|^{s+\frac{1}{2}} dg \\
+            &= \int_G \int_K \Phi(g) \tau(k) \theta(kg)|\det g|^{s+\frac{1}{2}} dk dg \\
+            &= \int_K \int_G \Phi(k^{-1}g) \tau(k)\theta(g) |\det g|^{s+\frac{1}{2}} dg dk \\
+            &= \int_K \int_K \int_B \Phi(k^{-1}bk') \tau(k)\theta(bk') |\det b|^{s+\frac{1}{2}} db dk' dk.
+        \end{split}
+    \end{equation*}
+    Smoothness of $\Phi$, $\theta$ and $\tau$ imply there is some open normal subgroup $K_1$ of $K$ for which $\Phi$ is left and right translation invariant, and $\theta$ and $\tau$ are right translation invariant. Let $\{k_i\}$ be a finite set of coset representatives of $K/K_1$, and let $\Phi^{ij}(x) = \Phi(k_i^{-1}xk_j)$. Then $\zeta(\Phi,f,s+\frac{1}{2})$ can be expressed as a finite linear combination over $\CC$ of terms of the form 
+    $$\int_B \Phi^{ij}(b) \tau(k_i)\theta(bk_j) |\det b|^{s+\frac{1}{2}} db.$$
+    Using the formula $\theta(bk_j) = \delta_B^{-1/2}(t)\chi(t)\theta(k_j)$, we can express the above as
+    $$\theta(k_j)\tau(k_i) \int_T\int_N \Phi^{ij}(tn) \chi(t)\delta_B^{-1/2}(t) |\det b|^{s+\frac{1}{2}} dn dt.$$
+    We have $|\det b|=|\det t| = |t_1| |t_2|$ and $\delta_B^{-1/2}(t) = |t_2/t_1|^{-1/2}$. Combining with the previous lemma, we deduce that $\zeta(\Phi,f,s+\frac{1}{2})$ can be expressed as a linear combination of terms of the form 
+    $$\theta(k_j)\tau(k_i) \int_T \Phi_T^{ij}(t) \chi(t) |\det t|^s dt.$$
+    If $\Phi^{ij}$ is of the form $(\phi_{uv})$ for $\phi_{uv} \in C_c^\infty(F)$, then the above term is a scalar multiple of $\zeta(\phi_{11},\chi_1,s)\zeta(\phi_{22},\chi_2,s)$ so that $\zeta(\Phi,f,s+\frac{1}{2}) \in \mathcal Z(\chi_1)\mathcal Z(\chi_2)$. In general, $\Phi^{ij}$ is a linear combination of terms of this form, so that we always have $\zeta(\Phi,f,s+\frac{1}{2}) \in \mathcal Z(\chi_1)\mathcal Z(\chi_2)$.
+
+    In the other direction, we wish to find $\Phi \in C_c^\infty(A)$ and $f \in \mathcal C(\pi)$ such that $\zeta(\Phi,f,s+\frac{1}{2})$ is a constant multiple of $L(\chi_1,s)L(\chi_2,s)$. We will find $f$ of the form $\gamma_{\tau \otimes \theta}$ and reverse the above calculation. Suppose we were in the situation where $\Phi$ is left and right invariant under $K$, and $\theta$ and $\tau$ are right invariant under $K$. Then the above computation shows that 
+    $$\zeta\left(\Phi,f,s+\frac{1}{2}\right) = \mu(K)^2 \theta(1)\tau(1) \int_T \Phi_T(t)\chi(t)|\det t|^s dt.$$
+    Therefore, if we could choose $\Phi$ left and right invariant under $K$ with $\Phi_T = \phi_1\otimes \phi_2$, where $\phi_i \in C_c^\infty(F)$ satisfy $\zeta(\phi_i,\chi_i,s)=L(\chi_i,s)$, and also choose $\theta \in \iota_B^G \chi$, $\tau \in \iota_B^G \check{\chi}$, with $\theta(1), \tau(1) \neq 0$, and $\theta$, $\tau$ right invariant under $K$, then we would be done. Unfortunately, if this was the case then $$\theta(bk) = \chi(b) \delta_B^{-1/2}(b) \theta(1)$$ for all $b \in B, k \in K$. But this is not well defined - we would require $1=\chi(b)\delta_B^{-1/2}(b) = \chi(b)$ for all $b \in B \cap K$. This only occurs when $\chi_1$ and $\chi_2$ are both unramified.
+
+    Instead, let $K_1$ be any open normal subgroup of $K$ such that $\chi$ is trivial on $B \cap K_1$, and let $\{k_i\}$ be a finite set of coset representatives of $K/K_1$. There are then unique $\theta \in \iota_B^G \chi$ and $\tau \in \iota_B^G \check{\chi}$, each supported on $BK_1$, invariant under right translation by $K_1$, and with $\theta(1)=1=\tau(1)$. Let $f=\gamma_{\tau \otimes \theta}$.
+    
+    For $\Phi \in C_c^\infty(A)$ left and right invariant under $K_1$, our previous computation gives us
+    $$\zeta\left(\Phi,f,s+\frac{1}{2}\right) = \mu(K_1)^2 \sum\limits_{i,j}  \int_T \theta(k_j)\tau(k_i)\Phi_T^{ij}(t)\chi(t)|\det t|^s dt.
+    $$
+    To control the terms over all $i,j$, we would like to choose $\Phi$ such that 
+    $$\theta(k_j)\tau(k_i)\Phi_T^{ij}(t) = \Phi_T(t)$$
+    for all $t \in T$, and all $i,j$ such that $k_i,k_j \in BK_1$. Then, by construction of $\theta$ and $\tau$, each term $\theta(k_j)\tau(k_i)\Phi_T^{ij}(t)$ is either 0 or $\Phi_T(t)$, and at least one is $\Phi_T(t)$, so that
+    $$\zeta(\Phi,f,s+\frac{1}{2}) = c \int_T \Phi_T(t) \chi(t) |\det t|^s dt$$ for some $c>0$. If $k_j = b_jk \in BK_1$, then $\theta(k_j) = \chi(b_j)\delta_B^{-1/2}(b_j)\theta(1) = \chi(b_j)$ because $\delta_B=1$ on $B \cap K$. Similarly, if $k_i=b_ik \in BK_1$, then $\tau(k_i)=\chi(b_i)^{-1}$. The condition $$\theta(k_j)\tau(k_i)\Phi_T^{ij}(t) = \Phi_T(t),$$ together with the $K_1$ invariance of $\Phi$, reduces to the condition
+    $$\chi(b_j)\chi(b_i)^{-1} \int_N \Phi(b_i^{-1}tnb_j) dn = \int_N \Phi(tn)dn$$ for all $b_i,b_j \in B \cap K_1$, as functions of $t \in T$.
+
+    To summarise, we want to construct $\Phi \in C_c^\infty(A)$ with the following properties:
+    \begin{itemize}
+        \item The function $\Phi$ is invariant under left and right translation by $K_1$.
+        \item For all $b_i,b_j \in B \cap K_1$ and $b \in B$ we have $$\chi(b_j)\chi(b_i)^{-1}\Phi(b_i^{-1}bb_j) = \Phi(b).$$
+        \item For our chosen $\phi_1,\phi_2 \in C_c^\infty(F)$ satisfying $\zeta(\phi_u,\chi_u,s)=L(\chi_u,s)$, we have $\Phi_T = c \cdot \phi_1 \otimes \phi_2 \in C_c^\infty(D)$ for some $c \neq 0$.
+    \end{itemize}
+    Since we may have chosen any open $K_1 \lhd K$, provided $\chi$ is trivial on $B \cap K_1$, we are free to shrink $K_1$ and adjust $\tau$ and $\theta$ accordingly. We can remove the dependence on $K_1$ by strengthening the second condition above, and now ask for $\Phi \in C_c^\infty(A)$ with the following properties:
+    \begin{itemize}
+        \item For all $x,y \in B \cap K$ and $b \in B$ we have $$\chi(xy)\Phi(xby) = \Phi(b).$$
+        \item For some $\phi_1,\phi_2 \in C_c^\infty(F)$ satisfying $\zeta(\phi_u,\chi_u,s)=L(\chi_u,s)$, we have $\Phi_T = c \cdot \phi_1 \otimes \phi_2 \in C_c^\infty(D)$ for some $c \neq 0$.
+    \end{itemize}
+    If we take $\Phi$ of the form $\Phi=(\phi_{uv})$, and set $\phi_{12}=\phi_{21}=\mathbbm{1}_{\mathcal O_F}$, then the computation of Lemma \ref{lemma:phiT} shows that for $t= \begin{psmallmatrix}
+        t_1&0\\0&t_2
+    \end{psmallmatrix}$,
+    $$\Phi_T(t) = \mu(\cO_F)\phi_{11}(t_1)\phi_{22}(t_2).$$
+    Taking $\phi_{uu}=\phi_u$, it suffices to find for each $u=1,2$ some $\phi_u \in C_c^\infty(F)$ such that
+    \begin{itemize}
+        \item For all $x,y \in \cO_F^\times$ and $a \in F^\times$ we have $$\chi_u(xy)\phi_u(xay) = \phi_u(a).$$
+        \item We have $\zeta(\phi_u,\chi_u,s)=c \cdot L(\chi_u,s)$ for some $c \neq 0$.
+    \end{itemize}
+    Here we divide into cases. If $\chi_u$ is unramified, then we may take $\phi_u = \mathbbm{1}_{\cO_F}$ by the proof of Proposition \ref{prop:gl1factor}. If $\chi_u$ is ramified, and the restriction to $U_F^n$ is trivial, then we take 
+    $$ \phi_u = \sum\limits_{z \in \cO_F^\times/U_F^n} \chi_u(z)^{-1} \mathbbm{1}_{zU_F^n}.$$ One sees that this satisfies the first condition. For the second we have 
+    $$\zeta(\phi_u,\chi_u,s) = \sum\limits_z \int_{U_F^n} \chi_i(z)^{-1}\chi_i(zx)|x|^s d^*x = \mu(\cO_F^\times)$$ which is a constant (and $L(\chi_u,s)=1$ in the ramified case). We have proven $\mathcal Z(\chi_1)\mathcal Z(\chi_2) \subset \mathcal Z(\pi)$.
+\end{proof}
+
+\begin{rem}
+    The computations of Proposition \ref{prop:gl2factor} show that each $\zeta(\Phi,f,s)$ converges absolutely and uniformly in vertical strips in some right half plane, and admit analytic continuation to a rational function in $q^{-s}$.
+\end{rem}
+
+
+\begin{defn}
+    Define the \textit{$L$-function} attached to $\pi = \iota_B^G \chi$, where $\chi=\chi_1\otimes \chi_2$ is a character of $T$, to be $$L(\pi,s) = P_\pi(q^{-s})^{-1} = L(\chi_1,s)L(\chi_2,s),$$
+    where the $L(\chi_i,s)$ are the $L$-functions defined
+    in \ref{def:lfunction}.
+\end{defn}
+
+For context, we state more general versions of these results that hold for any irreducible smooth representation $\pi$ of $G$.
+
+\begin{thm}\label{BHThm1}
+    Let $\pi$ be an irreducible smooth representation of $G$. There is a unique polynomial $P_\pi(X) \in \CC[X]$, satsifying $P_\pi(0)=1$, and 
+    $$\mathcal Z(\pi) = P_\pi(q^{-s})^{-1} \CC[q^{-s},q^s].$$
+\end{thm}
+\begin{proof}
+    \cite[Theorem 24.2.1]{BH1}.
+\end{proof}
+
+\begin{notn}
+    Set $L(\pi,s) = P_\pi(q^{-s})^{-1}$.
+\end{notn}
+
+
+\textbf{It remains to describe the L-functions of $\phi\circ\det$ and $\phi\St_G$. This could probably be done here.}
+
+
+\newpage
+
+
+

@@ -1,0 +1,140 @@
+\subsection{The Functional Equation}
+
+Having calculated the $L$-functions associated to all principal series representations, we now turn our attention towards the functional equation. Just like the case for $F^\times$, we begin by defining the notion of the Fourier transform. In this context, we need an additive character of $A=M_2(F)$, which we will take to be $\psi_A = \psi \circ \mathrm{tr}_A$ for some non-trivial additive character $\psi : F \to \CC^\times$ of $F$. We will apply the Fourier transform to the $F$-algebra $\Phi \in C_c^\infty(A)$ of locally constant compactly supported functions on $M_2(F)$. We remark that $M_2(F)$ is also the union of its open compact subgroups, and in particular it is unimodular, so any left Haar measure is also a left Haar measure.
+
+\begin{defn}
+    With respect to a Haar measure $\mu$ in $A$, and $\psi_A=\psi \circ \mathrm{tr}_A$ an additive character of $A$, we define, for any $\Phi \in C_c^\infty(A)$
+    $$\hat{\Phi}(x) = \int_A\Phi(y) \psi_A(xy)d\mu(y).$$
+\end{defn}
+
+Similarly to the previous case, this construction also satisfies the following desired properties analogous to the classical setting.
+
+\begin{prop}
+    The following holds:
+    \begin{itemize}
+        \item For any $\Phi \in C_c^\infty(A)$, we have $\hat{\Phi} \in C_c^\infty(A)$.
+        \item For any $\psi: F \to \CC^\times$ with $\psi \neq 1$, there is a unique Haar measure $\mu_{\psi_A}$ on $A$ such that for the associated Fourier transform we have $$\hat{\hat{\Phi}}(x) = \Phi(-x)$$ for any $\Phi \in C_c^\infty(A)$ and $x \in A$.
+    \end{itemize}
+    
+\end{prop}
+
+\begin{notn}
+    For the remainder of this subsection, we fix an additive character $\psi \neq 1$ of $F$ and $\psi_A = \psi \circ \mathrm{tr}_A$. Throughout, $\mu= \mu_{\psi_A}$ will denote the associated self-dual Haar measure on $A$.
+\end{notn}
+
+We now turn to the functional equations satisfied by the zeta functions $\zeta(\Phi,f,s)$. This involves understanding these zeta functions when we replace $\Phi$ with its Fourier transform, $\hat{\Phi}$. From the computations of Proposition \ref{prop:gl2factor}, this boils down to relating the map $\Phi \mapsto \Phi_T$ to the various Fourier transforms over $A$ and $D$. The first step towards this aim is to undertand the interaction between the Fourier transform and the map $\Theta\mapsto\Theta_T$. The following result states that these two operators, in fact, commute.
+
+\begin{lemma}
+    For $\Phi \in C_c^\infty(A)$, we have $(\hat{\Phi})_T = \widehat{\Phi_T}$.
+\end{lemma}
+\begin{proof}
+    \cite[Lemma 26.3]{BH1}.
+\end{proof}
+
+In addition, the Fouirer transform also commutes with another operator that naturally arised during the proof of Propostion \ref{prop:gl2factor}.
+
+\begin{lemma}\label{hat}
+    For $k_i,k_j \in K$ let $\Phi^{ij}$ denote the function $x \mapsto \Phi(k_i^{-1}xk_j)$ for $\Phi \in C_c^\infty(A)$. Then $\hat\Phi^{ji} = \widehat{\Phi^{ij}}$. 
+\end{lemma}
+\begin{proof}
+    We calculate 
+    $$\hat\Phi^{ji}(x) = \int_A \Phi(y)\psi_A(k_j^{-1}xk_iy)dy$$
+    and 
+    $$\widehat{\Phi^{ij}}(x) = \int_A\Phi(k_i^{-1}yk_j)\psi_A(xy)dy = \int_A \Phi(y)\psi_A(xk_iyk_j^{-1})dy.$$
+    Since $\psi_A = \psi \circ \mathrm{tr}_A$ and $\mathrm{tr}_A$ is invariant under conjugation, we have $\psi_A(k_j^{-1}xk_iy) = \psi_A(xk_iyk_j^{-1})$.
+\end{proof}
+
+We require one last element of notation before we can state and prove the functional equation for $G$, the main result of this section. Recall that for the $F^\times$ case, the functional equation related $\zeta(\hat{\Phi},\check{\chi},1-s)$ with $\zeta(\Phi,\chi,s)$, where $\check{\chi}(g)=\chi(g^{-1})$. Analogously, given a matrix coefficient $f\in\mathcal{C}(\pi)$, we write $\check{f} \in \mathcal C(\check\pi)$ for the matrix coefficient $\check{f}(g) = f(g^{-1})$.
+
+\begin{prop}\label{prop:gl2gamma}
+    Let $\pi = \iota_B^G \chi$ where $\chi=\chi_1\otimes \chi_2$ is a character of $T$. There is a unique $\gamma(\pi,s,\psi) \in \CC(q^{-s})$, depending on the additive character $\psi \neq 1$ of $F$ defining the Fourier transform, such that 
+    $$\zeta\left(\hat{\Phi},\check{f},(1-s)+\frac{1}{2}\right) = \gamma(\pi,s,\psi) \zeta\left(\Phi,f,s+\frac{1}{2}\right)$$
+    for all $\Phi \in C_c^\infty(A)$ and $f \in \mathcal C(\pi)$. Moreover, 
+    $$\gamma(\pi,s,\psi) = \gamma(\chi_1,s,\psi)\gamma(\chi_2,s,\psi).$$
+\end{prop}
+\begin{proof}
+    Since the zeta function is linear in the matrix coefficients, as is the operation $f \mapsto \check{f}$, it suffices to prove such $\gamma$ exists for all $\Phi \in C_c^\infty(A)$ and $f$ of the form $\gamma_{\tau \otimes \theta}$ as in the proof of Proposition \ref{prop:gl2factor}. We calculated that 
+    $$f(g) = \int_{B \backslash G} \tau(x)\theta(xg) d\dot{x} = \int_K \tau(k)\theta(kg)dk,$$ for some Haar measure $dk$ on $K$, so that by right invariance of $d\dot{x}$ we have 
+    $$\check{f}(g) = \int_{B \backslash G}\tau(xg)\theta(x) d\dot{x} = \int_K \tau(kg)\theta(k)dk.$$ The same computation as the proof of Proposition \ref{prop:gl2factor} gives (for the same $K_1$ and coset representatives $k_i$ of $K/K_1$)
+    \begin{equation*}
+        \begin{split}
+            \zeta\left(\hat{\Phi},\check{f},(1-s)+\frac{1}{2}\right) &= \mu(K_1)^2 \sum\limits_{i,j} \theta(k_j)\tau(k_i) \int_T (\hat\Phi^{ji})_T(t) \chi(t)^{-1} |\det t|^{1-s} dt \\
+            &= \mu(K_1)^2 \sum\limits_{i,j} \theta(k_j)\tau(k_i) \int_T \widehat{(\Phi_T^{ij})}(t) \chi(t)^{-1} |\det t|^{1-s} dt
+        \end{split}
+    \end{equation*}
+    by Lemma \ref{hat}. Therefore, it suffices to show that 
+    \begin{align*}
+        \int_{F^\times}\int_{F^\times}& \widehat{(\Phi^{ij}_T)}(t)\chi_1(t_1)^{-1}\chi_2(t_2)^{-1}|t_1t_2|^{1-s} dt_2dt_1 \\
+        =&\ \gamma(\chi_1,s,\psi)\gamma(\chi_2,s,\psi) \int_{F^\times} \int_{F^\times}\Phi^{ij}_T(t)\chi_1(t_1)\chi_2(t_2) |t_1t_2|^s dt_2dt_1,
+    \end{align*}
+    where $t = \begin{psmallmatrix}
+        t_1 &0\\0&t_2
+    \end{psmallmatrix} \in T$. By Theorem \ref{thm:gl1gamma}, this equality holds whenever we replace $\Phi^{ij}_T \in C_c^\infty(D)$ by a function of the form $\phi_{11}(t_1) \otimes \phi_{22}(t_2) \in C_c^\infty(D)$. But such functions span $C_c^\infty(D)$, so we are done by linearity of the integrals.
+\end{proof}
+
+\begin{defn}
+    Define the \textit{Godement-Jacquet local constant} $\varepsilon(\pi,s,\psi)$ of $\pi = \iota_B^G \chi$ by 
+    $$\varepsilon(\pi,s,\psi) = \gamma(\pi,s,\psi) \frac{L(\pi,s)}{L(\check{\pi},1-s)}.$$
+\end{defn}
+
+\begin{cor}
+    For $\pi= \iota_B^G \chi$ we have
+    $$\varepsilon(\pi,s,\psi) = \varepsilon(\chi_1,s,\psi)\varepsilon(\chi_2,s,\psi).$$
+\end{cor}
+\begin{proof}
+    This follows from Proposition \ref{prop:gl2gamma} and Proposition \ref{prop:gl2factor}.
+\end{proof}
+
+Similarly to case of the $L$-functions, one can also prove more general versions of the functional equation and the local constant that hold for any irreducible smooth representation $\pi$ of $G$
+
+
+\begin{thm}\label{BHThm2}
+    Let $\pi$ be an irreducible smooth representation of $G$. There is a unique rational function $\gamma(\pi,s,\psi) \in \CC(q^{-s})$ such that 
+    $$\zeta\left(\hat\Phi,\check{f},(1-s)+\frac{1}{2}\right) = \gamma(\pi,s,\psi) \zeta\left(\Phi,f,s+\frac{1}{2}\right)$$ for all $\Phi \in C_c^\infty(A)$ and $f \in \mathcal C(\pi)$.
+\end{thm}
+\begin{proof}
+    \cite[Theorem 24.2.2]{BH1}.
+\end{proof}
+
+The above theorem holds for any irreducible representation $\pi$ of $G$. When $\pi$ is a principal series representation, then $\gamma(\pi,s,\psi)$ has an explicit description.
+
+\begin{lemma}
+    If $(\pi,V)$ is a composition factor of $\Ind_B^G\chi$ for some character $\chi=\chi_1\otimes\chi_2$ of $T$, then
+    $$\gamma(\pi,s,\psi)=\gamma\left(\Ind_B^G\chi,s,\psi\right)=\gamma(\chi_1,s,\psi)\gamma(\chi_2,s,\psi).$$
+\end{lemma}
+
+
+
+\begin{defn}
+    Define the \textit{Godement-Jacquet local constant} $\varepsilon(\pi,s,\psi)$ of an irreducible smooth representation $\pi$ of $G$ by 
+    $$\varepsilon(\pi,s,\psi) = \gamma(\pi,s,\psi) \frac{L(\pi,s)}{L(\check{\pi},1-s)}.$$
+\end{defn}
+
+\begin{cor}
+    The local constant satisfies the functional equation
+    $$\varepsilon(\pi,s,\psi)\varepsilon(\check{\pi},1-s,\psi) = \omega_\pi(-1).$$
+    The local constant is of the form $$\varepsilon(\pi,s,\psi) = aq^{bs}$$ for some $a \in \CC^\times$, $b \in \ZZ$. 
+\end{cor}
+\begin{proof}
+    The first statement comes from the Fourier inversion formula and Theorem \ref{BHThm2}. The $\omega_\pi(-1)$ term comes from the minus sign in $\hat{\hat{\Phi}}(x)=\Phi(-x)$ and the observation that for a matrix coefficient $f \in \mathcal C(\pi)$ we have $f(-g)=\omega_\pi(-1)f(g)$. The functional equation and Theorem \ref{BHThm1} implies that $\varepsilon$ is a unit in $\CC[q^{-s},q^s]$, and the units are precisely the elements of the form $aq^{bs}$ for $b \in \ZZ$.
+\end{proof}
+
+The Propositions \ref{prop:gl2factor} and \ref{prop:gl2gamma} prove the Theorems \ref{BHThm1} and \ref{BHThm2} in the case that $\pi = \iota_B^G \chi$ and $\pi$ is irreducible. As in Theorem \ref{classify}, the representations $\pi = \iota_B^G \chi$ are typically irreducible - they are only reducible when $\chi = \phi \delta_B^{\pm 1/2}$ for some character $\phi$ of $F^\times$. In this case the composition factors are characters $\phi \circ \det$, and twists of Steinberg $\phi \mathrm{St}_G$. We state without proof the $L$-functions and local constants in the case that $\pi$ is one of these composition factors. For more detail see Sections 26.5 - 26.8 of \cite{BH1}. The results for all principal series representations are summarised in the following table:
+
+\begin{figure}[!ht]
+    \centering
+    \begin{tabular}{ |c|c|c| }
+        \hline
+        Principal series representation $\pi$ & $L(\pi,s)$ & $\varepsilon(\pi,s,\psi)$ \\ \hline
+        $\iota_B^G \chi$, $\chi=\chi_1\otimes \chi_2$, $\chi \neq \phi \delta_B^{\pm 1/2}$ & $L(\chi_1,s)L(\chi_2,s)$ & $\varepsilon(\chi_1,s,\psi)\varepsilon(\chi_2,s,\psi)$ \\ 
+        $\phi \circ \det$, $\phi :F^\times \to \CC^\times$ ramified & 1 & $\varepsilon(\phi,s-\frac{1}{2},\psi)\varepsilon(\phi,s+\frac{1}{2},\psi)$ \\ 
+        $\phi \mathrm{St}_G$, $\phi :F^\times \to \CC^\times$ ramified & 1 & $\varepsilon(\phi,s-\frac{1}{2},\psi)\varepsilon(\phi,s+\frac{1}{2},\psi)$ \\  
+        $\phi \circ \det$, $\phi :F^\times \to \CC^\times$ unramified & $L(\phi,s-\frac{1}{2})L(\phi,s+\frac{1}{2})$ & $\varepsilon(\phi,s-\frac{1}{2},\psi)\varepsilon(\phi,s+\frac{1}{2},\psi)$ \\ 
+        $\phi \mathrm{St}_G$, $\phi :F^\times \to \CC^\times$ unramified & $L(\phi,s+\frac{1}{2})$ & $-\varepsilon(\phi,s,\psi)$ \\     
+        \hline
+       \end{tabular}
+       \caption{$L$-functions and local constants of principal series representations of $G$}
+       \label{table:Lfunc}
+\end{figure}
+
+In particular, if $\pi$ is a composition factor of $\iota_B^G \chi$ then $L(\pi,s) = L(\chi_1,s)L(\chi_2,s)$, unless $\pi = \phi \mathrm{St}_G$ for some unramified character $\phi : F^\times \to \CC^\times$.
