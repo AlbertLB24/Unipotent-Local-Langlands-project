@@ -28,12 +28,12 @@ For general locally profinite results, we have this rather surprising result
 \end{proof}
 
 \begin{example}
-    The local field $F$ is the union of its open compact subgroups, so all characters of $F$ are unitary. This can also be checked directly as follows. Let $\psi:F\to\CC^\times$ be a character. By Lemma \ref{lem_cont_chars}, $\ker\psi$ is open in $F$ and therefore it contains $\pp^N$ for some $N$ large enough. Assume, for example, that $\psi$ is trivial on $R=\pp^0$. We will describe such characters inductively for each $\pp^n, n<0$. Fix some $n<0$ and assume that $\psi(\pp^n)\subset S^1$. Then $\psi(\varpi^{n-1})^q=\psi(q\varpi^{n-1})\in S^1$ since $q\varpi^{n-1}\in\pp^n$ and therefore $\psi(\varpi^{n-1})\in S^1$. Since any $x\in\pp^{n-1}$ can be expressed uniquely as $x=a\varpi^{n-1}+y$ for $a\in\{0,1,\ldots,q-1\}$ and $y\in \pp^n$, it follows that $\psi(x)=\psi(\varpi^{n-1})^a\psi(y)\in S^{1}$, so $\psi(\pp^{n-1})\subset S^1$.
+    The local field $F$ is the union of its open compact subgroups, so all characters of $F$ are unitary. This can also be checked directly as follows. Let $\psi:F\to\CC^\times$ be a character. By Lemma \ref{lem_cont_chars}, $\ker\psi$ is open in $F$ and therefore it contains $\pp^N$ for some $N$ large enough. Assume, for example, that $\psi$ is trivial on $\mathcal{O}_F=\pp^0$. We will describe such characters inductively for each $\pp^n, n<0$. Fix some $n<0$ and assume that $\psi(\pp^n)\subset S^1$. Then $\psi(\varpi^{n-1})^q=\psi(q\varpi^{n-1})\in S^1$ since $q\varpi^{n-1}\in\pp^n$ and therefore $\psi(\varpi^{n-1})\in S^1$. Since any $x\in\pp^{n-1}$ can be expressed uniquely as $x=a\varpi^{n-1}+y$ for $a\in\{0,1,\ldots,q-1\}$ and $y\in \pp^n$, it follows that $\psi(x)=\psi(\varpi^{n-1})^a\psi(y)\in S^{1}$, so $\psi(\pp^{n-1})\subset S^1$.
     
     
-    We remark that, for each $n<0$, there are exactly $q$ choices for $\psi(\varpi^n)$, since it is a $q$th root of $\psi(q\varpi^{n})$ and $q\varpi^{n}\in\pp^{n+1}$. Once this choice is made $\psi$ is completely determined on $\pp^n$. We have shown that all characters of $F$ trivial on $R$ are constructed this way.
+    We remark that, for each $n<0$, there are exactly $q$ choices for $\psi(\varpi^n)$, since it is a $q$th root of $\psi(q\varpi^{n})$ and $q\varpi^{n}\in\pp^{n+1}$. Once this choice is made $\psi$ is completely determined on $\pp^n$. We have shown that all characters of $F$ trivial on $\mathcal{O}_F$ are constructed this way.
 
-    It is also worth mentioning that if the uniformizer is chosen appropiately, the above construction can be made explicit. For example, if $F=\QQ_p$ and $\varpi=p$, then $\psi(p^{n-1})^p=\psi(p^{n})$ for any character $\psi$ of $\QQ_p$ and $n\in\ZZ$. This means that if $\psi$ is trivial on $R$ (in particular, $\psi(1)=1$), then $\psi$ is determined by a sequence $(\zeta_1,\zeta_2,\zeta_3,\ldots)$ where $\zeta_n$ is a $p^n$th root of unity and $\zeta_n^p=\zeta_{n-1}$. For example,
+    It is also worth mentioning that if the uniformizer is chosen appropiately, the above construction can be made explicit. For example, if $F=\QQ_p$ and $\varpi=p$, then $\psi(p^{n-1})^p=\psi(p^{n})$ for any character $\psi$ of $\QQ_p$ and $n\in\ZZ$. This means that if $\psi$ is trivial on $\mathcal{O}_F=\ZZ_p$ (in particular, $\psi(1)=1$), then $\psi$ is determined by a sequence $(\zeta_1,\zeta_2,\zeta_3,\ldots)$ where $\zeta_n$ is a $p^n$th root of unity and $\zeta_n^p=\zeta_{n-1}$. For example,
     \begin{align*}
         \psi:\QQ_p&\longrightarrow \CC^\times\\
         \sum_{k\geq m} a_kp^k&\longmapsto
@@ -48,13 +48,13 @@ For general locally profinite results, we have this rather surprising result
     From this perspective, it is clear that
     $$\{\psi\in\widehat{\QQ_p}\text{ trivial on } p^n\ZZ_p \text{ for some }n\in\ZZ \}\cong\{\psi\in\widehat{\QQ_p}\text{ trivial on } \ZZ_p \}\cong \varprojlim_{n\geq 0} \ZZ/p^n\ZZ\cong \ZZ_p,$$
     where the first isomorphism follows by replacing some character $\psi$ trivial on $p^n\ZZ_p$ for the character $x\mapsto\psi(p^n x)$, trivial on $\ZZ_p$. The more general statement 
-    $$\{\psi\in\hat{F}\text{ trivial on } \pp^n \text{ for some }n\in\ZZ \}\cong R$$
+    $$\{\psi\in\hat{F}\text{ trivial on } \pp^n \text{ for some }n\in\ZZ \}\cong \mathcal{O}_F$$
     also holds for any local field $F$, but this takes some more work. We prove this fact in Theorem \ref{thm:duality} (Additive Duality), together with the important isomorphism $\hat{F}\cong F$.
 
 \end{example}
 
 \begin{example}
-    In contrast, the multiplicative group $F^\times$ is not the union of its open compact subgroups. For instance, no open compact subgroup contains $2$ assuming that $\mathrm{char}\kappa\geq 3$. Moreover, it is not the case that all characters of $F^\times$ are unitary. Indeed, the map $\chi:x\mapsto|x|$ is a character of $F^{\times}$ since $\ker\chi=R^\times$ is an open subgroup of $F^\times$, and it is not unitary.
+    In contrast, the multiplicative group $F^\times$ is not the union of its open compact subgroups. For instance, no open compact subgroup contains $2$ assuming that $\mathrm{char}\kappa\geq 3$. Moreover, it is not the case that all characters of $F^\times$ are unitary. Indeed, the map $\chi:x\mapsto|x|$ is a character of $F^{\times}$ since $\ker\chi=\mathcal{O}_F^\times$ is an open subgroup of $F^\times$, and it is not unitary.
 
     This example hints at the fact that the group structure of $\hat{F^\times}$ is quite subtle and we will not cover its description here. The interested reader can find a partial description in \cite[\S 1.8]{BH1}.
 \end{example}
@@ -79,7 +79,7 @@ We are now ready to give the classfication theorem for $\hat{F}$.
 
 \begin{thm}[Additive Duality]\label{add_dual}
     Let $\psi\in\hat{F}$ be a character of level $d$. The map $a\mapsto a\psi$ induces the isomorphisms 
-    $$F\cong\hat{F} \quad\text{ and }\quad R\cong\{\psi\in\hat{F}:\pp^d\subseteq\ker\psi\}.$$  
+    $$F\cong\hat{F} \quad\text{ and }\quad \mathcal{O}_F\cong\{\psi\in\hat{F}:\pp^d\subseteq\ker\psi\}.$$  
 \end{thm}
 
 The proof of surjectivity of the theorem requires an inductive step, which relies on the following results.

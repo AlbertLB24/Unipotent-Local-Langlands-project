@@ -176,7 +176,7 @@ where $\mu_{H\backslash G}$ is called a \textit{positive semi-invariant measure}
     This concludes the proof of the Duality Theorem.
 \end{proof}
 
-\subsection{Measure Theory on \texorpdfstring{$GL_2(F)$}{TEXT}}
+\subsection{Measure Theory on \texorpdfstring{$GL_2(F)$}{TEXT}}\label{sec:measuregl2}
 
 We now focus on the group $G=\GL_2(F)$ over a non-Archimedean local field $F$. This group will be the main object of study of the next chapter, where we will study and classify a large family of irreducible representations of $G$. To that aim, we first need to develop some measure theory associated to the group, and we do this now.
 
@@ -184,7 +184,7 @@ We begin by introducing some notation. Let $$B=\left\{\begin{psmallmatrix} a&b\\
     a&0\\0&d
 \end{psmallmatrix}\mid a,d \in F^\times\right\} \cong F^\times \times F^\times\quad\text{ and }\quad N=\left\{\begin{psmallmatrix}
     1&b\\0&1
-\end{psmallmatrix}\mid b \in F\right\}\cong F$$ be the Borel subgroup $B$ of upper triangular matrices, the maximal torus $T$ and the subgroup of nilpotent elements $N$ of $B$, respectively. A simple calculation shows that $N$ is a normal subgroup of $B$ while $T$ is not. Furthermore, $B\cap N=\{1\}$ and $B=NT$ and so it follows that $B=N \rtimes T$.
+\end{psmallmatrix}\mid b \in F\right\}\cong F$$ be the Borel subgroup $B$ of upper triangular matrices, the maximal torus $T$ and the subgroup of nilpotent elements $N$ of $B$, respectively. All of these groups are closed in $G$. A simple calculation shows that $N$ is a normal subgroup of $B$ while $T$ is not. Furthermore, $B\cap N=\{1\}$ and $B=NT$ and so it follows that $B=N \rtimes T$.
 
 Although $G$ is unimodular (\cite[Proposition 7.5]{BH1}), the Borel subgroup $B$ is not. The failure of $B$ to be unimodular is a consequence of the subgroups $T$ and $N$ not commuting. As $T$ and $N$ are abelian, they are unimodular, and so we may pick Haar measures $dt$ and $dn$ on $T$ and $N$ respectively. Define a linear function $I$ on $C_c^\infty(B) = C_c^\infty(T) \otimes C_c^\infty(N)$ by
 $$I(\Phi) = \int_T\int_N \Phi(tn) dn dt.$$
@@ -213,9 +213,27 @@ $$I(\Phi) = \int_T\int_N \Phi(tn) dn dt.$$
     so by definition of the modular character we have $\delta_B(sm) = |s_2/s_1|$.
 \end{proof}
 
-The family of irreducible representations that we will study in the next chapter arise as subrepresentations of $\Ind_B^G\sigma$ where $\sigma$ is a smooth representation of $T$. We remark that the Borel subgroup $B$ is a normal subgroup of $G$ and that $G/B$ is compact and therefore the functors $\Ind_B^G$ and $\cInd_B^G$ coincide.
+The family of irreducible representations that we will study in the next chapter arise as subrepresentations of $\Ind_B^G\sigma$ where $\sigma$ is a smooth representation of $T$. We wish to use the Duality Theorem in this context to understand the interplay between induction from $B$ to $G$ and duality. To that aim, we first need to develop more group theoretic properties of $B$ and $G$. 
 
-Hence, by the Duality Theorem, it follows that 
+The subgroup $K=\GL_2(\mathcal{O}_F)$ is open and compact in $G$ and we have the following important decompositions.
+
+\begin{enumerate}[(1)]
+    \item \textbf{Iwasawa decomposition} (\cite[7.2.1]{BH1}). We have $G=BK$. Since $K$ is compact and $B\backslash G$ is a continuous image of $K$, we have the following important corollary.
+    \begin{cor}\label{cor:BGcompact}
+        The quotient space $B\backslash G$ is compact. In particular, the induction and compact induction functors $\Ind_B^G$ and $\cInd_B^G$ coincide.
+    \end{cor}
+    \item \textbf{Cartan decomposition} (\cite[7.2.2]{BH1}). Let $\varpi$ be a uniformizer of $F$. Then the matrices  
+    $$\begin{psmallmatrix}
+        \varpi^a & 0\\
+        0 & \varpi^b\\
+    \end{psmallmatrix},\quad a,b\in\ZZ,\ a\leq b$$
+    form a set of representatives for the space $K\backslash G/K$. This means in particular that the space $K\backslash G/K$ is countable, and each double cosset $KgK$ contains only finitely many cosets of $K$ by compactness. Hence, the following holds.
+    \begin{cor}\label{cor:KGcount}
+        If $K$ be a compact open subgroup of $G$, then $K\backslash G$ is countable.
+    \end{cor}
+\end{enumerate}
+
+We are now ready to apply Duality Theorem in this setting. Together with Corollary \ref{cor:BGcompact}, it follows that 
 $$(\Ind_B^G\sigma)^\vee\cong\Ind_B^G(\delta_B^{-1}\otimes\check{\sigma}),$$
 for any smooth representation $\sigma$ of $T$. This is slightly impractical, so one introduces a related functor that interacts well with duality.
 

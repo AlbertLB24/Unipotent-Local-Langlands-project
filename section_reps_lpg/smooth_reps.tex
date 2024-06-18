@@ -92,7 +92,7 @@ Let $(\pi,V)$ be a smooth representation of a locally profinite group $G$ and le
 
 As promised in \S\ref{Abstract_Reps}, we now discuss the dual, restriction and induction functors in the context of smooth representations of locally profinite groups. From our previous discussion, two major problems arise in this context. Firstly, given a locally profinite group $G$ and a subgroup $H$, there is no guarantee that $H$ is locally profinite, and thus $\Smo(H)$ may not be well-defined. Secondly, when we perform some construction on a smooth representation (e.g., constructing its dual, inducing to a bigger group) there is no gurarantee that the resulting representation is smooth. Thankfully, both of these problems can be resolved in a straightforward way.
 
-To ensure that $H$ is locally profinite, we must add a condition on the topology of $H$. Based on Example \ref{example_prof_groups}(7), we just need to assume that $H$ is a closed subgroup of $G$. In some cases, we will need to assume that $H$ is also open, which is a more restrictive condition. 
+To ensure that $H$ is locally profinite, we must add a condition on the topology of $H$. Based on Example \ref{example_prof_groups}(7), we just need to assume that $H$ is a closed subgroup of $G$. In some cases, we will need to assume that $H$ is also open, which is a more restrictive condition. To resolve the second problem, we construct a functor that associates, to each abstract representation, a smooth representation in a canonical way.
 
 \begin{defn}
     Let $G$ be a locally profinite group. Define the \textit{smoothness functor}
@@ -101,7 +101,7 @@ To ensure that $H$ is locally profinite, we must add a condition on the topology
         (\pi,V)&\longmapsto(\pi^\infty,V^\infty)
     \end{align*}
     by defining 
-    $$V^\infty:=\bigcup_K V^K \text{  and  } \pi^\infty(g):=\pi(g)|_{V^\infty} \text{  for each  } g\in G,$$ and $K$ ranges over the compact open subgroups of $G$.
+    $$V^\infty:=\bigcup_K V^K \text{  and  } \pi^\infty(g):=\pi(g)|_{V^\infty} \text{  for each  } g\in G,$$ where $K$ ranges over the compact open subgroups of $G$.
 \end{defn}
 
 \begin{rem}
@@ -111,7 +111,7 @@ To ensure that $H$ is locally profinite, we must add a condition on the topology
 Furthermore, the functor $(-)^\infty$ is left-exact and it satisfies that
 $$\Hom_G(V,W)=\Hom_G(V,W^\infty) \text{ for all } V\in\Smo(G), W\in\Rep(G).$$
 
-Using these constructions, we can define the smooth dual, restriction and induction functors. Recall that a subgroup $H\leq G$ is also locally profinite if $H$ is closed in $G$. In that case, the restriction functor (Definition \ref{def:absresind}) sends smooth representations of $G$ to smooth representations of $H$. This is because the intersection of an open compact subgroup of $G$ with $H$ is still open compact in the subspace topology of $H$. The analogous statement does not hold for the dual and induction functors, so we must compose with the smoothness functor.
+Using these constructions, we can define the smooth dual, restriction and induction functors. If $H\leq G$ is a closed subgroup, the restriction functor $\Res_H^G:\Rep(G)\to\Rep(H)$ (Definition \ref{def:absresind}) sends smooth representations of $G$ to smooth representations of $H$. This is because the intersection of an open compact subgroup of $G$ with $H$ is still open compact in the subspace topology of $H$. The analogous statement does not hold for the dual and induction functors, so we must compose with the smoothness functor. 
 
 \begin{defn}
     If $G$ is a locally profinite group, define the \textit{smooth dual functor} 
