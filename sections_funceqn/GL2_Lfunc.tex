@@ -76,10 +76,10 @@ The zeta functions associated to a smooth representation of $\pi$ of $G$ share m
             \]
             Putting everything together, one obtains
             \begin{align*}
-                \mu^*(K)^{-1}\zeta(\mathbbm{1}_H,f_\phi,s)&=\sum_{c=0}^{\infty}q^{-2c}+(q+1)\sum_{0\leq a< b}q^{b-a-1}q^{-s(a+b)}=^{(\dagger)}\sum_{k=0}^\infty\left(\sum_{j=0}^k q^j\right)q^{-sk}\\
-                &=\left(\sum_{m=0}^\infty q^{-ms}\right)\left(\sum_{n=0}^\infty q^{n(1-s)}\right)=(1-q^{-s})^{-1}(1-q^{1-s})^{-1},
+                \mu^*(K)^{-1}\zeta(\mathbbm{1}_H,f_\phi,s)&=\sum_{c=0}^{\infty}(\phi(\varpi)q^{-s})^{2c}+(q+1)\sum_{0\leq a< b}q^{b-a-1}(\phi(\varpi)q^{-s})^{a+b}\\
+                &=\sum_{k=0}^\infty\left(\sum_{j=0}^k q^j\right)(\phi(\varpi)q^{-s})^k=(1-\phi(\varpi)q^{-s})^{-1}(1-\phi(\varpi)q^{1-s})^{-1},
             \end{align*}
-            where step $(\dagger)$ follows by carefully couting the coeffient of $q^{-sk}$ for each $k\geq 0$.
+            where the last two steps follow by carefully couting the coeffient of $(\phi(\varpi)q^{-s})^k$ for each $k\geq 0$.
             \item If $\phi$ is ramified instead, then there is some $h\in \GL_2(\mathcal{O}_F)$ such that $\phi(\det h)\neq 1$. By using an almost identical argument to Example \ref{example:zetafnc}(1)(b), one shows that
             $$\int_{G_m\cap H}\phi(\det g)d^*g=0,$$
             for each $m\geq 0$ and using equation \eqref{eqn:zetagl2}, we have $\zeta(\mathbbm{1}_H,f_\phi,s)=0$.
