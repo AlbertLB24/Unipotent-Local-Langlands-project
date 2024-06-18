@@ -10,7 +10,7 @@ $$\gamma_{\check{v} \otimes v} : g \mapsto \langle \check{v},\pi(g) v \rangle,$$
 \begin{rem}
     If $\pi=\chi:F^\times \to \CC^\times$ is a character, any matrix coefficient (defined in the analogous way for $F^\times$) of $\chi$ is some scalar multiple of $\chi$.
 
-    If $V$ is the tautological representation of $G$ with basis $e_1,e_2$, then $\gamma_{\check{e_i} \otimes e_j}(g)$ is precisely the $(i,j)$-th entry of $g$ as a matrix with respect to the basis $e_1,e_2$.
+    If $V$ is the tautological representation of $G$ with basis $e_1,e_2$, then $\gamma_{\check{e_i} \otimes e_j}(g)$ is precisely the $(i,j)$-th entry of $g$ as a matrix with respect to the basis $e_1,e_2$. \textbf{Are we just deleting this? Or are we rephrasing it so that $V$ is a complex representation?}
 \end{rem}
 
 \iffalse
@@ -33,12 +33,26 @@ Fix a smooth representation $\pi$ of $G$. We may now define zeta functions for a
     $$\zeta(\Phi,f,s) := \int_{G} \Phi(x)f(x)|\det x|^s d^*x,$$ in the formal variable $s$, where $d\mu^*(x) = d^*x$ denotes any choice of Haar measure on $G$.
 \end{defn}
 
+The zeta functions associated to a smooth representation of $\pi$ of $G$ share many properties to the zeta functions associated to characters of $F^\times$. We state the relevant results now, and we give a sketch of the proof. For complete proofs, see \cite[\S 24.4]{BH1}.
+
 \begin{lemma}
     For any $\Phi \in C_c^\infty(A)$ and $f \in \mathcal C(\pi)$ we have $\zeta(\Phi,f,s) \in \CC((q^{-s}))$ in the formal variable $s$.
 \end{lemma}
 \begin{proof}
-    This follows from \cite[Lemma 24.4.1]{BH1}.
+    Similarly to the zeta functions for $F^\times$, we can express 
+    $$\zeta(\Phi,f,s)=\sum_{m\in\ZZ}z_m(\Phi,f)q^{-ms},$$
+    where 
+    $$z_m(\Phi,f)=\int_{G_m}\Phi(x)f(x)d^*x$$
+    and $G_m=\{x\in G\mid\nu(\det x)=m\}$. 
+    The result then follows from \cite[Lemma 24.4.1]{BH1}, where it is proven that $z_m(\Phi,f)=0$ for $m\ll0$.
 \end{proof}
+
+\textbf{This would be a good point to introduce a few examples. Ideas:
+\begin{enumerate}
+    \item Explicit computation of some zeta functions associated to the character $\det$ or $\phi\circ\det$. This requires, however, the cartan decomposition, which is not here yet.
+    \item Explicit computation that $\mathcal{Z}(\pi)$ contains a non-zero constant. This would be an explicit step of the proof of Lemma \ref{lem:ZmodGL2}. If we do this, should we just prove the lemma as a whole?
+\end{enumerate}
+}
 
 \begin{defn}
     Let $(\pi,V)$ be a smooth representation of $G$. We define the space of $\zeta$-functions associated to $\pi$ as $$\mathcal Z(\pi) = \left\{\zeta\left(\Phi,f,s+\frac{1}{2}\right) \mid \Phi \in C_c^\infty(A), f \in \mathcal C(\pi)\right\}.$$
@@ -47,10 +61,13 @@ Fix a smooth representation $\pi$ of $G$. We may now define zeta functions for a
     The addition of $1/2$ will be explained in the case of principal series representations by the appearance of the modular character $\delta_B$.
 \end{rem}
 
-\begin{lemma}
+The analogous result to Lemma \ref{lem:ZmodGL1} also holds in this case.
+
+\begin{lemma}\label{lem:ZmodGL2}
     The space $\mathcal Z(\pi)$ is a $\CC[q^{-s},q^s]$-module, containing $\CC[q^{-s},q^s]$.
 \end{lemma}
 \begin{proof}
+    The proof is a tedious generalization of Lemma \ref{lem:ZmodGL1}. Firstly, one needs to define appropiate actions of $G\times G$ on $C_c^\infty(A)$ and $\mathcal{C}(\pi)$ to describe the action of $q^{-s}$ on $\mathcal{Z}(\pi)$. Secondly, one needs to show that $\mathcal{Z}(\pi)$ contains a non-zero constant. For full details, see
     \cite[Lemma 24.4.2]{BH1}.
 \end{proof}
 
@@ -190,10 +207,7 @@ For context, we state more general versions of these results that hold for any i
 \end{notn}
 
 
-\textbf{It remains to describe the L-functions of $\phi\circ\det$ and $\phi\St_G$. This could probably be done here.}
-
-
-\newpage
+\textbf{It remains to describe the L-functions of $\phi\circ\det$ and $\phi\St_G$. This could probably be done here, using the examples from earlier.}
 
 
 
