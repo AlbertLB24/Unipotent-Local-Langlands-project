@@ -1,7 +1,7 @@
 \subsection{The L-function of a Principal Series Representation}
 
 Recall that for a character $\chi:F^\times \to \CC^\times$ we defined, for any $\Phi \in C_c^\infty(F)$, a zeta function $$\zeta(\Phi,\chi,s) = \int_{F^\times} \Phi(x)\chi(x) |x|^s d^*x.$$
-To replicate this for smooth representations $\pi : G \to \GL(V)$ we need to extract scalar values from $\pi(g) \in \GL(V)$. These will come from matrix coefficients.
+To replicate this for smooth representations $\pi : G \to \GL(V)$ we need both an analogue to the space $C_c^\infty(F)$ and a way to extract scalar values from $\pi(g) \in \GL(V)$. The first is done in the obvious way; we let $A=M_2(F)$ be the additive group of $2\times2$ matrices with the product topology $A\cong F^4$ and we consider the space $C_c^\times(A)$ of locally constant functions $\Phi:A\to\CC$ with compact support. Seconly, the scalar values of $\pi(g)$ will come from matrix coefficients.
 
 \begin{defn}
 Let $(\pi,V)$ be a smooth representation of $G$ with smooth dual $\check{V}$. For vectors $v\in V, \check{v} \in \check{V}$, define the smooth function $\gamma_{v \otimes \check{v}}: G \to \CC$ by 
@@ -19,7 +19,7 @@ $$\gamma_{\check{v} \otimes v} : g \mapsto \langle \check{v},\pi(g) v \rangle,$$
 \end{defn}
 \fi
 
-An important aspect of matrix coefficients is that the interact well with the action of the centre $Z$ of $G$ by left translation. 
+An important aspect of matrix coefficients is that they interact well with the action of the centre $Z$ of $G$ by left translation. 
 
 \begin{lemma}\label{central char}
     Let $(\pi,V)$ be an irreducible smooth representation of $G$, and let $Z$ be its centre. For any $f \in \mathcal C(\pi), z \in Z$ and $g \in G$ we have $f(zg) = \omega_\pi(z) f(g)$, where $\omega_\pi:Z\to\CC^\times$ is the central character defined in Corollary \ref{cor:centralchar}.
