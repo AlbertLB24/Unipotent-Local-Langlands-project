@@ -1,0 +1,33 @@
+\subsection{Weil-Deligne Representations}
+So far in this chapter, we have studied in some detail the Weil group of a local field $F$ and its smooth representations. The local Langlands correspondence, however, relates irreducible smooth representations of $\GL_2(F)$ to a highly structured family of $2$-dimensional semisimple representations of $W_F$, which we discuss now.
+
+\begin{defn}\label{defn:WeilDeligne}
+    A \textit{Weil-Deligne representation} of $W_F$ is a triple $(\rho,V,\nn)$ in which $(\rho,V)$ is a smooth finite-dimensional representation of $W_F$ and $\nn\in\End_\CC(V)$ is a \textit{nilpotent} element satisfying
+    $$\rho(x)\nn\rho(x)^{-1}=|x|\nn,\quad x\in W_F.$$
+
+    A Weil-Deligne representation $(\rho,V,\nn)$ is called \textit{semisimple} if the smooth representation $(\rho,V)$ of $W_F$ is semisimple.
+\end{defn}
+
+Naturally, the Weil-Deligne representations of $W_F$ form a category where a morphism $\phi:(\rho,V,\nn)\to(\sigma,W,\mm)$ is given by a $G$-invariant linear map $\phi:V\to W$ such that $\phi\circ\nn=\mm\circ\phi$. Following the notation in Bushnell-Henniart, we will write $\mathcal{G}_n(F)$ for the set of equivalence classes of $n$-dimensional semisimple Deligne representations of $W_F$. Note that we have the inclusions
+$$\mathcal{G}^{0}_n(F)\subset\mathcal{G}_n^{ss}(F)\subset\mathcal{G}_n(F)$$
+by identifying $(\rho,V)\in\mathcal{G}_n^{ss}(F)$ with $(\rho,V,0)\in\mathcal{G}_n(F)$. Therefore, one should view the Weil-Deligne representations as a refinement of the usual smooth semisimple finite-dimensional representations of $W_F$. 
+
+\begin{rem}
+    The definition of a Weil-Deligne representation we have presented is rather \textit{ad hoc} and probably unsatisfactory. The motivation for such objects comes from $\ell$-adic representations of $W_F$; that is, continuous actions on vector spaces over extensions of $\QQ_\ell$. As a consequence of the topology of $\QQ_\ell$, these representations present a major difference from the continuous complex representations. 
+
+    In Remark \ref{rem:contsmooth}, we showed that any continous \textit{finite-dimensional} complex representation of $W_F$ is smooth. In contrast, this is not the case for continous finite-dimensional $\ell$-adic representations. In fact, there are many continous $\ell$-adic representations that arise naturally in number theory that are not smooth. A beautiful result, central in the theory of $\ell$-adic representations of Weil-groups, shows that the failure of a continuous finite-dimensional representation $(\rho,V)$ of $W_F$ over $\overline{\QQ_\ell}$ from being smooth is encoded in a unique nilpotent element $\nn_\rho\in\End_{\overline{\QQ_\ell}}(V)$ (see \cite[32.5 Theorem]{BH1} for full details). The nilpotent element satisfies the condition from Definition \ref{defn:WeilDeligne}
+    $$\rho(g)\nn_\rho\rho(g)^{-1}=|g|\nn_\rho,\quad g\in W_F.$$
+    One can then prove that the category of Weil-Deligne representations of $W_F$ is equivalent to the category of continous finite-dimensional representations of $W_F$ over $\overline{\QQ_\ell}$ (see \cite[32.6 Theorem]{BH1}). 
+\end{rem}
+
+The Langlands correspondence, which we will describe in the following chapter, relates irreducible smooth representations of $\GL_2(F)$ with $\mathcal{G}_2(F)$. To write the explicit bijection, one uses the language of $L$-functions developed in Chapter \ref{chap:LfuncGL2} and class field theory developed in Section \ref{sec:CFT}.
+First we define the $L$-function associated to a Weil-Deligne representation $(\rho,V,\nn)$. Consider the subspace $V_\nn=\ker\nn$ and note that 
+$$\nn\rho(x)v=|x|^{-1}\rho(x)\nn v=0\quad\text{ for all}\quad x\in W_F,v\in V_\nn,$$
+so $V_\nn$ carries a smooth semisimple representation $(V_\nn,\rho_\nn)$ of $W_F$. We then define 
+$$L((\rho,V,\nn),s)=L(\rho_n,s),$$
+where the right hand side is defined as in Definition \ref{defn:LfuncWeil}. To define the local constant in this setting is slightly more involved. Given $(\rho,V,\nn)\in\mathcal{G}_n(F)$, we define its dual
+$$(\rho,V,s)^\vee=(\check\rho,\check{V},-\check{\nn}),$$
+where $\check\nn\in\End_\CC(\check{V})$ is the transpose of $\nn$. Then we set
+$$\varepsilon((\rho,V,\nn),s,\psi)=\varepsilon(\rho,s,\psi)\frac{L(\check{\rho},1-s)}{L(\rho,s)}\frac{L(\rho_\nn,s)}{L(\check{\rho}_{\check{\nn}},1-s)}.$$
+
+\newpage

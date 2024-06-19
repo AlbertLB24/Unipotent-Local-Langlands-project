@@ -97,7 +97,7 @@ We have the following criterion for recognizing semisimple representations in te
 		\item $\rho(\Psi)\in \Aut_{\CC}(V)$ is semisimple for all $\Psi\in W_F$.
 	\end{enumerate}
 \end{prop}
-\subsection{Local Class Field Theory}
+\subsection{Local Class Field Theory}\label{sec:CFT}
 In this subsection we summarize local class field theory, giving an axiomatic account. We then use it to relate characters of the Weil group to multiplicative characters of $F$.
 
 \begin{thm}[Local class field theory]
@@ -142,7 +142,7 @@ Note that any character $\chi: W_F\to \CC^\times$ of $W_F$ must factor through t
 \end{align*}
 \subsection{\texorpdfstring{$L$}{TEXT}-function and Local Constant}
 In this subsection, we define the quantities $L(\sigma, s)$ (the $L$-function) and $\varepsilon(\sigma, s, \psi)$ (the local constant) for smooth semisimple finite-dimensional representations $\sigma$ of $W_F$. The corresponding quantities for characters of $F^\times$ were defined in Section \ref{sec:func_equation}. We transfer these to characters of $W_F$ via the Artin map.
-\begin{defn}
+\begin{defn}\label{defn:LfuncWeil}
 	If $\chi: F^\times \to \CC^\times$ is a character and $\psi: F\to \CC^\times$ is an additive character, we define
 	\begin{align*}
 		L(\chi\circ\mathbf{a}_F, s) &= L(\chi, s)\\
@@ -194,3 +194,6 @@ The quantity $\varepsilon(\rho, s, \psi)$ is called the \emph{Langlands-Deligne 
 		for any $c(\chi)\in F^\times$ such that $\chi(1 + x) = \psi(c(\chi)x)$, $x\in \mathfrak{p}^{\left\lfloor \frac{k}{2}\right\rfloor+1}$.
 	\end{itemize}
 \end{prop}
+
+
+

@@ -65,6 +65,8 @@
 \newcommand{\GG}{\mathbb{G}}
 \newcommand{\adele}{\mathbb{A}}
 \newcommand{\pp}{\mathfrak{p}}
+\newcommand{\nn}{\mathfrak{n}}
+\newcommand{\mm}{\mathfrak{m}}
 
 % mathfra
 \newcommand{\fg}{\mathfrak{g}}
@@ -105,10 +107,13 @@
 
 \begin{document}
 	\maketitle
+	\thispagestyle{empty}
 	\tableofcontents
 	\pagenumbering{arabic}
+	\thispagestyle{empty}
 	\newpage
 
+	\setcounter{page}{1}
 \section{Locally Profinite Groups and Smooth Representations}
 \input{section_reps_lpg/section_reps_lpg.tex}
 %find reference for Frobenius reciprocity and Schurs lemma for finite groups
@@ -132,7 +137,7 @@
 \section{Functional Equation for \texorpdfstring{$\GL_1(F)$}{TEXT}}\label{sec:func_equation}
 \input{sections_funceqn/funceqn_GL1.tex}
 
-\section{Functional Equation for \texorpdfstring{$\GL_2(F)$}{TEXT}}
+\section{Functional Equation for \texorpdfstring{$\GL_2(F)$}{TEXT}}\label{chap:LfuncGL2}
 \input{sections_funceqn/funceqn_GL2.tex}
 
 \iffalse
@@ -141,8 +146,11 @@
 \fi
 
 \section{Representations of Weil Groups}
-\input{weil_groups}
+\input{weil_groups.tex}
+\input{weil-deligne_reps.tex}
 
+\section{Local Langlands Correspondence for Principal Series of \texorpdfstring{$\GL_2(F)$}{TEXT}}
+\input{langlands.tex}
 \section{Unipotent Representations of \texorpdfstring{$\GL_2(F)$}{TEXT}}
 \input{unipotent}
 \newpage
