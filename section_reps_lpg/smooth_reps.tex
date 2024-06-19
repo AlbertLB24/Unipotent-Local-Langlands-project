@@ -143,12 +143,12 @@ We also define the smooth induction functor as the composition of the induction 
 \end{defn}
 
 \begin{rem}
-    Throghout this document, we will only be interested in studying the smooth induction of smooth representations. The idea is that smooth induction is the `right' construction in this setting, which coincides with the abstract induction from Definition \ref{def:absresind} when the group is finite with the discrete topology. Therefore, as it is common in the literature, we will use a slight abuse of notation and denote the smooth induction functor as $\Ind_H^G$. We will write 
+    Throghout this document, we will only be interested in studying the smooth induction of smooth representations. The idea is that smooth induction is the correct construction in the category of smooth representations, which coincides with the abstract induction from Definition \ref{def:absresind} when the group is finite with the discrete topology. Therefore, as it is common in the literature, we will use a slight abuse of notation and denote the smooth induction functor as $\Ind_H^G$. We will write 
     \begin{align*}
         \Ind_H^G:\Smo(H)&\longrightarrow\Smo(G),\\
         (\sigma,W)&\longmapsto(\Sigma,X)
     \end{align*}
-    where $\Sigma$ is now the space of functions $f:G\to W$ satisfying:
+    where $X$ is now the space of functions $f:G\to W$ satisfying:
     \begin{enumerate}
         \item For all $h\in H, g\in G$, we have $f(hg) = \sigma(h)f(g)$.
         \item There is some open compact subgroup $K$ of $G$ such that $f(xg)=f(x)$ for all $x\in G$ and $g\in K$,
@@ -167,7 +167,7 @@ Since the action $\Sigma$ on $X$ is given by $\Sigma(g)f:x\mapsto f(xg)$, condit
 		\Psi:\Hom_G(\pi, \Ind_H^G\sigma)&\longrightarrow \Hom_H(\Res_H^G \pi, \sigma),\\
 		\varphi &\longmapsto a_\sigma \circ \varphi,
 	\end{align*}
-    is a bijection that is functorial in both variables $\pi,\sigma$. Here $a_\sigma:\Ind_H^G\sigma \to W$ is the canonical map $a_\sigma(f) = f(1)$. In categorical terms,
+    is a bijection that is natural in both variables $\pi,\sigma$. Here $a_\sigma:\Ind_H^G\sigma \to W$ is the canonical map $a_\sigma(f) = f(1)$. In categorical terms,
     $$\Res_H^G\dashv\Ind_H^G.$$
 \end{thm}
 \begin{proof}
@@ -197,7 +197,7 @@ This construction is mainly of interest in the case when $H$ is open in $G$, in 
 		\Psi^c:\Hom_G(\cInd_H^G \sigma, \pi)&\longrightarrow \Hom_H(\sigma, \Res_H^G\pi)\\
 		\varphi &\longmapsto \varphi \circ a^c_\sigma 
 	\end{align*}
-    is a bijection that is functorial in both variables $\pi,\sigma$. Here $a^c_\sigma: W\to c-\Ind_H^G \sigma$ is the map $w\mapsto f_w$, where $f_w$ is supported in $H$ and defined by $f_w(h) = hw$.
+    is a bijection that is natural in both variables $\pi,\sigma$. Here $a^c_\sigma: W\to c-\Ind_H^G \sigma$ is the map $w\mapsto f_w$, where $f_w$ is supported in $H$ and defined by $f_w(h) = hw$.
 \end{thm}
 \begin{proof}
     \cite[2.5 Theorem]{BH1}

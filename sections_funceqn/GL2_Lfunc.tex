@@ -1,7 +1,7 @@
 \subsection{The L-function of a Principal Series Representation}
 
 Recall that for a character $\chi:F^\times \to \CC^\times$ we defined, for any $\Phi \in C_c^\infty(F)$, a zeta function $$\zeta(\Phi,\chi,s) = \int_{F^\times} \Phi(x)\chi(x) |x|^s d^*x.$$
-To replicate this for smooth representations $\pi : G \to \GL(V)$ we need both an analogue to the space $C_c^\infty(F)$ and a way to extract scalar values from $\pi(g) \in \GL(V)$. The first is done in the obvious way; we let $A=M_2(F)$ be the additive group of $2\times2$ matrices with the product topology $A\cong F^4$ and we consider the space $C_c^\times(A)$ of locally constant functions $\Phi:A\to\CC$ with compact support. Seconly, the scalar values of $\pi(g)$ will come from matrix coefficients.
+To replicate this for smooth representations $\pi : G \to \GL(V)$ we need both an analogue to the space $C_c^\infty(F)$ and a way to extract scalar values from $\pi(g) \in \GL(V)$. The first is done in the obvious way; we let $A=M_2(F)$ be the additive group of $2\times2$ matrices with the product topology $A\cong F^4$ and we consider the space $C_c^\infty(A)$ of locally constant functions $\Phi:A\to\CC$ with compact support. Seconly, the scalar values of $\pi(g)$ will come from matrix coefficients.
 
 \begin{defn}
 Let $(\pi,V)$ be a smooth representation of $G$ with smooth dual $\check{V}$. For vectors $v\in V, \check{v} \in \check{V}$, define the smooth function $\gamma_{v \otimes \check{v}}: G \to \CC$ by 
@@ -10,7 +10,7 @@ $$\gamma_{\check{v} \otimes v} : g \mapsto \langle \check{v},\pi(g) v \rangle,$$
 \begin{rem}
     If $\pi=\chi:F^\times \to \CC^\times$ is a character, any matrix coefficient (defined in the analogous way for $F^\times$) of $\chi$ is some scalar multiple of $\chi$.
 
-    If $V$ is the tautological representation of $G$ with basis $e_1,e_2$, then $\gamma_{\check{e_i} \otimes e_j}(g)$ is precisely the $(i,j)$-th entry of $g$ as a matrix with respect to the basis $e_1,e_2$. \textbf{Are we just deleting this? Or are we rephrasing it so that $V$ is a complex representation?}
+    Moreover, if $V$ is a finite-dimensional complex representation of $G$ and $\{v_1,\ldots,v_n\}$ is a basis of $V$ with dual basis $\{\check{v_1},\ldots,\check{v_n}\}$, then $\gamma_{\check{v_i}\otimes v_j}(g)$ for $g\in G$ is precisely the $(i,j)$-th entry of $\pi(g)$ as a matrix with respect to the basis $\{v_1,\ldots,v_n\}$.
 \end{rem}
 
 \iffalse
@@ -63,7 +63,7 @@ The zeta functions associated to a smooth representation of $\pi$ of $G$ share m
         $$\zeta(\mathbbm{1}_H,f_\phi,s)=\sum_{0\leq a\leq b}\int_{Km_{a,b}K}\phi(\det g)|\det g|^sd^*g=\sum_{0\leq a\leq b}q^{-s(a+b)}\int_{Km_{a,b}K}\phi(\det g)d^*g.$$
         \begin{enumerate}
             \item If $\phi$ is unramified, then $\phi(\det g)=\phi(\varpi)^{a+b}$ for $g\in Km_{a,b}K$ and then
-            $$\zeta(\mathbbm{1}_H,f_\phi,s)=\sum_{0\leq a\leq b}(\phi(\varpi)q^{-s})^{a+b}\mu^*(Km_{a,b}M).$$
+            $$\zeta(\mathbbm{1}_H,f_\phi,s)=\sum_{0\leq a\leq b}(\phi(\varpi)q^{-s})^{a+b}\mu^*(Km_{a,b}K).$$
             It remains to determine $\mu^*(Km_{a,b}K)$ in terms of $\mu^*(K)$ for each $0\leq a\leq b$. We can write 
             $Km_{a,b}K=\cup_{g\in K}Km_{a,b}g$
             and $Km_{a,b}g_1=Km_{a,b}g_2$ if and only if $g_2g_1^{-1}\in m_{a,b}^{-1}K m_{a,b}$. Hence,
@@ -79,15 +79,14 @@ The zeta functions associated to a smooth representation of $\pi$ of $G$ share m
                 \mu^*(K)^{-1}\zeta(\mathbbm{1}_H,f_\phi,s)&=\sum_{c=0}^{\infty}(\phi(\varpi)q^{-s})^{2c}+(q+1)\sum_{0\leq a< b}q^{b-a-1}(\phi(\varpi)q^{-s})^{a+b}\\
                 &=\sum_{k=0}^\infty\left(\sum_{j=0}^k q^j\right)(\phi(\varpi)q^{-s})^k=(1-\phi(\varpi)q^{-s})^{-1}(1-\phi(\varpi)q^{1-s})^{-1},
             \end{align*}
-            where the last two steps follow by carefully couting the coeffient of $(\phi(\varpi)q^{-s})^k$ for each $k\geq 0$.
+            where the last two steps follow by carefully counting the coefficient of $(\phi(\varpi)q^{-s})^k$ for each $k\geq 0$.
             \item If $\phi$ is ramified instead, then there is some $h\in \GL_2(\mathcal{O}_F)$ such that $\phi(\det h)\neq 1$. By using an almost identical argument to Example \ref{example:zetafnc}(1)(b), one shows that
             $$\int_{G_m\cap H}\phi(\det g)d^*g=0,$$
             for each $m\geq 0$ and using equation \eqref{eqn:zetagl2}, we have $\zeta(\mathbbm{1}_H,f_\phi,s)=0$.
         \end{enumerate} 
         
-        \item Let $(\pi,V)$ be any representation of $G$ and let $f=\gamma_{\check{v}\otimes v}$ be a matrix coefficient so that $\langle\check{v},v\rangle\neq 0$. In other words, $f(1)\neq 0$. Next, choose some open compact subgroup of $G$ fixing both $\check{v}$ and $v$, so that $f(k_1gk_2)=f(g)$ for all $g\in G$ and $k_1,k_2\in K$. Recall that $\GL_2(\mathcal{O}_F)$ is an open and compact subgroup of $G$, so by intersecting with $\GL_2(\mathcal{O}_F)$ if necessary, we may assume that $K\leq\GL_2(\mathcal{O}_F)$. Since $f$ is a smooth function, it is locally constant around $1$. Hence, we may shrink $K$ even further so that $f(g)=f(1)\neq0$ for all $g\in K$. With these choices, it follows that 
-        $$\zeta(\mathbbm{1}_K,f,s)=\int_{K}f(g)|\det g|^sd^*g=\int_K f(g)d^*g=f(1)\mu^*(K)$$ is a positive constant.
-        
+        \item Let $(\pi,V)$ be any representation of $G$ and let $f=\gamma_{\check{v}\otimes v}$ be a matrix coefficient so that $\langle\check{v},v\rangle\neq 0$. In other words, $f(1)\neq 0$. Next, choose some open compact subgroup $K$ of $G$ fixing both $\check{v}$ and $v$, so that $f(k_1gk_2)=f(g)$ for all $g\in G$ and $k_1,k_2\in K$. In particular, $f$ is constant in $K$ so $f(g)=f(1)\neq 0$ for all $g\in K$. Recall that $\GL_2(\mathcal{O}_F)$ is an open and compact subgroup of $G$, so by intersecting with $\GL_2(\mathcal{O}_F)$ if necessary, we may assume that $K\leq\GL_2(\mathcal{O}_F)$. With these choices, it follows that 
+        $$\zeta(\mathbbm{1}_K,f,s)=\int_{K}f(g)|\det g|^sd^*g=\int_K f(g)d^*g=f(1)\mu^*(K)$$ is a nonzero constant.    
 
     \end{enumerate}
 \end{example}

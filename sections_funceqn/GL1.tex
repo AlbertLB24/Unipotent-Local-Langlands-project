@@ -23,14 +23,14 @@ Note that $z_m=z_m(\Phi,\chi)$ vanishes for $m \ll0$ because $\Phi$ is compactly
 \begin{example}\label{example:zetafnc}
     At this stage it is helpful and convenient to discuss some explicit examples of zeta functions that will be relevant in the future discussion.
     \begin{enumerate}[(1)]
-        \item Let $\Phi=\mathbbm{1}_{\mathcal{O}_F}\in C_c^\infty(F)$ be the characteristic function of $\mathcal{O}_F$ and let $\chi$ is a character of $F^\times$. Since $\mathcal{O}_F=\cup_{m\geq0}\varpi^m\mathcal{O}_F^\times$, it follows that $z_m(\mathbbm{1}_{\mathcal{O}_F},\chi)=0$ for $m<0$. For $m\geq 0$, we have that 
+        \item Let $\Phi=\mathbbm{1}_{\mathcal{O}_F}\in C_c^\infty(F)$ be the characteristic function of $\mathcal{O}_F$ and let $\chi$ be a character of $F^\times$. Since $\mathcal{O}_F=\cup_{m\geq0}\varpi^m\mathcal{O}_F^\times$, it follows that $z_m(\mathbbm{1}_{\mathcal{O}_F},\chi)=0$ for $m<0$. For $m\geq 0$, we have that 
         $$z_m(\mathbbm{1}_{\mathcal{O}_F},\chi)=\int_{\varpi^m \mathcal O_F^\times} \chi(x)d^*x=\chi(\varpi)^m\int_{\mathcal{O}_F^\times}\chi(x)d^*x$$
         
         We now consider the cases where $\chi$ is unramified or ramified separately.
         \begin{enumerate}
             \item If $\chi$ is unramified, then $z_m(\mathbbm{1}_{\mathcal{O}_F},\chi)=\mu^*(\mathcal{O}_F^\times)\chi(\varpi)^m$
             and therefore $$\zeta(\mathbbm{1}_{\mathcal{O}_F},\chi,s)=\mu^*(\mathcal{O}_F^\times)\sum_{m\geq0}\chi(\varpi)^mq^{-ms}=\mu^*(\mathcal{O}_F^\times)(1-\chi(\varpi)q^{-s})^{-1}.$$
-            Note that, if $\chi(\varpi)=1$, then $\chi$ is the trivial character and $\zeta(\mathbbm{1}_{\mathcal{O}_F},\mathbbm{1}_{F^\times},s)=(1-q^{-s})^{-1}$ provided that $\mu^*(\mathcal{O}_F^\times)=1$. If $F=K_v$ is the completion of a number field $K$ at a non-Archimedean place $v$, we recover the Euler factor of the Dedekind zeta function $\zeta_K(s)$ at the place $v$. This explains the naming of our zeta functions. 
+            Note that, if $\chi(\varpi)=1$, then $\chi$ is the trivial character and $\zeta(\mathbbm{1}_{\mathcal{O}_F},\mathbbm{1}_{F^\times},s)=(1-q^{-s})^{-1}$ if we normalize $\mu^*$ such that $\mu^*(\mathcal{O}_F^\times)=1$. If $F=K_v$ is the completion of a number field $K$ at a non-Archimedean place $v$, we recover the Euler factor of the Dedekind zeta function $\zeta_K(s)$ at the place $v$. This explains the naming of our zeta functions. 
             \item If $\chi$ is ramified, then there is some $y\in\mathcal{O}_F^\times$ such that $\chi(y)\neq 1$. Then, by left translation invariance of $d^*x$ we have that
             $$\int_{\mathcal O_F^\times} \chi(x)d^*x = \int_{\mathcal O_F^\times} \chi(xy)d^*x = \chi(y)\int_{\cO_F^\times} \chi(x) d^*x.$$
             Since $y$ was chosen so that $\chi(y)\neq 1$, it follows that 
@@ -137,7 +137,7 @@ To match the classical definition over $\RR$, we would like the Fourier transfor
     The Fourier transform on $C_c^\infty(F)$ satisfies the following:
     \begin{itemize}
         \item For any $\Phi \in C_c^\infty(F)$, we have $\hat{\Phi} \in C_c^\infty(F)$.
-        \item For any $\psi: F \to \CC^\times$ with $\psi \neq 1$, there is a unique Haar measure $\mu_\psi$ on $F$ such that for the associated Fourier transform we have $$\hat{\hat{\Phi}}(x) = \Phi(-x)$$ for any $\Phi \in C_c^\infty(F)$ and $x \in F$. This measure satisfies that $\mu_\psi(\mathfrak{o})=q^{l/2}$, where $l$ is the level of $\psi$.
+        \item For any $\psi: F \to \CC^\times$ with $\psi \neq 1$, there is a unique Haar measure $\mu_\psi$ on $F$ such that for the associated Fourier transform we have $$\hat{\hat{\Phi}}(x) = \Phi(-x)$$ for any $\Phi \in C_c^\infty(F)$ and $x \in F$. This measure satisfies that $\mu_\psi(\mathcal{O}_F)=q^{l/2}$, where $l$ is the level of $\psi$.
     \end{itemize}
     
 \end{prop}
