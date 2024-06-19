@@ -109,15 +109,10 @@ In this subsection we summarize local class field theory, giving an axiomatic ac
 		\item An element $x\in \mathcal{W}_F$ is a geometric Frobenius if and only if $\mathbf{a}_F(x)$ is a uniformizer in $F$;
 		\item We have $\mathbf{a}_F(\mathcal{I}_F) = \mathcal{O}_F^\times$;
 		\item For any finite separable extension $E/F$, the diagram 
-		\[\begin{tikzcd}
-			{\mathcal{W}_E} && {E^\times} \\
-			\\
-			{\mathcal{W}_F} && {F^\times}
-			\arrow["{\mathbf{a}_E}", from=1-1, to=1-3]
-			\arrow["{\Res_{E/F}}"', from=1-1, to=3-1]
-			\arrow["{N_{E/F}}", from=1-3, to=3-3]
-			\arrow["{\mathbf{a}_F}", from=3-1, to=3-3]
-		\end{tikzcd}\]
+		$$\xymatrix{
+			\mathcal W_E \ar[r]^{\mathbf a_E} \ar[d]_{\Res_{E/F}} & E^\times \ar[d]^{N_{E/F}} \\
+			\mathcal W_F \ar[r]^{\mathbf a_F} & F^\times
+		}$$
 		commutes.
 	\end{enumerate}
 	The map $\mathbf{a}_F$ is called the \emph{Artin reciprocity map}.
