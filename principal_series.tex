@@ -22,7 +22,7 @@ In this section, we begin by studying the representations of $N$ and introducing
 
 \subsection{Representations of \texorpdfstring{$N$}{TEXT}}
 
-We first study the representation theory of $N \cong F$. This is an abelian group so, by Schur's lemma, all irreducible representations are characters (Corollary 2.6.2 \cite{BH1}). For finite abelian groups, any representation $V$ decomposes into a direct sum of characters. This is no longer true when $N\cong F$ is infinite, but it is still true that any vector in $V$ is nonzero in some quotient on which $N$ acts via a character. To formalise this, we define
+We first study the representation theory of $N \cong F$. This is an abelian group so, by Schur's lemma, all irreducible representations are characters (Corollary 2.6.2 \cite{BH1}). For finite abelian groups, any representation $V$ decomposes into a direct sum of characters. This is no longer true when $N\cong F$ is infinite, but it is still true that any vector in $V$ is nonzero in some quotient on which $N$ acts via a character. To formalize this, we define
 
 \begin{notn}
     Let $V$ be a smooth representation of $N$ and $\theta$ a character of $N$. Let $V(\theta) \leq V$ be the subspace spanned by $\{n\cdot v - \theta(n)v \mid n \in N, v \in V\}$. Set $V_\theta = V/V(\theta)$ so that $N$ acts on $V_\theta$ by $\theta$. When $\theta$ is trivial we write $V(N)$ and $V_N$ respectively. 
@@ -183,7 +183,7 @@ Returning to $G=\GL_2(F)$, if $(\pi,V)$ is a smooth representation, the restrict
     Let $(\pi,V)$ be an irreducible smooth representation of $G$ with a nonzero vector $v\in V$ fixed by $N$. Then $\pi = \phi \circ \det$, for some character $\phi$ of $F^\times$. In particular, $\pi$ is one dimensional.
 \end{lemma}
 \begin{proof}[Proof sketch]
-    The vector $v$ is fixed by $N$, but also by a compact open subgroup $K$ of $G$ by smoothness. As we are working with $F$ a nonarchimedean local field (as opposed to a finite field), this implies $K$ contains a unipotent lower triangular matrix, and one shows that $v$ is fixed by $\mathrm{SL}_2(F)$. Thus $\pi$ factors through $\det$.
+    The vector $v$ is fixed by $N$, but also by a compact open subgroup $K$ of $G$ by smoothness. As we are working with $F$ a non-Archimedean local field (as opposed to a finite field), this implies $K$ contains a unipotent lower triangular matrix, and one shows that $v$ is fixed by $\mathrm{SL}_2(F)$. Thus $\pi$ factors through $\det$.
 \end{proof}
 
 
@@ -249,7 +249,7 @@ The following lemma makes the structure of $V$ more apparent.
     \end{pmatrix}$$ of $a \in F^\times$.
 
     So now we may consider $V=C_c^\infty(N)$. The benefit is that for this representation, the spaces of coinvariants of characters $\theta$ of $N$ are very simple. In particular, the map $f \mapsto \theta f$ is a linear automorphism of $C_c^\infty(N)$ taking $V(N)$ to $V(\theta)$, since $$n \cdot f - f \mapsto \theta (n \cdot f) - \theta f = \theta(n)^{-1} n \cdot (\theta f) - \theta f \in V(\theta).$$
-    Hence all the $V_\theta$ have the same dimension as $V_N=V/V(N)$, which has dimension 1 (we can see this from the characterisation of $V(N)$ as the zeros of some integral (Lemma \ref{criteria N}), or from the Restriction-Induction lemma to follow). The result follows from Theorem \ref{mirabolic} and Theorem \ref{irred induction}.
+    Hence all the $V_\theta$ have the same dimension as $V_N=V/V(N)$, which has dimension 1 (we can see this from the characterization of $V(N)$ as the zeros of some integral (Lemma \ref{criteria N}), or from the Restriction-Induction lemma to follow). The result follows from Theorem \ref{mirabolic} and Theorem \ref{irred induction}.
 \end{proof}
 
 We turn our attention to the Jacquet module $V_N$. Recall $V$ fits in the exact sequence
@@ -265,7 +265,7 @@ $$\xymatrix{0 \ar[r] & V_N \ar[r] & X_N \ar[r] & \CC \ar[r] & 0}$$ of $T$-repres
     \end{psmallmatrix}$, so that if $\sigma$ is the character $\chi_1 \otimes \chi_2$ of $T$, then $\sigma^w = \chi_2\otimes \chi_1$.
 \end{lemma}
 \begin{proof}
-    The proof of Lemma \ref{reduce to N} generalises to show that the vector space $V = \{f \in X \mid f(1)=0\}$ is isomorphic, as $N$-representations, to the space $\mathcal S$ of smooth compactly supported functions $N \to U$, by identifying $f$ with $f(w-)$.
+    The proof of Lemma \ref{reduce to N} generalizes to show that the vector space $V = \{f \in X \mid f(1)=0\}$ is isomorphic, as $N$-representations, to the space $\mathcal S$ of smooth compactly supported functions $N \to U$, by identifying $f$ with $f(w-)$.
 
 
 
@@ -425,7 +425,7 @@ $$\xymatrix{0 \ar[r] & \mathrm{St}_G^\vee \ar[r] & \Ind_B^G \delta_B^{-1} \ar[r]
 % add our own duality thm?
 
 \begin{notn}
-    Define normalised induction by
+    Define normalized induction by
     $$\iota_B^G \sigma = \Ind_B^G (\delta_B^{-1/2} \otimes \sigma).$$
     This has the benefit that $(\iota_B^G \sigma)^\vee \cong \iota_B^G \sigma^\vee$ (Theorem \ref{thm:duality}).
 \end{notn}

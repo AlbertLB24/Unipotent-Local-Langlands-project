@@ -100,7 +100,7 @@ We have the following criterion for recognizing semisimple representations in te
 \subsection{Local Class Field Theory}\label{sec:CFT}
 In this subsection we summarize local class field theory, giving an axiomatic account. We then use it to relate characters of the Weil group to multiplicative characters of $F$.
 
-\begin{thm}[Local class field theory]
+\begin{thm}[Local class field theory]\label{thm:lcf}
 	There is a unique continuous group homomorphism
 	\[\mathbf{a}_F: \mathcal{W}_F\to F^\times\]
 	with the following properties:
@@ -135,7 +135,7 @@ Note that any character $\chi: \mathcal{W}_F\to \CC^\times$ of $\mathcal{W}_F$ m
 	\{\text{smooth characters of }F^\times\} &\cong \{\text{smooth characters of }\mathcal{W}_F\}\\
 	\chi &\mapsto \chi\circ\mathbf{a}_F
 \end{align*}
-\subsection{\texorpdfstring{$L$}{TEXT}-function and Local Constant}
+\subsection{\texorpdfstring{$L$}{TEXT}-function and Local Constant}\label{sec:weilLfunc}
 In this subsection, we define the quantities $L(\sigma, s)$ (the $L$-function) and $\varepsilon(\sigma, s, \psi)$ (the local constant) for smooth semisimple finite-dimensional representations $\sigma$ of $\mathcal{W}_F$. The corresponding quantities for characters of $F^\times$ were defined in Section \ref{sec:func_equation}. We transfer these to characters of $\mathcal{W}_F$ via the Artin map.
 \begin{defn}\label{defn:LfuncWeil}
 	If $\chi: F^\times \to \CC^\times$ is a character and $\psi: F\to \CC^\times$ is an additive character, we define
@@ -146,9 +146,13 @@ In this subsection, we define the quantities $L(\sigma, s)$ (the $L$-function) a
 	This defines the $L$-function and the local constant for all characters of $\mathcal{W}_F$.
 \end{defn}
 We wish to extend this definition to all finite-dimensional semisimple representations. For the $L$-function this is simple: first we set
-\[L(\sigma, s) = 1\]
+\begin{equation}\label{eqn:Lweilirrep}\tag{\ref{sec:weilLfunc}.1}
+	L(\sigma, s) = 1
+\end{equation}
 for all irreducible smooth representations $\sigma$ of dimension $n\ge 2$, which defines the $L$-function for all irreducible representations. Then we extend this to all semisimple representations by setting
-\[L(\sigma_1\oplus \sigma_2, s) = L(\sigma_1, s)L(\sigma_2, s)\]
+\begin{equation}\label{eqn:Lweilsum}\tag{\ref{sec:weilLfunc}.2}
+	L(\sigma_1\oplus \sigma_2, s) = L(\sigma_1, s)L(\sigma_2, s)
+\end{equation}
 \begin{rem}
 	There is a more uniform way of defining the $L(\sigma, s)$: if $(\sigma, V)$ is a finite-dimensional, semisimple, smooth representation of $\mathcal{W}_F$, then the space $V^{\mathcal{I}_F}$ of $\mathcal{I}_F$-fixed vectors carries a natural representation $\sigma_{I}$ of $\mathcal{W}_F$. If $\Phi$ is a geometric Frobenius element, we have
 	\[L(\sigma, s) = \det(1 - \sigma_I(\Phi)q^{-s})^{-1}.\] 
