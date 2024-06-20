@@ -49,19 +49,15 @@ As we hinted in Remark \ref{rem_semisimple}, smooth representations of locally p
 Using this proposition, we can now prove that smooth representations of profinite groups behave in a similar way to those of finite groups. We note that any open compact subgroup $K$ of a locally profinite group $G$ is profinite, and that any smooth $G$-representation is natually a smooth $K$-representation by restriction. Therefore, the following results apply for any open compact subgroup of $G$.
 
 \begin{prop}\label{lem_profinite_smooth}
-    Let $(\pi,V)$ be a representation of a profinite group $K$. If $V$ is irreducible then it is finite dimensional. If $V$ is finite dimensional, then it is semisimple.
+	Let $(\pi,V)$ be a smooth representation of a profinite group $K$. Then $V$ is semisimple. If $V$ is irreducible then it is finite dimensional.
 \end{prop}
 
 \begin{proof}
-    The first statement is a matter of following the definitons. Fix any non-zero $v\in V$, and suppose $v\in V^{K_0}$ for some open compact $K_0 \leq K$. Then the subspace 
-    $$U=\Span\{\pi(k)v:k\in K\}=\Span\{\pi(k)v:k\in K/K_0\}$$
-    is clearly a $K$-subspace and it is also finite dimensional since $K_0$ is open and $K$ is compact, so $[K:K_0]$ is finite.   
-
-    To prove the second statement, let $v$ and $K_0$ be as above. By replacing $K_0$ by $\cap_{g\in K/K_0}gK_0g^{-1}$ if needed, we may assume that $K_0$ is normal in $K$. As above, the subspace 
-    $$W=\Span\{\pi(k)v:k\in K\}$$
-    is finite dimensional and $K_0$ acts trivially on it.
-    Thus $W$ factors through a finite dimensional representation of the finite group $K/K_0$. By Maschke's Theorem, $W$ is then the sum of its irreducible $K$ subspaces. Since $v$ was arbitrary this shows that condition $1.$ of Proposition \ref{prop_semisimple} is satisfied, so $V$ is semisimple.
-
+	Fix any $v\in V$, and suppose $v\in V^{K_0}$ for some open compact $K_0\subseteq K$. Since $K_0$ is open and $K$ is compact, $[K:K_0]$ is finite. By replacing $K_0$ by $\cap_{g\in K/K_0}gK_0g^{-1}$ if needed, we may assume that $K_0$ is normal in $K$. Then the subspace
+	$$U=\Span\{\pi(k)v:k\in K\}=\Span\{\pi(k)v:k\in K/K_0\}$$
+	is $K$-invariant, and finite-dimensional since $[K:K_0]$ is finite. Hence $U$ is a finite-dimensional representation of the finite group $K/K_0$. By Maschke's theorem, $U$ is a direct sum of irreducible $K$-subspaces. This shows that $v$ lies in a sum of irreducible $K$-subspaces, so $V$ is the sum of its irreducible $K$-subspaces and hence semisimple. 
+	
+	If $V$ is irreducible then picking $v\not=0$ above, we get a $K$-subspace $U\not=0$, so $U=V$ is finite-dimensional.
 \end{proof}
 
 This proposition has important structural results. Let $\hat{K}$ denote the set of equivalence classes of irreducible smooth representations of $K$. As we shall see, this notation is consistent with $\hat{F}$ since all irreducible smooth representations of $F$ are one-dimensional.
