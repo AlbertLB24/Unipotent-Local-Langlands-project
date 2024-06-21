@@ -2,7 +2,7 @@ We are finally ready to formally state the \textit{local Langlands correspondenc
 
 More generally, for $n\geq 1$, the local Langlands correspondence for $\GL_n$ relates in a formal way (we will not cover this) the $n$-dimensional semisimple Weil--Deligne representations of $\mathcal{W}_F$ and irreducible smooth representations of $\GL_n(F)$. We remark that, for $n=1$, the correspondence relates characters of $\mathcal{W}_F$ with characters of $F^\times$. As we say in Section \ref{sec:CFT}, this is precisely local class field theory! Therefore, one can view the local Langlands correspondence for $\GL_n$ as a generalization of local class field theory.
 
-To state the correspondence for $\GL_2$, it is convenient to uniformize notation, so we define $\mathcal{A}_2(F)$ to be the equivalence classes of irreducible smooth representations of $\GL_2(F)$. In the following statement, characters of $F^\times$ are viewed as characters of $\mathcal{W}_F$ via the isomorphism $\chi\mapsto\chi\circ a_F$, where $\mathbf{a}_F$ is the Artin map from Theorem \ref{thm:lcf}.
+To state the correspondence for $\GL_2$, it is convenient to uniformize notation on both sides, so we define $\mathcal{A}_2(F)$ to be the equivalence classes of irreducible smooth representations of $\GL_2(F)$. In the following statement, characters of $F^\times$ are viewed as characters of $\mathcal{W}_F$ via the isomorphism $\chi\mapsto\chi\circ a_F$, where $\mathbf{a}_F$ is the Artin map from Theorem \ref{thm:lcf}. Recall that the twist $\chi\pi$ of a representation $\pi$ of $\GL_2(F)$ by a character $\chi$ of $F^\times$ is the representation $g\mapsto \chi(\det g)\pi(g)$.
 
 
 \begin{thm}[Local Langlands Correspondence for $\GL_2$]\label{thm:langcorr}
@@ -76,6 +76,17 @@ We are now ready to prove the existence of the map $\bm\pi^1$.
         $$\rho(x)\nn\rho(x)^{-1}w=\rho(x)\nn\chi^{-1}_2(x)w=\chi_1(x)\chi_2^{-1}(x)\nn w.$$
         By Definition \ref{defn:WeilDeligne} of a Weil--Deligne representation, it follows that $\chi_1(x)\chi_2^{-1}(x)=|x|$. By Theorem \ref{classify} on the classification of principal series representations, this means that $\pi$ is reducible, as desired.
     \end{proof}
+    \fi
+    \begin{lemma}
+        Suppose that $\nn\neq0$. Then $\chi_1(x)\chi_2^{-1}(x)=|x|^{\pm1}$ and $\iota_B^G(\chi_1\otimes\chi_2)$ is reducible. Moreover, if $\chi_1(x)\chi_2^{-1}(x)=|x|$, then $\mathcal{W}_F$ acts on $\ker\nn$ by $\chi_1$.
+    \end{lemma}
+    \begin{proof}
+        If $\nn\neq 0$, then $\nn^2=0$ since $V$ is $2$-dimensional. This implies that $\dim_\CC\ker\nn=1$ and $\nn(V)=\ker\nn$. Moreover, we have seen in \eqref{eqn:Vnsubspace} that $\ker\nn$ carries a smooth representation $(\ker\nn,\rho_\nn)$ of $\mathcal{W}_F$. Since $\rho$ is semisimple, there is a $\mathcal{W}_F$-invariant subspace $W\leq V$ carrying a smooth representation $(W,\rho_W)$ such that $(V,\rho)=(\ker\nn,\rho_\nn)\oplus(W,\rho_W)$. Both $\ker\nn$ and $W$ are $1$-dimensional, so $\rho_\nn$ and $\rho_W$ are characters of $\mathcal{W}_F$. By Definition \ref{defn:WeilDeligne} of a Weil--Deligne representation, it follows that
+        $$|x|\nn w=\rho(x)\nn\rho(x)^{-1}w\rho(x)\nn\rho_W^{-1}(x)w=\rho_\nn(x)\rho_W^{-1}(x)\nn w$$
+        for all $w\in W$ and $x\in\mathcal{W}_F$, so $\rho_\nn(x)\rho_W^{-1}(x)=|x|$ for all $x\in\mathcal{W}_F$.
+
+        In addition, by viewing $\rho_\nn$ and $\rho_W$ as characters of $F^\times$, we have that $\{\rho_\nn,\rho_W\}=\{\chi_1,\chi_2\}$ and since the Artin map $\bm{a}_F$ is compatible with norms, $\chi_1(x)\chi_2^{-1}(x)=|x|^{\pm1}$ for all $x\in F^\times$. By Theorem \ref{classify} on the classification of principal series representations, this means that $\pi$ is reducible. Finally, by swapping $\chi_1$ and $\chi_2$ if necessary, we may assume that $\chi_1(x)\chi_2^{-1}(x)=|x|$, which immediately implies that $\chi_1=\rho_\nn$ as desired.
+    \end{proof}
     We are now ready to cover both cases.
     \begin{enumerate}[(1)]
         \item If $\pi$ is irreducible, then $\nn=0$ by the previous lemma. In that case, we set 
@@ -87,15 +98,15 @@ We are now ready to prove the existence of the map $\bm\pi^1$.
     \end{enumerate}
     To finish the proof, we need to show that $\bm\pi^1$ does indeed satisfy the conditions of the theorem. Let $\rho=\chi_1\oplus\chi_2$ be a Weil--Deligne representation as above with nilpotent $\nn$ and let $\chi$ be any character of $F^\times$. Then, we note that $\chi\otimes\rho=(\chi\otimes\chi_1)\oplus(\chi\otimes\chi_2)$ and, in particular, $\pi=\iota_B^G(\chi_1\otimes\chi_2)$ is irreducible if and only if $\chi\pi=\iota_B^G((\chi\otimes\chi_1)\otimes(\chi\otimes\chi_2))$ is irreducible. Hence, we may consider again the same two cases.
     \begin{enumerate}[(1)]
-        \item If $\pi$ is irreducible, then $\bm\pi^1(\chi\otimes\rho)=\chi\pi=\chi\bm\pi^1(\rho)$ and
+        \item If $\pi$ is irreducible, then $\nn=0$. From the construction above, $\bm\pi^1(\chi\otimes\rho)=\chi\pi=\chi\bm\pi^1(\rho)$ and
         $$L(\chi\bm\pi^1(\rho),s)=L(\chi\pi,s)=L(\chi\chi_1,s)L(\chi\chi_2,s)=^{(\dagger)}L(\chi\otimes\chi_1,s)L(\chi\otimes\chi_2,s)=L(\chi\otimes\rho,s),$$
         where the representations on the right hand side of $(\dagger)$ are viewed as representations of $\mathcal{W}_F$.
         \item If $\pi$ is reducible and $\nn=0$, then $\bm\pi^1(\chi\otimes\rho)=\chi\phi\circ\det=\chi\bm\pi^1(\rho)$ and
         $$L(\chi\bm\pi^1(\rho),s)=L(\chi\phi\circ\det,s)=L\left(\chi\phi,s+\frac{1}{2}\right)L\left(\chi\phi,s-\frac{1}{2}\right)=L\left(\chi\chi_1,s\right)L\left(\chi\chi_2,s\right)=L(\chi\otimes\rho,s),$$
-        where $\chi\phi$ are simultaneously viewed as characters of $F^\times$ and $\mathcal{W}_F$ as usual, and $\chi_1(x)=\phi(x)|x|^{1/2}$ and $\chi_2(x)=\phi(x)|x|^{-1/2}$ as above.
+        where the penultimate step follows from the fact that $\chi_1(x)=\phi(x)|x|^{1/2}$ and $\chi_2(x)=\phi(x)|x|^{-1/2}$.
         \item Finally, if $\pi$ is reducible and $\nn\neq0$, then $\bm\pi^1(\chi\otimes\rho)=\chi\phi\cdot\St_G=\chi\bm\pi^1(\rho)$ and
         $$L(\chi\bm\pi^1(\rho),s)=L(\chi\phi\cdot\St_G,s)=L\left(\chi\phi,s+\frac{1}{2}\right)=L\left(\chi\chi_1,s\right)=L(\chi\otimes\rho_\nn,s)=L(\chi\otimes(\rho,V,\nn),s),$$
-        where in this last case we are keeping track of the nilpotent $\nn$.
+        where in this last case we are keeping track of the nilpotent $\nn$ and $\rho_\nn(x)=\chi_1(x)=\phi(x)|x|^{1/2}$.
     \end{enumerate}
     To prove that the $\bm\pi^1$ satisfies the property of the local constants, one needs considerable amount of work. Firstly, one needs to use the information from Figure \ref{table:Lfunc} and a better understanding of local constants associated to Weil--Deligne representations. We shall not do so here, so this concludes the proof.
 \end{proof}

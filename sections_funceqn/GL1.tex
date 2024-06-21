@@ -1,6 +1,6 @@
 \subsection{The L-function of a Character of \texorpdfstring{$F^\times$}{TEXT}}
 
-Let $F$ be a non-Archimedean local field, $\varpi$ be a uniformiser and $q$ be the size of the residue field. We will later define $L$-functions attached to an irreducible smooth representation of $\GL_2(F)$ and determine a functional equation they satisfy. The ideas involved in the proof that such objects exists are similar (and highly dependent) on the ideas associated to the development of the theory discussed in the previous section for the local field $F$. 
+Let $F$ be a non-Archimedean local field, $\varpi$ be a uniformizer and $q$ be the size of the residue field. We will later define $L$-functions attached to an irreducible smooth representation of $\GL_2(F)$ and determine a functional equation they satisfy. The ideas involved in the proof that such objects exists are similar (and highly dependent) on the ideas associated to the development of the theory discussed in the previous section for the local field $F$. 
 
 Therefore, we explain these results first in the context of an irreducible smooth representation $\chi$ of $\GL_1(F)$, necessarily a character $\chi: F^\times \to \CC^\times$. To mimic the development we aim to follow for the case of irreducible representations of $\GL_2(F)$, we will first define the space $\mathcal Z(\chi)$ of zeta functions from which the definition of the L-function $L(\chi,s)$ arises naturally. Afterwards, we will introduce the analogue of the Fourier transform over $F$. This will lead us to the proof of the functional equation of $\GL_1$ and the construction of the local constant $\varepsilon(\chi,s,\psi)$. Before we start, we require one definition analogous to \ref{def:addlevel} in the multiplicative setting of $F^\times$.
 
@@ -8,7 +8,7 @@ Therefore, we explain these results first in the context of an irreducible smoot
     Let $\chi:F^\times\to\CC^\times$ be a character of $F^\times$. We say that $\chi$ is \textit{unramified} if $\mathcal{O}_F^\times\subseteq\ker\chi$ and \textit{ramified} otherwise. If $\chi$ is ramified, then the \textit{level} of $\chi$ is defined to be the least integer $d\geq0$ such that $U_F^{d+1}=1+\pp^{d+1}\subseteq\ker\chi$.
 \end{defn}
 
-Let $\chi: F^\times \to \CC^\times$ be a character of $F^\times$. We want to attach to this character an $L$-function $L(\chi,s)$ in the formal variable $s$. We remark that an unramified character $\chi$ of $F^\times$ is completely determined by the value of $\chi(\varpi)$ since $\chi(x)=\chi(\varpi)^m$ for each $x\in\varpi^m\mathcal{O}_F$. Classically, the L-function associated to $\chi$ is defined to be $(1-\chi(\varpi)q^{-s})^{-1}$ when $\chi$ is unramified, and $1$ otherwise. In order to generalise to $\GL_2$ it would be preferable to have a more intrinsic definition.
+Let $\chi: F^\times \to \CC^\times$ be a character of $F^\times$. We want to attach to this character an $L$-function $L(\chi,s)$ in the formal variable $s$. We remark that an unramified character $\chi$ of $F^\times$ is completely determined by the value of $\chi(\varpi)$ since $\chi(x)=\chi(\varpi)^m$ for each $x\in\varpi^m\mathcal{O}_F$. Classically, the L-function associated to $\chi$ is defined to be $(1-\chi(\varpi)q^{-s})^{-1}$ when $\chi$ is unramified, and $1$ otherwise. In order to generalize to $\GL_2$ it would be preferable to have a more intrinsic definition.
 
 \begin{defn}
     For $\Phi \in C_c^\infty(F)$ and $\chi :F^\times \to \CC^\times$, define the zeta function $\zeta(\Phi,\chi,s)$ to be
@@ -30,7 +30,7 @@ Note that $z_m=z_m(\Phi,\chi)$ vanishes for $m \ll0$ because $\Phi$ is compactly
         \begin{enumerate}
             \item If $\chi$ is unramified, then $z_m(\mathbbm{1}_{\mathcal{O}_F},\chi)=\mu^*(\mathcal{O}_F^\times)\chi(\varpi)^m$
             and therefore $$\zeta(\mathbbm{1}_{\mathcal{O}_F},\chi,s)=\mu^*(\mathcal{O}_F^\times)\sum_{m\geq0}\chi(\varpi)^mq^{-ms}=\mu^*(\mathcal{O}_F^\times)(1-\chi(\varpi)q^{-s})^{-1}.$$
-            Note that, if $\chi(\varpi)=1$, then $\chi$ is the trivial character and $\zeta(\mathbbm{1}_{\mathcal{O}_F},\mathbbm{1}_{F^\times},s)=(1-q^{-s})^{-1}$ if we normalize $\mu^*$ such that $\mu^*(\mathcal{O}_F^\times)=1$. If $F=K_v$ is the completion of a number field $K$ at a non-Archimedean place $v$, we recover the Euler factor of the Dedekind zeta function $\zeta_K(s)$ at the place $v$. This explains the naming of our zeta functions. 
+            Note that, if $\chi(\varpi)=1$, then $\chi$ is the trivial character and $\zeta(\mathbbm{1}_{\mathcal{O}_F},1_{F^\times},s)=(1-q^{-s})^{-1}$ if we normalize $\mu^*$ such that $\mu^*(\mathcal{O}_F^\times)=1$. If $F=K_v$ is the completion of a number field $K$ at a non-Archimedean place $v$, we recover the Euler factor of the Dedekind zeta function $\zeta_K(s)$ at the place $v$. This explains the naming of our zeta functions. 
             \item If $\chi$ is ramified, then there is some $y\in\mathcal{O}_F^\times$ such that $\chi(y)\neq 1$. Then, by left translation invariance of $d^*x$ we have that
             $$\int_{\mathcal O_F^\times} \chi(x)d^*x = \int_{\mathcal O_F^\times} \chi(xy)d^*x = \chi(y)\int_{\cO_F^\times} \chi(x) d^*x.$$
             Since $y$ was chosen so that $\chi(y)\neq 1$, it follows that 
@@ -161,7 +161,7 @@ As with the Riemann zeta function, we have a functional equation for the zeta fu
 
 Since $\mathcal Z(\chi) = L(\chi,s)\cdot \CC[q^{-s},q^s]$, it is natural to consider the terms $\frac{\zeta(\Phi,\chi,s)}{L(\chi,s)} \in \CC[q^{-s},q^s]$. This allows us to treat the case of $\chi$ ramified and unramified evenly. 
 
-\begin{defn}
+\begin{defn}\label{defn:localconstant}
     Given characters $\chi$ and $\psi$ of $F^\times$ and $F$ respectively,  we define %a rational function $\varepsilon(\chi,s,\psi)\in\CC(q^{-s})$ by
     $$\varepsilon(\chi,s,\psi) := \gamma(\chi,s,\psi)\frac{L(\chi,s)}{L(\check{\chi},1-s)}.$$
     Then $\varepsilon(\chi,s,\psi)\in\CC(q^{-s})$ is known as \textit{Tate's local constant}.

@@ -2,7 +2,7 @@
 
 We now turn our attention to representations of arbitrary dimension of locally profinite groups and we introduce the notion of \textit{smooth representations}, which form a full subcategory of $\Rep(G)$. For one-dimensional representations, we imposed a natural continuity condition, and Lemma \ref{lem_cont_chars} showed that characters have open kernel. This is a remarkable result, since this means that the homomorphism is continuous with respect to \textbf{any} topology on $\CC^{\times}$, not just the usual one. 
 
-If $V$ is a finite-dimensional representation of a locally profinite group $G$, the group $\GL_\CC(V)$ has a natural topology as an open subspace of $M_n(\CC)\cong\CC^{n^2}$. Again, it is a natural requirement that finite dimensional representations should be continous with respect to these topologies. It is a fact, analogous to $\CC^{\times}$, that small neighbourhoods of the identity of $\GL_\CC(V)$ do not contain any non-trivial subgroups. Therefore, the same reasoning as in Lemma \ref{lem_cont_chars} shows that continuous finite-dimensional representations of $G$ have open kernel too. That is, the homomorphism is continuous with respect to any topology on $\GL_\CC(V)$.
+If $V$ is a finite-dimensional representation of a locally profinite group $G$, the group $\GL_\CC(V)$ has a natural topology as an open subspace of $M_n(\CC)\cong\CC^{n^2}$. Again, it is a natural requirement that finite dimensional representations should be continuous with respect to these topologies. It is a fact, analogous to $\CC^{\times}$, that small neighborhoods of the identity of $\GL_\CC(V)$ do not contain any non-trivial subgroups. Therefore, the same reasoning as in Lemma \ref{lem_cont_chars} shows that continuous finite-dimensional representations of $G$ have open kernel too. That is, the homomorphism is continuous with respect to any topology on $\GL_\CC(V)$.
 
 However, for infinite-dimensional representations $V$, equipping $\GL_\CC(V)$ with a topology is not as straightforward, and the requirement of having an open kernel is too restrictive. Here is where the notion of smooth representation becomes relevant, for which we must first introduce the module of invariants and coinvariants.
 
@@ -46,7 +46,7 @@ As we hinted in Remark \ref{rem_semisimple}, smooth representations of locally p
     \cite[Lemma 2.2]{BH1}
 \end{proof}
 
-Using this proposition, we can now prove that smooth representations of profinite groups behave in a similar way to those of finite groups. We note that any open compact subgroup $K$ of a locally profinite group $G$ is profinite, and that any smooth $G$-representation is natually a smooth $K$-representation by restriction. Therefore, the following results apply for any open compact subgroup of $G$.
+Using this proposition, we can now prove that smooth representations of profinite groups behave in a similar way to those of finite groups. We note that any open compact subgroup $K$ of a locally profinite group $G$ is profinite, and that any smooth $G$-representation is naturally a smooth $K$-representation by restriction. Therefore, the following results apply for any open compact subgroup of $G$.
 
 \begin{prop}\label{lem_profinite_smooth}
 	Let $(\pi,V)$ be a smooth representation of a profinite group $K$. Then $V$ is semisimple. If $V$ is irreducible then it is finite dimensional.
@@ -86,7 +86,7 @@ Let $(\pi,V)$ be a smooth representation of a locally profinite group $G$ and le
     \cite[Proposition 2.3 and Corollary 1.2]{BH1}
 \end{proof}
 
-As promised in \S\ref{Abstract_Reps}, we now discuss the dual, restriction and induction functors in the context of smooth representations of locally profinite groups. From our previous discussion, two major problems arise in this context. Firstly, given a locally profinite group $G$ and a subgroup $H$, there is no guarantee that $H$ is locally profinite, and thus $\Smo(H)$ may not be well-defined. Secondly, when we perform some construction on a smooth representation (e.g., constructing its dual, inducing to a bigger group) there is no gurarantee that the resulting representation is smooth. Thankfully, both of these problems can be resolved in a straightforward way.
+As promised in \S\ref{Abstract_Reps}, we now discuss the dual, restriction and induction functors in the context of smooth representations of locally profinite groups. From our previous discussion, two major problems arise in this context. Firstly, given a locally profinite group $G$ and a subgroup $H$, there is no guarantee that $H$ is locally profinite, and thus $\Smo(H)$ may not be well-defined. Secondly, when we perform some construction on a smooth representation (e.g., constructing its dual, inducing to a bigger group) there is no guarantee that the resulting representation is smooth. Thankfully, both of these problems can be resolved in a straightforward way.
 
 To ensure that $H$ is locally profinite, we must add a condition on the topology of $H$. Based on Example \ref{example_prof_groups}(7), we just need to assume that $H$ is a closed subgroup of $G$. In some cases, we will need to assume that $H$ is also open, which is a more restrictive condition. To resolve the second problem, we construct a functor that associates, to each abstract representation, a smooth representation in a canonical way.
 
@@ -139,7 +139,7 @@ We also define the smooth induction functor as the composition of the induction 
 \end{defn}
 
 \begin{rem}
-    Throghout this document, we will only be interested in studying the smooth induction of smooth representations. The idea is that smooth induction is the correct construction in the category of smooth representations, which coincides with the abstract induction from Definition \ref{def:absresind} when the group is finite with the discrete topology. Therefore, as it is common in the literature, we will use a slight abuse of notation and denote the smooth induction functor as $\Ind_H^G$. We will write 
+    Throughout this document, we will only be interested in studying the smooth induction of smooth representations. The idea is that smooth induction is the correct construction in the category of smooth representations, which coincides with the abstract induction from Definition \ref{def:absresind} when the group is finite with the discrete topology. Therefore, as it is common in the literature, we will use a slight abuse of notation and denote the smooth induction functor as $\Ind_H^G$. We will write 
     \begin{align*}
         \Ind_H^G:\Smo(H)&\longrightarrow\Smo(G),\\
         (\sigma,W)&\longmapsto(\Sigma,X)
@@ -196,7 +196,7 @@ This construction is mainly of interest in the case when $H$ is open in $G$, in 
     is a bijection that is natural in both variables $\pi,\sigma$. Here $a^c_\sigma: W\to c-\Ind_H^G \sigma$ is the map $w\mapsto f_w$, where $f_w$ is supported in $H$ and defined by $f_w(h) = hw$.
 \end{thm}
 \begin{proof}
-    \cite[2.5 Theorem]{BH1}
+    \cite[Theorem 2.5]{BH1}
 \end{proof}
 In categorical terms, under the assumptions of this theorem we have
 $$\cInd_H^G\dashv\Res_H^G\dashv\Ind_H^G.$$
