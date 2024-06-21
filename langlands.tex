@@ -50,7 +50,7 @@ where $\mathcal{A}_2^1$ are the classes of principal series representations and 
 
 By uniqueness of the maps, the map $\bm\pi^1$ is simply the restriction of the Langlands correspondence $\bm\pi$ at the subset $\mathcal{G}_2^1(F)\subset\mathcal{G}_2(F)$. 
 
-\begin{rem}
+\begin{rem}\label{rem:deligne}
     The statement of Theorem \ref{thm:langcorr} has an important implication. The Langlands correspondence $\bm\pi^1$ restricted to $\mathcal{G}_2^1(F)$ is uniquely determined by the condition \eqref{eqn:langcorrLfunc} on $L$-functions, and the condition \eqref{eqn:langcorreps} on local factors is simply an additional property. This is not the case at all for the Langlands correspondence $\bm\pi$, since $L$-functions associated to cuspidal representations of $\GL_2(F)$ and irreducible Weil--Deligne representations of $\mathcal{W}_F$ provide no information. This idea is formalized with the following result.
     \begin{prop}
         The following holds:
@@ -103,12 +103,12 @@ We are now ready to prove the existence of the map $\bm\pi^1$.
         where the representations on the right hand side of $(\dagger)$ are viewed as representations of $\mathcal{W}_F$.
         \item If $\pi$ is reducible and $\nn=0$, then $\bm\pi^1(\chi\otimes\rho)=\chi\phi\circ\det=\chi\bm\pi^1(\rho)$ and
         $$L(\chi\bm\pi^1(\rho),s)=L(\chi\phi\circ\det,s)=L\left(\chi\phi,s+\frac{1}{2}\right)L\left(\chi\phi,s-\frac{1}{2}\right)=L\left(\chi\chi_1,s\right)L\left(\chi\chi_2,s\right)=L(\chi\otimes\rho,s),$$
-        where the penultimate step follows from the fact that $\chi_1(x)=\phi(x)|x|^{1/2}$ and $\chi_2(x)=\phi(x)|x|^{-1/2}$.
-        \item Finally, if $\pi$ is reducible and $\nn\neq0$, then $\bm\pi^1(\chi\otimes\rho)=\chi\phi\cdot\St_G=\chi\bm\pi^1(\rho)$ and
-        $$L(\chi\bm\pi^1(\rho),s)=L(\chi\phi\cdot\St_G,s)=L\left(\chi\phi,s+\frac{1}{2}\right)=L\left(\chi\chi_1,s\right)=L(\chi\otimes\rho_\nn,s)=L(\chi\otimes(\rho,V,\nn),s),$$
-        where in this last case we are keeping track of the nilpotent $\nn$ and $\rho_\nn(x)=\chi_1(x)=\phi(x)|x|^{1/2}$.
+        where the penultimate step follows from the fact that $\chi_1(x)=\phi(x)|x|^{1/2}$ and $\chi_2(x)=\phi(x)|x|^{-1/2}$. The second equality comes from Figure 1.
+        \item Finally, if $\pi$ is reducible and $\nn\neq0$, then $\bm\pi^1(\chi\rho,V,\nn)=\chi\phi\cdot\St_G=\chi\bm\pi^1(\rho,V,\nn)$ and
+        $$L(\chi\bm\pi^1(\rho),s)=L(\chi\phi\cdot\St_G,s)=L\left(\chi\phi,s+\frac{1}{2}\right)=L\left(\chi\chi_1,s\right)=L(\chi\otimes\rho_\nn,s)=L((\chi\rho,V,\nn),s),$$
+        where in this last case we are keeping track of the nilpotent $\nn$ and $\rho_\nn(x)=\chi_1(x)=\phi(x)|x|^{1/2}$. The second equality comes from Figure 1.
     \end{enumerate}
-    To prove that the $\bm\pi^1$ satisfies the property of the local constants, one needs considerable amount of work. Firstly, one needs to use the information from Figure \ref{table:Lfunc} and a better understanding of local constants associated to Weil--Deligne representations. We shall not do so here, so this concludes the proof.
+    To prove that $\bm\pi^1$ satisfies the property in the local constants, one needs a considerable amount of work. One uses the local constants listed in Figure \ref{table:Lfunc} and a better understanding of local constants associated to Weil--Deligne representations. See, for example, \cite[Sections 29-31]{BH1}. We omit this from the proof.
 \end{proof}
 
 

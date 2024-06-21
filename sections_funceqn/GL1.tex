@@ -91,7 +91,7 @@ $$\mathcal{Z}(\chi)=P_\chi(q^{-s})\cdot\CC[q^{-s},q^s]$$ for some polynomial $P_
     $$
 \end{prop}
 \begin{proof}
-    Suppose $\Phi(0)=0$. Then $\Phi|_{F^\times} \in C_c^\infty(F^\times)$, and so $\Phi$ is identically zero on $\varpi^m\mathcal O_F^\times$ for $|m| \gg0$. Thus only finitely many of the coefficients $z_m$ are nonzero, so that $\Phi \in \CC[q^{-s},q^s]$. \textbf{Maybe this needs slightly more explanation?}
+    Suppose $\Phi(0)=0$. Then $\Phi|_{F^\times} \in C_c^\infty(F^\times)$, and so $\Phi$ is identically zero on $\varpi^m\mathcal O_F^\times$ for $|m| \gg0$. Thus only finitely many of the coefficients $z_m$ are nonzero, so that $\Phi \in \CC[q^{-s},q^s]$. 
 
     Any $\Phi\in C_c^\infty(F)$ can be expressed as $\Phi=\alpha\mathbbm{1}_{\mathcal{O}_F}+\Phi'$, where $\alpha=\Phi(0)\in\CC$ and $\Phi'\in C_c^\infty(F)$ satisfies $\Phi'(0)=0$. By linearity,
     \begin{equation}\tag{\dag}\label{eqn:linear}
@@ -175,9 +175,9 @@ Since $\mathcal Z(\chi) = L(\chi,s)\cdot \CC[q^{-s},q^s]$, it is natural to cons
     \end{align*}
 \end{rem}
 
-The local constant arises naturally in the functional equation for $\zeta$ since it can be rewritten as
-$$\frac{\zeta(\hat{\Phi},\check{\chi},1-s)}{L(\check{\chi},1-s)} = \varepsilon(\chi,s,\psi) \frac{\zeta(\Phi,\chi,s)}{L(\chi,s)},$$
-and it satisfies the following functional equation itself.
+The local constant arises naturally in the functional equation for $\zeta$ since the functional equation can be rewritten as
+$$\frac{\zeta(\hat{\Phi},\check{\chi},1-s)}{L(\check{\chi},1-s)} = \varepsilon(\chi,s,\psi) \frac{\zeta(\Phi,\chi,s)}{L(\chi,s)}.$$
+In particular, we see that the local constant $\varepsilon(\chi,s,\psi)$ lives in $\CC[q^{-s},q^s]$ by choosing $\Phi$ such that $\zeta(\Phi,\chi,s)$ generates the $\CC[q^{-s},q^s]$ module $\mathcal Z(\chi)$. The local constant also satisfies the following functional equation.
 
 \begin{cor}
     The local constant satisfies the functional equation
@@ -187,6 +187,4 @@ and it satisfies the following functional equation itself.
 \begin{proof}
     The first statement comes from the Fourier inversion formula, where the $\chi(-1)$ term comes from the minus sign in $\hat{\hat{\Phi}}(x) = \Phi(-x)$. The functional equation implies that $\varepsilon(\chi,s,\psi)$ is a unit in $\CC[q^{-s},q^s]$, and the units are precisely the elements of the form $aq^{bs}$ for $a\in\CC^\times$ and $b \in \ZZ$.
 \end{proof}
-
-\textbf{The other thing to mention here is that $\varepsilon\in\CC[q^{-s},q^{s}]$, which is the non-trivial step of the proof. This crucially distinguishes between $\gamma$ and $\varepsilon$ right?}
 
