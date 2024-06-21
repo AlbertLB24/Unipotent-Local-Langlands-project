@@ -10,16 +10,18 @@ In this report, we restrict our attention to the so-called \emph{principal serie
 \begin{defn}
 	Let $\chi: T\to \CC^\times$ be a character. Extend $\chi$ to a character of $B$ by setting
 	\[\chi(nt) = \chi(t)\text{, for all } t\in T, n\in N\]
-	We will call the representation $\Ind_B^G \chi$ a \emph{parabolically induced representation}. A \emph{principal series representation} is an irreducible subquotient of a principally induced representation. Smooth irreducible representations of $G$ that are not principal series representations are known as \emph{cuspidal representations}.
+	We will call the representation $\Ind_B^G \chi$ a \emph{parabolically induced representation}. A \emph{principal series representation} is an irreducible subquotient of a parabolically induced representation. Smooth irreducible representations of $G$ that are not principal series representations are known as \emph{cuspidal representations}.
 \end{defn}
 
 The local Langlands correspondence states that irreducible smooth representations of $\GL_2(F)$ correspond to 2-dimensional, semisimple \emph{Weil--Deligne representations} of the Weil group $\mathcal{W}_F$. These are representations of $\mathcal{W}_F$ equipped with additional data.
 \begin{defn}
 	A \emph{Weil--Deligne representation} of $F$ is a triple $(\rho,V,\nn)$ in which $(\rho,V)$ is a smooth finite-dimensional representation of $\mathcal{W}_F$ and $\nn\in\End_\CC(V)$ is a \textit{nilpotent} element satisfying
 	$$\rho(x)\nn\rho(x)^{-1}=|x|\nn,\quad x\in \mathcal{W}_F.$$
+	where $|x| = q^{-v_F(x)}$, with $q$ the size of the residue field, and $v_F:\mathcal{W}_F\to \ZZ$ is the valuation sending any Frobenius element to 1.
 \end{defn}
 
-The local Langlands correspondence will be specified in terms of relations between the $L$-functions and local constants of the two types of representations. For both smooth irreducible representations $\pi$ of $G$, and finite-dimensional semisimple Weil--Deligne representations $\sigma$ of $\mathcal{W}_F$, we associate $L$-functions $L(\pi, s)$ and $L(\sigma, s)$. These $L$-functions both satisfy a functional equation, depending on the local constants $\varepsilon(\pi, s, \psi)$ and $\varepsilon(\sigma, s, \psi)$ respectively, where $\psi: F\to \CC^\times$ is an additive character. The correspondence is a bijection set up so that corresponding representations have the same $L$-function and local constant.
+
+The local Langlands correspondence will be specified in terms of relations between the $L$-functions and local constants of the two types of representations. For both smooth irreducible representations $\pi$ of $G$, and finite-dimensional semisimple Weil--Deligne representations $\sigma$ of $\mathcal{W}_F$, we associate $L$-functions $L(\pi, s)$ and $L(\sigma, s)$. In both cases we also have another associated invariants, the local constants $\varepsilon(\pi, s, \psi)$ and $\varepsilon(\sigma, s, \psi)$ respectively, where $\psi: F\to \CC^\times$ is an additive character. The correspondence is a bijection set up so that corresponding representations have the same $L$-function and local constant.
 
 The main result of the report is the following:
 \begin{thm}[ = Theorem \ref{thm:langcorr2}, Langlands correspondence for principal series representations]
