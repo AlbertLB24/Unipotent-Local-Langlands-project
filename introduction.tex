@@ -24,7 +24,7 @@ The local Langlands correspondence states that irreducible smooth representation
 The local Langlands correspondence will be specified in terms of relations between the $L$-functions and local constants of the two types of representations. For both smooth irreducible representations $\pi$ of $G$, and finite-dimensional semisimple Weil--Deligne representations $\sigma$ of $\mathcal{W}_F$, we associate $L$-functions $L(\pi, s)$ and $L(\sigma, s)$. In both cases we also have another associated invariants, the local constants $\varepsilon(\pi, s, \psi)$ and $\varepsilon(\sigma, s, \psi)$ respectively, where $\psi: F\to \CC^\times$ is an additive character. The correspondence is a bijection set up so that corresponding representations have the same $L$-function and local constant.
 
 The main result of the report is the following:
-\begin{thm}[ = Theorem \ref{thm:langcorr2}, Langlands correspondence for principal series representations]
+\begin{thm}[ = Theorem \ref{thm:langcorr2}, Langlands correspondence for principal series representations of $G$]\label{thm:langcorr2intro}
     Let $\mathcal{G}_2^1(F)$ be the set of isomorphism classes of reducible 2-dimensional semisimple Weil--Deligne representations of $\mathcal{W}_F$, and $\mathcal{A}_2^1(F)$ the set of isomorphism classes of irreducible smooth principal series representations of $G$. Then there is a unique map
 $$\bm\pi^1:\mathcal{G}_2^1(F)\longrightarrow\mathcal{A}_2^1(F)$$
 such that 
@@ -40,7 +40,11 @@ for all $\rho\in\mathcal{G}_2^1(F)$ and all characters $\chi$ of $F^\times$. Mor
 \end{equation*}
 for all $\rho\in\mathcal{G}_2^1(F)$ and characters $\psi:F \to \CC^\times$ and $\chi: F^\times \to \CC^\times$.
 \end{thm}
-At the end of the report we look at the class of \emph{unipotent representations} of $G$, which are the principal series representations corresponding to the \emph{unramified} Weil--Deligne representations, i.e. those which are trivial on the inertia group $\mathcal{I}_F\subseteq \mathcal{W}_F$.
+At the end of the report we look at the class of \emph{unipotent representations} of $\GL_2(F)$. Unipotent representations were introduced by Deligne--Lusztig in \cite{DL1} in the context of the group of points of a reductive group over a finite field. The connection between the two types of unipotent representations comes from representations of these finite groups of Lie type arising from the Moy--Prasad filtrations of $\GL_2(F)$. On the Galois side, we consider \emph{unramified} Weil--Deligne representations, i.e. those which are trivial on the inertia group $\mathcal{I}_F\leq \mathcal{W}_F$. We prove the refinement of the above theorem:
+
+\begin{thm}[= Corollary \ref{cor:unipotentcorr}, Langlands correspondence for unipotent representations of $G$]
+    The bijection of Theorem \ref{thm:langcorr2intro} restricts to a bijection between the equivalence classes of unipotent representations of $G$ and the equivalence classes of unramified, 2-dimensional, semisimple Weil--Deligne representations of $\mathcal W_F$.    
+\end{thm}
 
 The report is organised as follows. In Section \ref{sec:lpg} we define the notion of a \emph{locally profinite group}, which encompasses the groups we will be interested in. Then we describe the representation theory of these groups, including the notion of a \emph{smooth representation}. In Section \ref{sec:measure} we develop some measure theory on locally profinite groups, and then apply it to understand duality in the representation theory of these groups. Then in Section \ref{sec:principal} we give a classification of all irreducible principal series representations of $\GL_2(F)$.
 
@@ -48,7 +52,7 @@ In Section \ref{sec:func_equation} we define the $L$-function and local constant
 
 In Section \ref{sec:weil} we turn to the Galois side, reviewing the relevant Galois theory and the definition of the Weil group $\mathcal W_F$. Using local class field theory and the results from the previous sections, we define the $L$-function and local constant associated to finite-dimensional semisimple representations of $\mathcal{W}_F$. We also cover the basics of Weil--Deligne representations.
 
-In Section \ref{sec:langlands} we prove the Langlands correspondence for principal series representations of $\GL_2$. Lastly, in Section \ref{sec:unipotent}, we study unipotent representations. 
+In Section \ref{sec:langlands} we prove the local Langlands correspondence for principal series representations of $\GL_2(F)$. Lastly, in Section \ref{sec:unipotent}, we study unipotent representations of $\GL_2(F)$ and compare these with unramified Weil--Deligne representations. 
 
 
 \newpage
