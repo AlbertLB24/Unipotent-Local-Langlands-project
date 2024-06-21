@@ -1,0 +1,49 @@
+In this report, we aim to give an exposition of some aspects of the local Langlands correspondence for $\GL_2$, for the most part closely following the excellent book by Bushnell-Henniart \cite{BH1}. Throughout we will work with a non-archimedean local field $F$.
+
+This correspondence is a specific instance of a wide range of conjectures, proposed by Langlands, stating that for a nonarchimedean local field $F$, irreducible smooth representations of the group $\GL_2(F)$ of invertible $2\times 2$ matrices over $F$ should parametrize certain 2-dimensional representations of the Weil group $\mathcal{W}_F$, which is a Galois theoretic object encapsulating information about the arithmetic of the field $F$. This correspondence is also compatible with similar considerations over global fields, and may be viewed as a far-reaching generalisation of class field theory, which is the $\GL_1$ case. 
+
+In this report, we restrict our attention to the so-called \emph{principal series} representations of $G = \GL_2(F)$. These representations are subquotients of representations obtained by parabolic induction. To explain what these are, let us introduce some notation. Let $$B=\left\{\begin{psmallmatrix} a&b\\0&d\end{psmallmatrix} \mid a,d \in F^\times, b \in F\right\},\quad T=\left\{\begin{psmallmatrix}
+	a&0\\0&d
+\end{psmallmatrix}\mid a,d \in F^\times\right\}\quad\text{ and }\quad N=\left\{\begin{psmallmatrix}
+	1&b\\0&1
+\end{psmallmatrix}\mid b \in F\right\}$$ be the Borel subgroup $B$ of upper triangular matrices, the maximal torus $T$ and the subgroup of unipotent elements $N$ of $B$, respectively. We see that $B = NT$.
+\begin{defn}
+	Let $\chi: T\to \CC^\times$ be a character. Extend $\chi$ to a character of $B$ by setting
+	\[\chi(nt) = \chi(t)\text{, for all } t\in T, n\in N\]
+	We will call the representation $\Ind_B^G \chi$ a \emph{parabolically induced representation}. A \emph{principal series representation} is a subquotient of a principally induced representation.
+\end{defn}
+
+The Langlands correspondence states that irreducible smooth representations of $\GL_2(F)$ correspond to (2-dimensional, semisimple) \emph{Weil-Deligne representations} of the Weil group $\mathcal{W}_F$. These are representations of $\mathcal{W}_F$ equipped with additional data.
+\begin{defn}
+	A \emph{Weil-Deligne representation} of $F$ is a triple $(\rho,V,\nn)$ in which $(\rho,V)$ is a smooth finite-dimensional representation of $\mathcal{W}_F$ and $\nn\in\End_\CC(V)$ is a \textit{nilpotent} element satisfying
+	$$\rho(x)\nn\rho(x)^{-1}=|x|\nn,\quad x\in \mathcal{W}_F.$$
+\end{defn}
+
+The Langlands correspondence will be specified in terms of relations between the $L$-functions and local constants of the two types of representations. For both smooth irreducible representations $\pi$ of $G$, and finite-dimensional semisimple Weil-Deligne representations $\sigma$ of $\mathcal{W}_F$, we associate $L$-functions $L(\pi, s)$ and $L(\sigma, s)$. These $L$-functions both satisfy a functional equation, depending on the local constants $\varepsilon(\pi, s, \psi)$ and $\varepsilon(\sigma, s, \psi)$ respectively, where $\psi: F\to \CC^\times$ is an additive character. The correspondence is a bijection set up so that corresponding representations have the same $L$-function and local constant.
+
+The main result of the report is the following:
+\begin{thm}[ = Theorem \ref{thm:langcorr2}, Langlands correspondence for principal series representations]
+    Let $\mathcal{G}_2^1(F)$ be the set of isomorphism classes of reducible 2-dimensional semisimple Weil-Deligne representations of $\mathcal{W}_F$, and $\mathcal{A}_2^1(F)$ the set of isomorphism classes of irreducible smooth principal series representations of $G$. Then there is a unique map
+$$\bm\pi^1:\mathcal{G}_2^1(F)\longrightarrow\mathcal{A}_2^1(F)$$
+such that 
+\begin{equation*}
+	L(\chi\bm\pi^1(\rho),s)=L(\chi\otimes\rho,s),
+\end{equation*}
+for all $\rho\in\mathcal{G}_2^1(F)$ and all characters $\chi$ of $F^\times$. Moreover, the map $\bm\pi^1$ is a bijection and it satisfies
+\begin{equation*}
+	\begin{split}
+		\bm\pi^1(\chi\otimes\rho)&=\chi\bm\pi^1(\rho),\\
+		\varepsilon(\chi\bm\pi(\rho),s,\psi)&=\varepsilon(\chi\otimes\rho,s,\psi),
+	\end{split}
+\end{equation*}
+for all $\rho\in\mathcal{G}_2^1(F)$ and characters $\psi:F \to \CC^\times$ and $\chi: F^\times \to \CC^\times$.
+\end{thm}
+At the end of the report we look at the class of \emph{unipotent representations} of $G$, which are the principal series representations corresponding to the \emph{unramified} Weil-Deligne representations, i.e. those which are trivial on the inertia group $\mathcal{I}_F\subseteq \mathcal{W}_F$.
+
+The report is organised as follows. In Section \ref{sec:lpg} we define the notion of a \emph{locally profinite group}, which encompasses the groups we will be interested in. Then we describe the representation theory of these groups, including the notion of a \emph{smooth representation}. In Section \ref{sec:measure} we develop some measure theory on locally profinite groups, and then apply it to understand duality in the representation theory of these groups. Then in Section \ref{sec:principal} we give a classification of all irreducible principal series representations of $\GL_2(F)$.
+
+In Section \ref{sec:func_equation} we define the $L$-function and local constant associated to a character of $F^\times$, emphasizing the parallels to the classical theory of $L$-functions and the role of harmonic analysis and the Fourier transform. Then in Section \ref{chap:LfuncGL2} we generalise these to irreducible smooth representations of $\GL_2(F)$.
+
+In Section \ref{sec:weil} we turn to the Galois side, reviewing the relevant Galois theory and the definition of the Weil group $W_F$. Using local class field theory and the results from the previous sections, we define the $L$-function and local constant associated to finite-dimensional semisimple representations of $\mathcal{W}_F$. We also cover the basics of Weil-Deligne representations.
+
+In Section \ref{sec:langlands} we prove the Langlands correspondence for principal series representations of $\GL_2$. Lastly, in Section \ref{sec:unipotent}, we study unipotent representations. 
