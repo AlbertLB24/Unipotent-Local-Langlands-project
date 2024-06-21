@@ -1,6 +1,6 @@
 \subsection{The L-function of a Character of \texorpdfstring{$F^\times$}{TEXT}}
 
-Let $F$ be a non-Archimedean local field, $\varpi$ be a uniformiser and $q$ be the size of the residue field. We will later define $L$-functions attached to an irreducible smooth representation of $\GL_2(F)$ and determine a functional equation they satisfy. The ideas involved in the proof that such objects exists are similar (and highly dependent) on the ideas associated to the development of the theory discussed in the previous section for the local field $F$. 
+Let $F$ be a non-Archimedean local field, $\varpi$ be a uniformizer and $q$ be the size of the residue field. We will later define $L$-functions attached to an irreducible smooth representation of $\GL_2(F)$ and determine a functional equation they satisfy. The ideas involved in the proof that such objects exists are similar (and highly dependent) on the ideas associated to the development of the theory discussed in the previous section for the local field $F$. 
 
 Therefore, we explain these results first in the context of an irreducible smooth representation $\chi$ of $\GL_1(F)$, necessarily a character $\chi: F^\times \to \CC^\times$. To mimic the development we aim to follow for the case of irreducible representations of $\GL_2(F)$, we will first define the space $\mathcal Z(\chi)$ of zeta functions from which the definition of the L-function $L(\chi,s)$ arises naturally. Afterwards, we will introduce the analogue of the Fourier transform over $F$. This will lead us to the proof of the functional equation of $\GL_1$ and the construction of the local constant $\varepsilon(\chi,s,\psi)$. Before we start, we require one definition analogous to \ref{def:addlevel} in the multiplicative setting of $F^\times$.
 
@@ -8,7 +8,7 @@ Therefore, we explain these results first in the context of an irreducible smoot
     Let $\chi:F^\times\to\CC^\times$ be a character of $F^\times$. We say that $\chi$ is \textit{unramified} if $\mathcal{O}_F^\times\subseteq\ker\chi$ and \textit{ramified} otherwise. If $\chi$ is ramified, then the \textit{level} of $\chi$ is defined to be the least integer $d\geq0$ such that $U_F^{d+1}=1+\pp^{d+1}\subseteq\ker\chi$.
 \end{defn}
 
-Let $\chi: F^\times \to \CC^\times$ be a character of $F^\times$. We want to attach to this character an $L$-function $L(\chi,s)$ in the formal variable $s$. We remark that an unramified character $\chi$ of $F^\times$ is completely determined by the value of $\chi(\varpi)$ since $\chi(x)=\chi(\varpi)^m$ for each $x\in\varpi^m\mathcal{O}_F$. Classically, the L-function associated to $\chi$ is defined to be $(1-\chi(\varpi)q^{-s})^{-1}$ when $\chi$ is unramified, and $1$ otherwise. In order to generalise to $\GL_2$ it would be preferable to have a more intrinsic definition.
+Let $\chi: F^\times \to \CC^\times$ be a character of $F^\times$. We want to attach to this character an $L$-function $L(\chi,s)$ in the formal variable $s$. We remark that an unramified character $\chi$ of $F^\times$ is completely determined by the value of $\chi(\varpi)$ since $\chi(x)=\chi(\varpi)^m$ for each $x\in\varpi^m\mathcal{O}_F$. Classically, the L-function associated to $\chi$ is defined to be $(1-\chi(\varpi)q^{-s})^{-1}$ when $\chi$ is unramified, and $1$ otherwise. In order to generalize to $\GL_2$ it would be preferable to have a more intrinsic definition.
 
 \begin{defn}
     For $\Phi \in C_c^\infty(F)$ and $\chi :F^\times \to \CC^\times$, define the zeta function $\zeta(\Phi,\chi,s)$ to be
@@ -52,7 +52,7 @@ It is clear from the examples that the zeta function $\zeta(\Phi,\chi,s)$ only d
 \end{defn}
 
 We note that $\mathcal{Z}(\chi)$ is a $\CC$-vector space. Indeed, $$\alpha\zeta(\Phi_1,\chi,s)+\zeta(\Phi_2,\chi,s)=\zeta(\alpha\Phi_1+\Phi_2,\chi,s)\in\mathcal{Z}(\chi)$$
-for any $\Phi_1,\Phi_2\in C_c^\infty(F)$ and $\alpha\in\CC$. However, $\mathcal{Z}(\chi)$ has futher useful structure; it is also a $\CC[q^{-s},q^s]$-module. To see this, one needs to describe an invertible action of $q^{-s}$ on $\mathcal{Z}(\chi)$. To do this, we introduce some notation.
+for any $\Phi_1,\Phi_2\in C_c^\infty(F)$ and $\alpha\in\CC$. However, $\mathcal{Z}(\chi)$ has further useful structure; it is also a $\CC[q^{-s},q^s]$-module. To see this, one needs to describe an invertible action of $q^{-s}$ on $\mathcal{Z}(\chi)$. To do this, we introduce some notation.
 
 \begin{notn}
     For $a \in F^\times$ and $\Phi \in C_c^\infty(F)$, denote by $a\Phi$ the function $x \mapsto \Phi(a^{-1}x),x\in F$. This function also lies in $C_c^\infty(F)$.
@@ -97,7 +97,7 @@ $$\mathcal{Z}(\chi)=P_\chi(q^{-s})\cdot\CC[q^{-s},q^s]$$ for some polynomial $P_
     \begin{equation}\tag{\dag}\label{eqn:linear}
         \zeta(\Phi,\chi,s)=\alpha\zeta(\mathbbm{1}_{\mathcal{O}_F},\chi,s)+\zeta(\Phi',\chi,s)
     \end{equation}
-    and by the previous paragraph, $\zeta(\Phi',\chi,s)\in\CC[q^{-s},q^{s}]$. Hence, it only remains to compute $\zeta(\mathbbm{1}_{\mathcal O_F},\chi,s)$. This is precisely the contant of Example \ref{example:zetafnc}(1). If $\chi$ is unramified, then $\zeta(\mathbbm{1}_{\mathcal O_F},\chi,s)=\mu^*(\mathcal{O}_F^\times)(1-\chi(\varpi)q^{-s})^{-1}$ and if $\chi$ is ramified, then $\zeta(\mathbbm{1}_{\mathcal O_F},\chi,s)=0$. Together with \eqref{eqn:linear} and the previous lemma, this establishes the result. 
+    and by the previous paragraph, $\zeta(\Phi',\chi,s)\in\CC[q^{-s},q^{s}]$. Hence, it only remains to compute $\zeta(\mathbbm{1}_{\mathcal O_F},\chi,s)$. This is precisely the constant of Example \ref{example:zetafnc}(1). If $\chi$ is unramified, then $\zeta(\mathbbm{1}_{\mathcal O_F},\chi,s)=\mu^*(\mathcal{O}_F^\times)(1-\chi(\varpi)q^{-s})^{-1}$ and if $\chi$ is ramified, then $\zeta(\mathbbm{1}_{\mathcal O_F},\chi,s)=0$. Together with \eqref{eqn:linear} and the previous lemma, this establishes the result. 
 \end{proof}
 
 \iffalse
