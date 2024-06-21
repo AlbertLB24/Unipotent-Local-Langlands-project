@@ -211,7 +211,7 @@ Finally, we define the unipotent representations of $\mathbf G(\FF_q)$.
     There is one other conjugacy class of maximal tori in $\GL_2$ defined over $\FF_q$. This is owing to the fact that the Weyl group of $T$ in $\GL_2$ is $W(T) = \ZZ/2\ZZ$ (see \cite[Proposition 3.3.3]{BH1}). The Weyl group of a maximal torus is the quotient of the normaliser of the torus by the torus. For $T$ the torus of diagonal matrices, the nontrivial element of the Weyl group is represented by a matrix under which conjugation swaps eigenvalues in $T$. This matrix is defined over $\FF_q$. Let $S$ be a representative of this other conjugacy class of maximal tori; $S$ is a non-split maximal torus. We have the following character relation, \cite[Corollary 7.6.5]{BH1}:
     $$1 = \frac{R_{T}(1)}{|W(T)(\FF_q)|} + \frac{R_{S}(1)}{|W(S)(\FF_q)|}.$$ Since $R_{T}(1) = 1+\mathrm{St}$, where $\mathrm{St}$ is the Steinberg character, we deduce that the only irreducible representations of $\GL_2$ appearing in $R_S(1)$ are again the trivial character and Steinberg. In fact, using \cite[Proposition 3.3.6]{BH1} to calculate $|W(S)(\FF_q)|=2$, we have $R_S(1) = 1-\mathrm{St}$.
 
-    The unipotent representations of $\GL_2(\FF_q)$ are exactly the trivial representation and the Steinberg representation.
+    The unipotent representations of $\GL_2(\FF_q)$ are exactly the trivial representation and the Steinberg.
 \end{example}
 
 
@@ -229,10 +229,10 @@ So far we have described the Moy--Prasad filtrations of $G=\GL_2(F)$, from which
 From Examples \ref{ex:uniG} and \ref{ex:uniT} we can classify the unipotent representations of $G$ more simply:
 
 \begin{notn}
-    Let 
+    Let $I$ denote the Iwahori subgroup of $G$:
     $$I = \left\{ \begin{pmatrix}
         a&b\\c&d
-    \end{pmatrix} : a,d \in \cO^\times, b \in \cO, c \in \varpi\cO\right\}$$ denote the Iwahori subgroup of $G$.
+    \end{pmatrix} : a,d \in \cO^\times, b \in \cO, c \in \varpi\cO\right\}$$ 
 \end{notn}
 
 \begin{prop}\label{prop:unipotent}
@@ -245,7 +245,7 @@ From Examples \ref{ex:uniG} and \ref{ex:uniT} we can classify the unipotent repr
     $$g \cdot V^K = V^{gKg^{-1}},$$ the representation $(\pi,V)$ is unipotent if and only if $V^I \neq 0$.
 \end{proof}
 
-This allows us to list the unipotent principal series representations of $G=\GL_2(F)$. It turns out that there are no unipotent cuspidal representations of $G$ (\cite[Proposition 14.3]{BH1}) so that these are all the unipotent representations.
+This allows us to list the unipotent principal series representations of $G=\GL_2(F)$. It turns out that there are no unipotent cuspidal representations (\cite[Proposition 14.3]{BH1}) so that these are all the unipotent ones.
 
 \begin{prop}\label{prop:unipotent2}
     Let $(\pi,V)$ be an irreducible smooth representation of $G$ that is a composition factor of $\iota_B^G\chi$, where $\chi=\chi_1\otimes \chi_2$ is a character of $T$. Then $(\pi,V)$ is unipotent if and only if $\chi_1$ and $\chi_2$ are both unramified characters of $F^\times$.
@@ -265,7 +265,6 @@ This allows us to list the unipotent principal series representations of $G=\GL_
     To show that the Steinberg representation is unipotent, we produce a non-constant function $f \in \Ind_B^G 1$ which is invariant under right translation by $I$. The image in the Steinberg representation, as the quotient of $\Ind_B^G 1$ by $1_G$, is then a nonzero Iwahori fixed vector. Such an $f$ is exactly a non-constant complex valued function on the set of $B-I$ double cosets of $G$. The existence of $f$ follows from the claim that $BI \neq G$. To see this, there is a surjection $B \backslash G \to \PP^1(F)$ given by sending $g=\begin{psmallmatrix}
         a&b\\c&d
     \end{psmallmatrix}$ to $[a:c]$. But the image of $I$ consists of $[a:c]$ such that the valuation of $c$ in $F$ is strictly greater than that of $a$. So $BI \neq G$ and thus the Steinberg representation is unipotent. 
-
 \end{proof}
 
 On the Weil--Deligne side, we define unramified representations.
@@ -281,10 +280,10 @@ On the Weil--Deligne side, we define unramified representations.
     \end{psmallmatrix}$.
 \end{rem}
 
-Comparing with the proof of Theorem ************ we have
+Comparing with the proof of Theorem \ref{thm:langcorr2} we have
 
 \begin{cor}
-    The bijection of Theorem ********** restricts to a bijection between the equivalence classes of unipotent representations of $G=\GL_2(F)$ and the equivalence classes of unramified, 2-dimensional, semisimple Weil--Deligne representations of the Weil group $\mathcal W_F$.    
+    The bijection of Theorem \ref{thm:langcorr2} restricts to a bijection between the equivalence classes of unipotent representations of $G=\GL_2(F)$ and the equivalence classes of unramified, 2-dimensional, semisimple Weil--Deligne representations of the Weil group $\mathcal W_F$.    
 \end{cor}
 
 
@@ -295,13 +294,13 @@ We have seen that the unipotent representations of $G$ are the irreducible smoot
 \end{defn}
 
 \begin{cor}
-    The bijection of Theorem ********** restricts to a bijection between the equivalence classes of $K$-unramified representations of $G=\GL_2(F)$ and the equivalence classes of unramified, 2-dimensional, semisimple smooth representations of the Weil group $\mathcal W_F$.    
+    The bijection of Theorem \ref{thm:langcorr2} restricts to a bijection between the equivalence classes of $K$-unramified representations of $G=\GL_2(F)$ and the equivalence classes of unramified, 2-dimensional, semisimple smooth representations of the Weil group $\mathcal W_F$.    
 \end{cor}
 \begin{proof}
-    The proof of Proposition \ref{prop:unipotent2} can be adapted (replacing $I$ with $K$) to show that the $K$-unramified representations of $G$ are all the unipotent representations except the twists of Steinberg $\phi \mathrm{St}_G$ by an unramified character $\phi$ of $F^\times$. We lose the Steinberg representation because $BK=G$. On the other hand, restricting to smooth representations of $\mathcal W_F$ only loses the Weil--Deligne representations for which $\mathfrak n \neq 0$. These correspond to the twists of Steinberg under the bijection of Theorem **********.
+    The proof of Proposition \ref{prop:unipotent2} can be adapted (replacing $I$ with $K$) to show that the $K$-unramified representations of $G$ are all the unipotent representations except the twists of Steinberg $\phi \mathrm{St}_G$ by an unramified character $\phi$ of $F^\times$. We lose the Steinberg representation because $BK=G$. On the other hand, restricting to smooth representations of $\mathcal W_F$ only loses the Weil--Deligne representations for which $\mathfrak n \neq 0$. These correspond to the twists of Steinberg under the bijection of Theorem \ref{thm:langcorr2}.
 \end{proof}
 \begin{rem}
-    *********** Compare with $\ell$-adic unramified.
+    In Remark \ref{rem:deligne}, we saw that the category of Weil--Deligne representations of $\mathcal W_F$ is equivalent to the category of continuous finite-dimensional representations of $\mathcal W_F$ over $\overline{\QQ_\ell}$. The obstruction for these $\ell$-adic continuous representations $(\rho,V)$ to be smooth is encoded in some nilpotent element $\mathfrak n \in \mathrm{End}(V)$. More precisely, in \cite[Theorem 32.5]{BH1} we see that $\rho$ acts unipotently on some open subgroup of $\mathcal I_F$. If $(\rho,V)$ is an unramified $\ell$-adic continuous representation of $\mathcal W_F$, in the sense that it is trivial on $\mathcal I_F$, then this forces $\mathfrak n = 0$. The corresponding Weil--Deligne representation $(\rho,V,\mathfrak n)$ is then an unramified Weil--Deligne representation with $\mathfrak n=0$; in other words, an unramified smooth representation of $\mathcal W_F$.
 \end{rem}
 
 
