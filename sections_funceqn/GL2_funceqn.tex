@@ -72,6 +72,59 @@ We require one last element of notation before we can state and prove the functi
     \end{psmallmatrix} \in T$. By Theorem \ref{thm:gl1gamma}, this equality holds whenever we replace $\Phi^{ij}_T \in C_c^\infty(D)$ by a function of the form $\phi_{11}(t_1) \otimes \phi_{22}(t_2) \in C_c^\infty(D)$. But such functions span $C_c^\infty(D)$, so we are done by linearity of the integrals.
 \end{proof}
 
+\begin{rem}\label{BHThm2}
+    Similarly to case of the $L$-functions, there are more general versions of the functional equation and the local constant that hold for any irreducible smooth representation $\pi$ of $G$. More concretely, for any irreducible smooth representation of $G$. There is a unique rational function $\gamma(\pi,s,\psi) \in \CC(q^{-s})$ such that 
+    $$\zeta\left(\hat\Phi,\check{f},(1-s)+\frac{1}{2}\right) = \gamma(\pi,s,\psi) \zeta\left(\Phi,f,s+\frac{1}{2}\right)$$ for all $\Phi \in C_c^\infty(A)$ and $f \in \mathcal C(\pi)$.
+\end{rem}
+
+Similarly to our discussion with $L$-functions, we do not have the tools to prove the above result if $\pi$ is a cuspidal representation. However, with the work we have done so far, we can easily calculate $\gamma(\pi,s,\chi)$ whenever $\pi$ is a principal series representation.
+
+\begin{lemma}\label{lem:gamma}
+    If $(\pi,V)$ is a composition factor of $\Sigma=\iota_B^G\chi$ for some character $\chi=\chi_1\otimes\chi_2$ of $T$, then
+    $$\gamma(\pi,s,\psi)=\gamma\left(\Sigma,s,\psi\right)=\gamma(\chi_1,s,\psi)\gamma(\chi_2,s,\psi).$$
+\end{lemma}
+
+\begin{proof}
+    Similarly to the proof of the $L$-function for $\pi$, we use the fact that $\mathcal{C}(\pi)\subseteq\mathcal{C}(\Sigma)$, so $\mathcal{Z}(\pi)\subseteq\mathcal{Z}(\Sigma)$. In particular, the convergence for the zeta functions also hold for $\pi$. Therefore, for any $\Phi\in C_c^\infty(A)$ and $f\in\mathcal{C}(\pi)$ we have that $\check{f}\in\mathcal{C}(\check{\pi})\subseteq\mathcal{C}(\check{\Sigma})$ and
+    $$\zeta\left(\hat{\Phi},\check{f},\frac{3}{2}-s\right)=\gamma(\Sigma,s,\psi)\zeta\left(\Phi,f,s+\frac{1}{2}\right),$$
+    whence $\gamma(\pi,s,\psi)=\gamma\left(\Sigma,s,\psi\right)$ as desired.
+\end{proof}
+
+Similarly to the $\GL_1(F)$ case in the previous chapter, it is natural to consider the terms $\frac{\zeta(\Phi,f,s+1/2)}{L(\pi,s)}\in\CC[q^{-s},q^s]$ that motivate the analogous definition to \ref{defn:localconstant}.
+
+\begin{defn}
+    Define the \textit{Godement-Jacquet local constant} $\varepsilon(\pi,s,\psi)$ of an irreducible smooth representation $\pi$ of $G$ by 
+    $$\varepsilon(\pi,s,\psi) = \gamma(\pi,s,\psi) \frac{L(\pi,s)}{L(\check{\pi},1-s)}.$$
+\end{defn}
+
+A simple manipulation shows that 
+$$\frac{\zeta(\hat{\Phi},\check{f},3/2-s)}{L(\check{\pi},1-s)} = \varepsilon(\pi,s,\psi) \frac{\zeta(\Phi,f,s+1/2)}{L(\pi,s)},$$
+and the local constant in this setting also satisfies a functional equation. 
+
+\begin{cor}
+    The local constant satisfies the functional equation
+    $$\varepsilon(\pi,s,\psi)\varepsilon(\check{\pi},1-s,\psi) = \omega_\pi(-1).$$
+    The local constant is of the form $$\varepsilon(\pi,s,\psi) = aq^{bs}$$ for some $a \in \CC^\times$, $b \in \ZZ$. 
+\end{cor}
+\begin{proof}
+    The first statement comes from the Fourier inversion formula and Remark \ref{BHThm2}. The $\omega_\pi(-1)$ term comes from the minus sign in $\hat{\hat{\Phi}}(x)=\Phi(-x)$ and the observation that for a matrix coefficient $f \in \mathcal C(\pi)$ we have $f(-g)=\omega_\pi(-1)f(g)$. The functional equation and Remark \ref{BHThm1} implies that $\varepsilon$ is a unit in $\CC[q^{-s},q^s]$, and the units are precisely the elements of the form $aq^{bs}$ for $b \in \ZZ$.
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\iffalse
+
 \begin{defn}
     Define the \textit{Godement-Jacquet local constant} $\varepsilon(\pi,s,\psi)$ of $\pi = \iota_B^G \chi$ by 
     $$\varepsilon(\pi,s,\psi) = \gamma(\pi,s,\psi) \frac{L(\pi,s)}{L(\check{\pi},1-s)}.$$
@@ -85,10 +138,8 @@ We require one last element of notation before we can state and prove the functi
     This follows from Proposition \ref{prop:gl2gamma} and Proposition \ref{prop:gl2factor}.
 \end{proof}
 
-Similarly to case of the $L$-functions, one can also prove more general versions of the functional equation and the local constant that hold for any irreducible smooth representation $\pi$ of $G$.
 
-
-\begin{thm}\label{BHThm2}
+\begin{thm}\label{}
     Let $\pi$ be an irreducible smooth representation of $G$. There is a unique rational function $\gamma(\pi,s,\psi) \in \CC(q^{-s})$ such that 
     $$\zeta\left(\hat\Phi,\check{f},(1-s)+\frac{1}{2}\right) = \gamma(\pi,s,\psi) \zeta\left(\Phi,f,s+\frac{1}{2}\right)$$ for all $\Phi \in C_c^\infty(A)$ and $f \in \mathcal C(\pi)$.
 \end{thm}
@@ -97,6 +148,7 @@ Similarly to case of the $L$-functions, one can also prove more general versions
 \end{proof}
 
 The above theorem holds for any irreducible representation $\pi$ of $G$, including cuspidal representations. With the work we have done so far, we can easily calculate $\gamma(\pi,s,\chi)$ whenever $\pi$ is a principal series representation.
+
 
 
 \begin{lemma}
@@ -123,8 +175,17 @@ The above theorem holds for any irreducible representation $\pi$ of $G$, includi
 \begin{proof}
     The first statement comes from the Fourier inversion formula and Theorem \ref{BHThm2}. The $\omega_\pi(-1)$ term comes from the minus sign in $\hat{\hat{\Phi}}(x)=\Phi(-x)$ and the observation that for a matrix coefficient $f \in \mathcal C(\pi)$ we have $f(-g)=\omega_\pi(-1)f(g)$. The functional equation and Theorem \ref{BHThm1} implies that $\varepsilon$ is a unit in $\CC[q^{-s},q^s]$, and the units are precisely the elements of the form $aq^{bs}$ for $b \in \ZZ$.
 \end{proof}
+\fi 
 
-The Propositions \ref{prop:gl2factor} and \ref{prop:gl2gamma} prove the Theorems \ref{BHThm1} and \ref{BHThm2} in the case that $\pi = \iota_B^G \chi$ and $\pi$ is irreducible. As in Theorem \ref{classify}, the representations $\pi = \iota_B^G \chi$ are typically irreducible - they are only reducible when $\chi = \phi \delta_B^{\pm 1/2}$ for some character $\phi$ of $F^\times$. In this case the composition factors are characters $\phi \circ \det$, and twists of Steinberg $\phi \mathrm{St}_G$. We state without proof the $L$-functions and local constants in the case that $\pi$ is one of these composition factors. For more detail see Sections 26.5 - 26.8 of \cite{BH1}. The results for all principal series representations are summarized in the following table:
+
+The Propositions \ref{prop:gl2factor} and \ref{prop:gl2gamma} provide a description of the $L$-function and the $\gamma(\pi,s,\psi)$ factor in the case that $\pi = \iota_B^G \chi$ and the list at the end of Section \ref{sec:LfuncGL2} and Lemma \ref{lem:gamma} describe them when $\pi$ is a principal series representation. From this information, one can derive formulas for the local constants that we omit (only the local constant for the Steinberg representation is a non-trivial computation). As we will see in the following section, principal series representations are completely determined by its $L$-function. The results for all principal series representations are summarized in the following table:
+
+\iffalse
+As in Theorem \ref{classify}, the representations $\pi = \iota_B^G \chi$ are typically irreducible - they are only reducible when $\chi = \phi \delta_B^{\pm 1/2}$ for some character $\phi$ of $F^\times$. In this case the composition factors are characters $\phi \circ \det$, and twists of Steinberg $\phi \mathrm{St}_G$. We state without proof the $L$-functions and local constants in the case that $\pi$ is one of these composition factors. For more detail see Sections 26.5 - 26.8 of \cite{BH1}. 
+\fi
+
+
+
 
 \begin{figure}[!ht]
     \centering
